@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>浏览器环境概述 -- JavaScript 标准参考教程（alpha）</title>
+  
+  <!-- Included CSS Files (Uncompressed) -->
+  <!--
+  <link rel="stylesheet" href="stylesheets/foundation.css">
+  -->
+  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="foundation.css" tppabs="http://javascript.ruanyifeng.com/css/foundation.css">
+  <link rel="stylesheet" href="main.css" tppabs="http://javascript.ruanyifeng.com/css/main.css">
+
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="html5.js" tppabs="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <script src="jquery.js" tppabs="http://javascript.ruanyifeng.com/js/jquery.js"></script>
+  <script src="toc.js" tppabs="http://javascript.ruanyifeng.com/js/toc.js"></script>
+  <script src="main.js" tppabs="http://javascript.ruanyifeng.com/js/main.js"></script>
+
+</head>
+<body>
+
+<header class="top-bar" id="header">
+
+<div class="fixed">
+
+<nav class="top-bar">
+<ul>
+<!-- Title Area -->
+	<li class="name has-dropdown">
+	<h1><a href="index.htm" tppabs="http://javascript.ruanyifeng.com/">JavaScript 标准参考教程（alpha） </a></h1>
+		<ul class="dropdown">
+			
+			<li><a href="index.htm#introduction" tppabs="http://javascript.ruanyifeng.com/#introduction">导论</a></li>
+			
+			<li><a href="index.htm#grammar" tppabs="http://javascript.ruanyifeng.com/#grammar">语法</a></li>
+			
+			<li><a href="index.htm#stdlib" tppabs="http://javascript.ruanyifeng.com/#stdlib">标准库</a></li>
+			
+			<li><a href="index.htm#oop" tppabs="http://javascript.ruanyifeng.com/#oop">面向对象编程</a></li>
+			
+			<li><a href="index.htm#advanced" tppabs="http://javascript.ruanyifeng.com/#advanced">语法专题</a></li>
+			
+			<li><a href="index.htm#dom" tppabs="http://javascript.ruanyifeng.com/#dom">DOM模型</a></li>
+			
+			<li><a href="index.htm#bom" tppabs="http://javascript.ruanyifeng.com/#bom">浏览器环境</a></li>
+			
+			<li><a href="index.htm#htmlapi" tppabs="http://javascript.ruanyifeng.com/#htmlapi">Web API</a></li>
+			
+		</ul>
+	</li>
+</ul>
+
+<section>
+
+
+<ul class="left">
+<li class="divider"></li>
+<li class="has-dropdown"><a class="active" href="#"> 浏览器环境 </a><ul class="dropdown">
+
+
+
+<li><a href="ajax.html" tppabs="http://javascript.ruanyifeng.com/bom/ajax.html">AJAX</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="cookie.html" tppabs="http://javascript.ruanyifeng.com/bom/cookie.html">Cookie</a></li>
+
+
+
+
+
+<li><a href="cors.html" tppabs="http://javascript.ruanyifeng.com/bom/cors.html">CORS通信</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="active"><a href="#">浏览器环境概述</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="history-1.html" tppabs="http://javascript.ruanyifeng.com/bom/history.html">history对象</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="indexeddb.html" tppabs="http://javascript.ruanyifeng.com/bom/indexeddb.html">IndexedDB：浏览器端数据库</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mobile.html" tppabs="http://javascript.ruanyifeng.com/bom/mobile.html">移动设备API</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="notification.html" tppabs="http://javascript.ruanyifeng.com/bom/notification.html">Web Notifications API</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="performance.html" tppabs="http://javascript.ruanyifeng.com/bom/performance.html">Performance API</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="same-origin.html" tppabs="http://javascript.ruanyifeng.com/bom/same-origin.html">同源政策</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="webrtc.html" tppabs="http://javascript.ruanyifeng.com/htmlapi/webrtc.html">WebRTC</a></li>
+
+
+
+
+
+<li><a href="websocket.html" tppabs="http://javascript.ruanyifeng.com/htmlapi/websocket.html">WebSocket</a></li>
+
+
+
+
+
+
+
+<li><a href="webstorage.html" tppabs="http://javascript.ruanyifeng.com/bom/webstorage.html">Web Storage：浏览器端数据储存机制</a></li>
+
+
+
+
+
+
+
+<li><a href="window.html" tppabs="http://javascript.ruanyifeng.com/bom/window.html">window对象</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul></li>
+<li class="divider"></li>
+<li class="has-dropdown nav-3"><a href="#"> 浏览器环境概述</a><ul class="dropdown">
+</ul></li>
+</ul>
+
+
+<ul class="right">
+	<li class="divider"></li>
+	<li>
+		<a href="javascript:if(confirm('https://github.com/ruanyf/jstutorial  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://github.com/ruanyf/jstutorial'" tppabs="https://github.com/ruanyf/jstutorial" target="_blank">GitHub <i class="foundicon-edit"></i></a>
+	</li>
+	<li class="divider"></li>
+	<li>
+		<a href="#">TOP <i class="foundicon-up-arrow"></i></a>
+	</li>
+</ul>
+
+</section>
+
+</nav>  
+</div>
+</header>
+
+
+<article class="bookPage">
+
+  <div class="row">
+    <div class="twelve columns">
+
+<h1> 浏览器环境概述 </h1>
+
+<aside class="right"><p>来自<a href="index.htm" tppabs="http://javascript.ruanyifeng.com/">《JavaScript 标准参考教程（alpha）》</a>，by 阮一峰</p></aside>
+
+<div id="toc" class="panel callout radius">目录</div>
+
+
+<h2 id="javascript代码嵌入网页的方法">JavaScript代码嵌入网页的方法</h2>
+
+<p>JavaScript代码只有嵌入网页，才能在用户浏览器网页时运行。</p>
+
+<p>网页中嵌入JavaScript代码，主要有四种方法。</p>
+
+<ul>
+  <li><code class="highlighter-rouge">&lt;script&gt;</code>标签：代码嵌入网页</li>
+  <li><code class="highlighter-rouge">&lt;script&gt;</code>标签：加载外部脚本</li>
+  <li>事件属性：代码写入HTML元素的事件处理属性，比如<code class="highlighter-rouge">onclick</code>或者<code class="highlighter-rouge">onmouseover</code></li>
+  <li>URL协议：URL支持以<code class="highlighter-rouge">javascript:</code>协议的方式，执行JavaScript代码</li>
+</ul>
+
+<p>后两种方法用得很少，常用的是前两种方法。由于内容（HTML代码）和行为代码（JavaScript）应该分离，所以第一种方法应当谨慎使用。</p>
+
+<h3 id="script标签代码嵌入网页">script标签：代码嵌入网页</h3>
+
+<p>通过<code class="highlighter-rouge">&lt;script&gt;</code>标签，可以直接将JavaScript代码嵌入网页。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Hello World'</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">&lt;script&gt;</code>标签有一个<code class="highlighter-rouge">type</code>属性，用来指定脚本类型。对JavaScript脚本来说，<code class="highlighter-rouge">type</code>属性可以设为两种值。</p>
+
+<ul>
+  <li><code class="highlighter-rouge">text/javascript</code>：这是默认值，也是历史上一贯设定的值。如果你省略<code class="highlighter-rouge">type</code>属性，默认就是这个值。对于老式浏览器，设为这个值比较好。</li>
+  <li><code class="highlighter-rouge">application/javascript</code>：对于较新的浏览器，建议设为这个值。</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"application/javascript"</span><span class="nt">&gt;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Hello World'</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>由于<code class="highlighter-rouge">&lt;script&gt;</code>标签默认就是JavaScript代码。所以，嵌入JavaScript脚本时，<code class="highlighter-rouge">type</code>属性也可以省略。</p>
+
+<p>如果<code class="highlighter-rouge">type</code>属性的值，浏览器不认识，那么它不会执行其中的代码。利用这一点，可以在<code class="highlighter-rouge">&lt;script&gt;</code>标签之中嵌入任意的文本内容，然后加上一个浏览器不认识的<code class="highlighter-rouge">type</code>属性即可。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">id=</span><span class="s">"mydata"</span> <span class="na">type=</span><span class="s">"x-custom-data"</span><span class="nt">&gt;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Hello World'</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>上面的代码，浏览器不会执行，也不会显示它的内容，因为不认识它的<code class="highlighter-rouge">type</code>属性。但是，这个<code class="highlighter-rouge">&lt;script&gt;</code>节点依然存在于DOM之中，可以使用<code class="highlighter-rouge">&lt;script&gt;</code>节点的<code class="highlighter-rouge">text</code>属性读出它的内容。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'mydata'</span><span class="p">).</span><span class="nx">text</span>
+<span class="c1">// "</span>
+<span class="c1">//   console.log('Hello World');</span>
+<span class="c1">// "</span>
+</code></pre></div></div>
+
+<h3 id="script标签加载外部脚本">script标签：加载外部脚本</h3>
+
+<p><code class="highlighter-rouge">&lt;script&gt;</code>标签也可以指定加载外部的脚本文件。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"example.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>如果脚本文件使用了非英语字符，还应该注明编码。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">charset=</span><span class="s">"utf-8"</span> <span class="na">src=</span><span class="s">"example.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>所加载的脚本必须是纯的 JavaScript 代码，不能有<code class="highlighter-rouge">HTML</code>代码和<code class="highlighter-rouge">&lt;script&gt;</code>标签。</p>
+
+<p>加载外部脚本和直接添加代码块，这两种方法不能混用。下面代码的<code class="highlighter-rouge">console.log</code>语句直接被忽略。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">charset=</span><span class="s">"utf-8"</span> <span class="na">src=</span><span class="s">"example.js"</span><span class="nt">&gt;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Hello World!'</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>为了防止攻击者篡改外部脚本，<code class="highlighter-rouge">script</code>标签允许设置一个<code class="highlighter-rouge">integrity</code>属性，写入该外部脚本的Hash签名，用来验证脚本的一致性。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/assets/application.js"</span>
+  <span class="na">integrity=</span><span class="s">"sha256-TvVUHzSfftWg1rcfL6TIJ0XKEGrgLyEq6lEpcmrG9qs="</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">script</code>标签有一个<code class="highlighter-rouge">integrity</code>属性，指定了外部脚本<code class="highlighter-rouge">/assets/application.js</code>的SHA265签名。一旦有人改了这个脚本，导致SHA265签名不匹配，浏览器就会拒绝加载。</p>
+
+<h3 id="事件属性">事件属性</h3>
+
+<p>某些HTML元素的事件属性（比如<code class="highlighter-rouge">onclick</code>和<code class="highlighter-rouge">onmouseover</code>），可以写入JavaScript代码。当指定事件发生时，就会调用这些代码。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">onclick=</span><span class="s">"alert('Hello')"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>上面的事件属性代码只有一个语句。如果有多个语句，用分号分隔即可。</p>
+
+<h3 id="url协议">URL协议</h3>
+
+<p>URL支持<code class="highlighter-rouge">javascript:</code>协议，调用这个URL时，就会执行JavaScript代码。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"javascript:alert('Hello')"</span><span class="nt">&gt;&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<p>浏览器的地址栏也可以执行<code class="highlighter-rouge">javascipt:</code>协议。将<code class="highlighter-rouge">javascript:alert('Hello')</code>放入地址栏，按回车键，就会跳出提示框。</p>
+
+<p>如果JavaScript代码返回一个字符串，浏览器就会新建一个文档，展示这个字符串的内容，原有文档的内容都会消失。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"javascript:new Date().toLocaleTimeString();"</span><span class="nt">&gt;</span>
+  What time is it?
+<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<p>上面代码中，用户点击链接以后，会打开一个新文档，里面有当前时间。</p>
+
+<p>如果返回的不是字符串，那么浏览器不会新建文档，也不会跳转。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">"javascript:console.log(new Date().toLocaleTimeString())"</span><span class="o">&gt;</span>
+<span class="nx">What</span> <span class="nx">time</span> <span class="nx">is</span> <span class="nx">it</span><span class="p">?</span>
+<span class="o">&lt;</span><span class="sr">/a</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p>上面代码中，用户点击链接后，网页不会跳转，只会在控制台显示当前时间。</p>
+
+<p><code class="highlighter-rouge">javascript:</code>协议的常见用途是书签脚本Bookmarklet。由于浏览器的书签保存的是一个网址，所以<code class="highlighter-rouge">javascript:</code>网址也可以保存在里面，用户选择这个书签的时候，就会在当前页面执行这个脚本。为了防止书签替换掉当前文档，可以在脚本最后返回<code class="highlighter-rouge">void 0</code>。</p>
+
+<h2 id="script标签">script标签</h2>
+
+<h3 id="工作原理">工作原理</h3>
+
+<p>浏览器加载JavaScript脚本，主要通过<code class="highlighter-rouge">&lt;script&gt;</code>标签完成。正常的网页加载流程是这样的。</p>
+
+<ol>
+  <li>浏览器一边下载HTML网页，一边开始解析</li>
+  <li>解析过程中，发现<code class="highlighter-rouge">&lt;script&gt;</code>标签</li>
+  <li>暂停解析，网页渲染的控制权转交给JavaScript引擎</li>
+  <li>如果<code class="highlighter-rouge">&lt;script&gt;</code>标签引用了外部脚本，就下载该脚本，否则就直接执行</li>
+  <li>执行完毕，控制权交还渲染引擎，恢复往下解析HTML网页</li>
+</ol>
+
+<p>加载外部脚本时，浏览器会暂停页面渲染，等待脚本下载并执行完成后，再继续渲染。原因是JavaScript可以修改DOM（比如使用<code class="highlighter-rouge">document.write</code>方法），所以必须把控制权让给它，否则会导致复杂的线程竞赛的问题。</p>
+
+<p>如果外部脚本加载时间很长（比如一直无法完成下载），就会造成网页长时间失去响应，浏览器就会呈现“假死”状态，这被称为“阻塞效应”。</p>
+
+<p>为了避免这种情况，较好的做法是将<code class="highlighter-rouge">&lt;script&gt;</code>标签都放在页面底部，而不是头部。这样即使遇到脚本失去响应，网页主体的渲染也已经完成了，用户至少可以看到内容，而不是面对一张空白的页面。</p>
+
+<p>如果某些脚本代码非常重要，一定要放在页面头部的话，最好直接将代码嵌入页面，而不是连接外部脚本文件，这样能缩短加载时间。</p>
+
+<p>将脚本文件都放在网页尾部加载，还有一个好处。在DOM结构生成之前就调用DOM，JavaScript会报错，如果脚本都在网页尾部加载，就不存在这个问题，因为这时DOM肯定已经生成了。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;script&gt;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerHTML</span><span class="p">);</span>
+  <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</code></pre></div></div>
+
+<p>上面代码执行时会报错，因为此时<code class="highlighter-rouge">document.body</code>元素还未生成。</p>
+
+<p>一种解决方法是设定<code class="highlighter-rouge">DOMContentLoaded</code>事件的回调函数。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;script&gt;</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span>
+      <span class="s1">'DOMContentLoaded'</span><span class="p">,</span>
+      <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerHTML</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">);</span>
+  <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+</code></pre></div></div>
+
+<p>另一种解决方法是，使用<code class="highlighter-rouge">&lt;script&gt;</code>标签的<code class="highlighter-rouge">onload</code>属性。当<code class="highlighter-rouge">&lt;script&gt;</code>标签指定的外部脚本文件下载和解析完成，会触发一个load事件，可以把所需执行的代码，放在这个事件的回调函数里面。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery.min.js"</span> <span class="na">onload=</span><span class="s">"console.log(document.body.innerHTML)"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>但是，如果将脚本放在页面底部，就可以完全按照正常的方式写，上面两种方式都不需要。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;body&gt;</span>
+  <span class="c">&lt;!-- 其他代码  --&gt;</span>
+  <span class="nt">&lt;script&gt;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerHTML</span><span class="p">);</span>
+  <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</code></pre></div></div>
+
+<p>如果有多个<code class="highlighter-rouge">script</code>标签，比如下面这样。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"a.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"b.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>浏览器会同时并行下载<code class="highlighter-rouge">a.js</code>和<code class="highlighter-rouge">b.js</code>，但是，执行时会保证先执行<code class="highlighter-rouge">a.js</code>，然后再执行<code class="highlighter-rouge">b.js</code>，即使后者先下载完成，也是如此。也就是说，脚本的执行顺序由它们在页面中的出现顺序决定，这是为了保证脚本之间的依赖关系不受到破坏。当然，加载这两个脚本都会产生“阻塞效应”，必须等到它们都加载完成，浏览器才会继续页面渲染。</p>
+
+<p>Gecko和Webkit引擎在网页被阻塞后，会生成第二个线程解析文档，下载外部资源，但是不会修改DOM，网页还是处于阻塞状态。</p>
+
+<p>解析和执行CSS，也会产生阻塞。Firefox会等到脚本前面的所有样式表，都下载并解析完，再执行脚本；Webkit则是一旦发现脚本引用了样式，就会暂停执行脚本，等到样式表下载并解析完，再恢复执行。</p>
+
+<p>此外，对于来自同一个域名的资源，比如脚本文件、样式表文件、图片文件等，浏览器一般最多同时下载六个（IE11允许同时下载13个）。如果是来自不同域名的资源，就没有这个限制。所以，通常把静态文件放在不同的域名之下，以加快下载速度。</p>
+
+<h3 id="defer属性">defer属性</h3>
+
+<p>为了解决脚本文件下载阻塞网页渲染的问题，一个方法是加入<code class="highlighter-rouge">defer</code>属性。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"a.js"</span> <span class="na">defer</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"b.js"</span> <span class="na">defer</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>上面代码中，只有等到DOM加载完成后，才会执行<code class="highlighter-rouge">a.js</code>和<code class="highlighter-rouge">b.js</code>。</p>
+
+<p><code class="highlighter-rouge">defer</code>的运行流程如下。</p>
+
+<ol>
+  <li>浏览器开始解析HTML网页</li>
+  <li>解析过程中，发现带有<code class="highlighter-rouge">defer</code>属性的<code class="highlighter-rouge">script</code>标签</li>
+  <li>浏览器继续往下解析HTML网页，同时并行下载<code class="highlighter-rouge">script</code>标签中的外部脚本</li>
+  <li>浏览器完成解析HTML网页，此时再执行下载的脚本</li>
+</ol>
+
+<p>有了<code class="highlighter-rouge">defer</code>属性，浏览器下载脚本文件的时候，不会阻塞页面渲染。下载的脚本文件在<code class="highlighter-rouge">DOMContentLoaded</code>事件触发前执行（即刚刚读取完<code class="highlighter-rouge">&lt;/html&gt;</code>标签），而且可以保证执行顺序就是它们在页面上出现的顺序。</p>
+
+<p>对于内置而不是加载外部脚本的<code class="highlighter-rouge">script</code>标签，以及动态生成的<code class="highlighter-rouge">script</code>标签，<code class="highlighter-rouge">defer</code>属性不起作用。另外，使用<code class="highlighter-rouge">defer</code>加载的外部脚本不应该使用<code class="highlighter-rouge">document.write</code>方法。</p>
+
+<h3 id="async属性">async属性</h3>
+
+<p>解决“阻塞效应”的另一个方法是加入<code class="highlighter-rouge">async</code>属性。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"a.js"</span> <span class="na">async</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"b.js"</span> <span class="na">async</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">async</code>属性的作用是，使用另一个进程下载脚本，下载时不会阻塞渲染。</p>
+
+<ol>
+  <li>浏览器开始解析HTML网页</li>
+  <li>解析过程中，发现带有<code class="highlighter-rouge">async</code>属性的<code class="highlighter-rouge">script</code>标签</li>
+  <li>浏览器继续往下解析HTML网页，同时并行下载<code class="highlighter-rouge">script</code>标签中的外部脚本</li>
+  <li>脚本下载完成，浏览器暂停解析HTML网页，开始执行下载的脚本</li>
+  <li>脚本执行完毕，浏览器恢复解析HTML网页</li>
+</ol>
+
+<p><code class="highlighter-rouge">async</code>属性可以保证脚本下载的同时，浏览器继续渲染。需要注意的是，一旦采用这个属性，就无法保证脚本的执行顺序。哪个脚本先下载结束，就先执行那个脚本。另外，使用<code class="highlighter-rouge">async</code>属性的脚本文件中，不应该使用<code class="highlighter-rouge">document.write</code>方法。</p>
+
+<p><code class="highlighter-rouge">defer</code>属性和<code class="highlighter-rouge">async</code>属性到底应该使用哪一个？</p>
+
+<p>一般来说，如果脚本之间没有依赖关系，就使用<code class="highlighter-rouge">async</code>属性，如果脚本之间有依赖关系，就使用<code class="highlighter-rouge">defer</code>属性。如果同时使用<code class="highlighter-rouge">async</code>和<code class="highlighter-rouge">defer</code>属性，后者不起作用，浏览器行为由<code class="highlighter-rouge">async</code>属性决定。</p>
+
+<h3 id="脚本的动态加载">脚本的动态加载</h3>
+
+<p>除了静态的<code class="highlighter-rouge">script</code>标签，还可以动态生成<code class="highlighter-rouge">script</code>标签，然后加入页面，从而实现脚本的动态加载。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="s1">'a.js'</span><span class="p">,</span> <span class="s1">'b.js'</span><span class="p">].</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">src</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">script</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'script'</span><span class="p">);</span>
+  <span class="nx">script</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">src</span><span class="p">;</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">head</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">script</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>这种方法的好处是，动态生成的<code class="highlighter-rouge">script</code>标签不会阻塞页面渲染，也就不会造成浏览器假死。但是问题在于，这种方法无法保证脚本的执行顺序，哪个脚本文件先下载完成，就先执行哪个。</p>
+
+<p>如果想避免这个问题，可以设置async属性为<code class="highlighter-rouge">false</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="s1">'a.js'</span><span class="p">,</span> <span class="s1">'b.js'</span><span class="p">].</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">src</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">script</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'script'</span><span class="p">);</span>
+  <span class="nx">script</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">src</span><span class="p">;</span>
+  <span class="nx">script</span><span class="p">.</span><span class="k">async</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">head</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">script</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>上面的代码依然不会阻塞页面渲染，而且可以保证<code class="highlighter-rouge">b.js</code>在<code class="highlighter-rouge">a.js</code>后面执行。不过需要注意的是，在这段代码后面加载的脚本文件，会因此都等待<code class="highlighter-rouge">b.js</code>执行完成后再执行。</p>
+
+<p>我们可以把上面的写法，封装成一个函数。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">scripts</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'script'</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+  <span class="kd">function</span> <span class="nx">load</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">script</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'script'</span><span class="p">);</span>
+    <span class="nx">script</span><span class="p">.</span><span class="k">async</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="nx">script</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">url</span><span class="p">;</span>
+    <span class="nx">scripts</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">script</span><span class="p">,</span> <span class="nx">scripts</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">load</span><span class="p">(</span><span class="s1">'//apis.google.com/js/plusone.js'</span><span class="p">);</span>
+  <span class="nx">load</span><span class="p">(</span><span class="s1">'//platform.twitter.com/widgets.js'</span><span class="p">);</span>
+  <span class="nx">load</span><span class="p">(</span><span class="s1">'//s.thirdpartywidget.com/widget.js'</span><span class="p">);</span>
+<span class="p">}());</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">async</code>属性设为<code class="highlighter-rouge">true</code>，是因为加载的脚本没有互相依赖关系。而且，这样就不会造成堵塞。</p>
+
+<p>如果想为动态加载的脚本指定回调函数，可以使用下面的写法。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">loadScript</span><span class="p">(</span><span class="nx">src</span><span class="p">,</span> <span class="nx">done</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">js</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'script'</span><span class="p">);</span>
+  <span class="nx">js</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">src</span><span class="p">;</span>
+  <span class="nx">js</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">done</span><span class="p">();</span>
+  <span class="p">};</span>
+  <span class="nx">js</span><span class="p">.</span><span class="nx">onerror</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">done</span><span class="p">(</span><span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">'Failed to load script '</span> <span class="o">+</span> <span class="nx">src</span><span class="p">));</span>
+  <span class="p">};</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">head</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">js</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>此外，动态嵌入还有一个地方需要注意。动态嵌入必须等待CSS文件加载完成后，才会去下载外部脚本文件。静态加载就不存在这个问题，<code class="highlighter-rouge">script</code>标签指定的外部脚本文件，都是与CSS文件同时并发下载的。</p>
+
+<h3 id="加载使用的协议">加载使用的协议</h3>
+
+<p>如果不指定协议，浏览器默认采用HTTP协议下载。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"example.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>上面的<code class="highlighter-rouge">example.js</code>默认就是采用HTTP协议下载，如果要采用HTTPS协议下载，必需写明（假定服务器支持）。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://example.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>但是有时我们会希望，根据页面本身的协议来决定加载协议，这时可以采用下面的写法。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//example.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<h2 id="浏览器的组成">浏览器的组成</h2>
+
+<p>浏览器的核心是两部分：渲染引擎和JavaScript解释器（又称JavaScript引擎）。</p>
+
+<h3 id="渲染引擎">渲染引擎</h3>
+
+<p>渲染引擎的主要作用是，将网页代码渲染为用户视觉可以感知的平面文档。</p>
+
+<p>不同的浏览器有不同的渲染引擎。</p>
+
+<ul>
+  <li>Firefox：Gecko引擎</li>
+  <li>Safari：WebKit引擎</li>
+  <li>Chrome：Blink引擎</li>
+  <li>IE: Trident引擎</li>
+  <li>Edge: EdgeHTML引擎</li>
+</ul>
+
+<p>渲染引擎处理网页，通常分成四个阶段。</p>
+
+<ol>
+  <li>解析代码：HTML代码解析为DOM，CSS代码解析为CSSOM（CSS Object Model）</li>
+  <li>对象合成：将DOM和CSSOM合成一棵渲染树（render tree）</li>
+  <li>布局：计算出渲染树的布局（layout）</li>
+  <li>绘制：将渲染树绘制到屏幕</li>
+</ol>
+
+<p>以上四步并非严格按顺序执行，往往第一步还没完成，第二步和第三步就已经开始了。所以，会看到这种情况：网页的HTML代码还没下载完，但浏览器已经显示出内容了。</p>
+
+<h3 id="重流和重绘">重流和重绘</h3>
+
+<p>渲染树转换为网页布局，称为“布局流”（flow）；布局显示到页面的这个过程，称为“绘制”（paint）。它们都具有阻塞效应，并且会耗费很多时间和计算资源。</p>
+
+<p>页面生成以后，脚本操作和样式表操作，都会触发重流（reflow）和重绘（repaint）。用户的互动，也会触发，比如设置了鼠标悬停（<code class="highlighter-rouge">a:hover</code>）效果、页面滚动、在输入框中输入文本、改变窗口大小等等。</p>
+
+<p>重流和重绘并不一定一起发生，重流必然导致重绘，重绘不一定需要重流。比如改变元素颜色，只会导致重绘，而不会导致重流；改变元素的布局，则会导致重绘和重流。</p>
+
+<p>大多数情况下，浏览器会智能判断，将重流和重绘只限制到相关的子树上面，最小化所耗费的代价，而不会全局重新生成网页。</p>
+
+<p>作为开发者，应该尽量设法降低重绘的次数和成本。比如，尽量不要变动高层的DOM元素，而以底层DOM元素的变动代替；再比如，重绘<code class="highlighter-rouge">table</code>布局和<code class="highlighter-rouge">flex</code>布局，开销都会比较大。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'foobar'</span><span class="p">);</span>
+
+<span class="nx">foo</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="s1">'blue'</span><span class="p">;</span>
+<span class="nx">foo</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">marginTop</span> <span class="o">=</span> <span class="s1">'30px'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>上面的代码只会导致一次重绘，因为浏览器会累积DOM变动，然后一次性执行。</p>
+
+<p>下面是一些优化技巧。</p>
+
+<ul>
+  <li>读取DOM或者写入DOM，尽量写在一起，不要混杂</li>
+  <li>缓存DOM信息</li>
+  <li>不要一项一项地改变样式，而是使用CSS class一次性改变样式</li>
+  <li>使用document fragment操作DOM</li>
+  <li>动画时使用absolute定位或fixed定位，这样可以减少对其他元素的影响</li>
+  <li>只在必要时才显示元素</li>
+  <li>使用<code class="highlighter-rouge">window.requestAnimationFrame()</code>，因为它可以把代码推迟到下一次重流时执行，而不是立即要求页面重流</li>
+  <li>使用虚拟DOM（virtual DOM）库</li>
+</ul>
+
+<p>下面是一个<code class="highlighter-rouge">window.requestAnimationFrame()</code>对比效果的例子。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 重绘代价高</span>
+<span class="kd">function</span> <span class="nx">doubleHeight</span><span class="p">(</span><span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">currentHeight</span> <span class="o">=</span> <span class="nx">element</span><span class="p">.</span><span class="nx">clientHeight</span><span class="p">;</span>
+  <span class="nx">element</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="p">(</span><span class="nx">currentHeight</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'px'</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">all_my_elements</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">doubleHeight</span><span class="p">);</span>
+
+<span class="c1">// 重绘代价低</span>
+<span class="kd">function</span> <span class="nx">doubleHeight</span><span class="p">(</span><span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">currentHeight</span> <span class="o">=</span> <span class="nx">element</span><span class="p">.</span><span class="nx">clientHeight</span><span class="p">;</span>
+
+  <span class="nb">window</span><span class="p">.</span><span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">element</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="p">(</span><span class="nx">currentHeight</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'px'</span><span class="p">;</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="nx">all_my_elements</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">doubleHeight</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="javascript引擎">JavaScript引擎</h3>
+
+<p>JavaScript引擎的主要作用是，读取网页中的JavaScript代码，对其处理后运行。</p>
+
+<p>JavaScript是一种解释型语言，也就是说，它不需要编译，由解释器实时运行。这样的好处是运行和修改都比较方便，刷新页面就可以重新解释；缺点是每次运行都要调用解释器，系统开销较大，运行速度慢于编译型语言。</p>
+
+<p>为了提高运行速度，目前的浏览器都将JavaScript进行一定程度的编译，生成类似字节码（bytecode）的中间代码，以提高运行速度。</p>
+
+<p>早期，浏览器内部对JavaScript的处理过程如下：</p>
+
+<ol>
+  <li>读取代码，进行词法分析（Lexical analysis），将代码分解成词元（token）。</li>
+  <li>对词元进行语法分析（parsing），将代码整理成“语法树”（syntax tree）。</li>
+  <li>使用“翻译器”（translator），将代码转为字节码（bytecode）。</li>
+  <li>使用“字节码解释器”（bytecode interpreter），将字节码转为机器码。</li>
+</ol>
+
+<p>逐行解释将字节码转为机器码，是很低效的。为了提高运行速度，现代浏览器改为采用“即时编译”（Just In Time compiler，缩写JIT），即字节码只在运行时编译，用到哪一行就编译哪一行，并且把编译结果缓存（inline cache）。通常，一个程序被经常用到的，只是其中一小部分代码，有了缓存的编译结果，整个程序的运行速度就会显著提升。不同的浏览器有不同的编译策略。有的浏览器只编译最经常用到的部分，比如循环的部分；有的浏览器索性省略了字节码的翻译步骤，直接编译成机器码，比如chrome浏览器的V8引擎。</p>
+
+<p>字节码不能直接运行，而是运行在一个虚拟机（Virtual Machine）之上，一般也把虚拟机称为JavaScript引擎。因为JavaScript运行时未必有字节码，所以JavaScript虚拟机并不完全基于字节码，而是部分基于源码，即只要有可能，就通过JIT（just in time）编译器直接把源码编译成机器码运行，省略字节码步骤。这一点与其他采用虚拟机（比如Java）的语言不尽相同。这样做的目的，是为了尽可能地优化代码、提高性能。下面是目前最常见的一些JavaScript虚拟机：</p>
+
+<ul>
+  <li><a href="javascript:if(confirm('http://en.wikipedia.org/wiki/Chakra_(JScript_engine/)  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://en.wikipedia.org/wiki/Chakra_(JScript_engine/)'" tppabs="http://en.wikipedia.org/wiki/Chakra_(JScript_engine/)">Chakra</a>(Microsoft Internet Explorer)</li>
+  <li><a href="javascript:if(confirm('http://en.wikipedia.org/wiki/WebKit  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://en.wikipedia.org/wiki/WebKit#JavaScriptCore'" tppabs="http://en.wikipedia.org/wiki/WebKit#JavaScriptCore">Nitro/JavaScript Core</a> (Safari)</li>
+  <li><a href="javascript:if(confirm('http://dev.opera.com/articles/view/labs-carakan/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://dev.opera.com/articles/view/labs-carakan/'" tppabs="http://dev.opera.com/articles/view/labs-carakan/">Carakan</a> (Opera)</li>
+  <li><a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/SpiderMonkey  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://developer.mozilla.org/en-US/docs/SpiderMonkey'" tppabs="https://developer.mozilla.org/en-US/docs/SpiderMonkey">SpiderMonkey</a> (Firefox)</li>
+  <li><a href="javascript:if(confirm('http://en.wikipedia.org/wiki/V8_(JavaScript_engine/)  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://en.wikipedia.org/wiki/V8_(JavaScript_engine/)'" tppabs="http://en.wikipedia.org/wiki/V8_(JavaScript_engine/)">V8</a> (Chrome, Chromium)</li>
+</ul>
+
+<h2 id="参考链接">参考链接</h2>
+
+<ul>
+  <li>John Dalziel, <a href="javascript:if(confirm('http://creativejs.com/2013/06/the-race-for-speed-part-2-how-javascript-compilers-work/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://creativejs.com/2013/06/the-race-for-speed-part-2-how-javascript-compilers-work/'" tppabs="http://creativejs.com/2013/06/the-race-for-speed-part-2-how-javascript-compilers-work/">The race for speed part 2: How JavaScript compilers work</a></li>
+  <li>Jake Archibald，<a href="javascript:if(confirm('http://www.html5rocks.com/en/tutorials/speed/script-loading/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.html5rocks.com/en/tutorials/speed/script-loading/'" tppabs="http://www.html5rocks.com/en/tutorials/speed/script-loading/">Deep dive into the murky waters of script loading</a></li>
+  <li>Mozilla Developer Network, <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/API/window.setTimeout  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://developer.mozilla.org/en-US/docs/Web/API/window.setTimeout'" tppabs="https://developer.mozilla.org/en-US/docs/Web/API/window.setTimeout">window.setTimeout</a></li>
+  <li>Remy Sharp, <a href="javascript:if(confirm('http://remysharp.com/2010/07/21/throttling-function-calls/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://remysharp.com/2010/07/21/throttling-function-calls/'" tppabs="http://remysharp.com/2010/07/21/throttling-function-calls/">Throttling function calls</a></li>
+  <li>Ayman Farhat, <a href="javascript:if(confirm('http://www.thecodeship.com/web-development/alternative-to-javascript-evil-setinterval/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.thecodeship.com/web-development/alternative-to-javascript-evil-setinterval/'" tppabs="http://www.thecodeship.com/web-development/alternative-to-javascript-evil-setinterval/">An alternative to Javascript’s evil setInterval</a></li>
+  <li>Ilya Grigorik, <a href="javascript:if(confirm('https://www.igvita.com/2014/05/20/script-injected-async-scripts-considered-harmful/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://www.igvita.com/2014/05/20/script-injected-async-scripts-considered-harmful/'" tppabs="https://www.igvita.com/2014/05/20/script-injected-async-scripts-considered-harmful/">Script-injected “async scripts” considered harmful</a></li>
+  <li>Axel Rauschmayer, <a href="javascript:if(confirm('http://www.2ality.com/2014/09/es6-promises-foundations.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.2ality.com/2014/09/es6-promises-foundations.html'" tppabs="http://www.2ality.com/2014/09/es6-promises-foundations.html">ECMAScript 6 promises (1/2): foundations</a></li>
+  <li>Daniel Imms, <a href="javascript:if(confirm('http://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html'" tppabs="http://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html">async vs defer attributes</a></li>
+  <li>Craig Buckler, <a href="javascript:if(confirm('http://www.sitepoint.com/non-blocking-async-defer/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.sitepoint.com/non-blocking-async-defer/'" tppabs="http://www.sitepoint.com/non-blocking-async-defer/">Load Non-blocking JavaScript with HTML5 Async and Defer</a></li>
+  <li>Domenico De Felice, <a href="javascript:if(confirm('http://domenicodefelice.blogspot.sg/2015/08/how-browsers-work.html?t=2  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://domenicodefelice.blogspot.sg/2015/08/how-browsers-work.html?t=2'" tppabs="http://domenicodefelice.blogspot.sg/2015/08/how-browsers-work.html?t=2">How browsers work</a></li>
+</ul>
+
+
+</article>
+
+<div class="row">
+<div class="twelve columns">
+
+<h2>留言</h2>
+
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'jstutorial'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="javascript:if(confirm('http://disqus.com/?ref_noscript  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://disqus.com/?ref_noscript'" tppabs="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="javascript:if(confirm('http://disqus.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://disqus.com/'" tppabs="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</section>
+
+</div>
+</div>
+
+<footer>
+<div class="row">
+<div class="twelve columns">
+	<p><a href="license.html" tppabs="http://javascript.ruanyifeng.com/introduction/license.html">版权声明</a> | last modified on 2013-12-22 </p>
+</div>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-43771063-1', 'http://javascript.ruanyifeng.com/bom/ruanyifeng.com');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
+
+

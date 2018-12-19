@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>CORS通信 -- JavaScript 标准参考教程（alpha）</title>
+  
+  <!-- Included CSS Files (Uncompressed) -->
+  <!--
+  <link rel="stylesheet" href="stylesheets/foundation.css">
+  -->
+  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="foundation.css" tppabs="http://javascript.ruanyifeng.com/css/foundation.css">
+  <link rel="stylesheet" href="main.css" tppabs="http://javascript.ruanyifeng.com/css/main.css">
+
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="html5.js" tppabs="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <script src="jquery.js" tppabs="http://javascript.ruanyifeng.com/js/jquery.js"></script>
+  <script src="toc.js" tppabs="http://javascript.ruanyifeng.com/js/toc.js"></script>
+  <script src="main.js" tppabs="http://javascript.ruanyifeng.com/js/main.js"></script>
+
+</head>
+<body>
+
+<header class="top-bar" id="header">
+
+<div class="fixed">
+
+<nav class="top-bar">
+<ul>
+<!-- Title Area -->
+	<li class="name has-dropdown">
+	<h1><a href="index.htm" tppabs="http://javascript.ruanyifeng.com/">JavaScript 标准参考教程（alpha） </a></h1>
+		<ul class="dropdown">
+			
+			<li><a href="index.htm#introduction" tppabs="http://javascript.ruanyifeng.com/#introduction">导论</a></li>
+			
+			<li><a href="index.htm#grammar" tppabs="http://javascript.ruanyifeng.com/#grammar">语法</a></li>
+			
+			<li><a href="index.htm#stdlib" tppabs="http://javascript.ruanyifeng.com/#stdlib">标准库</a></li>
+			
+			<li><a href="index.htm#oop" tppabs="http://javascript.ruanyifeng.com/#oop">面向对象编程</a></li>
+			
+			<li><a href="index.htm#advanced" tppabs="http://javascript.ruanyifeng.com/#advanced">语法专题</a></li>
+			
+			<li><a href="index.htm#dom" tppabs="http://javascript.ruanyifeng.com/#dom">DOM模型</a></li>
+			
+			<li><a href="index.htm#bom" tppabs="http://javascript.ruanyifeng.com/#bom">浏览器环境</a></li>
+			
+			<li><a href="index.htm#htmlapi" tppabs="http://javascript.ruanyifeng.com/#htmlapi">Web API</a></li>
+			
+		</ul>
+	</li>
+</ul>
+
+<section>
+
+
+<ul class="left">
+<li class="divider"></li>
+<li class="has-dropdown"><a class="active" href="#"> 浏览器环境 </a><ul class="dropdown">
+
+
+
+<li><a href="ajax.html" tppabs="http://javascript.ruanyifeng.com/bom/ajax.html">AJAX</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="cookie.html" tppabs="http://javascript.ruanyifeng.com/bom/cookie.html">Cookie</a></li>
+
+
+
+
+
+<li class="active"><a href="#">CORS通信</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="engine.html" tppabs="http://javascript.ruanyifeng.com/bom/engine.html">浏览器环境概述</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="history-1.html" tppabs="http://javascript.ruanyifeng.com/bom/history.html">history对象</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="indexeddb.html" tppabs="http://javascript.ruanyifeng.com/bom/indexeddb.html">IndexedDB：浏览器端数据库</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mobile.html" tppabs="http://javascript.ruanyifeng.com/bom/mobile.html">移动设备API</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="notification.html" tppabs="http://javascript.ruanyifeng.com/bom/notification.html">Web Notifications API</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="performance.html" tppabs="http://javascript.ruanyifeng.com/bom/performance.html">Performance API</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="same-origin.html" tppabs="http://javascript.ruanyifeng.com/bom/same-origin.html">同源政策</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="webrtc.html" tppabs="http://javascript.ruanyifeng.com/htmlapi/webrtc.html">WebRTC</a></li>
+
+
+
+
+
+<li><a href="websocket.html" tppabs="http://javascript.ruanyifeng.com/htmlapi/websocket.html">WebSocket</a></li>
+
+
+
+
+
+
+
+<li><a href="webstorage.html" tppabs="http://javascript.ruanyifeng.com/bom/webstorage.html">Web Storage：浏览器端数据储存机制</a></li>
+
+
+
+
+
+
+
+<li><a href="window.html" tppabs="http://javascript.ruanyifeng.com/bom/window.html">window对象</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul></li>
+<li class="divider"></li>
+<li class="has-dropdown nav-3"><a href="#"> CORS通信</a><ul class="dropdown">
+</ul></li>
+</ul>
+
+
+<ul class="right">
+	<li class="divider"></li>
+	<li>
+		<a href="javascript:if(confirm('https://github.com/ruanyf/jstutorial  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://github.com/ruanyf/jstutorial'" tppabs="https://github.com/ruanyf/jstutorial" target="_blank">GitHub <i class="foundicon-edit"></i></a>
+	</li>
+	<li class="divider"></li>
+	<li>
+		<a href="#">TOP <i class="foundicon-up-arrow"></i></a>
+	</li>
+</ul>
+
+</section>
+
+</nav>  
+</div>
+</header>
+
+
+<article class="bookPage">
+
+  <div class="row">
+    <div class="twelve columns">
+
+<h1> CORS通信 </h1>
+
+<aside class="right"><p>来自<a href="index.htm" tppabs="http://javascript.ruanyifeng.com/">《JavaScript 标准参考教程（alpha）》</a>，by 阮一峰</p></aside>
+
+<div id="toc" class="panel callout radius">目录</div>
+
+
+<p>CORS是一个W3C标准，全称是“跨域资源共享”（Cross-origin resource sharing）。</p>
+
+<p>它允许浏览器向跨源服务器，发出<a href="javascript:if(confirm('http://www.ruanyifeng.com/blog/2012/09/xmlhttprequest_level_2.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.ruanyifeng.com/blog/2012/09/xmlhttprequest_level_2.html'" tppabs="http://www.ruanyifeng.com/blog/2012/09/xmlhttprequest_level_2.html"><code class="highlighter-rouge">XMLHttpRequest</code></a>请求，从而克服了AJAX只能<a href="javascript:if(confirm('http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html'" tppabs="http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html">同源</a>使用的限制。</p>
+
+<p>本文详细介绍CORS的内部机制。</p>
+
+<h2 id="简介">简介</h2>
+
+<p>CORS需要浏览器和服务器同时支持。目前，所有浏览器都支持该功能，IE浏览器不能低于IE10。</p>
+
+<p>整个CORS通信过程，都是浏览器自动完成，不需要用户参与。对于开发者来说，CORS通信与同源的AJAX通信没有差别，代码完全一样。浏览器一旦发现AJAX请求跨源，就会自动添加一些附加的头信息，有时还会多出一次附加的请求，但用户不会有感觉。</p>
+
+<p>因此，实现CORS通信的关键是服务器。只要服务器实现了CORS接口，就可以跨源通信。</p>
+
+<h2 id="两种请求">两种请求</h2>
+
+<p>浏览器将CORS请求分成两类：简单请求（simple request）和非简单请求（not-so-simple request）。</p>
+
+<p>只要同时满足以下两大条件，就属于简单请求。</p>
+
+<p>（1）请求方法是以下三种方法之一。</p>
+
+<blockquote>
+  <ul>
+    <li>HEAD</li>
+    <li>GET</li>
+    <li>POST</li>
+  </ul>
+</blockquote>
+
+<p>（2）HTTP的头信息不超出以下几种字段。</p>
+
+<blockquote>
+  <ul>
+    <li>Accept</li>
+    <li>Accept-Language</li>
+    <li>Content-Language</li>
+    <li>Last-Event-ID</li>
+    <li>Content-Type：只限于三个值<code class="highlighter-rouge">application/x-www-form-urlencoded</code>、<code class="highlighter-rouge">multipart/form-data</code>、<code class="highlighter-rouge">text/plain</code></li>
+  </ul>
+</blockquote>
+
+<p>凡是不同时满足上面两个条件，就属于非简单请求。</p>
+
+<p>浏览器对这两种请求的处理，是不一样的。</p>
+
+<h2 id="简单请求">简单请求</h2>
+
+<h3 id="基本流程">基本流程</h3>
+
+<p>对于简单请求，浏览器直接发出CORS请求。具体来说，就是在头信息之中，增加一个<code class="highlighter-rouge">Origin</code>字段。</p>
+
+<p>下面是一个例子，浏览器发现这次跨源AJAX请求是简单请求，就自动在头信息之中，添加一个<code class="highlighter-rouge">Origin</code>字段。</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">GET</span> <span class="nn">/cors</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Origin</span><span class="p">:</span> <span class="s">http://api.bob.com</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">api.alice.com</span>
+<span class="na">Accept-Language</span><span class="p">:</span> <span class="s">en-US</span>
+<span class="na">Connection</span><span class="p">:</span> <span class="s">keep-alive</span>
+<span class="na">User-Agent</span><span class="p">:</span> <span class="s">Mozilla/5.0...</span>
+</code></pre></div></div>
+
+<p>上面的头信息中，<code class="highlighter-rouge">Origin</code>字段用来说明，本次请求来自哪个源（协议 + 域名 + 端口）。服务器根据这个值，决定是否同意这次请求。</p>
+
+<p>如果<code class="highlighter-rouge">Origin</code>指定的源，不在许可范围内，服务器会返回一个正常的HTTP回应。浏览器发现，这个回应的头信息没有包含<code class="highlighter-rouge">Access-Control-Allow-Origin</code>字段（详见下文），就知道出错了，从而抛出一个错误，被<code class="highlighter-rouge">XMLHttpRequest</code>的<code class="highlighter-rouge">onerror</code>回调函数捕获。注意，这种错误无法通过状态码识别，因为HTTP回应的状态码有可能是200。</p>
+
+<p>如果<code class="highlighter-rouge">Origin</code>指定的域名在许可范围内，服务器返回的响应，会多出几个头信息字段。</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">Access-Control-Allow-Origin: http://api.bob.com
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: FooBar
+Content-Type: text/html; charset=utf-8
+</span></code></pre></div></div>
+
+<p>上面的头信息之中，有三个与CORS请求相关的字段，都以<code class="highlighter-rouge">Access-Control-</code>开头。</p>
+
+<p><strong>（1）<code class="highlighter-rouge">Access-Control-Allow-Origin</code></strong></p>
+
+<p>该字段是必须的。它的值要么是请求时<code class="highlighter-rouge">Origin</code>字段的值，要么是一个<code class="highlighter-rouge">*</code>，表示接受任意域名的请求。</p>
+
+<p><strong>（2）<code class="highlighter-rouge">Access-Control-Allow-Credentials</code></strong></p>
+
+<p>该字段可选。它的值是一个布尔值，表示是否允许发送Cookie。默认情况下，Cookie不包括在CORS请求之中。设为<code class="highlighter-rouge">true</code>，即表示服务器明确许可，Cookie可以包含在请求中，一起发给服务器。这个值也只能设为<code class="highlighter-rouge">true</code>，如果服务器不要浏览器发送Cookie，删除该字段即可。</p>
+
+<p><strong>（3）<code class="highlighter-rouge">Access-Control-Expose-Headers</code></strong></p>
+
+<p>该字段可选。CORS请求时，<code class="highlighter-rouge">XMLHttpRequest</code>对象的<code class="highlighter-rouge">getResponseHeader()</code>方法只能拿到6个基本字段：<code class="highlighter-rouge">Cache-Control</code>、<code class="highlighter-rouge">Content-Language</code>、<code class="highlighter-rouge">Content-Type</code>、<code class="highlighter-rouge">Expires</code>、<code class="highlighter-rouge">Last-Modified</code>、<code class="highlighter-rouge">Pragma</code>。如果想拿到其他字段，就必须在<code class="highlighter-rouge">Access-Control-Expose-Headers</code>里面指定。上面的例子指定，<code class="highlighter-rouge">getResponseHeader('FooBar')</code>可以返回<code class="highlighter-rouge">FooBar</code>字段的值。</p>
+
+<h3 id="withcredentials-属性">withCredentials 属性</h3>
+
+<p>上面说到，CORS请求默认不包含Cookie信息（以及HTTP认证信息等）。如果需要包含Cookie信息，一方面要服务器同意，指定<code class="highlighter-rouge">Access-Control-Allow-Credentials</code>字段。</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">Access-Control-Allow-Credentials: true
+</span></code></pre></div></div>
+
+<p>另一方面，开发者必须在AJAX请求中打开<code class="highlighter-rouge">withCredentials</code>属性。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">withCredentials</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>否则，即使服务器同意发送Cookie，浏览器也不会发送。或者，服务器要求设置Cookie，浏览器也不会处理。</p>
+
+<p>但是，如果省略<code class="highlighter-rouge">withCredentials</code>设置，有的浏览器还是会一起发送Cookie。这时，可以显式关闭<code class="highlighter-rouge">withCredentials</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">xhr</span><span class="p">.</span><span class="nx">withCredentials</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>需要注意的是，如果要发送Cookie，<code class="highlighter-rouge">Access-Control-Allow-Origin</code>就不能设为星号，必须指定明确的、与请求网页一致的域名。同时，Cookie依然遵循同源政策，只有用服务器域名设置的Cookie才会上传，其他域名的Cookie并不会上传，且（跨源）原网页代码中的<code class="highlighter-rouge">document.cookie</code>也无法读取服务器域名下的Cookie。</p>
+
+<h2 id="非简单请求">非简单请求</h2>
+
+<h3 id="预检请求">预检请求</h3>
+
+<p>非简单请求是那种对服务器有特殊要求的请求，比如请求方法是<code class="highlighter-rouge">PUT</code>或<code class="highlighter-rouge">DELETE</code>，或者<code class="highlighter-rouge">Content-Type</code>字段的类型是<code class="highlighter-rouge">application/json</code>。</p>
+
+<p>非简单请求的CORS请求，会在正式通信之前，增加一次HTTP查询请求，称为“预检”请求（preflight）。</p>
+
+<p>浏览器先询问服务器，当前网页所在的域名是否在服务器的许可名单之中，以及可以使用哪些HTTP动词和头信息字段。只有得到肯定答复，浏览器才会发出正式的<code class="highlighter-rouge">XMLHttpRequest</code>请求，否则就报错。</p>
+
+<p>下面是一段浏览器的JavaScript脚本。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s1">'http://api.alice.com/cors'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">'PUT'</span><span class="p">,</span> <span class="nx">url</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s1">'X-Custom-Header'</span><span class="p">,</span> <span class="s1">'value'</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>上面代码中，HTTP请求的方法是<code class="highlighter-rouge">PUT</code>，并且发送一个自定义头信息<code class="highlighter-rouge">X-Custom-Header</code>。</p>
+
+<p>浏览器发现，这是一个非简单请求，就自动发出一个“预检”请求，要求服务器确认可以这样请求。下面是这个“预检”请求的HTTP头信息。</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">OPTIONS</span> <span class="nn">/cors</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Origin</span><span class="p">:</span> <span class="s">http://api.bob.com</span>
+<span class="na">Access-Control-Request-Method</span><span class="p">:</span> <span class="s">PUT</span>
+<span class="na">Access-Control-Request-Headers</span><span class="p">:</span> <span class="s">X-Custom-Header</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">api.alice.com</span>
+<span class="na">Accept-Language</span><span class="p">:</span> <span class="s">en-US</span>
+<span class="na">Connection</span><span class="p">:</span> <span class="s">keep-alive</span>
+<span class="na">User-Agent</span><span class="p">:</span> <span class="s">Mozilla/5.0...</span>
+</code></pre></div></div>
+
+<p>“预检”请求用的请求方法是<code class="highlighter-rouge">OPTIONS</code>，表示这个请求是用来询问的。头信息里面，关键字段是<code class="highlighter-rouge">Origin</code>，表示请求来自哪个源。</p>
+
+<p>除了<code class="highlighter-rouge">Origin</code>字段，“预检”请求的头信息包括两个特殊字段。</p>
+
+<p><strong>（1）<code class="highlighter-rouge">Access-Control-Request-Method</code></strong></p>
+
+<p>该字段是必须的，用来列出浏览器的CORS请求会用到哪些HTTP方法，上例是<code class="highlighter-rouge">PUT</code>。</p>
+
+<p><strong>（2）<code class="highlighter-rouge">Access-Control-Request-Headers</code></strong></p>
+
+<p>该字段是一个逗号分隔的字符串，指定浏览器CORS请求会额外发送的头信息字段，上例是<code class="highlighter-rouge">X-Custom-Header</code>。</p>
+
+<h3 id="预检请求的回应">预检请求的回应</h3>
+
+<p>服务器收到“预检”请求以后，检查了<code class="highlighter-rouge">Origin</code>、<code class="highlighter-rouge">Access-Control-Request-Method</code>和<code class="highlighter-rouge">Access-Control-Request-Headers</code>字段以后，确认允许跨源请求，就可以做出回应。</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Date</span><span class="p">:</span> <span class="s">Mon, 01 Dec 2008 01:15:39 GMT</span>
+<span class="na">Server</span><span class="p">:</span> <span class="s">Apache/2.0.61 (Unix)</span>
+<span class="na">Access-Control-Allow-Origin</span><span class="p">:</span> <span class="s">http://api.bob.com</span>
+<span class="na">Access-Control-Allow-Methods</span><span class="p">:</span> <span class="s">GET, POST, PUT</span>
+<span class="na">Access-Control-Allow-Headers</span><span class="p">:</span> <span class="s">X-Custom-Header</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">text/html; charset=utf-8</span>
+<span class="na">Content-Encoding</span><span class="p">:</span> <span class="s">gzip</span>
+<span class="na">Content-Length</span><span class="p">:</span> <span class="s">0</span>
+<span class="na">Keep-Alive</span><span class="p">:</span> <span class="s">timeout=2, max=100</span>
+<span class="na">Connection</span><span class="p">:</span> <span class="s">Keep-Alive</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">text/plain</span>
+</code></pre></div></div>
+
+<p>上面的HTTP回应中，关键的是<code class="highlighter-rouge">Access-Control-Allow-Origin</code>字段，表示<code class="highlighter-rouge">http://api.bob.com</code>可以请求数据。该字段也可以设为星号，表示同意任意跨源请求。</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">Access-Control-Allow-Origin: *
+</span></code></pre></div></div>
+
+<p>如果服务器否定了“预检”请求，会返回一个正常的HTTP回应，但是没有任何CORS相关的头信息字段。这时，浏览器就会认定，服务器不同意预检请求，因此触发一个错误，被<code class="highlighter-rouge">XMLHttpRequest</code>对象的<code class="highlighter-rouge">onerror</code>回调函数捕获。控制台会打印出如下的报错信息。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>XMLHttpRequest cannot load http://api.alice.com.
+Origin http://api.bob.com is not allowed by Access-Control-Allow-Origin.
+</code></pre></div></div>
+
+<p>服务器回应的其他CORS相关字段如下。</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">Access-Control-Allow-Methods: GET, POST, PUT
+Access-Control-Allow-Headers: X-Custom-Header
+Access-Control-Allow-Credentials: true
+Access-Control-Max-Age: 1728000
+</span></code></pre></div></div>
+
+<p><strong>（1）<code class="highlighter-rouge">Access-Control-Allow-Methods</code></strong></p>
+
+<p>该字段必需，它的值是逗号分隔的一个字符串，表明服务器支持的所有跨域请求的方法。注意，返回的是所有支持的方法，而不单是浏览器请求的那个方法。这是为了避免多次“预检”请求。</p>
+
+<p><strong>（2）<code class="highlighter-rouge">Access-Control-Allow-Headers</code></strong></p>
+
+<p>如果浏览器请求包括<code class="highlighter-rouge">Access-Control-Request-Headers</code>字段，则<code class="highlighter-rouge">Access-Control-Allow-Headers</code>字段是必需的。它也是一个逗号分隔的字符串，表明服务器支持的所有头信息字段，不限于浏览器在“预检”中请求的字段。</p>
+
+<p><strong>（3）<code class="highlighter-rouge">Access-Control-Allow-Credentials</code></strong></p>
+
+<p>该字段与简单请求时的含义相同。</p>
+
+<p><strong>（4）<code class="highlighter-rouge">Access-Control-Max-Age</code></strong></p>
+
+<p>该字段可选，用来指定本次预检请求的有效期，单位为秒。上面结果中，有效期是20天（1728000秒），即允许缓存该条回应1728000秒（即20天），在此期间，不用发出另一条预检请求。</p>
+
+<h3 id="浏览器的正常请求和回应">浏览器的正常请求和回应</h3>
+
+<p>一旦服务器通过了“预检”请求，以后每次浏览器正常的CORS请求，就都跟简单请求一样，会有一个<code class="highlighter-rouge">Origin</code>头信息字段。服务器的回应，也都会有一个<code class="highlighter-rouge">Access-Control-Allow-Origin</code>头信息字段。</p>
+
+<p>下面是“预检”请求之后，浏览器的正常CORS请求。</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">PUT</span> <span class="nn">/cors</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Origin</span><span class="p">:</span> <span class="s">http://api.bob.com</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">api.alice.com</span>
+<span class="na">X-Custom-Header</span><span class="p">:</span> <span class="s">value</span>
+<span class="na">Accept-Language</span><span class="p">:</span> <span class="s">en-US</span>
+<span class="na">Connection</span><span class="p">:</span> <span class="s">keep-alive</span>
+<span class="na">User-Agent</span><span class="p">:</span> <span class="s">Mozilla/5.0...</span>
+</code></pre></div></div>
+
+<p>上面头信息的<code class="highlighter-rouge">Origin</code>字段是浏览器自动添加的。</p>
+
+<p>下面是服务器正常的回应。</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">Access-Control-Allow-Origin: http://api.bob.com
+Content-Type: text/html; charset=utf-8
+</span></code></pre></div></div>
+
+<p>上面头信息中，<code class="highlighter-rouge">Access-Control-Allow-Origin</code>字段是每次回应都必定包含的。</p>
+
+<h2 id="与jsonp的比较">与JSONP的比较</h2>
+
+<p>CORS与JSONP的使用目的相同，但是比JSONP更强大。</p>
+
+<p>JSONP只支持<code class="highlighter-rouge">GET</code>请求，CORS支持所有类型的HTTP请求。JSONP的优势在于支持老式浏览器，以及可以向不支持CORS的网站请求数据。</p>
+
+<h2 id="参考链接">参考链接</h2>
+
+<ul>
+  <li>Monsur Hossain, <a href="javascript:if(confirm('http://www.html5rocks.com/en/tutorials/cors/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.html5rocks.com/en/tutorials/cors/'" tppabs="http://www.html5rocks.com/en/tutorials/cors/">Using CORS</a></li>
+  <li>MDN, <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS'" tppabs="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">HTTP access control (CORS)</a></li>
+</ul>
+
+
+
+</article>
+
+<div class="row">
+<div class="twelve columns">
+
+<h2>留言</h2>
+
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'jstutorial'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="javascript:if(confirm('http://disqus.com/?ref_noscript  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://disqus.com/?ref_noscript'" tppabs="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="javascript:if(confirm('http://disqus.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://disqus.com/'" tppabs="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</section>
+
+</div>
+</div>
+
+<footer>
+<div class="row">
+<div class="twelve columns">
+	<p><a href="license.html" tppabs="http://javascript.ruanyifeng.com/introduction/license.html">版权声明</a> | last modified on 2016-04-08 </p>
+</div>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-43771063-1', 'http://javascript.ruanyifeng.com/bom/ruanyifeng.com');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
+
+

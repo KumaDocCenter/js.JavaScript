@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>document节点 -- JavaScript 标准参考教程（alpha）</title>
+  
+  <!-- Included CSS Files (Uncompressed) -->
+  <!--
+  <link rel="stylesheet" href="stylesheets/foundation.css">
+  -->
+  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="foundation.css" tppabs="http://javascript.ruanyifeng.com/css/foundation.css">
+  <link rel="stylesheet" href="main.css" tppabs="http://javascript.ruanyifeng.com/css/main.css">
+
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="html5.js" tppabs="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <script src="jquery.js" tppabs="http://javascript.ruanyifeng.com/js/jquery.js"></script>
+  <script src="toc.js" tppabs="http://javascript.ruanyifeng.com/js/toc.js"></script>
+  <script src="main.js" tppabs="http://javascript.ruanyifeng.com/js/main.js"></script>
+
+</head>
+<body>
+
+<header class="top-bar" id="header">
+
+<div class="fixed">
+
+<nav class="top-bar">
+<ul>
+<!-- Title Area -->
+	<li class="name has-dropdown">
+	<h1><a href="index.htm" tppabs="http://javascript.ruanyifeng.com/">JavaScript 标准参考教程（alpha） </a></h1>
+		<ul class="dropdown">
+			
+			<li><a href="index.htm#introduction" tppabs="http://javascript.ruanyifeng.com/#introduction">导论</a></li>
+			
+			<li><a href="index.htm#grammar" tppabs="http://javascript.ruanyifeng.com/#grammar">语法</a></li>
+			
+			<li><a href="index.htm#stdlib" tppabs="http://javascript.ruanyifeng.com/#stdlib">标准库</a></li>
+			
+			<li><a href="index.htm#oop" tppabs="http://javascript.ruanyifeng.com/#oop">面向对象编程</a></li>
+			
+			<li><a href="index.htm#advanced" tppabs="http://javascript.ruanyifeng.com/#advanced">语法专题</a></li>
+			
+			<li><a href="index.htm#dom" tppabs="http://javascript.ruanyifeng.com/#dom">DOM模型</a></li>
+			
+			<li><a href="index.htm#bom" tppabs="http://javascript.ruanyifeng.com/#bom">浏览器环境</a></li>
+			
+			<li><a href="index.htm#htmlapi" tppabs="http://javascript.ruanyifeng.com/#htmlapi">Web API</a></li>
+			
+		</ul>
+	</li>
+</ul>
+
+<section>
+
+
+<ul class="left">
+<li class="divider"></li>
+<li class="has-dropdown"><a class="active" href="#"> DOM模型 </a><ul class="dropdown">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="attribute.html" tppabs="http://javascript.ruanyifeng.com/dom/attribute.html">属性的操作</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="css.html" tppabs="http://javascript.ruanyifeng.com/dom/css.html">CSS操作</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="active"><a href="#">document节点</a></li>
+
+
+
+
+
+
+
+<li><a href="element.html" tppabs="http://javascript.ruanyifeng.com/dom/element.html">Element对象</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="event-type.html" tppabs="http://javascript.ruanyifeng.com/dom/event-type.html">事件种类</a></li>
+
+
+
+
+
+<li><a href="event.html" tppabs="http://javascript.ruanyifeng.com/dom/event.html">事件模型</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="image.html" tppabs="http://javascript.ruanyifeng.com/dom/image.html">Image对象</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mutationobserver.html" tppabs="http://javascript.ruanyifeng.com/dom/mutationobserver.html">Mutation Observer API</a></li>
+
+
+
+
+
+
+
+<li><a href="node.html" tppabs="http://javascript.ruanyifeng.com/dom/node.html">DOM 模型概述</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="text.html" tppabs="http://javascript.ruanyifeng.com/dom/text.html">Text节点和DocumentFragment节点</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul></li>
+<li class="divider"></li>
+<li class="has-dropdown nav-3"><a href="#"> document节点</a><ul class="dropdown">
+</ul></li>
+</ul>
+
+
+<ul class="right">
+	<li class="divider"></li>
+	<li>
+		<a href="javascript:if(confirm('https://github.com/ruanyf/jstutorial  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://github.com/ruanyf/jstutorial'" tppabs="https://github.com/ruanyf/jstutorial" target="_blank">GitHub <i class="foundicon-edit"></i></a>
+	</li>
+	<li class="divider"></li>
+	<li>
+		<a href="#">TOP <i class="foundicon-up-arrow"></i></a>
+	</li>
+</ul>
+
+</section>
+
+</nav>  
+</div>
+</header>
+
+
+<article class="bookPage">
+
+  <div class="row">
+    <div class="twelve columns">
+
+<h1> document节点 </h1>
+
+<aside class="right"><p>来自<a href="index.htm" tppabs="http://javascript.ruanyifeng.com/">《JavaScript 标准参考教程（alpha）》</a>，by 阮一峰</p></aside>
+
+<div id="toc" class="panel callout radius">目录</div>
+
+
+<h2 id="概述">概述</h2>
+
+<p><code class="highlighter-rouge">document</code>节点是文档的根节点，每张网页都有自己的<code class="highlighter-rouge">document</code>节点。<code class="highlighter-rouge">window.document</code>属性就指向这个节点。只要浏览器开始载入HTML文档，这个节点对象就存在了，可以直接调用。</p>
+
+<p><code class="highlighter-rouge">document</code>节点有不同的办法可以获取。</p>
+
+<ul>
+  <li>对于正常的网页，直接使用<code class="highlighter-rouge">document</code>或<code class="highlighter-rouge">window.document</code>。</li>
+  <li>对于<code class="highlighter-rouge">iframe</code>载入的网页，使用<code class="highlighter-rouge">iframe</code>节点的<code class="highlighter-rouge">contentDocument</code>属性。</li>
+  <li>对Ajax操作返回的文档，使用XMLHttpRequest对象的<code class="highlighter-rouge">responseXML</code>属性。</li>
+  <li>对于包含某个节点的文档，使用该节点的<code class="highlighter-rouge">ownerDocument</code>属性。</li>
+</ul>
+
+<p>上面这四种<code class="highlighter-rouge">document</code>节点，都部署了<a href="javascript:if(confirm('http://dom.spec.whatwg.org/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://dom.spec.whatwg.org/#interface-document'" tppabs="http://dom.spec.whatwg.org/#interface-document">Document接口</a>，因此有共同的属性和方法。当然，各自也有一些自己独特的属性和方法，比如HTML和XML文档的<code class="highlighter-rouge">document</code>节点就不一样。</p>
+
+<h2 id="内部节点属性">内部节点属性</h2>
+
+<p><code class="highlighter-rouge">document</code>节点有很多属性，其中相当一部分属于快捷方式，指向文档内部的某个节点。</p>
+
+<h3 id="documentdoctypedocumentdocumentelementdocumentdefaultview">document.doctype，document.documentElement，document.defaultView</h3>
+
+<p>对于HTML文档来说，<code class="highlighter-rouge">document</code>对象一般有两个子节点。第一个子节点是<code class="highlighter-rouge">document.doctype</code>，它是一个对象，包含了当前文档类型（Document Type Declaration，简写DTD）信息。对于HTML5文档，该节点就代表<code class="highlighter-rouge"><span class="cp">&lt;!DOCTYPE html&gt;</span></code>。如果网页没有声明DTD，该属性返回<code class="highlighter-rouge">null</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">doctype</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">doctype</span><span class="p">;</span>
+<span class="nx">doctype</span> <span class="c1">// "&lt;!DOCTYPE html&gt;"</span>
+<span class="nx">doctype</span><span class="p">.</span><span class="nx">name</span> <span class="c1">// "html"</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">document.firstChild</code>通常就返回这个节点。</p>
+
+<p><code class="highlighter-rouge">document.documentElement</code>属性返回当前文档的根节点（root）。它通常是<code class="highlighter-rouge">document</code>节点的第二个子节点，紧跟在<code class="highlighter-rouge">document.doctype</code>节点后面。对于HTML网页，该属性返回<code class="highlighter-rouge"><span class="nt">&lt;html&gt;</span></code>节点。</p>
+
+<p><code class="highlighter-rouge">document.defaultView</code>属性，在浏览器中返回<code class="highlighter-rouge">document</code>对象所在的<code class="highlighter-rouge">window</code>对象，否则返回<code class="highlighter-rouge">null</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">defaultView</span> <span class="o">===</span> <span class="nb">window</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<h3 id="documentbodydocumenthead">document.body，document.head</h3>
+
+<p><code class="highlighter-rouge">document.head</code>属性返回当前文档的<code class="highlighter-rouge">&lt;head&gt;</code>节点，<code class="highlighter-rouge">document.body</code>属性返回当前文档的<code class="highlighter-rouge">&lt;body&gt;</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">head</span> <span class="o">===</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'head'</span><span class="p">)</span> <span class="c1">// true</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">body</span> <span class="o">===</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'body'</span><span class="p">)</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>这两个属性总是存在的，如果网页源码里面省略了<code class="highlighter-rouge">&lt;head&gt;</code>或<code class="highlighter-rouge">&lt;body&gt;</code>，浏览器会自动创造。另外，这两个属性是可写的，如果对其写入一个新的节点，会导致原有的所有子节点被移除。</p>
+
+<h3 id="documentactiveelement">document.activeElement</h3>
+
+<p><code class="highlighter-rouge">document.activeElement</code>属性返回当前文档中获得焦点的那个元素。用户通常可以使用Tab键移动焦点，使用空格键激活焦点。比如，如果焦点在一个链接上，此时按一下空格键，就会跳转到该链接。</p>
+
+<h2 id="节点集合属性">节点集合属性</h2>
+
+<p>以下属性返回文档内部特定元素的集合，都是类似数组的对象。这些集合都是动态的，原节点有任何变化，立刻会反映在集合中。</p>
+
+<h3 id="documentlinksdocumentformsdocumentimagesdocumentembeds">document.links，document.forms，document.images，document.embeds</h3>
+
+<p><code class="highlighter-rouge">document.links</code>属性返回当前文档所有设定了<code class="highlighter-rouge">href</code>属性的<code class="highlighter-rouge">a</code>及<code class="highlighter-rouge">area</code>元素。</p>
+
+<p><code class="highlighter-rouge">document.forms</code>属性返回页面中所有表单元素<code class="highlighter-rouge">form</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">selectForm</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">forms</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+</code></pre></div></div>
+
+<p>上面代码获取文档第一个表单。</p>
+
+<p><code class="highlighter-rouge">document.images</code>属性返回页面所有图片元素（即<code class="highlighter-rouge">img</code>标签）。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">imglist</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">images</span><span class="p">;</span>
+
+<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">imglist</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">imglist</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">src</span> <span class="o">===</span> <span class="s1">'banner.gif'</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>上面代码在所有<code class="highlighter-rouge">img</code>标签中，寻找特定图片。</p>
+
+<p><code class="highlighter-rouge">document.embeds</code>属性返回网页中所有嵌入对象，即<code class="highlighter-rouge">embed</code>标签。</p>
+
+<p>以上四个属性返回的都是<code class="highlighter-rouge">HTMLCollection</code>对象实例。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">links</span> <span class="k">instanceof</span> <span class="nx">HTMLCollection</span> <span class="c1">// true</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">images</span> <span class="k">instanceof</span> <span class="nx">HTMLCollection</span> <span class="c1">// true</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">forms</span> <span class="k">instanceof</span> <span class="nx">HTMLCollection</span> <span class="c1">// true</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">embeds</span> <span class="k">instanceof</span> <span class="nx">HTMLCollection</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>由于<code class="highlighter-rouge">HTMLCollection</code>实例可以用HTML元素的<code class="highlighter-rouge">id</code>或<code class="highlighter-rouge">name</code>属性引用，因此如果一个元素有<code class="highlighter-rouge">id</code>或<code class="highlighter-rouge">name</code>属性，就可以在上面这四个属性上引用。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// HTML代码为</span>
+<span class="c1">// &lt;form name="myForm" &gt;</span>
+
+<span class="nb">document</span><span class="p">.</span><span class="nx">myForm</span> <span class="o">===</span> <span class="nb">document</span><span class="p">.</span><span class="nx">forms</span><span class="p">.</span><span class="nx">myForm</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<h3 id="documentscriptsdocumentstylesheets">document.scripts，document.styleSheets</h3>
+
+<p><code class="highlighter-rouge">document.scripts</code>属性返回当前文档的所有脚本（即<code class="highlighter-rouge">script</code>标签）。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">scripts</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">scripts</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">scripts</span><span class="p">.</span><span class="nx">length</span> <span class="o">!==</span> <span class="mi">0</span> <span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'当前网页有脚本'</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">document.scripts</code>返回的也是<code class="highlighter-rouge">HTMLCollection</code>实例。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">scripts</span> <span class="k">instanceof</span> <span class="nx">HTMLCollection</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>因此，如果一个<code class="highlighter-rouge">script</code>标签有<code class="highlighter-rouge">id</code>或<code class="highlighter-rouge">name</code>属性，就可以在<code class="highlighter-rouge">document.scripts</code>上引用。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// HTML代码为</span>
+<span class="c1">// &lt;script id="myScript" &gt;</span>
+
+<span class="nb">document</span><span class="p">.</span><span class="nx">scripts</span><span class="p">.</span><span class="nx">myScript</span>
+<span class="c1">// &lt;script id="myScript"&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">document.styleSheets</code>属性返回一个类似数组的对象，代表当前网页的所有样式表。每个样式表对象都有<code class="highlighter-rouge">cssRules</code>属性，返回该样式表的所有CSS规则，这样这可以操作具体的CSS规则了。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">allSheets</span> <span class="o">=</span> <span class="p">[].</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">styleSheets</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>上面代码中，使用<code class="highlighter-rouge">slice</code>方法将<code class="highlighter-rouge">document.styleSheets</code>转为数组，以便于进一步处理。</p>
+
+<h2 id="文档信息属性">文档信息属性</h2>
+
+<p>以下属性返回文档信息。</p>
+
+<h3 id="documentdocumenturidocumenturl">document.documentURI，document.URL</h3>
+
+<p><code class="highlighter-rouge">document.documentURI</code>属性和<code class="highlighter-rouge">document.URL</code>属性都返回一个字符串，表示当前文档的网址。不同之处是<code class="highlighter-rouge">documentURI</code>属性可用于所有文档（包括 XML 文档），<code class="highlighter-rouge">URL</code>属性只能用于 HTML 文档。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">URL</span>
+<span class="c1">// http://www.example.com/about</span>
+
+<span class="nb">document</span><span class="p">.</span><span class="nx">documentURI</span> <span class="o">===</span> <span class="nb">document</span><span class="p">.</span><span class="nx">URL</span>
+<span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>如果文档的锚点（<code class="highlighter-rouge">#anchor</code>）变化，这两个属性都会跟着变化。</p>
+
+<h3 id="documentdomain">document.domain</h3>
+
+<p><code class="highlighter-rouge">document.domain</code>属性返回当前文档的域名。比如，某张网页的网址是 http://www.example.com/hello.html ，<code class="highlighter-rouge">domain</code>属性就等于<code class="highlighter-rouge">www.example.com</code>。如果无法获取域名，该属性返回<code class="highlighter-rouge">null</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">badDomain</span> <span class="o">=</span> <span class="s1">'www.example.xxx'</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">domain</span> <span class="o">===</span> <span class="nx">badDomain</span><span class="p">)</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>上面代码判断，如果当前域名等于指定域名，则关闭窗口。</p>
+
+<p>二级域名的情况下，domain属性可以设置为对应的一级域名。比如，当前域名是sub.example.com，则domain属性可以设置为example.com。除此之外的写入，都是不可以的。</p>
+
+<h3 id="documentlastmodified">document.lastModified</h3>
+
+<p><code class="highlighter-rouge">document.lastModified</code>属性返回当前文档最后修改的时间戳，格式为字符串。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">lastModified</span>
+<span class="c1">// Tuesday, July 10, 2001 10:19:42</span>
+</code></pre></div></div>
+
+<p>注意，<code class="highlighter-rouge">lastModified</code>属性的值是字符串，所以不能用来直接比较，两个文档谁的日期更新，需要用<code class="highlighter-rouge">Date.parse</code>方法转成时间戳格式，才能进行比较。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">doc1</span><span class="p">.</span><span class="nx">lastModified</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">doc2</span><span class="p">.</span><span class="nx">lastModified</span><span class="p">))</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="documentlocation">document.location</h3>
+
+<p><code class="highlighter-rouge">document.location</code>属性返回<code class="highlighter-rouge">location</code>对象，提供了当前文档的URL信息。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 当前网址为 http://user:passwd@www.example.com:4097/path/a.html?x=111#part1</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="c1">// "http://user:passwd@www.example.com:4097/path/a.html?x=111#part1"</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">protocol</span> <span class="c1">// "http:"</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">host</span> <span class="c1">// "www.example.com:4097"</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">hostname</span> <span class="c1">// "www.example.com"</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">port</span> <span class="c1">// "4097"</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">pathname</span> <span class="c1">// "/path/a.html"</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">search</span> <span class="c1">// "?x=111"</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">hash</span> <span class="c1">// "#part1"</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">user</span> <span class="c1">// "user"</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">password</span> <span class="c1">// "passwd"</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">location</code>对象有以下方法。</p>
+
+<ul>
+  <li><code class="highlighter-rouge">location.assign()</code></li>
+  <li><code class="highlighter-rouge">location.reload()</code></li>
+  <li><code class="highlighter-rouge">location.toString()</code></li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 跳转到另一个网址</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">assign</span><span class="p">(</span><span class="s1">'http://www.google.com'</span><span class="p">)</span>
+<span class="c1">// 优先从服务器重新加载</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">reload</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+<span class="c1">// 优先从本地缓存重新加载（默认值）</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">reload</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+<span class="c1">// 跳转到新网址，并将取代掉history对象中的当前记录</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s1">'http://www.google.com'</span><span class="p">);</span>
+<span class="c1">// 将location对象转为字符串，等价于document.location.href</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>如果将新的网址赋值给<code class="highlighter-rouge">location</code>对象，网页就会自动跳转到新网址。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">location</span> <span class="o">=</span> <span class="s1">'http://www.example.com'</span><span class="p">;</span>
+<span class="c1">// 等同于</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="s1">'http://www.example.com'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>也可以指定相对URL。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">location</span> <span class="o">=</span> <span class="s1">'page2.html'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>如果指定的是锚点，浏览器会自动滚动到锚点处。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">location</span> <span class="o">=</span> <span class="s1">'#top'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>注意，采用上面的方法重置URL，跟用户点击链接跳转的效果是一样的。上一个网页依然将保存在浏览器历史之中，点击“后退”按钮就可以回到前一个网页。</p>
+
+<p>如果不希望用户看到前一个网页，可以使用<code class="highlighter-rouge">location.replace</code>方法，浏览器<code class="highlighter-rouge">history</code>对象就会用新的网址，取代当前网址，这样的话，“后退”按钮就不会回到当前网页了。它的一个应用就是，当脚本发现当前是移动设备时，就立刻跳转到移动版网页。</p>
+
+<p><code class="highlighter-rouge">document.location</code>属性与<code class="highlighter-rouge">window.location</code>属性等价。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">location</span> <span class="o">===</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>历史上，IE曾经不允许对<code class="highlighter-rouge">document.location</code>赋值，为了保险起见，建议优先使用<code class="highlighter-rouge">window.location</code>。如果只是单纯地获取当前网址，建议使用<code class="highlighter-rouge">document.URL</code>，语义性更好。</p>
+
+<h3 id="documentreferrerdocumenttitledocumentcharacterset">document.referrer，document.title，document.characterSet</h3>
+
+<p><code class="highlighter-rouge">document.referrer</code>属性返回一个字符串，表示当前文档的访问来源，如果是无法获取来源或是用户直接键入网址，而不是从其他网页点击，则返回一个空字符串。</p>
+
+<p><code class="highlighter-rouge">document.referrer</code>的值，总是与HTTP头信息的<code class="highlighter-rouge">Referer</code>保持一致，但是它的拼写有两个<code class="highlighter-rouge">r</code>。</p>
+
+<p><code class="highlighter-rouge">document.title</code>属性返回当前文档的标题，该属性是可写的。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="s1">'新标题'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">document.characterSet</code>属性返回渲染当前文档的字符集，比如UTF-8、ISO-8859-1。</p>
+
+<h3 id="documentreadystate">document.readyState</h3>
+
+<p><code class="highlighter-rouge">document.readyState</code>属性返回当前文档的状态，共有三种可能的值。</p>
+
+<ul>
+  <li><code class="highlighter-rouge">loading</code>：加载HTML代码阶段（尚未完成解析）</li>
+  <li><code class="highlighter-rouge">interactive</code>：加载外部资源阶段时</li>
+  <li><code class="highlighter-rouge">complete</code>：加载完成时</li>
+</ul>
+
+<p>这个属性变化的过程如下。</p>
+
+<ol>
+  <li>浏览器开始解析HTML文档，<code class="highlighter-rouge">document.readyState</code>属性等于<code class="highlighter-rouge">loading</code>。</li>
+  <li>浏览器遇到HTML文档中的<code class="highlighter-rouge">&lt;script&gt;</code>元素，并且没有<code class="highlighter-rouge">async</code>或<code class="highlighter-rouge">defer</code>属性，就暂停解析，开始执行脚本，这时<code class="highlighter-rouge">document.readyState</code>属性还是等于<code class="highlighter-rouge">loading</code>。</li>
+  <li>HTML文档解析完成，<code class="highlighter-rouge">document.readyState</code>属性变成<code class="highlighter-rouge">interactive</code>。</li>
+  <li>浏览器等待图片、样式表、字体文件等外部资源加载完成，一旦全部加载完成，<code class="highlighter-rouge">document. readyState</code>属性变成<code class="highlighter-rouge">complete</code>。</li>
+</ol>
+
+<p>下面的代码用来检查网页是否加载成功。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 基本检查</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="s1">'complete'</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+
+<span class="c1">// 轮询检查</span>
+<span class="kd">var</span> <span class="nx">interval</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="s1">'complete'</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">clearInterval</span><span class="p">(</span><span class="nx">interval</span><span class="p">);</span>
+    <span class="c1">// ...</span>
+  <span class="p">}</span>
+<span class="p">},</span> <span class="mi">100</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="documentdesignmode">document.designMode</h3>
+
+<p><code class="highlighter-rouge">document.designMode</code>属性控制当前文档是否可编辑，通常用在制作所见即所得编辑器。打开<code class="highlighter-rouge">iframe</code>元素包含的文档的<code class="highlighter-rouge">designMode</code>属性，就能将其变为一个所见即所得的编辑器。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;iframe</span> <span class="na">id=</span><span class="s">"editor"</span> <span class="na">src=</span><span class="s">"about:blank"</span><span class="nt">&gt;&lt;/iframe&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="o">!</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">editor</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'editor'</span><span class="p">);</span>
+  <span class="nx">editor</span><span class="p">.</span><span class="nx">contentDocument</span><span class="p">.</span><span class="nx">designMode</span> <span class="o">=</span> <span class="s1">'on'</span><span class="p">;</span>
+<span class="p">})();</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<h3 id="documentimplementation">document.implementation</h3>
+
+<p><code class="highlighter-rouge">document.implementation</code>属性返回一个对象，用来甄别当前环境部署了哪些DOM相关接口。<code class="highlighter-rouge">implementation</code>属性的<code class="highlighter-rouge">hasFeature</code>方法，可以判断当前环境是否部署了特定版本的特定接口。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">implementation</span><span class="p">.</span><span class="nx">hasFeature</span><span class="p">(</span><span class="s1">'HTML'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">)</span>
+<span class="c1">// true</span>
+
+<span class="nb">document</span><span class="p">.</span><span class="nx">implementation</span><span class="p">.</span><span class="nx">hasFeature</span><span class="p">(</span><span class="s1">'MutationEvents'</span><span class="p">,</span><span class="s1">'2.0'</span><span class="p">)</span>
+<span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>上面代码表示，当前环境部署了DOM HTML 2.0版和MutationEvents的2.0版。</p>
+
+<h3 id="documentcompatmode">document.compatMode</h3>
+
+<p><code class="highlighter-rouge">compatMode</code>属性返回浏览器处理文档的模式，可能的值为<code class="highlighter-rouge">BackCompat</code>（向后兼容模式）和<code class="highlighter-rouge">CSS1Compat</code>（严格模式）。</p>
+
+<p>一般来说，如果网页代码的第一行设置了明确的<code class="highlighter-rouge">DOCTYPE</code>（比如<code class="highlighter-rouge">&lt;!doctype html&gt;</code>），<code class="highlighter-rouge">document.compatMode</code>的值都为<code class="highlighter-rouge">CSS1Compat</code>。</p>
+
+<h3 id="documentcookie">document.cookie</h3>
+
+<p><code class="highlighter-rouge">document.cookie</code>属性用来操作浏览器Cookie，详见《浏览器环境》一章的《Cookie》部分。</p>
+
+<h2 id="读写相关的方法">读写相关的方法</h2>
+
+<h3 id="documentopendocumentclose">document.open()，document.close()</h3>
+
+<p><code class="highlighter-rouge">document.open</code>方法用于新建一个文档，供write方法写入内容。它实际上等于清除当前文档，重新写入内容。不要将此方法与<code class="highlighter-rouge">window.open()</code>混淆，后者用来打开一个新窗口，与当前文档无关。</p>
+
+<p><code class="highlighter-rouge">document.close</code>方法用于关闭<code class="highlighter-rouge">open</code>方法所新建的文档。一旦关闭，<code class="highlighter-rouge">write</code>方法就无法写入内容了。如果再调用<code class="highlighter-rouge">write</code>方法，就等同于又调用<code class="highlighter-rouge">open</code>方法，新建一个文档，再写入内容。</p>
+
+<h3 id="documentwritedocumentwriteln">document.write()，document.writeln()</h3>
+
+<p><code class="highlighter-rouge">document.write</code>方法用于向当前文档写入内容。只要当前文档还没有用<code class="highlighter-rouge">close</code>方法关闭，它所写入的内容就会追加在已有内容的后面。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 页面显示“helloworld”</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">open</span><span class="p">();</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">);</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">'world'</span><span class="p">);</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>注意，<code class="highlighter-rouge">document.write</code>会当作HTML代码解析，不会转义。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">'&lt;p&gt;hello world&lt;/p&gt;'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>如果页面已经解析完成（<code class="highlighter-rouge">DOMContentLoaded</code>事件发生之后），再调用<code class="highlighter-rouge">write</code>方法，它会先调用<code class="highlighter-rouge">open</code>方法，擦除当前文档所有内容，然后再写入。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'DOMContentLoaded'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">'&lt;p&gt;Hello World!&lt;/p&gt;'</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">// 等同于</span>
+
+<span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'DOMContentLoaded'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">open</span><span class="p">();</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">'&lt;p&gt;Hello World!&lt;/p&gt;'</span><span class="p">);</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>如果在页面渲染过程中调用<code class="highlighter-rouge">write</code>方法，并不会调用<code class="highlighter-rouge">open</code>方法。（可以理解成，<code class="highlighter-rouge">open</code>方法已调用，但<code class="highlighter-rouge">close</code>方法还未调用。）</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+hello
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">"world"</span><span class="p">)</span>
+<span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>在浏览器打开上面网页，将会显示<code class="highlighter-rouge">hello world</code>。</p>
+
+<p><code class="highlighter-rouge">document.write</code>是JavaScript语言标准化之前就存在的方法，现在完全有更符合标准的方法向文档写入内容（比如对<code class="highlighter-rouge">innerHTML</code>属性赋值）。所以，除了某些特殊情况，应该尽量避免使用<code class="highlighter-rouge">document.write</code>这个方法。</p>
+
+<p><code class="highlighter-rouge">document.writeln</code>方法与<code class="highlighter-rouge">write</code>方法完全一致，除了会在输出内容的尾部添加换行符。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="c1">// 12</span>
+
+<span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="c1">// 1</span>
+<span class="c1">// 2</span>
+<span class="c1">//</span>
+</code></pre></div></div>
+
+<p>注意，<code class="highlighter-rouge">writeln</code>方法添加的是ASCII码的换行符，渲染成HTML网页时不起作用，即在网页上显示不出换行。</p>
+
+<h2 id="查找节点的方法">查找节点的方法</h2>
+
+<p>以下方法用来查找某个节点。</p>
+
+<h3 id="documentqueryselectordocumentqueryselectorall">document.querySelector()，document.querySelectorAll()</h3>
+
+<p><code class="highlighter-rouge">document.querySelector</code>方法接受一个CSS选择器作为参数，返回匹配该选择器的元素节点。如果有多个节点满足匹配条件，则返回第一个匹配的节点。如果没有发现匹配的节点，则返回<code class="highlighter-rouge">null</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">el1</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'.myclass'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">el2</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'#myParent &gt; [ng-click]'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">document.querySelectorAll</code>方法与<code class="highlighter-rouge">querySelector</code>用法类似，区别是返回一个<code class="highlighter-rouge">NodeList</code>对象，包含所有匹配给定选择器的节点。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">elementList</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">'.myclass'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>这两个方法的参数，可以是逗号分隔的多个CSS选择器，返回匹配其中一个选择器的元素节点。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">matches</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">'div.note, div.alert'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>上面代码返回<code class="highlighter-rouge">class</code>属性是<code class="highlighter-rouge">note</code>或<code class="highlighter-rouge">alert</code>的<code class="highlighter-rouge">div</code>元素。</p>
+
+<p>这两个方法都支持复杂的CSS选择器。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 选中data-foo-bar属性等于someval的元素</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">'[data-foo-bar="someval"]'</span><span class="p">);</span>
+
+<span class="c1">// 选中myForm表单中所有不通过验证的元素</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">'#myForm :invalid'</span><span class="p">);</span>
+
+<span class="c1">// 选中div元素，那些class含ignore的除外</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">'DIV:not(.ignore)'</span><span class="p">);</span>
+
+<span class="c1">// 同时选中div，a，script三类元素</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">'DIV, A, SCRIPT'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>但是，它们不支持CSS伪元素的选择器（比如<code class="highlighter-rouge">:first-line</code>和<code class="highlighter-rouge">:first-letter</code>）和伪类的选择器（比如<code class="highlighter-rouge">:link</code>和<code class="highlighter-rouge">:visited</code>），即无法选中伪元素和伪类。</p>
+
+<p>如果<code class="highlighter-rouge">querySelectorAll</code>方法的参数是字符串<code class="highlighter-rouge">*</code>，则会返回文档中的所有HTML元素节点。另外，<code class="highlighter-rouge">querySelectorAll</code>的返回结果不是动态集合，不会实时反映元素节点的变化。</p>
+
+<p>最后，这两个方法除了定义在<code class="highlighter-rouge">document</code>对象上，还定义在元素节点上，即在元素节点上也可以调用。</p>
+
+<h3 id="documentgetelementsbytagname">document.getElementsByTagName()</h3>
+
+<p><code class="highlighter-rouge">document.getElementsByTagName</code>方法返回所有指定HTML标签的元素，返回值是一个类似数组的<code class="highlighter-rouge">HTMLCollection</code>对象，可以实时反映HTML文档的变化。如果没有任何匹配的元素，就返回一个空集。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">paras</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'p'</span><span class="p">);</span>
+
+<span class="nx">paras</span> <span class="k">instanceof</span> <span class="nx">HTMLCollection</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>上面代码返回当前文档的所有<code class="highlighter-rouge">p</code>元素节点。</p>
+
+<p>HTML标签名是大小写不敏感的，因此<code class="highlighter-rouge">getElementsByTagName</code>方法也是大小写不敏感的。另外，返回结果中，各个成员的顺序就是它们在文档中出现的顺序。</p>
+
+<p>如果传入<code class="highlighter-rouge">*</code>，就可以返回文档中所有HTML元素。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">allElements</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'*'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>注意，HTML元素本身也定义了<code class="highlighter-rouge">getElementsByTagName</code>方法，返回该元素的后代元素中符合指定标签的元素。也就是说，这个方法不仅可以在<code class="highlighter-rouge">document</code>对象上调用，也可以在任何元素节点上调用。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">firstPara</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'p'</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">spans</span> <span class="o">=</span> <span class="nx">firstPara</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'span'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>上面代码选中第一个<code class="highlighter-rouge">p</code>元素内部的所有<code class="highlighter-rouge">span</code>元素。</p>
+
+<h3 id="documentgetelementsbyclassname">document.getElementsByClassName()</h3>
+
+<p><code class="highlighter-rouge">document.getElementsByClassName</code>方法返回一个类似数组的对象（<code class="highlighter-rouge">HTMLCollection</code>实例对象），包括了所有<code class="highlighter-rouge">class</code>名字符合指定条件的元素，元素的变化实时反映在返回结果中。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">elements</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="nx">names</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>由于<code class="highlighter-rouge">class</code>是保留字，所以JavaScript一律使用<code class="highlighter-rouge">className</code>表示CSS的<code class="highlighter-rouge">class</code>。</p>
+
+<p>如果参数是一个空格分隔的字符串，元素的<code class="highlighter-rouge">class</code>必须符合所有字符串之中所有的<code class="highlighter-rouge">class</code>才会返回。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">elements</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s1">'foo bar'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>上面代码返回同时具有<code class="highlighter-rouge">foo</code>和<code class="highlighter-rouge">bar</code>两个<code class="highlighter-rouge">class</code>的元素，<code class="highlighter-rouge">foo</code>和<code class="highlighter-rouge">bar</code>的顺序不重要。</p>
+
+<p>注意，正常模式下，CSS的<code class="highlighter-rouge">class</code>是大小写敏感的。（<code class="highlighter-rouge">quirks mode</code>下，大小写不敏感。）</p>
+
+<p>与<code class="highlighter-rouge">getElementsByTagName</code>方法一样，<code class="highlighter-rouge">getElementsByClassName</code>方法不仅可以在<code class="highlighter-rouge">document</code>对象上调用，也可以在任何元素节点上调用。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 非document对象上调用</span>
+<span class="kd">var</span> <span class="nx">elements</span> <span class="o">=</span> <span class="nx">rootElement</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="nx">names</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="documentgetelementsbyname">document.getElementsByName()</h3>
+
+<p><code class="highlighter-rouge">document.getElementsByName</code>方法用于选择拥有<code class="highlighter-rouge">name</code>属性的HTML元素（比如<code class="highlighter-rouge">&lt;form&gt;</code>、<code class="highlighter-rouge">&lt;radio&gt;</code>、<code class="highlighter-rouge">&lt;img&gt;</code>、<code class="highlighter-rouge">&lt;frame&gt;</code>、<code class="highlighter-rouge">&lt;embed&gt;</code>和<code class="highlighter-rouge">&lt;object&gt;</code>等），返回一个类似数组的的对象（<code class="highlighter-rouge">NodeList</code>对象的实例），因为<code class="highlighter-rouge">name</code>属性相同的元素可能不止一个。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 表单为 &lt;form name="x"&gt;&lt;/form&gt;</span>
+<span class="kd">var</span> <span class="nx">forms</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByName</span><span class="p">(</span><span class="s1">'x'</span><span class="p">);</span>
+<span class="nx">forms</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">tagName</span> <span class="c1">// "FORM"</span>
+</code></pre></div></div>
+
+<h3 id="getelementbyid">getElementById()</h3>
+
+<p><code class="highlighter-rouge">getElementById</code>方法返回匹配指定<code class="highlighter-rouge">id</code>属性的元素节点。如果没有发现匹配的节点，则返回<code class="highlighter-rouge">null</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">elem</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'para1'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>注意，该方法的参数是大小写敏感的。比如，如果某个节点的<code class="highlighter-rouge">id</code>属性是<code class="highlighter-rouge">main</code>，那么<code class="highlighter-rouge">document.getElementById('Main')</code>将返回<code class="highlighter-rouge">null</code>，而不是那个节点。</p>
+
+<p><code class="highlighter-rouge">document.getElementById</code>方法与<code class="highlighter-rouge">document.querySelector</code>方法都能获取元素节点，不同之处是<code class="highlighter-rouge">document.querySelector</code>方法的参数使用CSS选择器语法，<code class="highlighter-rouge">document.getElementById</code>方法的参数是HTML标签元素的<code class="highlighter-rouge">id</code>属性。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'myElement'</span><span class="p">)</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'#myElement'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>上面代码中，两个方法都能选中<code class="highlighter-rouge">id</code>为<code class="highlighter-rouge">myElement</code>的元素，但是<code class="highlighter-rouge">getElementById()</code>比<code class="highlighter-rouge">querySelector()</code>效率高得多。</p>
+
+<p>另外，这个方法只能在<code class="highlighter-rouge">document</code>对象上使用，不能在其他元素节点上使用。</p>
+
+<h3 id="documentelementfrompoint">document.elementFromPoint()</h3>
+
+<p><code class="highlighter-rouge">document.elementFromPoint</code>方法返回位于页面指定位置最上层的Element子节点。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">element</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">elementFromPoint</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>上面代码选中在<code class="highlighter-rouge">(50, 50)</code>这个坐标位置的最上层的那个HTML元素。</p>
+
+<p><code class="highlighter-rouge">elementFromPoint</code>方法的两个参数，依次是相对于当前视口左上角的横坐标和纵坐标，单位是像素。如果位于该位置的HTML元素不可返回（比如文本框的滚动条），则返回它的父元素（比如文本框）。如果坐标值无意义（比如负值或超过视口大小），则返回<code class="highlighter-rouge">null</code>。</p>
+
+<h2 id="生成节点的方法">生成节点的方法</h2>
+
+<p>以下方法用于生成元素节点。</p>
+
+<h3 id="documentcreateelement">document.createElement()</h3>
+
+<p><code class="highlighter-rouge">document.createElement</code>方法用来生成网页元素节点。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">newDiv</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'div'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">createElement</code>方法的参数为元素的标签名，即元素节点的<code class="highlighter-rouge">tagName</code>属性，对于 HTML 网页大小写不敏感，即参数为<code class="highlighter-rouge">div</code>或<code class="highlighter-rouge">DIV</code>返回的是同一种节点。如果参数里面包含尖括号（即<code class="highlighter-rouge">&lt;</code>和<code class="highlighter-rouge">&gt;</code>）会报错。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'&lt;div&gt;'</span><span class="p">)</span>
+<span class="c1">// DOMException: The tag name provided ('&lt;div&gt;') is not a valid name</span>
+</code></pre></div></div>
+
+<h3 id="documentcreatetextnode">document.createTextNode()</h3>
+
+<p><code class="highlighter-rouge">document.createTextNode</code>方法用来生成文本节点，参数为所要生成的文本节点的内容。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">newDiv</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'div'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">newContent</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createTextNode</span><span class="p">(</span><span class="s1">'Hello'</span><span class="p">);</span>
+<span class="nx">newDiv</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">newContent</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>上面代码新建一个<code class="highlighter-rouge">div</code>节点和一个文本节点，然后将文本节点插入<code class="highlighter-rouge">div</code>节点。</p>
+
+<p>这个方法可以确保返回的节点，被浏览器当作文本渲染，而不是当作HTML代码渲染。因此，可以用来展示用户的输入，避免XSS攻击。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">div</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'div'</span><span class="p">);</span>
+<span class="nx">div</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">createTextNode</span><span class="p">(</span><span class="s1">'&lt;span&gt;Foo &amp; bar&lt;/span&gt;'</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">div</span><span class="p">.</span><span class="nx">innerHTML</span><span class="p">)</span>
+<span class="c1">// &amp;lt;span&amp;gt;Foo &amp;amp; bar&amp;lt;/span&amp;gt;</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">createTextNode</code>方法对大于号和小于号进行转义，从而保证即使用户输入的内容包含恶意代码，也能正确显示。</p>
+
+<p>需要注意的是，该方法不对单引号和双引号转义，所以不能用来对HTML属性赋值。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function escapeHtml(str) {
+  var div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
+var userWebsite = '" onmouseover="alert(\'derp\')" "';
+var profileLink = '<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"' + escapeHtml(userWebsite) + '"</span><span class="nt">&gt;</span>Bob<span class="nt">&lt;/a&gt;</span>';
+var div = document.getElementById('target');
+div.innerHTML = profileLink;
+// <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">""</span> <span class="na">onmouseover=</span><span class="s">"alert('derp')"</span> <span class="err">""</span><span class="nt">&gt;</span>Bob<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<p>上面代码中，由于<code class="highlighter-rouge">createTextNode</code>方法不转义双引号，导致<code class="highlighter-rouge">onmouseover</code>方法被注入了代码。</p>
+
+<h3 id="documentcreateattribute">document.createAttribute()</h3>
+
+<p><code class="highlighter-rouge">document.createAttribute</code>方法生成一个新的属性对象节点，并返回它。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">attribute</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createAttribute</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>createAttribute方法的参数name，是属性的名称。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">node</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"div1"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createAttribute</span><span class="p">(</span><span class="s2">"my_attrib"</span><span class="p">);</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="s2">"newVal"</span><span class="p">;</span>
+<span class="nx">node</span><span class="p">.</span><span class="nx">setAttributeNode</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+
+<span class="c1">// 等同于</span>
+
+<span class="kd">var</span> <span class="nx">node</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"div1"</span><span class="p">);</span>
+<span class="nx">node</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s2">"my_attrib"</span><span class="p">,</span> <span class="s2">"newVal"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="documentcreatedocumentfragment">document.createDocumentFragment()</h3>
+
+<p>createDocumentFragment方法生成一个DocumentFragment对象。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">docFragment</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createDocumentFragment</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>DocumentFragment对象是一个存在于内存的DOM片段，但是不属于当前文档，常常用来生成较复杂的DOM结构，然后插入当前文档。这样做的好处在于，因为DocumentFragment不属于当前文档，对它的任何改动，都不会引发网页的重新渲染，比直接修改当前文档的DOM有更好的性能表现。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">docfrag</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createDocumentFragment</span><span class="p">();</span>
+
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">].</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">li</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"li"</span><span class="p">);</span>
+  <span class="nx">li</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">e</span><span class="p">;</span>
+  <span class="nx">docfrag</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">li</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">docfrag</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="事件相关的方法">事件相关的方法</h2>
+
+<h3 id="documentcreateevent">document.createEvent()</h3>
+
+<p><code class="highlighter-rouge">document.createEvent</code>方法生成一个事件对象，该对象可以被<code class="highlighter-rouge">element.dispatchEvent</code>方法使用，触发指定事件。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">event</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createEvent</span><span class="p">(</span><span class="nx">type</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>createEvent方法的参数是事件类型，比如UIEvents、MouseEvents、MutationEvents、HTMLEvents。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">event</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createEvent</span><span class="p">(</span><span class="s1">'Event'</span><span class="p">);</span>
+<span class="nx">event</span><span class="p">.</span><span class="nx">initEvent</span><span class="p">(</span><span class="s1">'build'</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'build'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+<span class="p">},</span> <span class="kc">false</span><span class="p">);</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">dispatchEvent</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="documentaddeventlistenerdocumentremoveeventlistenerdocumentdispatchevent">document.addEventListener()，document.removeEventListener()，document.dispatchEvent()</h3>
+
+<p>以下三个方法与<code class="highlighter-rouge">document</code>节点的事件相关。这些方法都继承自EventTarget接口，详细介绍参见《Event对象》章节的《EventTarget》部分。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 添加事件监听函数</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="nx">listener</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+
+<span class="c1">// 移除事件监听函数</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="nx">listener</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+
+<span class="c1">// 触发事件</span>
+<span class="kd">var</span> <span class="nx">event</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Event</span><span class="p">(</span><span class="s1">'click'</span><span class="p">);</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">dispatchEvent</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="其他方法">其他方法</h2>
+
+<h3 id="documenthasfocus">document.hasFocus()</h3>
+
+<p><code class="highlighter-rouge">document.hasFocus</code>方法返回一个布尔值，表示当前文档之中是否有元素被激活或获得焦点。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">focused</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">hasFocus</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>注意，有焦点的文档必定被激活（active），反之不成立，激活的文档未必有焦点。比如如果用户点击按钮，从当前窗口跳出一个新窗口，该新窗口就是激活的，但是不拥有焦点。</p>
+
+<h3 id="documentcreatenodeiteratordocumentcreatetreewalker">document.createNodeIterator()，document.createTreeWalker()</h3>
+
+<p>以下方法用于遍历元素节点。</p>
+
+<p><strong>（1）document.createNodeIterator()</strong></p>
+
+<p><code class="highlighter-rouge">document.createNodeIterator</code>方法返回一个DOM的子节点遍历器。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">nodeIterator</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createNodeIterator</span><span class="p">(</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">,</span>
+  <span class="nx">NodeFilter</span><span class="p">.</span><span class="nx">SHOW_ELEMENT</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<p>上面代码返回body元素的遍历器。createNodeIterator方法的第一个参数为遍历器的根节点，第二个参数为所要遍历的节点类型，这里指定为元素节点。其他类型还有所有节点（NodeFilter.SHOW_ALL）、文本节点（NodeFilter.SHOW_TEXT）、评论节点（NodeFilter.SHOW_COMMENT）等。</p>
+
+<p>所谓“遍历器”，在这里指可以用nextNode方法和previousNode方法依次遍历根节点的所有子节点。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">nodeIterator</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createNodeIterator</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">pars</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="kd">var</span> <span class="nx">currentNode</span><span class="p">;</span>
+
+<span class="k">while</span> <span class="p">(</span><span class="nx">currentNode</span> <span class="o">=</span> <span class="nx">nodeIterator</span><span class="p">.</span><span class="nx">nextNode</span><span class="p">())</span> <span class="p">{</span>
+  <span class="nx">pars</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">currentNode</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>上面代码使用遍历器的nextNode方法，将根节点的所有子节点，按照从头部到尾部的顺序，读入一个数组。nextNode方法先返回遍历器的内部指针所在的节点，然后会将指针移向下一个节点。所有成员遍历完成后，返回null。previousNode方法则是先将指针移向上一个节点，然后返回该节点。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">nodeIterator</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createNodeIterator</span><span class="p">(</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">,</span>
+  <span class="nx">NodeFilter</span><span class="p">.</span><span class="nx">SHOW_ELEMENT</span>
+<span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">currentNode</span> <span class="o">=</span> <span class="nx">nodeIterator</span><span class="p">.</span><span class="nx">nextNode</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">previousNode</span> <span class="o">=</span> <span class="nx">nodeIterator</span><span class="p">.</span><span class="nx">previousNode</span><span class="p">();</span>
+
+<span class="nx">currentNode</span> <span class="o">===</span> <span class="nx">previousNode</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>上面代码中，currentNode和previousNode都指向同一个的节点。</p>
+
+<p>有一个需要注意的地方，遍历器返回的第一个节点，总是根节点。</p>
+
+<p><strong>（2）document.createTreeWalker()</strong></p>
+
+<p><code class="highlighter-rouge">document.createTreeWalker</code>方法返回一个DOM的子树遍历器。它与createNodeIterator方法的区别在于，后者只遍历子节点，而它遍历整个子树。</p>
+
+<p><code class="highlighter-rouge">document.createTreeWalker</code>方法的第一个参数，是所要遍历的根节点，第二个参数指定所要遍历的节点类型。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">treeWalker</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createTreeWalker</span><span class="p">(</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">,</span>
+  <span class="nx">NodeFilter</span><span class="p">.</span><span class="nx">SHOW_ELEMENT</span>
+<span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">nodeList</span> <span class="o">=</span> <span class="p">[];</span>
+
+<span class="k">while</span><span class="p">(</span><span class="nx">treeWalker</span><span class="p">.</span><span class="nx">nextNode</span><span class="p">())</span> <span class="nx">nodeList</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">treeWalker</span><span class="p">.</span><span class="nx">currentNode</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>上面代码遍历body节点下属的所有元素节点，将它们插入nodeList数组。</p>
+
+<h3 id="documentadoptnode">document.adoptNode()</h3>
+
+<p><code class="highlighter-rouge">document.adoptNode</code>方法将某个节点，从其原来所在的文档移除，插入当前文档，并返回插入后的新节点。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">node</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">adoptNode</span><span class="p">(</span><span class="nx">externalNode</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="documentimportnode">document.importNode()</h3>
+
+<p><code class="highlighter-rouge">document.importNode</code>方法从外部文档拷贝指定节点，插入当前文档。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">node</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">importNode</span><span class="p">(</span><span class="nx">externalNode</span><span class="p">,</span> <span class="nx">deep</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">document.importNode</code>方法用于创造一个外部节点的拷贝，然后插入当前文档。它的第一个参数是外部节点，第二个参数是一个布尔值，表示对外部节点是深拷贝还是浅拷贝，默认是浅拷贝（false）。虽然第二个参数是可选的，但是建议总是保留这个参数，并设为<code class="highlighter-rouge">true</code>。</p>
+
+<p>注意，<code class="highlighter-rouge">importNode方法</code>只是拷贝外部节点，这时该节点的父节点是null。下一步还必须将这个节点插入当前文档的DOM树。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">iframe</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'iframe'</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">oldNode</span> <span class="o">=</span> <span class="nx">iframe</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">.</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'myNode'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">newNode</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">importNode</span><span class="p">(</span><span class="nx">oldNode</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"container"</span><span class="p">).</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">newNode</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>上面代码从<code class="highlighter-rouge">iframe</code>窗口，拷贝一个指定节点<code class="highlighter-rouge">myNode</code>，插入当前文档。</p>
+
+<h3 id="documentgetselection">document.getSelection()</h3>
+
+<p>这个方法指向<code class="highlighter-rouge">window.getSelection()</code>，参见<code class="highlighter-rouge">window</code>对象一节的介绍。</p>
+
+
+</article>
+
+<div class="row">
+<div class="twelve columns">
+
+<h2>留言</h2>
+
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'jstutorial'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="javascript:if(confirm('http://disqus.com/?ref_noscript  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://disqus.com/?ref_noscript'" tppabs="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="javascript:if(confirm('http://disqus.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://disqus.com/'" tppabs="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</section>
+
+</div>
+</div>
+
+<footer>
+<div class="row">
+<div class="twelve columns">
+	<p><a href="license.html" tppabs="http://javascript.ruanyifeng.com/introduction/license.html">版权声明</a> | last modified on 2014-05-18 </p>
+</div>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-43771063-1', 'http://javascript.ruanyifeng.com/dom/ruanyifeng.com');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
+
+

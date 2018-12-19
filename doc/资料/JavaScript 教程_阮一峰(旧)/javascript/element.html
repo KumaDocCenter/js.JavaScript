@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>Element对象 -- JavaScript 标准参考教程（alpha）</title>
+  
+  <!-- Included CSS Files (Uncompressed) -->
+  <!--
+  <link rel="stylesheet" href="stylesheets/foundation.css">
+  -->
+  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="foundation.css" tppabs="http://javascript.ruanyifeng.com/css/foundation.css">
+  <link rel="stylesheet" href="main.css" tppabs="http://javascript.ruanyifeng.com/css/main.css">
+
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="html5.js" tppabs="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <script src="jquery.js" tppabs="http://javascript.ruanyifeng.com/js/jquery.js"></script>
+  <script src="toc.js" tppabs="http://javascript.ruanyifeng.com/js/toc.js"></script>
+  <script src="main.js" tppabs="http://javascript.ruanyifeng.com/js/main.js"></script>
+
+</head>
+<body>
+
+<header class="top-bar" id="header">
+
+<div class="fixed">
+
+<nav class="top-bar">
+<ul>
+<!-- Title Area -->
+	<li class="name has-dropdown">
+	<h1><a href="index.htm" tppabs="http://javascript.ruanyifeng.com/">JavaScript 标准参考教程（alpha） </a></h1>
+		<ul class="dropdown">
+			
+			<li><a href="index.htm#introduction" tppabs="http://javascript.ruanyifeng.com/#introduction">导论</a></li>
+			
+			<li><a href="index.htm#grammar" tppabs="http://javascript.ruanyifeng.com/#grammar">语法</a></li>
+			
+			<li><a href="index.htm#stdlib" tppabs="http://javascript.ruanyifeng.com/#stdlib">标准库</a></li>
+			
+			<li><a href="index.htm#oop" tppabs="http://javascript.ruanyifeng.com/#oop">面向对象编程</a></li>
+			
+			<li><a href="index.htm#advanced" tppabs="http://javascript.ruanyifeng.com/#advanced">语法专题</a></li>
+			
+			<li><a href="index.htm#dom" tppabs="http://javascript.ruanyifeng.com/#dom">DOM模型</a></li>
+			
+			<li><a href="index.htm#bom" tppabs="http://javascript.ruanyifeng.com/#bom">浏览器环境</a></li>
+			
+			<li><a href="index.htm#htmlapi" tppabs="http://javascript.ruanyifeng.com/#htmlapi">Web API</a></li>
+			
+		</ul>
+	</li>
+</ul>
+
+<section>
+
+
+<ul class="left">
+<li class="divider"></li>
+<li class="has-dropdown"><a class="active" href="#"> DOM模型 </a><ul class="dropdown">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="attribute.html" tppabs="http://javascript.ruanyifeng.com/dom/attribute.html">属性的操作</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="css.html" tppabs="http://javascript.ruanyifeng.com/dom/css.html">CSS操作</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="document.html" tppabs="http://javascript.ruanyifeng.com/dom/document.html">document节点</a></li>
+
+
+
+
+
+
+
+<li class="active"><a href="#">Element对象</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="event-type.html" tppabs="http://javascript.ruanyifeng.com/dom/event-type.html">事件种类</a></li>
+
+
+
+
+
+<li><a href="event.html" tppabs="http://javascript.ruanyifeng.com/dom/event.html">事件模型</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="image.html" tppabs="http://javascript.ruanyifeng.com/dom/image.html">Image对象</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mutationobserver.html" tppabs="http://javascript.ruanyifeng.com/dom/mutationobserver.html">Mutation Observer API</a></li>
+
+
+
+
+
+
+
+<li><a href="node.html" tppabs="http://javascript.ruanyifeng.com/dom/node.html">DOM 模型概述</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="text.html" tppabs="http://javascript.ruanyifeng.com/dom/text.html">Text节点和DocumentFragment节点</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul></li>
+<li class="divider"></li>
+<li class="has-dropdown nav-3"><a href="#"> Element对象</a><ul class="dropdown">
+</ul></li>
+</ul>
+
+
+<ul class="right">
+	<li class="divider"></li>
+	<li>
+		<a href="javascript:if(confirm('https://github.com/ruanyf/jstutorial  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://github.com/ruanyf/jstutorial'" tppabs="https://github.com/ruanyf/jstutorial" target="_blank">GitHub <i class="foundicon-edit"></i></a>
+	</li>
+	<li class="divider"></li>
+	<li>
+		<a href="#">TOP <i class="foundicon-up-arrow"></i></a>
+	</li>
+</ul>
+
+</section>
+
+</nav>  
+</div>
+</header>
+
+
+<article class="bookPage">
+
+  <div class="row">
+    <div class="twelve columns">
+
+<h1> Element对象 </h1>
+
+<aside class="right"><p>来自<a href="index.htm" tppabs="http://javascript.ruanyifeng.com/">《JavaScript 标准参考教程（alpha）》</a>，by 阮一峰</p></aside>
+
+<div id="toc" class="panel callout radius">目录</div>
+
+
+<p><code class="highlighter-rouge">Element</code>对象对应网页的HTML标签元素。每一个HTML标签元素，在DOM树上都会转化成一个<code class="highlighter-rouge">Element</code>节点对象（以下简称元素节点）。</p>
+
+<p>元素节点的<code class="highlighter-rouge">nodeType</code>属性都是<code class="highlighter-rouge">1</code>，但是不同HTML标签生成的元素节点是不一样的。JavaScript内部使用不同的构造函数，生成不同的Element节点，比如<code class="highlighter-rouge">&lt;a&gt;</code>标签的节点对象由<code class="highlighter-rouge">HTMLAnchorElement()</code>构造函数生成，<code class="highlighter-rouge">&lt;button&gt;</code>标签的节点对象由<code class="highlighter-rouge">HTMLButtonElement()</code>构造函数生成。因此，元素节点不是一种对象，而是一组对象。</p>
+
+<h2 id="特征相关的属性">特征相关的属性</h2>
+
+<p>以下属性与元素特点本身的特征相关。</p>
+
+<h3 id="elementattributes">Element.attributes</h3>
+
+<p><code class="highlighter-rouge">Element.attributes</code>属性返回一个类似数组的对象，成员是当前元素节点的所有属性节点，详见本章《属性的操作》一节。</p>
+
+<h3 id="elementidelementtagname">Element.id，Element.tagName</h3>
+
+<p><code class="highlighter-rouge">Element.id</code>属性返回指定元素的<code class="highlighter-rouge">id</code>属性，该属性可读写。</p>
+
+<p><code class="highlighter-rouge">Element.tagName</code>属性返回指定元素的大写标签名，与<code class="highlighter-rouge">nodeName</code>属性的值相等。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// HTML代码为</span>
+<span class="c1">// &lt;span id="myspan"&gt;Hello&lt;/span&gt;</span>
+<span class="kd">var</span> <span class="nx">span</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'myspan'</span><span class="p">);</span>
+<span class="nx">span</span><span class="p">.</span><span class="nx">id</span> <span class="c1">// "myspan"</span>
+<span class="nx">span</span><span class="p">.</span><span class="nx">tagName</span> <span class="c1">// "SPAN"</span>
+</code></pre></div></div>
+
+<h3 id="elementinnerhtml">Element.innerHTML</h3>
+
+<p><code class="highlighter-rouge">Element.innerHTML</code>属性返回该元素包含的 HTML 代码。该属性可读写，常用来设置某个节点的内容。</p>
+
+<p>如果将<code class="highlighter-rouge">innerHTML</code>属性设为空，等于删除所有它包含的所有节点。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">el</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>上面代码等于将<code class="highlighter-rouge">el</code>节点变成了一个空节点，<code class="highlighter-rouge">el</code>原来包含的节点被全部删除。</p>
+
+<p>注意，如果文本节点中包含<code class="highlighter-rouge">&amp;</code>、小于号（<code class="highlighter-rouge">&lt;</code>）和大于号（<code class="highlighter-rouge">&gt;</code>），<code class="highlighter-rouge">innerHTML</code>属性会将它们转为实体形式<code class="highlighter-rouge">&amp;amp;</code>、<code class="highlighter-rouge">&amp;lt;</code>、<code class="highlighter-rouge">&amp;gt;</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// HTML代码如下 &lt;p id="para"&gt; 5 &gt; 3 &lt;/p&gt;</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'para'</span><span class="p">).</span><span class="nx">innerHTML</span>
+<span class="c1">// 5 &amp;gt; 3</span>
+</code></pre></div></div>
+
+<p>如果插入的文本包含 HTML 标签，会被解析成为节点对象插入 DOM。注意，如果文本之中含有<code class="highlighter-rouge">&lt;script&gt;</code>标签，虽然可以生成<code class="highlighter-rouge">script</code>节点，但是插入的代码不会执行。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="s2">"&lt;script&gt;alert('haha')&lt;/script&gt;"</span><span class="p">;</span>
+<span class="nx">el</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>上面代码将脚本插入内容，脚本并不会执行。但是，<code class="highlighter-rouge">innerHTML</code>还是有安全风险的。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="s2">"&lt;img src=x onerror=alert(1)&gt;"</span><span class="p">;</span>
+<span class="nx">el</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">alert</code>方法是会执行的。因此为了安全考虑，如果插入的是文本，最好用<code class="highlighter-rouge">textContent</code>属性代替<code class="highlighter-rouge">innerHTML</code>。</p>
+
+<h3 id="elementouterhtml">Element.outerHTML</h3>
+
+<p><code class="highlighter-rouge">Element.outerHTML</code>属性返回一个字符串，内容为指定元素节点的所有HTML代码，包括它自身和包含的所有子元素。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// HTML代码如下</span>
+<span class="c1">// &lt;div id="d"&gt;&lt;p&gt;Hello&lt;/p&gt;&lt;/div&gt;</span>
+
+<span class="nx">d</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'d'</span><span class="p">);</span>
+<span class="nx">d</span><span class="p">.</span><span class="nx">outerHTML</span>
+<span class="c1">// '&lt;div id="d"&gt;&lt;p&gt;Hello&lt;/p&gt;&lt;/div&gt;'</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">outerHTML</code>属性是可读写的，对它进行赋值，等于替换掉当前元素。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// HTML代码如下</span>
+<span class="c1">// &lt;div id="container"&gt;&lt;div id="d"&gt;Hello&lt;/div&gt;&lt;/div&gt;</span>
+
+<span class="nx">container</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'container'</span><span class="p">);</span>
+<span class="nx">d</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"d"</span><span class="p">);</span>
+<span class="nx">container</span><span class="p">.</span><span class="nx">firstChild</span><span class="p">.</span><span class="nx">nodeName</span> <span class="c1">// "DIV"</span>
+<span class="nx">d</span><span class="p">.</span><span class="nx">nodeName</span> <span class="c1">// "DIV"</span>
+
+<span class="nx">d</span><span class="p">.</span><span class="nx">outerHTML</span> <span class="o">=</span> <span class="s1">'&lt;p&gt;Hello&lt;/p&gt;'</span><span class="p">;</span>
+<span class="nx">container</span><span class="p">.</span><span class="nx">firstChild</span><span class="p">.</span><span class="nx">nodeName</span> <span class="c1">// "P"</span>
+<span class="nx">d</span><span class="p">.</span><span class="nx">nodeName</span> <span class="c1">// "DIV"</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">outerHTML</code>属性重新赋值以后，内层的<code class="highlighter-rouge">div</code>元素就不存在了，被<code class="highlighter-rouge">p</code>元素替换了。但是，变量<code class="highlighter-rouge">d</code>依然指向原来的<code class="highlighter-rouge">div</code>元素，这表示被替换的<code class="highlighter-rouge">DIV</code>元素还存在于内存中。</p>
+
+<h3 id="elementclassnameelementclasslist">Element.className，Element.classList</h3>
+
+<p><code class="highlighter-rouge">className</code>属性用来读写当前元素节点的<code class="highlighter-rouge">class</code>属性。它的值是一个字符串，每个<code class="highlighter-rouge">class</code>之间用空格分割。</p>
+
+<p><code class="highlighter-rouge">classList</code>属性则返回一个类似数组的对象，当前元素节点的每个<code class="highlighter-rouge">class</code>就是这个对象的一个成员。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"one two three"</span> <span class="na">id=</span><span class="s">"myDiv"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>上面这个<code class="highlighter-rouge">div</code>元素的节点对象的<code class="highlighter-rouge">className</code>属性和<code class="highlighter-rouge">classList</code>属性，分别如下。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'myDiv'</span><span class="p">).</span><span class="nx">className</span>
+<span class="c1">// "one two three"</span>
+
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'myDiv'</span><span class="p">).</span><span class="nx">classList</span>
+<span class="c1">// {</span>
+<span class="c1">//   0: "one"</span>
+<span class="c1">//   1: "two"</span>
+<span class="c1">//   2: "three"</span>
+<span class="c1">//   length: 3</span>
+<span class="c1">// }</span>
+</code></pre></div></div>
+
+<p>从上面代码可以看出，<code class="highlighter-rouge">className</code>属性返回一个空格分隔的字符串，而<code class="highlighter-rouge">classList</code>属性指向一个类似数组的对象，该对象的<code class="highlighter-rouge">length</code>属性（只读）返回当前元素的<code class="highlighter-rouge">class</code>数量。</p>
+
+<p>classList对象有下列方法。</p>
+
+<ul>
+  <li>add()：增加一个class。</li>
+  <li>remove()：移除一个class。</li>
+  <li>contains()：检查当前元素是否包含某个class。</li>
+  <li>toggle()：将某个class移入或移出当前元素。</li>
+  <li>item()：返回指定索引位置的class。</li>
+  <li>toString()：将class的列表转为字符串。</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">myDiv</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'myCssClass'</span><span class="p">);</span>
+<span class="nx">myDiv</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'foo'</span><span class="p">,</span> <span class="s1">'bar'</span><span class="p">);</span>
+<span class="nx">myDiv</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s1">'myCssClass'</span><span class="p">);</span>
+<span class="nx">myDiv</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">toggle</span><span class="p">(</span><span class="s1">'myCssClass'</span><span class="p">);</span> <span class="c1">// 如果myCssClass不存在就加入，否则移除</span>
+<span class="nx">myDiv</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="s1">'myCssClass'</span><span class="p">);</span> <span class="c1">// 返回 true 或者 false</span>
+<span class="nx">myDiv</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">item</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span> <span class="c1">// 返回第一个Class</span>
+<span class="nx">myDiv</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>下面比较一下，className和classList在添加和删除某个类时的写法。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 添加class</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'foo'</span><span class="p">).</span><span class="nx">className</span> <span class="o">+=</span> <span class="s1">'bold'</span><span class="p">;</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'foo'</span><span class="p">).</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'bold'</span><span class="p">);</span>
+
+<span class="c1">// 删除class</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'foo'</span><span class="p">).</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s1">'bold'</span><span class="p">);</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'foo'</span><span class="p">).</span><span class="nx">className</span> <span class="o">=</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'foo'</span><span class="p">).</span><span class="nx">className</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/^bold$/</span><span class="p">,</span> <span class="s1">''</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>toggle方法可以接受一个布尔值，作为第二个参数。如果为<code class="highlighter-rouge">true</code>，则添加该属性；如果为<code class="highlighter-rouge">false</code>，则去除该属性。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">el</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">toggle</span><span class="p">(</span><span class="s1">'abc'</span><span class="p">,</span> <span class="nx">boolValue</span><span class="p">);</span>
+
+<span class="c1">// 等同于</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">boolValue</span><span class="p">){</span>
+  <span class="nx">el</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'abc'</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="nx">el</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s1">'abc'</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="盒状模型相关属性">盒状模型相关属性</h2>
+
+<h3 id="elementclientheightelementclientwidth">Element.clientHeight，Element.clientWidth</h3>
+
+<p><code class="highlighter-rouge">Element.clientHeight</code>属性返回元素节点可见部分的高度，<code class="highlighter-rouge">Element.clientWidth</code>属性返回元素节点可见部分的宽度。所谓“可见部分”，指的是不包括溢出（overflow）的大小，只返回该元素在容器中占据的大小，对于有滚动条的元素来说，它们等于滚动条围起来的区域大小。这两个属性的值包括Padding、但不包括滚动条、边框和Margin，单位为像素。这两个属性可以计算得到，等于元素的CSS高度（或宽度）加上CSS的Padding，减去滚动条（如果存在）。</p>
+
+<p>对于整张网页来说，当前可见高度（即视口高度）要从<code class="highlighter-rouge">document.documentElement</code>对象（即<code class="highlighter-rouge"><span class="nt">&lt;html&gt;</span></code>节点）上获取，等同于<code class="highlighter-rouge">window.innerHeight</code>属性减去水平滚动条的高度。没有滚动条时，这两个值是相等的；有滚动条时，前者小于后者。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">rootElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">;</span>
+
+<span class="c1">// 没有水平滚动条时</span>
+<span class="nx">rootElement</span><span class="p">.</span><span class="nx">clientHeight</span> <span class="o">===</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span> <span class="c1">// true</span>
+
+<span class="c1">// 没有垂直滚动条时</span>
+<span class="nx">rootElement</span><span class="p">.</span><span class="nx">clientWidth</span> <span class="o">===</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>注意，这里不能用<code class="highlighter-rouge">document.body.clientHeight</code>或<code class="highlighter-rouge">document.body.clientWidth</code>，因为<code class="highlighter-rouge">document.body</code>返回<code class="highlighter-rouge">&lt;body&gt;</code>节点，与视口大小是无关的。</p>
+
+<h3 id="elementclientleftelementclienttop">Element.clientLeft，Element.clientTop</h3>
+
+<p><code class="highlighter-rouge">Element.clientLeft</code>属性等于元素节点左边框（left border）的宽度，<code class="highlighter-rouge">Element.clientTop</code>属性等于网页元素顶部边框的宽度，单位为像素。</p>
+
+<p>这两个属性包括滚动条的宽度，但不包括Margin和Padding。不过，一般来说，除非排版方向是从右到左，且发生元素高度溢出，否则不可能存在左侧滚动条，亦不可能存在顶部的滚动条。</p>
+
+<p>如果元素的显示设为<code class="highlighter-rouge">display: inline</code>，它的<code class="highlighter-rouge">clientLeft</code>属性一律为<code class="highlighter-rouge">0</code>，不管是否存在左边框。</p>
+
+<h3 id="elementscrollheightelementscrollwidth">Element.scrollHeight，Element.scrollWidth</h3>
+
+<p><code class="highlighter-rouge">Element.scrollHeight</code>属性返回某个网页元素的总高度，<code class="highlighter-rouge">Element.scrollWidth</code>属性返回总宽度，可以理解成元素在垂直和水平两个方向上可以滚动的距离。它们都包括由于溢出容器而无法显示在网页上的那部分高度或宽度。这两个属性是只读属性。</p>
+
+<p>它们返回的是整个元素的高度或宽度，包括由于存在滚动条而不可见的部分。默认情况下，它们包括Padding，但不包括Border和Margin。</p>
+
+<p>整张网页的总高度可以从<code class="highlighter-rouge">document.documentElement</code>或<code class="highlighter-rouge">document.body</code>上读取。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">scrollHeight</span>
+</code></pre></div></div>
+
+<p>如果内容正好适合它的容器，没有溢出，那么<code class="highlighter-rouge">Element.scrollHeight</code>和<code class="highlighter-rouge">Element.clientHeight</code>是相等的，<code class="highlighter-rouge">scrollWidth</code>属性与<code class="highlighter-rouge">clientWidth</code>属性是相等的。如果存在溢出，那么<code class="highlighter-rouge">scrollHeight</code>属性大于<code class="highlighter-rouge">clientHeight</code>属性，<code class="highlighter-rouge">scrollWidth</code>属性大于<code class="highlighter-rouge">clientWidth</code>属性。</p>
+
+<p>存在溢出时，当滚动条滚动到内容底部时，下面的表达式为<code class="highlighter-rouge">true</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">element</span><span class="p">.</span><span class="nx">scrollHeight</span> <span class="o">-</span> <span class="nx">element</span><span class="p">.</span><span class="nx">scrollTop</span> <span class="o">===</span> <span class="nx">element</span><span class="p">.</span><span class="nx">clientHeight</span>
+</code></pre></div></div>
+
+<p>如果滚动条没有滚动到内容底部，上面的表达式为<code class="highlighter-rouge">false</code>。这个特性结合<code class="highlighter-rouge">onscroll</code>事件，可以判断用户是否滚动到了指定元素的底部，比如向用户展示某个内容区块时，判断用户是否滚动到了区块的底部。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">rules</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'rules'</span><span class="p">);</span>
+<span class="nx">rules</span><span class="p">.</span><span class="nx">onscroll</span> <span class="o">=</span> <span class="nx">checking</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">checking</span><span class="p">(){</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">scrollHeight</span> <span class="o">-</span> <span class="k">this</span><span class="p">.</span><span class="nx">scrollTop</span> <span class="o">===</span> <span class="k">this</span><span class="p">.</span><span class="nx">clientHeight</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'谢谢阅读'</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'您还未读完'</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="elementscrollleftelementscrolltop">Element.scrollLeft，Element.scrollTop</h3>
+
+<p><code class="highlighter-rouge">Element.scrollLeft</code>属性表示网页元素的水平滚动条向右侧滚动的像素数量，<code class="highlighter-rouge">Element.scrollTop</code>属性表示网页元素的垂直滚动条向下滚动的像素数量。对于那些没有滚动条的网页元素，这两个属性总是等于0。</p>
+
+<p>如果要查看整张网页的水平的和垂直的滚动距离，要从<code class="highlighter-rouge">document.documentElement</code>元素上读取。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">scrollLeft</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">scrollTop</span>
+</code></pre></div></div>
+
+<p>这两个属性都可读写，设置该属性的值，会导致浏览器将指定元素自动滚动到相应的位置。</p>
+
+<h3 id="elementoffsetheightelementoffsetwidth">Element.offsetHeight，Element.offsetWidth</h3>
+
+<p><code class="highlighter-rouge">Element.offsetHeight</code>属性返回元素的垂直高度，<code class="highlighter-rouge">Element.offsetWidth</code>属性返回水平宽度。<code class="highlighter-rouge">offsetHeight</code>可以理解成元素左下角距离左上角的位移，<code class="highlighter-rouge">offsetWidth</code>是元素右上角距离左上角的位移。它们的单位为像素，都是只读。</p>
+
+<p>这两个属性值包括<code class="highlighter-rouge">Padding</code>和<code class="highlighter-rouge">Border</code>、以及滚动条。这也意味着，如果不存在内容溢出，<code class="highlighter-rouge">Element.offsetHeight</code>只比<code class="highlighter-rouge">Element.clientHeight</code>多了边框的高度。</p>
+
+<p>整张网页的高度，可以在<code class="highlighter-rouge">document.documentElement</code>和<code class="highlighter-rouge">document.body</code>上读取。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 网页总高度</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">offsetHeight</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">offsetHeight</span>
+
+<span class="c1">// 网页总宽度</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">offsetWidth</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">offsetWidth</span>
+</code></pre></div></div>
+
+<h3 id="elementoffsetleftelementoffsettop">Element.offsetLeft，Element.offsetTop</h3>
+
+<p><code class="highlighter-rouge">Element.offsetLeft</code>返回当前元素左上角相对于<code class="highlighter-rouge">Element.offsetParent</code>节点的水平位移，<code class="highlighter-rouge">Element.offsetTop</code>返回垂直位移，单位为像素。通常，这两个值是指相对于父节点的位移。</p>
+
+<p>下面的代码可以算出元素左上角相对于整张网页的坐标。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">getElementPosition</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">e</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span>  <span class="p">{</span>
+    <span class="nx">x</span> <span class="o">+=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">offsetLeft</span><span class="p">;</span>
+    <span class="nx">y</span> <span class="o">+=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">offsetTop</span><span class="p">;</span>
+    <span class="nx">e</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">offsetParent</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="p">{</span><span class="na">x</span><span class="p">:</span> <span class="nx">x</span><span class="p">,</span> <span class="na">y</span><span class="p">:</span> <span class="nx">y</span><span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>注意，上面的代码假定所有元素都适合它的容器，不存在内容溢出。</p>
+
+<h3 id="elementstyle">Element.style</h3>
+
+<p>每个元素节点都有<code class="highlighter-rouge">style</code>用来读写该元素的行内样式信息，具体介绍参见《CSS操作》一节。</p>
+
+<h3 id="总结">总结</h3>
+
+<p>整张网页的高度和宽度，可以从<code class="highlighter-rouge">document.documentElement</code>（即<code class="highlighter-rouge"><span class="nt">&lt;html&gt;</span></code>元素）或<code class="highlighter-rouge">&lt;body&gt;</code>元素上读取。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 网页总高度</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">offsetHeight</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">scrollHeight</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">offsetHeight</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">scrollHeight</span>
+
+<span class="c1">// 网页总宽度</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">offsetWidth</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">scrollWidth</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">offsetWidth</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">scrollWidth</span>
+</code></pre></div></div>
+
+<p>由于<code class="highlighter-rouge"><span class="nt">&lt;html&gt;</span></code>和<code class="highlighter-rouge">&lt;body&gt;</code>的宽度可能设得不一样，因此从<code class="highlighter-rouge">&lt;body&gt;</code>上取值会更保险一点。</p>
+
+<p>视口的高度和宽度（包括滚动条），有两种方法可以获得。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 视口高度</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span> <span class="c1">// 包括滚动条</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">clientHeight</span> <span class="c1">// 不包括滚动条</span>
+
+<span class="c1">// 视口宽度</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span> <span class="c1">// 包括滚动条</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">clientWidth</span> <span class="c1">// 不包括滚动条</span>
+</code></pre></div></div>
+
+<p>某个网页元素距离视口左上角的坐标，使用<code class="highlighter-rouge">Element.getBoundingClientRect</code>方法读取。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 网页元素左上角的视口横坐标</span>
+<span class="nx">Element</span><span class="p">.</span><span class="nx">getBoundingClientRect</span><span class="p">().</span><span class="nx">left</span>
+
+<span class="c1">// 网页元素左上角的视口纵坐标</span>
+<span class="nx">Element</span><span class="p">.</span><span class="nx">getBoundingClientRect</span><span class="p">().</span><span class="nx">top</span>
+</code></pre></div></div>
+
+<p>某个网页元素距离网页左上角的坐标，使用视口坐标加上网页滚动距离。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 网页元素左上角的网页横坐标</span>
+<span class="nx">Element</span><span class="p">.</span><span class="nx">getBoundingClientRect</span><span class="p">().</span><span class="nx">left</span> <span class="o">+</span> <span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">scrollLeft</span>
+
+<span class="c1">// 网页元素左上角的网页纵坐标</span>
+<span class="nx">Element</span><span class="p">.</span><span class="nx">getBoundingClientRect</span><span class="p">().</span><span class="nx">top</span> <span class="o">+</span> <span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">scrollTop</span>
+</code></pre></div></div>
+
+<p>网页目前滚动的距离，可以从<code class="highlighter-rouge">document.documentElement</code>节点上得到。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 网页滚动的水平距离</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">scrollLeft</span>
+
+<span class="c1">// 网页滚动的垂直距离</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">scrollTop</span>
+</code></pre></div></div>
+
+<p>网页元素本身的高度和宽度（不含overflow溢出的部分），通过<code class="highlighter-rouge">offsetHeight</code>和<code class="highlighter-rouge">offsetWidth</code>属性（包括<code class="highlighter-rouge">Padding</code>和<code class="highlighter-rouge">Border</code>）或<code class="highlighter-rouge">Element.getBoundingClientRect</code>方法获取。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 网页元素的高度</span>
+<span class="nx">Element</span><span class="p">.</span><span class="nx">offsetHeight</span>
+
+<span class="c1">// 网页元素的宽度</span>
+<span class="nx">Element</span><span class="p">.</span><span class="nx">offsetWidth</span>
+</code></pre></div></div>
+
+<h2 id="相关节点的属性">相关节点的属性</h2>
+
+<p>以下属性返回元素节点的相关节点。</p>
+
+<h3 id="elementchildrenelementchildelementcount">Element.children，Element.childElementCount</h3>
+
+<p><code class="highlighter-rouge">Element.children</code>属性返回一个<code class="highlighter-rouge">HTMLCollection</code>对象，包括当前元素节点的所有子元素。它是一个类似数组的动态对象（实时反映网页元素的变化）。如果当前元素没有子元素，则返回的对象包含零个成员。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// para是一个p元素节点</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">para</span><span class="p">.</span><span class="nx">children</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">children</span> <span class="o">=</span> <span class="nx">para</span><span class="p">.</span><span class="nx">children</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">children</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// ...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>这个属性与<code class="highlighter-rouge">Node.childNodes</code>属性的区别是，它只包括HTML元素类型的子节点，不包括其他类型的子节点。</p>
+
+<p><code class="highlighter-rouge">Element.childElementCount</code>属性返回当前元素节点包含的子HTML元素节点的个数，与<code class="highlighter-rouge">Element.children.length</code>的值相同。注意，该属性只计算HTML元素类型的子节点。</p>
+
+<h3 id="elementfirstelementchildelementlastelementchild">Element.firstElementChild，Element.lastElementChild</h3>
+
+<p><code class="highlighter-rouge">Element.firstElementChild</code>属性返回第一个HTML元素类型的子节点，<code class="highlighter-rouge">Element.lastElementChild</code>返回最后一个HTML元素类型的子节点。</p>
+
+<p>如果没有HTML类型的子节点，这两个属性返回<code class="highlighter-rouge">null</code>。</p>
+
+<h3 id="elementnextelementsiblingelementpreviouselementsibling">Element.nextElementSibling，Element.previousElementSibling</h3>
+
+<p><code class="highlighter-rouge">Element.nextElementSibling</code>属性返回当前HTML元素节点的后一个同级HTML元素节点，如果没有则返回<code class="highlighter-rouge">null</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 假定HTML代码如下</span>
+<span class="c1">// &lt;div id="div-01"&gt;Here is div-01&lt;/div&gt;</span>
+<span class="c1">// &lt;div id="div-02"&gt;Here is div-02&lt;/div&gt;</span>
+<span class="kd">var</span> <span class="nx">el</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'div-01'</span><span class="p">);</span>
+<span class="nx">el</span><span class="p">.</span><span class="nx">nextElementSibling</span>
+<span class="c1">// &lt;div id="div-02"&gt;Here is div-02&lt;/div&gt;</span>
+
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">Element.previousElementSibling</code>属性返回当前HTML元素节点的前一个同级HTML元素节点，如果没有则返回<code class="highlighter-rouge">null</code>。</p>
+
+<h3 id="elementoffsetparent">Element.offsetParent</h3>
+
+<p><code class="highlighter-rouge">Element.offsetParent</code>属性返回当前 HTML 元素的最靠近的、并且 CSS 的<code class="highlighter-rouge">position</code>属性不等于<code class="highlighter-rouge">static</code>的上层元素。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"position: absolute;"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;p&gt;</span>
+    <span class="nt">&lt;span&gt;</span>Hello<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">span</code>元素的<code class="highlighter-rouge">offsetParent</code>属性就是<code class="highlighter-rouge">div</code>元素。</p>
+
+<p>该属性主要用于确定子元素位置偏移的计算基准，<code class="highlighter-rouge">Element.offsetTop</code>和<code class="highlighter-rouge">Element.offsetLeft</code>就是<code class="highlighter-rouge">offsetParent</code>元素计算的。</p>
+
+<p>如果该元素是不可见的（<code class="highlighter-rouge">display</code>属性为<code class="highlighter-rouge">none</code>），或者位置是固定的（<code class="highlighter-rouge">position</code>属性为<code class="highlighter-rouge">fixed</code>），则<code class="highlighter-rouge">offsetParent</code>属性返回<code class="highlighter-rouge">null</code>。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"position: absolute;"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;p&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">style=</span><span class="s">"display: none;"</span><span class="nt">&gt;</span>Hello<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">span</code>元素的<code class="highlighter-rouge">offsetParent</code>属性是<code class="highlighter-rouge">null</code>。</p>
+
+<p>如果某个元素的所有上层节点的<code class="highlighter-rouge">position</code>属性都是<code class="highlighter-rouge">static</code>，则<code class="highlighter-rouge">Element.offsetParent</code>属性指向<code class="highlighter-rouge">&lt;body&gt;</code>元素。</p>
+
+<h2 id="属性相关的方法">属性相关的方法</h2>
+
+<p>元素节点提供以下四个方法，用来操作HTML标签的属性。</p>
+
+<ul>
+  <li><code class="highlighter-rouge">Element.getAttribute()</code>：读取指定属性</li>
+  <li><code class="highlighter-rouge">Element.setAttribute()</code>：设置指定属性</li>
+  <li><code class="highlighter-rouge">Element.hasAttribute()</code>：返回一个布尔值，表示当前元素节点是否有指定的属性</li>
+  <li><code class="highlighter-rouge">Element.removeAttribute()</code>：移除指定属性</li>
+</ul>
+
+<p>这些属性的详细介绍，参见本章的《属性的操作》一节。</p>
+
+<h2 id="查找相关的方法">查找相关的方法</h2>
+
+<p>以下四个方法用来查找与当前元素节点相关的节点。这四个方法也部署在<code class="highlighter-rouge">document</code>对象上，用法完全一致。</p>
+
+<ul>
+  <li><code class="highlighter-rouge">Element.querySelector()</code></li>
+  <li><code class="highlighter-rouge">Element.querySelectorAll()</code></li>
+  <li><code class="highlighter-rouge">Element.getElementsByTagName()</code></li>
+  <li><code class="highlighter-rouge">Element.getElementsByClassName()</code></li>
+</ul>
+
+<p>上面四个方法只返回Element子节点，因此可以采用链式写法。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span>
+  <span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'header'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s1">'a'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="elementqueryselector">Element.querySelector()</h3>
+
+<p><code class="highlighter-rouge">Element.querySelector</code>方法接受CSS选择器作为参数，返回父元素的第一个匹配的子元素。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">content</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'content'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">el</span> <span class="o">=</span> <span class="nx">content</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'p'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>上面代码返回<code class="highlighter-rouge">content</code>节点的第一个<code class="highlighter-rouge">p</code>元素。</p>
+
+<p>需要注意的是，浏览器执行<code class="highlighter-rouge">querySelector</code>方法时，是先在全局范围内搜索给定的CSS选择器，然后过滤出哪些属于当前元素的子元素。因此，会有一些违反直觉的结果，请看下面的HTML代码。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div&gt;</span>
+<span class="nt">&lt;blockquote</span> <span class="na">id=</span><span class="s">"outer"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;p&gt;</span>Hello<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"inner"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>World<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/blockquote&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>那么，下面代码实际上会返回第一个<code class="highlighter-rouge">p</code>元素，而不是第二个。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">outer</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'outer'</span><span class="p">);</span>
+<span class="nx">outer</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'div p'</span><span class="p">)</span>
+<span class="c1">// &lt;p&gt;Hello&lt;/p&gt;</span>
+</code></pre></div></div>
+
+<h3 id="elementqueryselectorall">Element.querySelectorAll()</h3>
+
+<p><code class="highlighter-rouge">Element.querySelectorAll</code>方法接受CSS选择器作为参数，返回一个<code class="highlighter-rouge">NodeList</code>对象，包含所有匹配的子元素。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">el</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'#test'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">matches</span> <span class="o">=</span> <span class="nx">el</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">'div.highlighted &gt; p'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>该方法的执行机制与<code class="highlighter-rouge">querySelector</code>相同，也是先在全局范围内查找，再过滤出当前元素的子元素。因此，选择器实际上针对整个文档的。</p>
+
+<h3 id="elementgetelementsbyclassname">Element.getElementsByClassName()</h3>
+
+<p><code class="highlighter-rouge">Element.getElementsByClassName</code>方法返回一个<code class="highlighter-rouge">HTMLCollection</code>对象，成员是当前元素节点的所有匹配指定<code class="highlighter-rouge">class</code>的子元素。该方法与<code class="highlighter-rouge">document.getElementsByClassName</code>方法的用法类似，只是搜索范围不是整个文档，而是当前元素节点。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">element</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s1">'red test'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>注意，该方法的参数大小写敏感。</p>
+
+<h3 id="elementgetelementsbytagname">Element.getElementsByTagName()</h3>
+
+<p><code class="highlighter-rouge">Element.getElementsByTagName</code>方法返回一个<code class="highlighter-rouge">HTMLCollection</code>对象，成员是当前元素节点的所有匹配指定标签名的子元素。该方法与<code class="highlighter-rouge">document.getElementsByClassName</code>方法的用法类似，只是搜索范围不是整个文档，而是当前元素节点。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">table</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'forecast-table'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">cells</span> <span class="o">=</span> <span class="nx">table</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'td'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>注意，该方法的参数是大小写不敏感的。</p>
+
+<h3 id="elementclosest">Element.closest()</h3>
+
+<p><code class="highlighter-rouge">Element.closest</code>方法返回当前元素节点的最接近的父元素（或者当前节点本身），条件是必须匹配给定的CSS选择器。如果不满足匹配，则返回null。</p>
+
+<p>假定HTML代码如下。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;article&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"div-01"</span><span class="nt">&gt;</span>Here is div-01
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"div-02"</span><span class="nt">&gt;</span>Here is div-02
+      <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"div-03"</span><span class="nt">&gt;</span>Here is div-03<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/article&gt;</span>
+</code></pre></div></div>
+
+<p>div-03节点的closet方法的例子如下。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">el</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'div-03'</span><span class="p">);</span>
+<span class="nx">el</span><span class="p">.</span><span class="nx">closest</span><span class="p">(</span><span class="s2">"#div-02"</span><span class="p">)</span> <span class="c1">// div-02</span>
+<span class="nx">el</span><span class="p">.</span><span class="nx">closest</span><span class="p">(</span><span class="s2">"div div"</span><span class="p">)</span> <span class="c1">// div-03</span>
+<span class="nx">el</span><span class="p">.</span><span class="nx">closest</span><span class="p">(</span><span class="s2">"article &gt; div"</span><span class="p">)</span> <span class="c1">//div-01</span>
+<span class="nx">el</span><span class="p">.</span><span class="nx">closest</span><span class="p">(</span><span class="s2">":not(div)"</span><span class="p">)</span> <span class="c1">// article</span>
+</code></pre></div></div>
+
+<p>上面代码中，由于closet方法将当前元素节点也考虑在内，所以第二个closet方法返回div-03。</p>
+
+<h3 id="elementmatches">Element.matches()</h3>
+
+<p><code class="highlighter-rouge">Element.matches</code>方法返回一个布尔值，表示当前元素是否匹配给定的CSS选择器。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">el</span><span class="p">.</span><span class="nx">matches</span><span class="p">(</span><span class="s1">'.someClass'</span><span class="p">))</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Match!'</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>该方法带有浏览器前缀，下面的函数可以兼容不同的浏览器，并且在浏览器不支持时，自行部署这个功能。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">matchesSelector</span><span class="p">(</span><span class="nx">el</span><span class="p">,</span> <span class="nx">selector</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="nx">Element</span><span class="p">.</span><span class="nx">prototype</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">f</span> <span class="o">=</span> <span class="nx">p</span><span class="p">.</span><span class="nx">matches</span>
+    <span class="o">||</span> <span class="nx">p</span><span class="p">.</span><span class="nx">webkitMatchesSelector</span>
+    <span class="o">||</span> <span class="nx">p</span><span class="p">.</span><span class="nx">mozMatchesSelector</span>
+    <span class="o">||</span> <span class="nx">p</span><span class="p">.</span><span class="nx">msMatchesSelector</span>
+    <span class="o">||</span> <span class="kd">function</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">[].</span><span class="nx">indexOf</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="nx">s</span><span class="p">),</span> <span class="k">this</span><span class="p">)</span> <span class="o">!==</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+  <span class="p">};</span>
+  <span class="k">return</span> <span class="nx">f</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">el</span><span class="p">,</span> <span class="nx">selector</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// 用法</span>
+<span class="nx">matchesSelector</span><span class="p">(</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'myDiv'</span><span class="p">),</span>
+  <span class="s1">'div.someSelector[some-attribute=true]'</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="事件相关的方法">事件相关的方法</h2>
+
+<p>以下三个方法与<code class="highlighter-rouge">Element</code>节点的事件相关。这些方法都继承自<code class="highlighter-rouge">EventTarget</code>接口，详见本章的《Event对象》一节。</p>
+
+<ul>
+  <li><code class="highlighter-rouge">Element.addEventListener()</code>：添加事件的回调函数</li>
+  <li><code class="highlighter-rouge">Element.removeEventListener()</code>：移除事件监听函数</li>
+  <li><code class="highlighter-rouge">Element.dispatchEvent()</code>：触发事件</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">element</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="nx">listener</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="nx">listener</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">event</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Event</span><span class="p">(</span><span class="s1">'click'</span><span class="p">);</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">dispatchEvent</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="其他方法">其他方法</h2>
+
+<h3 id="elementscrollintoview">Element.scrollIntoView()</h3>
+
+<p><code class="highlighter-rouge">Element.scrollIntoView</code>方法滚动当前元素，进入浏览器的可见区域，类似于设置<code class="highlighter-rouge">window.location.hash</code>的效果。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">el</span><span class="p">.</span><span class="nx">scrollIntoView</span><span class="p">();</span> <span class="c1">// 等同于el.scrollIntoView(true)</span>
+<span class="nx">el</span><span class="p">.</span><span class="nx">scrollIntoView</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>该方法可以接受一个布尔值作为参数。如果为<code class="highlighter-rouge">true</code>，表示元素的顶部与当前区域的可见部分的顶部对齐（前提是当前区域可滚动）；如果为<code class="highlighter-rouge">false</code>，表示元素的底部与当前区域的可见部分的尾部对齐（前提是当前区域可滚动）。如果没有提供该参数，默认为<code class="highlighter-rouge">true</code>。</p>
+
+<h3 id="elementgetboundingclientrect">Element.getBoundingClientRect()</h3>
+
+<p><code class="highlighter-rouge">Element.getBoundingClientRect</code>方法返回一个对象，该对象提供当前元素节点的大小、位置等信息，基本上就是CSS盒状模型提供的所有信息。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">rect</span> <span class="o">=</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">getBoundingClientRect</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">getBoundingClientRect</code>方法返回的<code class="highlighter-rouge">rect</code>对象，具有以下属性（全部为只读）。</p>
+
+<ul>
+  <li><code class="highlighter-rouge">x</code>：元素左上角相对于视口的横坐标</li>
+  <li><code class="highlighter-rouge">left</code>：元素左上角相对于视口的横坐标，与<code class="highlighter-rouge">x</code>属性相等</li>
+  <li><code class="highlighter-rouge">right</code>：元素右边界相对于视口的横坐标（等于<code class="highlighter-rouge">x</code>加上<code class="highlighter-rouge">width</code>）</li>
+  <li><code class="highlighter-rouge">width</code>：元素宽度（等于<code class="highlighter-rouge">right</code>减去<code class="highlighter-rouge">left</code>）</li>
+  <li><code class="highlighter-rouge">y</code>：元素顶部相对于视口的纵坐标</li>
+  <li><code class="highlighter-rouge">top</code>：元素顶部相对于视口的纵坐标，与<code class="highlighter-rouge">y</code>属性相等</li>
+  <li><code class="highlighter-rouge">bottom</code>：元素底部相对于视口的纵坐标</li>
+  <li><code class="highlighter-rouge">height</code>：元素高度（等于<code class="highlighter-rouge">y</code>加上<code class="highlighter-rouge">height</code>）</li>
+</ul>
+
+<p>由于元素相对于视口（viewport）的位置，会随着页面滚动变化，因此表示位置的四个属性值，都不是固定不变的。如果想得到绝对位置，可以将<code class="highlighter-rouge">left</code>属性加上<code class="highlighter-rouge">window.scrollX</code>，<code class="highlighter-rouge">top</code>属性加上<code class="highlighter-rouge">window.scrollY</code>。</p>
+
+<p>注意，<code class="highlighter-rouge">getBoundingClientRect</code>方法的所有属性，都把边框（<code class="highlighter-rouge">border</code>属性）算作元素的一部分。也就是说，都是从边框外缘的各个点来计算。因此，<code class="highlighter-rouge">width</code>和<code class="highlighter-rouge">height</code>包括了元素本身 + <code class="highlighter-rouge">padding</code> + <code class="highlighter-rouge">border</code>。</p>
+
+<h3 id="elementgetclientrects">Element.getClientRects()</h3>
+
+<p><code class="highlighter-rouge">Element.getClientRects</code>方法返回一个类似数组的对象，里面是当前元素在页面上形成的所有矩形。每个矩形都有<code class="highlighter-rouge">bottom</code>、<code class="highlighter-rouge">height</code>、<code class="highlighter-rouge">left</code>、<code class="highlighter-rouge">right</code>、<code class="highlighter-rouge">top</code>和<code class="highlighter-rouge">width</code>六个属性，表示它们相对于视口的四个坐标，以及本身的高度和宽度。</p>
+
+<p>对于盒状元素（比如<code class="highlighter-rouge">&lt;div&gt;</code>和<code class="highlighter-rouge">&lt;p&gt;</code>），该方法返回的对象中只有该元素一个成员。对于行内元素（比如span、a、em），该方法返回的对象有多少个成员，取决于该元素在页面上占据多少行。这是它和<code class="highlighter-rouge">Element.getBoundingClientRect()</code>方法的主要区别，对于行内元素，后者总是返回一个矩形区域，前者可能返回多个矩形区域，所以方法名中的<code class="highlighter-rouge">Rect</code>用的是复数。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"inline"</span><span class="nt">&gt;</span>
+Hello World
+Hello World
+Hello World
+<span class="nt">&lt;/span&gt;</span>
+</code></pre></div></div>
+
+<p>上面代码是一个行内元素<code class="highlighter-rouge">&lt;span&gt;</code>，如果它在页面上占据三行，<code class="highlighter-rouge">getClientRects</code>方法返回的对象就有三个成员，如果它在页面上占据一行，<code class="highlighter-rouge">getClientRects</code>方法返回的对象就只有一个成员。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">el</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'inline'</span><span class="p">);</span>
+<span class="nx">el</span><span class="p">.</span><span class="nx">getClientRects</span><span class="p">().</span><span class="nx">length</span> <span class="c1">// 3</span>
+<span class="nx">el</span><span class="p">.</span><span class="nx">getClientRects</span><span class="p">()[</span><span class="mi">0</span><span class="p">].</span><span class="nx">left</span> <span class="c1">// 8</span>
+<span class="nx">el</span><span class="p">.</span><span class="nx">getClientRects</span><span class="p">()[</span><span class="mi">0</span><span class="p">].</span><span class="nx">right</span> <span class="c1">// 113.908203125</span>
+<span class="nx">el</span><span class="p">.</span><span class="nx">getClientRects</span><span class="p">()[</span><span class="mi">0</span><span class="p">].</span><span class="nx">bottom</span> <span class="c1">// 31.200000762939453</span>
+<span class="nx">el</span><span class="p">.</span><span class="nx">getClientRects</span><span class="p">()[</span><span class="mi">0</span><span class="p">].</span><span class="nx">height</span> <span class="c1">// 23.200000762939453</span>
+<span class="nx">el</span><span class="p">.</span><span class="nx">getClientRects</span><span class="p">()[</span><span class="mi">0</span><span class="p">].</span><span class="nx">width</span> <span class="c1">// 105.908203125</span>
+</code></pre></div></div>
+
+<p>这个方法主要用于判断行内元素是否换行，以及行内元素的每一行的位置偏移。</p>
+
+<h3 id="elementinsertadjacenthtml">Element.insertAdjacentHTML()</h3>
+
+<p><code class="highlighter-rouge">Element.insertAdjacentHTML</code>方法解析HTML字符串，然后将生成的节点插入DOM树的指定位置。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">element</span><span class="p">.</span><span class="nx">insertAdjacentHTML</span><span class="p">(</span><span class="nx">position</span><span class="p">,</span> <span class="nx">text</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>该方法接受两个参数，第一个是指定位置，第二个是待解析的字符串。</p>
+
+<p>指定位置共有四个。</p>
+
+<ul>
+  <li><code class="highlighter-rouge">beforebegin</code>：在当前元素节点的前面。</li>
+  <li><code class="highlighter-rouge">afterbegin</code>：在当前元素节点的里面，插在它的第一个子元素之前。</li>
+  <li><code class="highlighter-rouge">beforeend</code>：在当前元素节点的里面，插在它的最后一个子元素之后。</li>
+  <li><code class="highlighter-rouge">afterend</code>：在当前元素节点的后面。</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 原来的HTML代码：&lt;div id="one"&gt;one&lt;/div&gt;</span>
+<span class="kd">var</span> <span class="nx">d1</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'one'</span><span class="p">);</span>
+<span class="nx">d1</span><span class="p">.</span><span class="nx">insertAdjacentHTML</span><span class="p">(</span><span class="s1">'afterend'</span><span class="p">,</span> <span class="s1">'&lt;div id="two"&gt;two&lt;/div&gt;'</span><span class="p">);</span>
+<span class="c1">// 现在的HTML代码：</span>
+<span class="c1">// &lt;div id="one"&gt;one&lt;/div&gt;&lt;div id="two"&gt;two&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>该方法不是彻底置换现有的DOM结构，这使得它的执行速度比<code class="highlighter-rouge">innerHTML</code>操作快得多。</p>
+
+<h3 id="elementremove">Element.remove()</h3>
+
+<p><code class="highlighter-rouge">Element.remove</code>方法用于将当前元素节点从DOM树删除。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">el</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'div-01'</span><span class="p">);</span>
+<span class="nx">el</span><span class="p">.</span><span class="nx">remove</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h3 id="elementfocus">Element.focus()</h3>
+
+<p><code class="highlighter-rouge">Element.focus</code>方法用于将当前页面的焦点，转移到指定元素上。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'my-span'</span><span class="p">).</span><span class="nx">focus</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h2 id="参考链接">参考链接</h2>
+
+<ul>
+  <li>Craig Buckler，<a href="javascript:if(confirm('https://www.sitepoint.com/how-to-translate-from-dom-to-svg-coordinates-and-back-again/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://www.sitepoint.com/how-to-translate-from-dom-to-svg-coordinates-and-back-again/'" tppabs="https://www.sitepoint.com/how-to-translate-from-dom-to-svg-coordinates-and-back-again/">How to Translate from DOM to SVG Coordinates and Back Again</a></li>
+</ul>
+
+
+</article>
+
+<div class="row">
+<div class="twelve columns">
+
+<h2>留言</h2>
+
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'jstutorial'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="javascript:if(confirm('http://disqus.com/?ref_noscript  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://disqus.com/?ref_noscript'" tppabs="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="javascript:if(confirm('http://disqus.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://disqus.com/'" tppabs="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</section>
+
+</div>
+</div>
+
+<footer>
+<div class="row">
+<div class="twelve columns">
+	<p><a href="license.html" tppabs="http://javascript.ruanyifeng.com/introduction/license.html">版权声明</a> | last modified on 2015-04-15 </p>
+</div>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-43771063-1', 'http://javascript.ruanyifeng.com/dom/ruanyifeng.com');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
+
+

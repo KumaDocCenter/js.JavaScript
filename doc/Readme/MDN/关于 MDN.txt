@@ -1,0 +1,15 @@
+
+关于 MDN
+
+https://developer.mozilla.org/zh-CN/docs/MDN/About
+
+
+
+Mozilla 开发者社区（MDN）是一个完整的学习平台，你可以在这里深入学习
+Web技术以及能够驱动Web的软件，包括：
+
+
+网络标准（例如：CSS、HTML 和 JavaScript）
+开发开放网络应用
+开发 Firefox 附加组件
+

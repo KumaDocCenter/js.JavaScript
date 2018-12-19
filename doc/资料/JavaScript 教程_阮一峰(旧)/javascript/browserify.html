@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>Browserify：浏览器加载Node.js模块 -- JavaScript 标准参考教程（alpha）</title>
+  
+  <!-- Included CSS Files (Uncompressed) -->
+  <!--
+  <link rel="stylesheet" href="stylesheets/foundation.css">
+  -->
+  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="foundation.css" tppabs="http://javascript.ruanyifeng.com/css/foundation.css">
+  <link rel="stylesheet" href="main.css" tppabs="http://javascript.ruanyifeng.com/css/main.css">
+
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="html5.js" tppabs="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <script src="jquery.js" tppabs="http://javascript.ruanyifeng.com/js/jquery.js"></script>
+  <script src="toc.js" tppabs="http://javascript.ruanyifeng.com/js/toc.js"></script>
+  <script src="main.js" tppabs="http://javascript.ruanyifeng.com/js/main.js"></script>
+
+</head>
+<body>
+
+<header class="top-bar" id="header">
+
+<div class="fixed">
+
+<nav class="top-bar">
+<ul>
+<!-- Title Area -->
+	<li class="name has-dropdown">
+	<h1><a href="index.htm" tppabs="http://javascript.ruanyifeng.com/">JavaScript 标准参考教程（alpha） </a></h1>
+		<ul class="dropdown">
+			
+			<li><a href="index.htm#introduction" tppabs="http://javascript.ruanyifeng.com/#introduction">导论</a></li>
+			
+			<li><a href="index.htm#grammar" tppabs="http://javascript.ruanyifeng.com/#grammar">语法</a></li>
+			
+			<li><a href="index.htm#stdlib" tppabs="http://javascript.ruanyifeng.com/#stdlib">标准库</a></li>
+			
+			<li><a href="index.htm#oop" tppabs="http://javascript.ruanyifeng.com/#oop">面向对象编程</a></li>
+			
+			<li><a href="index.htm#advanced" tppabs="http://javascript.ruanyifeng.com/#advanced">语法专题</a></li>
+			
+			<li><a href="index.htm#dom" tppabs="http://javascript.ruanyifeng.com/#dom">DOM模型</a></li>
+			
+			<li><a href="index.htm#bom" tppabs="http://javascript.ruanyifeng.com/#bom">浏览器环境</a></li>
+			
+			<li><a href="index.htm#htmlapi" tppabs="http://javascript.ruanyifeng.com/#htmlapi">Web API</a></li>
+			
+		</ul>
+	</li>
+</ul>
+
+<section>
+
+
+<ul class="left">
+<li class="divider"></li>
+<li class="has-dropdown"><a class="active" href="#"> 开发工具 </a><ul class="dropdown">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="bower.html" tppabs="http://javascript.ruanyifeng.com/tool/bower.html">Bower：客户端库管理工具</a></li>
+
+
+
+
+
+<li class="active"><a href="#">Browserify：浏览器加载Node.js模块</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="console.html" tppabs="http://javascript.ruanyifeng.com/stdlib/console.html">console对象</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="grunt.html" tppabs="http://javascript.ruanyifeng.com/tool/grunt.html">Grunt：任务自动管理工具</a></li>
+
+
+
+
+
+<li><a href="gulp.html" tppabs="http://javascript.ruanyifeng.com/tool/gulp.html">Gulp：任务自动管理工具</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="lint.html" tppabs="http://javascript.ruanyifeng.com/tool/lint.html">Lint 工具</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="phantomjs.html" tppabs="http://javascript.ruanyifeng.com/tool/phantomjs.html">PhantomJS</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="requirejs.html" tppabs="http://javascript.ruanyifeng.com/tool/requirejs.html">RequireJS和AMD规范</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="sourcemap.html" tppabs="http://javascript.ruanyifeng.com/tool/sourcemap.html">Source Map</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="testing.html" tppabs="http://javascript.ruanyifeng.com/tool/testing.html">JavaScript 程序测试</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul></li>
+<li class="divider"></li>
+<li class="has-dropdown nav-3"><a href="#"> Browserify：浏览器加载Node.js模块</a><ul class="dropdown">
+</ul></li>
+</ul>
+
+
+<ul class="right">
+	<li class="divider"></li>
+	<li>
+		<a href="javascript:if(confirm('https://github.com/ruanyf/jstutorial  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://github.com/ruanyf/jstutorial'" tppabs="https://github.com/ruanyf/jstutorial" target="_blank">GitHub <i class="foundicon-edit"></i></a>
+	</li>
+	<li class="divider"></li>
+	<li>
+		<a href="#">TOP <i class="foundicon-up-arrow"></i></a>
+	</li>
+</ul>
+
+</section>
+
+</nav>  
+</div>
+</header>
+
+
+<article class="bookPage">
+
+  <div class="row">
+    <div class="twelve columns">
+
+<h1> Browserify：浏览器加载Node.js模块 </h1>
+
+<aside class="right"><p>来自<a href="index.htm" tppabs="http://javascript.ruanyifeng.com/">《JavaScript 标准参考教程（alpha）》</a>，by 阮一峰</p></aside>
+
+<div id="toc" class="panel callout radius">目录</div>
+
+
+<p>随着JavaScript程序逐渐模块化，在ECMAScript 6推出官方的模块处理方案之前，有两种方案在实践中广泛采用：一种是AMD模块规范，针对模块的异步加载，主要用于浏览器端；另一种是CommonJS规范，针对模块的同步加载，主要用于服务器端，即node.js环境。</p>
+
+<p>Browserify是一个node.js模块，主要用于改写现有的CommonJS模块，使得浏览器端也可以使用这些模块。使用下面的命令，在全局环境下安装Browserify。</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>npm install <span class="nt">-g</span> browserify</code></pre></figure>
+
+<h2 id="基本用法">基本用法</h2>
+
+<p>先看一个例子。假定有一个很简单的CommonJS模块文件foo.js。</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// foo.js</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" /><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span><br data-jekyll-commonmark-ghpages="" /><span class="p">};</span></code></pre></figure>
+
+<p>然后，还有一个main.js文件，用来加载foo模块。</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// main.js</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" /><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"./foo"</span><span class="p">);</span><br data-jekyll-commonmark-ghpages="" /><span class="nx">foo</span><span class="p">(</span><span class="s2">"Hi"</span><span class="p">);</span></code></pre></figure>
+
+<p>使用Browserify，将main.js转化为浏览器可以加载的脚本compiled.js。</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">browserify main.js <span class="o">&gt;</span> compiled.js<br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" /><span class="c"># 或者</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" />browserify main <span class="o">&gt;</span> compiled.js<br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" /><span class="c"># 或者</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" />browserify main.js <span class="nt">-o</span> compiled.js</code></pre></figure>
+
+<p>之所以转化后的文件叫做compiled.js，是因为该文件不仅包括了main.js，还包括了它所依赖的foo.js。两者打包在一起，保证浏览器加载时的依赖关系。</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"compiled.js"</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></figure>
+
+<p>使用上面的命令，在浏览器中运行compiled.js，控制台会显示Hi。</p>
+
+<p>我们再看一个在服务器端的backbone模块转为客户端backbone模块的例子。先安装backbone和它所依赖的jQuery模块。</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">npm install backbone jquery</code></pre></figure>
+
+<p>然后，新建一个main.js文件。</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// main.js</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" /><span class="kd">var</span> <span class="nx">Backbone</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'backbone'</span><span class="p">);</span><br data-jekyll-commonmark-ghpages="" /><span class="kd">var</span> <span class="nx">$</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">$</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'jquery/dist/jquery'</span><span class="p">)(</span><span class="nb">window</span><span class="p">);</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" /><span class="kd">var</span> <span class="nx">AppView</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">View</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span><br data-jekyll-commonmark-ghpages="" />  <span class="na">render</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span><br data-jekyll-commonmark-ghpages="" />    <span class="nx">$</span><span class="p">(</span><span class="s1">'main'</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">'&lt;h1&gt;Browserify is a great tool.&lt;/h1&gt;'</span><span class="p">);</span><br data-jekyll-commonmark-ghpages="" />  <span class="p">}</span><br data-jekyll-commonmark-ghpages="" /><span class="p">});</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" /><span class="kd">var</span> <span class="nx">appView</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AppView</span><span class="p">();</span><br data-jekyll-commonmark-ghpages="" /><span class="nx">appView</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span></code></pre></figure>
+
+<p>接着，使用browserify将main.js转为app.js。</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">browserify main.js <span class="nt">-o</span> app.js</code></pre></figure>
+
+<p>app.js就可以直接插入HTML网页了。</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"app.js"</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></figure>
+
+<p>注意，只要插入app.js一个文件就可以了，完全不需要再加载backbone.js和jQuery了。</p>
+
+<h2 id="管理前端模块">管理前端模块</h2>
+
+<p>Browserify的主要作用是将CommonJS模块转为浏览器可以调用的格式，但是纯粹的前端模块，也可以用它打包。</p>
+
+<p>首先，新建一个项目目录，添加package.json文件。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+  <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"demo"</span><span class="p">,</span>
+  <span class="s2">"version"</span><span class="p">:</span> <span class="s2">"1.0.0"</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>接着，新建index.html。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;title&gt;</span>npm and jQuery demo<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"title-tipso tipso_style"</span> <span class="na">title=</span><span class="s">"This is a loaded TIPSO!"</span><span class="nt">&gt;</span>
+    Roll over to see the tip
+  <span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"./bundle.js"</span><span class="nt">/&gt;</span>
+<span class="o">&lt;</span><span class="sr">/body</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/html</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p>上面代码中的bundle.js，就是Browserify打包后将生成的文件。</p>
+
+<p>然后，安装jquery和它的插件。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span> <span class="nx">npm</span> <span class="nx">install</span> <span class="o">--</span><span class="nx">save</span> <span class="nx">jquery</span> <span class="nx">tipso</span>
+</code></pre></div></div>
+
+<p>接着，新建一个文件entry.js。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">global</span><span class="p">.</span><span class="nx">jQuery</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'jquery'</span><span class="p">);</span>
+<span class="nx">require</span><span class="p">(</span><span class="s1">'tipso'</span><span class="p">);</span>
+
+<span class="nx">jQuery</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+  <span class="nx">jQuery</span><span class="p">(</span><span class="s1">'.title-tipso'</span><span class="p">).</span><span class="nx">tipso</span><span class="p">();</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>上面的文件中，第一行之所以要把jQuery写成global的属性，是为了转码之后，它可以变成一个全局变量。</p>
+
+<p>最后，Browserify打包。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>browserify entry.js <span class="nt">--debug</span> <span class="o">&gt;</span> bundle.js
+</code></pre></div></div>
+
+<p>上面代码中，–debug参数表示在打包后的文件中加入source map以便除错。</p>
+
+<p>这时，浏览器打开index.html，脚本已经可以运行。如果不希望将jQuery一起打包，而是通过CDN加载，可以使用browserify-shim模块。</p>
+
+<p>另外一个问题是，某些jQuery插件还有自带的CSS文件，这时可以安装parcelify模块。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm install <span class="nt">-g</span> parcelify
+</code></pre></div></div>
+
+<p>然后，在package.json中写入规则，声明CSS文件的位置。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"style"</span><span class="p">:</span> <span class="p">[</span>
+  <span class="s2">"./node_modules/tipso/src/tipso.css"</span>
+<span class="p">]</span>
+</code></pre></div></div>
+
+<p>接着，运行parcelify进行CSS打包。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>parcelify entry.js <span class="nt">-c</span> bundle.css
+</code></pre></div></div>
+
+<p>最后，将打包后的CSS文件插入index.html。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"bundle.css"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h2 id="生成前端模块">生成前端模块</h2>
+
+<p>有时，我们只是希望将node.js的模块，移植到浏览器，使得浏览器端可以调用。这时，可以采用browserify的-r参数（–require的简写）。</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">browserify <span class="nt">-r</span> through <span class="nt">-r</span> ./my-file.js:my-module <span class="o">&gt;</span> bundle.js</code></pre></figure>
+
+<p>上面代码将through和my-file.js（后面的冒号表示指定模块名为my-module）都做成了模块，可以在其他script标签中调用。</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"bundle.js"</span><span class="nt">&gt;&lt;/script&gt;</span><br data-jekyll-commonmark-ghpages="" /><span class="nt">&lt;script&gt;</span><br data-jekyll-commonmark-ghpages="" />  <span class="kd">var</span> <span class="nx">through</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'through'</span><span class="p">);</span><br data-jekyll-commonmark-ghpages="" />  <span class="kd">var</span> <span class="nx">myModule</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'my-module'</span><span class="p">);</span><br data-jekyll-commonmark-ghpages="" />  <span class="cm">/* ... */</span><br data-jekyll-commonmark-ghpages="" /><span class="nt">&lt;/script&gt;</span></code></pre></figure>
+
+<p>可以看到，-r参数的另一个作用，就是为浏览器端提供require方法。</p>
+
+<h2 id="脚本文件的实时生成">脚本文件的实时生成</h2>
+
+<p>Browserify还可以实时生成脚本文件。</p>
+
+<p>下面是一个服务器端脚本，启动Web服务器之后，外部用户每次访问这个脚本，它的内容是实时生成的。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">var</span> <span class="nx">browserify</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'browserify'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'http'</span><span class="p">);</span>
+
+<span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">url</span> <span class="o">===</span> <span class="s1">'/bundle.js'</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">setHeader</span><span class="p">(</span><span class="s1">'content-type'</span><span class="p">,</span> <span class="s1">'application/javascript'</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">browserify</span><span class="p">(</span><span class="nx">__dirname</span> <span class="o">+</span> <span class="s1">'/main.js'</span><span class="p">).</span><span class="nx">bundle</span><span class="p">();</span>
+    <span class="nx">b</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'error'</span><span class="p">,</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">);</span>
+    <span class="nx">b</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">else</span> <span class="nx">res</span><span class="p">.</span><span class="nx">writeHead</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="s1">'not found'</span><span class="p">)</span>
+<span class="p">});</span>
+
+</code></pre></div></div>
+
+<h2 id="browserify-middleware模块">browserify-middleware模块</h2>
+
+<p>上面是将服务器端模块直接转为客户端脚本，然后在网页中调用这个转化后的脚本文件。还有一种思路是，在运行时动态转换模块，这就需要用到<a href="javascript:if(confirm('https://github.com/ForbesLindesay/browserify-middleware  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://github.com/ForbesLindesay/browserify-middleware'" tppabs="https://github.com/ForbesLindesay/browserify-middleware">browserify-middleware模块</a>。</p>
+
+<p>比如，网页中需要加载app.js，它是从main.js转化过来的。</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- index.html --&gt;</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" /><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"app.js"</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></figure>
+
+<p>你可以在服务器端静态生成一个app.js文件，也可以让它动态生成。这就需要用browserify-middleware模块，服务器端脚本要像下面这样写。</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">browserify</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'browserify-middleware'</span><span class="p">);</span><br data-jekyll-commonmark-ghpages="" /><span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'express'</span><span class="p">);</span><br data-jekyll-commonmark-ghpages="" /><span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" /><span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'/app.js'</span><span class="p">,</span> <span class="nx">browserify</span><span class="p">(</span><span class="s1">'./client/main.js'</span><span class="p">));</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" /><span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span><br data-jekyll-commonmark-ghpages="" />  <span class="nx">res</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s1">'index.html'</span><span class="p">);</span><br data-jekyll-commonmark-ghpages="" /><span class="p">});</span></code></pre></figure>
+
+<h2 id="参考链接">参考链接</h2>
+
+<ul>
+  <li>Jack Franklin, <a href="javascript:if(confirm('http://javascriptplayground.com/blog/2013/09/browserify/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://javascriptplayground.com/blog/2013/09/browserify/'" tppabs="http://javascriptplayground.com/blog/2013/09/browserify/">Dependency Management with Browserify</a></li>
+  <li>Seth Vincent, <a href="javascript:if(confirm('http://learnjs.io/blog/2013/12/22/express-and-browserify/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://learnjs.io/blog/2013/12/22/express-and-browserify/'" tppabs="http://learnjs.io/blog/2013/12/22/express-and-browserify/">Using Browserify with Express</a></li>
+  <li>Patrick Mulder, <a href="javascript:if(confirm('http://thinkingonthinking.com/unix-in-the-browser/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://thinkingonthinking.com/unix-in-the-browser/'" tppabs="http://thinkingonthinking.com/unix-in-the-browser/">Browserify - Unix in the browser</a></li>
+  <li>Patrick Catanzariti, <a href="javascript:if(confirm('http://www.sitepoint.com/getting-started-browserify/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.sitepoint.com/getting-started-browserify/'" tppabs="http://www.sitepoint.com/getting-started-browserify/">Getting Started with Browserify</a></li>
+  <li>Lin Clark, <a href="javascript:if(confirm('http://blog.npmjs.org/post/112064849860/using-jquery-plugins-with-npm  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://blog.npmjs.org/post/112064849860/using-jquery-plugins-with-npm'" tppabs="http://blog.npmjs.org/post/112064849860/using-jquery-plugins-with-npm">Using jQuery plugins with npm</a></li>
+</ul>
+
+
+</article>
+
+<div class="row">
+<div class="twelve columns">
+
+<h2>留言</h2>
+
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'jstutorial'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="javascript:if(confirm('http://disqus.com/?ref_noscript  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://disqus.com/?ref_noscript'" tppabs="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="javascript:if(confirm('http://disqus.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://disqus.com/'" tppabs="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</section>
+
+</div>
+</div>
+
+<footer>
+<div class="row">
+<div class="twelve columns">
+	<p><a href="license.html" tppabs="http://javascript.ruanyifeng.com/introduction/license.html">版权声明</a> | last modified on 2014-01-14 </p>
+</div>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-43771063-1', 'http://javascript.ruanyifeng.com/tool/ruanyifeng.com');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
+
+

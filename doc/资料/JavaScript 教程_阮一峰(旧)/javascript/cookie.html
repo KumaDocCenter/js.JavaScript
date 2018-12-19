@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>Cookie -- JavaScript 标准参考教程（alpha）</title>
+  
+  <!-- Included CSS Files (Uncompressed) -->
+  <!--
+  <link rel="stylesheet" href="stylesheets/foundation.css">
+  -->
+  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="foundation.css" tppabs="http://javascript.ruanyifeng.com/css/foundation.css">
+  <link rel="stylesheet" href="main.css" tppabs="http://javascript.ruanyifeng.com/css/main.css">
+
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="html5.js" tppabs="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <script src="jquery.js" tppabs="http://javascript.ruanyifeng.com/js/jquery.js"></script>
+  <script src="toc.js" tppabs="http://javascript.ruanyifeng.com/js/toc.js"></script>
+  <script src="main.js" tppabs="http://javascript.ruanyifeng.com/js/main.js"></script>
+
+</head>
+<body>
+
+<header class="top-bar" id="header">
+
+<div class="fixed">
+
+<nav class="top-bar">
+<ul>
+<!-- Title Area -->
+	<li class="name has-dropdown">
+	<h1><a href="index.htm" tppabs="http://javascript.ruanyifeng.com/">JavaScript 标准参考教程（alpha） </a></h1>
+		<ul class="dropdown">
+			
+			<li><a href="index.htm#introduction" tppabs="http://javascript.ruanyifeng.com/#introduction">导论</a></li>
+			
+			<li><a href="index.htm#grammar" tppabs="http://javascript.ruanyifeng.com/#grammar">语法</a></li>
+			
+			<li><a href="index.htm#stdlib" tppabs="http://javascript.ruanyifeng.com/#stdlib">标准库</a></li>
+			
+			<li><a href="index.htm#oop" tppabs="http://javascript.ruanyifeng.com/#oop">面向对象编程</a></li>
+			
+			<li><a href="index.htm#advanced" tppabs="http://javascript.ruanyifeng.com/#advanced">语法专题</a></li>
+			
+			<li><a href="index.htm#dom" tppabs="http://javascript.ruanyifeng.com/#dom">DOM模型</a></li>
+			
+			<li><a href="index.htm#bom" tppabs="http://javascript.ruanyifeng.com/#bom">浏览器环境</a></li>
+			
+			<li><a href="index.htm#htmlapi" tppabs="http://javascript.ruanyifeng.com/#htmlapi">Web API</a></li>
+			
+		</ul>
+	</li>
+</ul>
+
+<section>
+
+
+<ul class="left">
+<li class="divider"></li>
+<li class="has-dropdown"><a class="active" href="#"> 浏览器环境 </a><ul class="dropdown">
+
+
+
+<li><a href="ajax.html" tppabs="http://javascript.ruanyifeng.com/bom/ajax.html">AJAX</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="active"><a href="#">Cookie</a></li>
+
+
+
+
+
+<li><a href="cors.html" tppabs="http://javascript.ruanyifeng.com/bom/cors.html">CORS通信</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="engine.html" tppabs="http://javascript.ruanyifeng.com/bom/engine.html">浏览器环境概述</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="history-1.html" tppabs="http://javascript.ruanyifeng.com/bom/history.html">history对象</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="indexeddb.html" tppabs="http://javascript.ruanyifeng.com/bom/indexeddb.html">IndexedDB：浏览器端数据库</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mobile.html" tppabs="http://javascript.ruanyifeng.com/bom/mobile.html">移动设备API</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="notification.html" tppabs="http://javascript.ruanyifeng.com/bom/notification.html">Web Notifications API</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="performance.html" tppabs="http://javascript.ruanyifeng.com/bom/performance.html">Performance API</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="same-origin.html" tppabs="http://javascript.ruanyifeng.com/bom/same-origin.html">同源政策</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="webrtc.html" tppabs="http://javascript.ruanyifeng.com/htmlapi/webrtc.html">WebRTC</a></li>
+
+
+
+
+
+<li><a href="websocket.html" tppabs="http://javascript.ruanyifeng.com/htmlapi/websocket.html">WebSocket</a></li>
+
+
+
+
+
+
+
+<li><a href="webstorage.html" tppabs="http://javascript.ruanyifeng.com/bom/webstorage.html">Web Storage：浏览器端数据储存机制</a></li>
+
+
+
+
+
+
+
+<li><a href="window.html" tppabs="http://javascript.ruanyifeng.com/bom/window.html">window对象</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul></li>
+<li class="divider"></li>
+<li class="has-dropdown nav-3"><a href="#"> Cookie</a><ul class="dropdown">
+</ul></li>
+</ul>
+
+
+<ul class="right">
+	<li class="divider"></li>
+	<li>
+		<a href="javascript:if(confirm('https://github.com/ruanyf/jstutorial  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://github.com/ruanyf/jstutorial'" tppabs="https://github.com/ruanyf/jstutorial" target="_blank">GitHub <i class="foundicon-edit"></i></a>
+	</li>
+	<li class="divider"></li>
+	<li>
+		<a href="#">TOP <i class="foundicon-up-arrow"></i></a>
+	</li>
+</ul>
+
+</section>
+
+</nav>  
+</div>
+</header>
+
+
+<article class="bookPage">
+
+  <div class="row">
+    <div class="twelve columns">
+
+<h1> Cookie </h1>
+
+<aside class="right"><p>来自<a href="index.htm" tppabs="http://javascript.ruanyifeng.com/">《JavaScript 标准参考教程（alpha）》</a>，by 阮一峰</p></aside>
+
+<div id="toc" class="panel callout radius">目录</div>
+
+
+<h2 id="概述">概述</h2>
+
+<p>Cookie 是服务器保存在浏览器的一小段文本信息，每个 Cookie 的大小一般不能超过4KB。浏览器每次向服务器发出请求，就会自动附上这段信息。</p>
+
+<p>Cookie 保存以下几方面的信息。</p>
+
+<ul>
+  <li>Cookie 的名字</li>
+  <li>Cookie 的值</li>
+  <li>到期时间</li>
+  <li>所属域名（默认是当前域名）</li>
+  <li>生效的路径（默认是当前网址）</li>
+</ul>
+
+<p>举例来说，如果当前URL是<code class="highlighter-rouge">www.example.com</code>，那么Cookie的路径就是根目录<code class="highlighter-rouge">/</code>。这意味着，这个Cookie对该域名的根路径和它的所有子路径都有效。如果路径设为<code class="highlighter-rouge">/forums</code>，那么这个Cookie只有在访问<code class="highlighter-rouge">www.example.com/forums</code>及其子路径时才有效。</p>
+
+<p>浏览器可以设置不接受 Cookie，也可以设置不向服务器发送 Cookie。<code class="highlighter-rouge">window.navigator.cookieEnabled</code>属性返回一个布尔值，表示浏览器是否打开 Cookie 功能。</p>
+
+<p><code class="highlighter-rouge">document.cookie</code>属性返回当前网页的 Cookie。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 读取当前网页的所有cookie</span>
+<span class="kd">var</span> <span class="nx">allCookies</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>由于<code class="highlighter-rouge">document.cookie</code>返回的是分号分隔的所有 Cookie，所以必须手动还原，才能取出每一个 Cookie 的值。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">cookies</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">';'</span><span class="p">);</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">cookies</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<span class="err">  </span><span class="c1">// cookies[i] name=value形式的单个Cookie</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">document.cookie</code>属性是可写的，可以通过它为当前网站添加 Cookie。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span> <span class="o">=</span> <span class="s1">'fontSize=14'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Cookie 的值必须写成<code class="highlighter-rouge">key=value</code>的形式。注意，等号两边不能有空格。另外，写入 Cookie 的时候，必须对分号、逗号和空格进行转义（它们都不允许作为 Cookie 的值），这可以用<code class="highlighter-rouge">encodeURIComponent</code>方法达到。</p>
+
+<p>但是，<code class="highlighter-rouge">document.cookie</code>一次只能写入一个 Cookie，而且写入并不是覆盖，而是添加。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span> <span class="o">=</span> <span class="s1">'test1=hello'</span><span class="p">;</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span> <span class="o">=</span> <span class="s1">'test2=world'</span><span class="p">;</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span>
+<span class="c1">// test1=hello;test2=world</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">document.cookie</code>属性读写行为的差异（一次可以读出全部 Cookie，但是只能写入一个 Cookie），与服务器与浏览器之间的 Cookie 通信格式有关。浏览器向服务器发送 Cookie 的时候，是使用一行将所有 Cookie 全部发送。</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">GET</span> <span class="nn">/sample_page.html</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">www.example.org</span>
+<span class="na">Cookie</span><span class="p">:</span> <span class="s">cookie_name1=cookie_value1; cookie_name2=cookie_value2</span>
+<span class="na">Accept</span><span class="p">:</span> <span class="s">*/*</span>
+</code></pre></div></div>
+
+<p>上面的头信息中，<code class="highlighter-rouge">Cookie</code>字段是浏览器向服务器发送的 Cookie。</p>
+
+<p>服务器告诉浏览器需要储存 Cookie 的时候，则是分行指定。</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.0</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-type</span><span class="p">:</span> <span class="s">text/html</span>
+<span class="na">Set-Cookie</span><span class="p">:</span> <span class="s">cookie_name1=cookie_value1</span>
+<span class="na">Set-Cookie</span><span class="p">:</span> <span class="s">cookie_name2=cookie_value2; expires=Sun, 16 Jul 3567 06:23:41 GMT</span>
+</code></pre></div></div>
+
+<p>上面的头信息中，<code class="highlighter-rouge">Set-Cookie</code>字段是服务器写入浏览器的 Cookie，一行一个。</p>
+
+<p>如果仔细看浏览器向服务器发送的 Cookie，就会意识到，Cookie 协议存在问题。对于服务器来说，有两点是无法知道的。</p>
+
+<ul>
+  <li>Cookie 的各种属性，比如何时过期。</li>
+  <li>哪个域名设置的 Cookie，因为 Cookie 可能是一级域名设的，也可能是任意一个二级域名设的。</li>
+</ul>
+
+<h2 id="cookie-的属性">Cookie 的属性</h2>
+
+<p>服务器向浏览器发送 Cookie 的时候，除了 Cookie 本身的内容，还有一些可选的属性也是可以写入的，它们都必须以分号开头。</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">Set-Cookie: value[; expires=date][; domain=domain][; path=path][; secure]
+</span></code></pre></div></div>
+
+<p>上面的<code class="highlighter-rouge">Set-Cookie</code>字段，用分号分隔多个属性。它们的含义如下。</p>
+
+<p>（1）value 属性</p>
+
+<p><code class="highlighter-rouge">value</code>属性是必需的，它是一个键值对，用于指定Cookie的值。</p>
+
+<p>（2）expires 属性</p>
+
+<p><code class="highlighter-rouge">expires</code>属性用于指定 Cookie 过期时间。它的格式采用<code class="highlighter-rouge">Date.toUTCString()</code>的格式。</p>
+
+<p>如果不设置该属性，或者设为<code class="highlighter-rouge">null</code>，Cookie只在当前会话（session）有效，浏览器窗口一旦关闭，当前 Session 结束，该 Cookie 就会被删除。</p>
+
+<p>浏览器根据本地时间，决定 Cookie 是否过期，由于本地时间是不精确的，所以没有办法保证 Cookie 一定会在服务器指定的时间过期。</p>
+
+<p>（3）domain属性</p>
+
+<p><code class="highlighter-rouge">domain</code>属性指定 Cookie 所在的域名，比如<code class="highlighter-rouge">example.com</code>或<code class="highlighter-rouge">.example.com</code>（这种写法将对所有子域名生效）、<code class="highlighter-rouge">subdomain.example.com</code>。</p>
+
+<p>如果未指定，默认为设定该Cookie的域名。所指定的域名必须是当前发送Cookie的域名的一部分，比如当前访问的域名是<code class="highlighter-rouge">example.com</code>，就不能将其设为<code class="highlighter-rouge">google.com</code>。只有访问的域名匹配 domain 属性，Cookie 才会发送到服务器。</p>
+
+<p>（4）path 属性</p>
+
+<p><code class="highlighter-rouge">path</code>属性用来指定路径，必须是绝对路径（比如<code class="highlighter-rouge">/</code>、<code class="highlighter-rouge">/mydir</code>），如果未指定，默认为请求该 Cookie 的网页路径。</p>
+
+<p>只有<code class="highlighter-rouge">path</code>属性匹配向服务器发送的路径，Cookie 才会发送。这里的匹配不是绝对匹配，而是从根路径开始，只要<code class="highlighter-rouge">path</code>属性匹配发送路径的一部分，就可以发送。比如，<code class="highlighter-rouge">path</code>属性等于<code class="highlighter-rouge">/blog</code>，则发送路径是<code class="highlighter-rouge">/blog</code>或者<code class="highlighter-rouge">/blog/roll</code>，Cookie都会发送。<code class="highlighter-rouge">path</code>属性生效的前提是<code class="highlighter-rouge">domain</code>属性匹配。</p>
+
+<p>（5）secure 属性</p>
+
+<p><code class="highlighter-rouge">secure</code>属性用来指定Cookie只能在加密协议HTTPS下发送到服务器。</p>
+
+<p>该属性只是一个开关，不需要指定值。如果通信是HTTPS协议，该开关自动打开。</p>
+
+<p>（6）max-age</p>
+
+<p><code class="highlighter-rouge">max-age</code>属性用来指定Cookie有效期，比如<code class="highlighter-rouge">60 * 60 * 24 * 365</code>（即一年31536e3秒）。</p>
+
+<p>（7）HttpOnly</p>
+
+<p><code class="highlighter-rouge">HttpOnly</code>属性用于设置该Cookie不能被JavaScript读取，详见下文的说明。</p>
+
+<p>以上属性可以同时设置一个或多个，也没有次序的要求。如果服务器想改变一个早先设置的Cookie，必须同时满足四个条件：Cookie的<code class="highlighter-rouge">key</code>、<code class="highlighter-rouge">domain</code>、<code class="highlighter-rouge">path</code>和<code class="highlighter-rouge">secure</code>都匹配。也就是说，如果原始的Cookie是用如下的<code class="highlighter-rouge">Set-Cookie</code>设置的。</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">Set-Cookie: key1=value1; domain=example.com; path=/blog
+</span></code></pre></div></div>
+
+<p>改变上面这个 Cookie 的值，就必须使用同样的<code class="highlighter-rouge">Set-Cookie</code>。</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">Set-Cookie: key1=value2; domain=example.com; path=/blog
+</span></code></pre></div></div>
+
+<p>只要有一个属性不同，就会生成一个全新的 Cookie，而不是替换掉原来那个 Cookie。</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">Set-Cookie: key1=value2; domain=example.com; path=/
+</span></code></pre></div></div>
+
+<p>上面的命令设置了一个全新的同名 Cookie，但是<code class="highlighter-rouge">path</code>属性不一样。下一次访问<code class="highlighter-rouge">example.com/blog</code>的时候，浏览器将向服务器发送两个同名的 Cookie。</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">Cookie: key1=value1; key1=value2
+</span></code></pre></div></div>
+
+<p>上面代码的两个 Cookie 是同名的，匹配越精确的Cookie排在越前面。</p>
+
+<p>浏览器设置这些属性的写法如下。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span> <span class="o">=</span> <span class="s1">'fontSize=14; '</span>
+  <span class="o">+</span> <span class="s1">'expires='</span> <span class="o">+</span> <span class="nx">someDate</span><span class="p">.</span><span class="nx">toGMTString</span><span class="p">()</span> <span class="o">+</span> <span class="s1">'; '</span>
+  <span class="o">+</span> <span class="s1">'path=/subdirectory; '</span>
+  <span class="o">+</span> <span class="s1">'domain=*.example.com'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>另外，这些属性只能用来设置 Cookie。一旦设置完成，就没有办法读取这些属性的值。</p>
+
+<p>删除一个 Cookie 的唯一方法是设置其<code class="highlighter-rouge">expires</code>为一个过去的日期。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span> <span class="o">=</span> <span class="s1">'fontSize=;expires=Thu, 01-Jan-1970 00:00:01 GMT'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>上面代码中，名为<code class="highlighter-rouge">fontSize</code>的 Cookie 的值为空，过期时间设为1970年1月1月零点，就等同于删除了这个 Cookie。</p>
+
+<h2 id="cookie-的限制">Cookie 的限制</h2>
+
+<p>浏览器对 Cookie 数量的限制，规定不一样。目前，Firefox 是每个域名最多设置50个 Cookie，而 Safari 和 Chrome 没有域名数量的限制。</p>
+
+<p>所有 Cookie 的累加长度限制为4KB。超过这个长度的 Cookie，将被忽略，不会被设置。</p>
+
+<p>由于 Cookie 可能存在数量限制，有时为了规避限制，可以将 Cookie 设置成下面的形式。</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">name=a=b&amp;c=d&amp;e=f&amp;g=h
+</span></code></pre></div></div>
+
+<p>上面代码实际上是设置了一个 Cookie，但是这个 Cookie 内部使用<code class="highlighter-rouge">&amp;</code>符号，设置了多部分的内容。因此，读取这个 Cookie 的时候，就要自行解析，得到多个键值对。这样就规避了 Cookie 的数量限制。</p>
+
+<h2 id="同源政策">同源政策</h2>
+
+<p>浏览器的同源政策规定，两个网址只要域名相同和端口相同，就可以共享 Cookie。</p>
+
+<p>注意，这里不要求协议相同。也就是说，<code class="highlighter-rouge">http://example.com</code>设置的Cookie，可以被<code class="highlighter-rouge">https://example.com</code>读取。</p>
+
+<h2 id="http-only-cookie">Http-Only Cookie</h2>
+
+<p>设置 Cookie 的时候，如果服务器加上了<code class="highlighter-rouge">HttpOnly</code>属性，则这个 Cookie 无法被 JavaScript 读取（即<code class="highlighter-rouge">document.cookie</code>不会返回这个Cookie的值），只用于向服务器发送。</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">Set-Cookie: key=value; HttpOnly
+</span></code></pre></div></div>
+
+<p>上面的这个 Cookie 将无法用 JavaScript 获取。进行 AJAX 操作时，<code class="highlighter-rouge">XMLHttpRequest</code>对象也无法包括这个 Cookie。这主要是为了防止 XSS 攻击盗取 Cookie。</p>
+
+
+
+</article>
+
+<div class="row">
+<div class="twelve columns">
+
+<h2>留言</h2>
+
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'jstutorial'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="javascript:if(confirm('http://disqus.com/?ref_noscript  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://disqus.com/?ref_noscript'" tppabs="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="javascript:if(confirm('http://disqus.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://disqus.com/'" tppabs="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</section>
+
+</div>
+</div>
+
+<footer>
+<div class="row">
+<div class="twelve columns">
+	<p><a href="license.html" tppabs="http://javascript.ruanyifeng.com/introduction/license.html">版权声明</a> | last modified on 2016-04-10 </p>
+</div>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-43771063-1', 'http://javascript.ruanyifeng.com/bom/ruanyifeng.com');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
+
+

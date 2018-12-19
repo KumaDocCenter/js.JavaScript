@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>Source Map -- JavaScript 标准参考教程（alpha）</title>
+  
+  <!-- Included CSS Files (Uncompressed) -->
+  <!--
+  <link rel="stylesheet" href="stylesheets/foundation.css">
+  -->
+  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="foundation.css" tppabs="http://javascript.ruanyifeng.com/css/foundation.css">
+  <link rel="stylesheet" href="main.css" tppabs="http://javascript.ruanyifeng.com/css/main.css">
+
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="html5.js" tppabs="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <script src="jquery.js" tppabs="http://javascript.ruanyifeng.com/js/jquery.js"></script>
+  <script src="toc.js" tppabs="http://javascript.ruanyifeng.com/js/toc.js"></script>
+  <script src="main.js" tppabs="http://javascript.ruanyifeng.com/js/main.js"></script>
+
+</head>
+<body>
+
+<header class="top-bar" id="header">
+
+<div class="fixed">
+
+<nav class="top-bar">
+<ul>
+<!-- Title Area -->
+	<li class="name has-dropdown">
+	<h1><a href="index.htm" tppabs="http://javascript.ruanyifeng.com/">JavaScript 标准参考教程（alpha） </a></h1>
+		<ul class="dropdown">
+			
+			<li><a href="index.htm#introduction" tppabs="http://javascript.ruanyifeng.com/#introduction">导论</a></li>
+			
+			<li><a href="index.htm#grammar" tppabs="http://javascript.ruanyifeng.com/#grammar">语法</a></li>
+			
+			<li><a href="index.htm#stdlib" tppabs="http://javascript.ruanyifeng.com/#stdlib">标准库</a></li>
+			
+			<li><a href="index.htm#oop" tppabs="http://javascript.ruanyifeng.com/#oop">面向对象编程</a></li>
+			
+			<li><a href="index.htm#advanced" tppabs="http://javascript.ruanyifeng.com/#advanced">语法专题</a></li>
+			
+			<li><a href="index.htm#dom" tppabs="http://javascript.ruanyifeng.com/#dom">DOM模型</a></li>
+			
+			<li><a href="index.htm#bom" tppabs="http://javascript.ruanyifeng.com/#bom">浏览器环境</a></li>
+			
+			<li><a href="index.htm#htmlapi" tppabs="http://javascript.ruanyifeng.com/#htmlapi">Web API</a></li>
+			
+		</ul>
+	</li>
+</ul>
+
+<section>
+
+
+<ul class="left">
+<li class="divider"></li>
+<li class="has-dropdown"><a class="active" href="#"> 开发工具 </a><ul class="dropdown">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="bower.html" tppabs="http://javascript.ruanyifeng.com/tool/bower.html">Bower：客户端库管理工具</a></li>
+
+
+
+
+
+<li><a href="browserify.html" tppabs="http://javascript.ruanyifeng.com/tool/browserify.html">Browserify：浏览器加载Node.js模块</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="console.html" tppabs="http://javascript.ruanyifeng.com/stdlib/console.html">console对象</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="grunt.html" tppabs="http://javascript.ruanyifeng.com/tool/grunt.html">Grunt：任务自动管理工具</a></li>
+
+
+
+
+
+<li><a href="gulp.html" tppabs="http://javascript.ruanyifeng.com/tool/gulp.html">Gulp：任务自动管理工具</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="lint.html" tppabs="http://javascript.ruanyifeng.com/tool/lint.html">Lint 工具</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="phantomjs.html" tppabs="http://javascript.ruanyifeng.com/tool/phantomjs.html">PhantomJS</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="requirejs.html" tppabs="http://javascript.ruanyifeng.com/tool/requirejs.html">RequireJS和AMD规范</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="active"><a href="#">Source Map</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="testing.html" tppabs="http://javascript.ruanyifeng.com/tool/testing.html">JavaScript 程序测试</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul></li>
+<li class="divider"></li>
+<li class="has-dropdown nav-3"><a href="#"> Source Map</a><ul class="dropdown">
+</ul></li>
+</ul>
+
+
+<ul class="right">
+	<li class="divider"></li>
+	<li>
+		<a href="javascript:if(confirm('https://github.com/ruanyf/jstutorial  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://github.com/ruanyf/jstutorial'" tppabs="https://github.com/ruanyf/jstutorial" target="_blank">GitHub <i class="foundicon-edit"></i></a>
+	</li>
+	<li class="divider"></li>
+	<li>
+		<a href="#">TOP <i class="foundicon-up-arrow"></i></a>
+	</li>
+</ul>
+
+</section>
+
+</nav>  
+</div>
+</header>
+
+
+<article class="bookPage">
+
+  <div class="row">
+    <div class="twelve columns">
+
+<h1> Source Map </h1>
+
+<aside class="right"><p>来自<a href="index.htm" tppabs="http://javascript.ruanyifeng.com/">《JavaScript 标准参考教程（alpha）》</a>，by 阮一峰</p></aside>
+
+<div id="toc" class="panel callout radius">目录</div>
+
+
+<h2 id="概述">概述</h2>
+
+<p>随着JavaScript脚本变得越来越复杂，大部分源码（尤其是各种函数库和框架）都要经过转换，才能投入生产环境。</p>
+
+<p>常见的源码转换，主要是以下三种情况：</p>
+
+<ul>
+  <li>压缩，减小体积。比如jQuery 1.9的源码，压缩前是252KB，压缩后是32KB。</li>
+  <li>多个文件合并，减少HTTP请求数。</li>
+  <li>其他语言编译成JavaScript。最常见的例子就是CoffeeScript。</li>
+</ul>
+
+<p>这三种情况，都使得实际运行的代码不同于开发代码，除错（debug）变得困难重重。</p>
+
+<p>通常，JavaScript的解释器会告诉你，第几行第几列代码出错。但是，这对于转换后的代码毫无用处。举例来说，jQuery 1.9压缩后只有3行，每行3万个字符，所有内部变量都改了名字。你看着报错信息，感到毫无头绪，根本不知道它所对应的原始位置。</p>
+
+<p>这就是Source map想要解决的问题。</p>
+
+<p>简单说，Source map就是一个信息文件，里面储存着位置信息。也就是说，转换后的代码的每一个位置，所对应的转换前的位置。</p>
+
+<p>有了它，出错的时候，除错工具将直接显示原始代码，而不是转换后的代码。这无疑给开发者带来了很大方便。</p>
+
+<p>目前，暂时只有Chrome浏览器支持这个功能。在Developer Tools的Setting设置中，确认选中”Enable source maps”。</p>
+
+<h2 id="生成和启用">生成和启用</h2>
+
+<p>生成Source Map的最常用方法，是使用Google的<a href="javascript:if(confirm('https://developers.google.com/closure/compiler/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://developers.google.com/closure/compiler/'" tppabs="https://developers.google.com/closure/compiler/">Closure编译器</a>。</p>
+
+<p>生成命令的格式如下：</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">java</span> <span class="o">-</span><span class="n">jar</span> <span class="n">compiler</span><span class="o">.</span><span class="na">jar</span> <span class="err">\</span> <br data-jekyll-commonmark-ghpages="" /><span class="err">　　</span><span class="o">--</span><span class="n">js</span> <span class="n">script</span><span class="o">.</span><span class="na">js</span> <span class="err">\</span><br data-jekyll-commonmark-ghpages="" /><span class="err">　　</span><span class="o">--</span><span class="n">create_source_map</span> <span class="o">./</span><span class="n">script</span><span class="o">-</span><span class="n">min</span><span class="o">.</span><span class="na">js</span><span class="o">.</span><span class="na">map</span> <span class="err">\</span><br data-jekyll-commonmark-ghpages="" /><span class="err">　　</span><span class="o">--</span><span class="n">source_map_format</span><span class="o">=</span><span class="n">V3</span> <span class="err">\</span><br data-jekyll-commonmark-ghpages="" /><span class="err">　　</span><span class="o">--</span><span class="n">js_output_file</span> <span class="n">script</span><span class="o">-</span><span class="n">min</span><span class="o">.</span><span class="na">js</span></code></pre></figure>
+
+<p>各个参数的意义如下：</p>
+
+<ul>
+  <li>js： 转换前的代码文件</li>
+  <li>create_source_map： 生成的source map文件</li>
+  <li>source_map_format：source map的版本，目前一律采用V3。</li>
+  <li>js_output_file： 转换后的代码文件。</li>
+</ul>
+
+<p>其他的生成方法可以参考<a href="javascript:if(confirm('http://net.tutsplus.com/tutorials/tools-and-tips/source-maps-101/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://net.tutsplus.com/tutorials/tools-and-tips/source-maps-101/'" tppabs="http://net.tutsplus.com/tutorials/tools-and-tips/source-maps-101/">这篇文章</a>。</p>
+
+<p>启用Source map的方法很简单，只要在转换后的代码头部或尾部，加上一行就可以了。</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">//# sourceMappingURL=/path/to/file.js.map</span></code></pre></figure>
+
+<p>或者</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="cm">/*# sourceMappingURL=/path/to/file.js.map */</span></code></pre></figure>
+
+<p>map文件可以放在网络上，也可以放在本地文件系统。</p>
+
+<h2 id="格式">格式</h2>
+
+<p>打开Source map文件，它大概是这个样子：</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="err">　　</span><span class="p">{</span><br data-jekyll-commonmark-ghpages="" /><span class="err">　　　　</span><span class="nx">version</span> <span class="p">:</span> <span class="mi">3</span><span class="p">,</span><br data-jekyll-commonmark-ghpages="" /><span class="err">　　　　</span><span class="nx">file</span><span class="p">:</span> <span class="s2">"out.js"</span><span class="p">,</span><br data-jekyll-commonmark-ghpages="" /><span class="err">　　　　</span><span class="nx">sourceRoot</span> <span class="p">:</span> <span class="s2">""</span><span class="p">,</span><br data-jekyll-commonmark-ghpages="" /><span class="err">　　　　</span><span class="nx">sources</span><span class="p">:</span> <span class="p">[</span><span class="s2">"foo.js"</span><span class="p">,</span> <span class="s2">"bar.js"</span><span class="p">],</span><br data-jekyll-commonmark-ghpages="" /><span class="err">　　　　</span><span class="nx">names</span><span class="p">:</span> <span class="p">[</span><span class="s2">"src"</span><span class="p">,</span> <span class="s2">"maps"</span><span class="p">,</span> <span class="s2">"are"</span><span class="p">,</span> <span class="s2">"fun"</span><span class="p">],</span><br data-jekyll-commonmark-ghpages="" /><span class="err">　　　　</span><span class="nx">mappings</span><span class="p">:</span> <span class="s2">"AAgBC,SAAQ,CAAEA"</span><br data-jekyll-commonmark-ghpages="" /><span class="err">　　</span><span class="p">}</span></code></pre></figure>
+
+<p>整个文件就是一个JavaScript对象，可以被解释器读取。它主要有以下几个属性：</p>
+
+<ul>
+  <li>version：Source map的版本，目前为3。</li>
+  <li>file：转换后的文件名。</li>
+  <li>sourceRoot：转换前的文件所在的目录。如果与转换前的文件在同一目录，该项为空。</li>
+  <li>sources：转换前的文件。该项是一个数组，表示可能存在多个文件合并。</li>
+  <li>names：转换前的所有变量名和属性名。</li>
+  <li>mappings：记录位置信息的字符串。</li>
+</ul>
+
+<h2 id="mappings属性">mappings属性</h2>
+
+<p>转换前后的代码一一对应的关键，就是map文件的mappings属性。这是一个很长的字符串，它分成三层。</p>
+
+<p>第一层是行对应，以分号（;）表示，每个分号对应转换后源码的一行。所以，第一个分号前的内容，就对应源码的第一行，以此类推。</p>
+
+<p>第二层是位置对应，以逗号（,）表示，每个逗号对应转换后源码的一个位置。所以，第一个逗号前的内容，就对应该行源码的第一个位置，以此类推。</p>
+
+<p>第三层是位置转换，以<a href="javascript:if(confirm('http://en.wikipedia.org/wiki/Variable-length_quantity  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://en.wikipedia.org/wiki/Variable-length_quantity'" tppabs="http://en.wikipedia.org/wiki/Variable-length_quantity">VLQ编码</a>表示，代表该位置对应的转换前的源码位置。</p>
+
+<p>举例来说，假定mappings属性的内容如下：</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">mappings</span><span class="p">:</span><span class="s2">"AAAAA,BBBBB;CCCCC"</span></code></pre></figure>
+
+<p>它表示，转换后的源码分成两行，第一行有两个位置，第二行有一个位置。</p>
+
+<p>每个位置使用五位，表示五个字段。从左边算起，</p>
+
+<ul>
+  <li>第一位，表示这个位置在（转换后的代码的）的第几列。</li>
+  <li>第二位，表示这个位置属于sources属性中的哪一个文件。</li>
+  <li>第三位，表示这个位置属于转换前代码的第几行。</li>
+  <li>第四位，表示这个位置属于转换前代码的第几列。</li>
+  <li>第五位，表示这个位置属于names属性中的哪一个变量。</li>
+</ul>
+
+<p>有几点需要说明。首先，所有的值都是以0作为基数的。其次，第五位不是必需的，如果该位置没有对应names属性中的变量，可以省略第五位。再次，每一位都采用VLQ编码表示；由于VLQ编码是变长的，所以每一位可以由多个字符构成。</p>
+
+<p>如果某个位置是AAAAA，由于A在VLQ编码中表示0，因此这个位置的五个位实际上都是0。它的意思是，该位置在转换后代码的第0列，对应sources属性中第0个文件，属于转换前代码的第0行第0列，对应names属性中的第0个变量。</p>
+
+<h2 id="vlq编码">VLQ编码</h2>
+
+<p>这种编码最早用于MIDI文件，后来被多种格式采用。它的特点就是可以非常精简地表示很大的数值。</p>
+
+<p>VLQ编码是变长的。如果（整）数值在-15到+15之间（含两个端点），用一个字符表示；超出这个范围，就需要用多个字符表示。它规定，每个字符使用6个两进制位，正好可以借用<a href="javascript:if(confirm('http://en.wikipedia.org/wiki/Base_64  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://en.wikipedia.org/wiki/Base_64'" tppabs="http://en.wikipedia.org/wiki/Base_64">Base 64编码</a>的字符表。</p>
+
+<p>在这6个位中，左边的第一位（最高位）表示是否”连续”（continuation）。如果是1，代表这６个位后面的6个位也属于同一个数；如果是0，表示该数值到这6个位结束。</p>
+
+<p>这6个位中的右边最后一位（最低位）的含义，取决于这6个位是否是某个数值的VLQ编码的第一个字符。如果是的，这个位代表”符号”（sign），0为正，1为负（Source map的符号固定为0）；如果不是，这个位没有特殊含义，被算作数值的一部分。</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">Continuation<br data-jekyll-commonmark-ghpages="" />|　　　　　Sign<br data-jekyll-commonmark-ghpages="" />|　　　　　|<br data-jekyll-commonmark-ghpages="" />V　　　　　V<br data-jekyll-commonmark-ghpages="" />１０１０１１</code></pre></figure>
+
+<p>下面举例如何对数值16进行VLQ编码。</p>
+
+<p>(1) 将16改写成二进制形式10000。</p>
+
+<p>(2) 在最右边补充符号位。因为16大于0，所以符号位为0，整个数变成100000。</p>
+
+<p>(3) 从右边的最低位开始，将整个数每隔5位，进行分段，即变成1和00000两段。如果最高位所在的段不足5位，则前面补0，因此两段变成00001和00000。</p>
+
+<p>(4) 将两段的顺序倒过来，即00000和00001。</p>
+
+<p>(5) 在每一段的最前面添加一个”连续位”，除了最后一段为0，其他都为1，即变成100000和000001。</p>
+
+<p>(6) 将每一段转成Base 64编码。查表可知，100000为g，000001为B。因此，数值16的VLQ编码为gB。</p>
+
+<p>上面的过程，看上去好像很复杂，做起来其实很简单，具体的实现可以参考官方的<a href="javascript:if(confirm('https://github.com/mozilla/source-map/blob/master/lib/source-map/base64-vlq.js  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://github.com/mozilla/source-map/blob/master/lib/source-map/base64-vlq.js'" tppabs="https://github.com/mozilla/source-map/blob/master/lib/source-map/base64-vlq.js">base64-vlq.js</a>文件，里面有详细的注释。</p>
+
+<h2 id="参考链接">参考链接</h2>
+
+<ul>
+  <li><a href="javascript:if(confirm('http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/'" tppabs="http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/">Introduction To JavaScript Source Maps</a></li>
+  <li><a href="javascript:if(confirm('https://docs.google.com/document/d/1U1RGAehQwRypUTovF1KRlpiOFze0b-_2gc6fAH0KY0k/edit  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://docs.google.com/document/d/1U1RGAehQwRypUTovF1KRlpiOFze0b-_2gc6fAH0KY0k/edit'" tppabs="https://docs.google.com/document/d/1U1RGAehQwRypUTovF1KRlpiOFze0b-_2gc6fAH0KY0k/edit">Source Map Revision 3 Proposal</a></li>
+  <li>Paul Irish, <a href="javascript:if(confirm('http://updates.html5rocks.com/2013/06/sourceMappingURL-and-sourceURL-syntax-changed  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://updates.html5rocks.com/2013/06/sourceMappingURL-and-sourceURL-syntax-changed'" tppabs="http://updates.html5rocks.com/2013/06/sourceMappingURL-and-sourceURL-syntax-changed">sourceMappingURL and sourceURL syntax changed</a></li>
+</ul>
+
+
+</article>
+
+<div class="row">
+<div class="twelve columns">
+
+<h2>留言</h2>
+
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'jstutorial'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="javascript:if(confirm('http://disqus.com/?ref_noscript  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://disqus.com/?ref_noscript'" tppabs="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="javascript:if(confirm('http://disqus.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://disqus.com/'" tppabs="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</section>
+
+</div>
+</div>
+
+<footer>
+<div class="row">
+<div class="twelve columns">
+	<p><a href="license.html" tppabs="http://javascript.ruanyifeng.com/introduction/license.html">版权声明</a> | last modified on 2013-06-20 </p>
+</div>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-43771063-1', 'http://javascript.ruanyifeng.com/tool/ruanyifeng.com');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
+
+

@@ -1,0 +1,7 @@
+
+From ：https://baike.baidu.com/item/JScript
+
+
+【 JScript 】
+
+JScript是由微软公司开发的活动脚本语言，是微软对ECMAScript规范的实现。

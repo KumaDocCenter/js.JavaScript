@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>运算符 -- JavaScript 标准参考教程（alpha）</title>
+  
+  <!-- Included CSS Files (Uncompressed) -->
+  <!--
+  <link rel="stylesheet" href="stylesheets/foundation.css">
+  -->
+  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="foundation.css" tppabs="http://javascript.ruanyifeng.com/css/foundation.css">
+  <link rel="stylesheet" href="main.css" tppabs="http://javascript.ruanyifeng.com/css/main.css">
+
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="html5.js" tppabs="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <script src="jquery.js" tppabs="http://javascript.ruanyifeng.com/js/jquery.js"></script>
+  <script src="toc.js" tppabs="http://javascript.ruanyifeng.com/js/toc.js"></script>
+  <script src="main.js" tppabs="http://javascript.ruanyifeng.com/js/main.js"></script>
+
+</head>
+<body>
+
+<header class="top-bar" id="header">
+
+<div class="fixed">
+
+<nav class="top-bar">
+<ul>
+<!-- Title Area -->
+	<li class="name has-dropdown">
+	<h1><a href="index.htm" tppabs="http://javascript.ruanyifeng.com/">JavaScript 标准参考教程（alpha） </a></h1>
+		<ul class="dropdown">
+			
+			<li><a href="index.htm#introduction" tppabs="http://javascript.ruanyifeng.com/#introduction">导论</a></li>
+			
+			<li><a href="index.htm#grammar" tppabs="http://javascript.ruanyifeng.com/#grammar">语法</a></li>
+			
+			<li><a href="index.htm#stdlib" tppabs="http://javascript.ruanyifeng.com/#stdlib">标准库</a></li>
+			
+			<li><a href="index.htm#oop" tppabs="http://javascript.ruanyifeng.com/#oop">面向对象编程</a></li>
+			
+			<li><a href="index.htm#advanced" tppabs="http://javascript.ruanyifeng.com/#advanced">语法专题</a></li>
+			
+			<li><a href="index.htm#dom" tppabs="http://javascript.ruanyifeng.com/#dom">DOM模型</a></li>
+			
+			<li><a href="index.htm#bom" tppabs="http://javascript.ruanyifeng.com/#bom">浏览器环境</a></li>
+			
+			<li><a href="index.htm#htmlapi" tppabs="http://javascript.ruanyifeng.com/#htmlapi">Web API</a></li>
+			
+		</ul>
+	</li>
+</ul>
+
+<section>
+
+
+<ul class="left">
+<li class="divider"></li>
+<li class="has-dropdown"><a class="active" href="#"> 语法 </a><ul class="dropdown">
+
+
+
+
+
+
+
+<li><a href="array.html" tppabs="http://javascript.ruanyifeng.com/grammar/array.html">数组</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="basic.html" tppabs="http://javascript.ruanyifeng.com/grammar/basic.html">基本语法</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="conversion.html" tppabs="http://javascript.ruanyifeng.com/grammar/conversion.html">数据类型转换</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="error.html" tppabs="http://javascript.ruanyifeng.com/grammar/error.html">错误处理机制</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="function.html" tppabs="http://javascript.ruanyifeng.com/grammar/function.html">函数</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="number.html" tppabs="http://javascript.ruanyifeng.com/grammar/number.html">数值</a></li>
+
+
+
+
+
+
+
+<li><a href="object.html" tppabs="http://javascript.ruanyifeng.com/grammar/object.html">对象</a></li>
+
+
+
+
+
+
+
+
+
+<li class="active"><a href="#">运算符</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="string.html" tppabs="http://javascript.ruanyifeng.com/grammar/string.html">字符串</a></li>
+
+
+
+
+
+
+
+<li><a href="style.html" tppabs="http://javascript.ruanyifeng.com/grammar/style.html">JavaScript 编程风格</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="types.html" tppabs="http://javascript.ruanyifeng.com/grammar/types.html">数据类型</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul></li>
+<li class="divider"></li>
+<li class="has-dropdown nav-3"><a href="#"> 运算符</a><ul class="dropdown">
+</ul></li>
+</ul>
+
+
+<ul class="right">
+	<li class="divider"></li>
+	<li>
+		<a href="javascript:if(confirm('https://github.com/ruanyf/jstutorial  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://github.com/ruanyf/jstutorial'" tppabs="https://github.com/ruanyf/jstutorial" target="_blank">GitHub <i class="foundicon-edit"></i></a>
+	</li>
+	<li class="divider"></li>
+	<li>
+		<a href="#">TOP <i class="foundicon-up-arrow"></i></a>
+	</li>
+</ul>
+
+</section>
+
+</nav>  
+</div>
+</header>
+
+
+<article class="bookPage">
+
+  <div class="row">
+    <div class="twelve columns">
+
+<h1> 运算符 </h1>
+
+<aside class="right"><p>来自<a href="index.htm" tppabs="http://javascript.ruanyifeng.com/">《JavaScript 标准参考教程（alpha）》</a>，by 阮一峰</p></aside>
+
+<div id="toc" class="panel callout radius">目录</div>
+
+
+<p>运算符是处理数据的基本方法，用来从现有数据得到新的数据。JavaScript与其他编程语言一样，提供了多种运算符。本节逐一介绍这些运算符。</p>
+
+<h2 id="加法运算符">加法运算符</h2>
+
+<p>加法运算符（<code class="highlighter-rouge">+</code>）是最常见的运算符之一，但是使用规则却相对复杂。因为在JavaScript语言里面，这个运算符可以完成两种运算，既可以处理算术的加法，也可以用作字符串连接，它们都写成<code class="highlighter-rouge">+</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 加法</span>
+<span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1">// 2</span>
+<span class="kc">true</span> <span class="o">+</span> <span class="kc">true</span> <span class="c1">// 2</span>
+<span class="mi">1</span> <span class="o">+</span> <span class="kc">true</span> <span class="c1">// 2</span>
+
+<span class="c1">// 字符串连接</span>
+<span class="s1">'1'</span> <span class="o">+</span> <span class="s1">'1'</span> <span class="c1">// "11"</span>
+<span class="s1">'1.1'</span> <span class="o">+</span> <span class="s1">'1.1'</span> <span class="c1">// "1.11.1"</span>
+</code></pre></div></div>
+
+<p>它的算法步骤如下。</p>
+
+<ol>
+  <li>如果运算子是对象，先自动转成原始类型的值（即先执行该对象的<code class="highlighter-rouge">valueOf</code>方法，如果结果还不是原始类型的值，再执行<code class="highlighter-rouge">toString</code>方法；如果对象是<code class="highlighter-rouge">Date</code>实例，则先执行<code class="highlighter-rouge">toString</code>方法）。</li>
+  <li>两个运算子都是原始类型的值以后，只要有一个运算子是字符串，则两个运算子都转为字符串，执行字符串连接运算。</li>
+  <li>否则，两个运算子都转为数值，执行加法运算。</li>
+</ol>
+
+<p>下面是一些例子。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'1'</span> <span class="o">+</span> <span class="p">{</span><span class="na">foo</span><span class="p">:</span> <span class="s1">'bar'</span><span class="p">}</span> <span class="c1">// "1[object Object]"</span>
+<span class="s1">'1'</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1">// "11"</span>
+<span class="s1">'1'</span> <span class="o">+</span> <span class="kc">true</span> <span class="c1">// "1true"</span>
+<span class="s1">'1'</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1">// "11"</span>
+</code></pre></div></div>
+
+<p>上面代码中，由于运算符左边是一个字符串，导致右边的运算子都会先转为字符串，然后执行字符串连接运算。</p>
+
+<p>这种由于参数不同，而改变自身行为的现象，叫做“重载”（overload）。由于加法运算符是运行时决定到底执行那种运算，使用的时候必须很小心。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'3'</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">5</span> <span class="c1">// "345"</span>
+<span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">+</span> <span class="s1">'5'</span> <span class="c1">// "75"</span>
+</code></pre></div></div>
+
+<p>上面代码中，运算结果由于字符串的位置不同而不同。</p>
+
+<p>下面的写法，可以用来将一个值转为字符串。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">x</span> <span class="o">+</span> <span class="s1">''</span>
+</code></pre></div></div>
+
+<p>上面代码中，一个值加上空字符串，会使得该值转为字符串形式。</p>
+
+<p>加法运算符会将其他类型的值，自动转为字符串，然后再执行连接运算。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="c1">// "1,23"</span>
+
+<span class="c1">// 等同于</span>
+<span class="nb">String</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="o">+</span> <span class="nb">String</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="c1">// '1,2' + '3'</span>
+</code></pre></div></div>
+
+<p>上面代码中，两个数组相加，会先转成字符串，然后再连接。这种数据类型的自动转换，参见《数据类型转换》一节。</p>
+
+<p>加法运算符一定有左右两个运算子，如果只有右边一个运算子，就是另一个运算符，叫做“数值运算符”。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">+</span> <span class="o">-</span> <span class="mi">3</span> <span class="c1">// 等同于 +(-3)</span>
+<span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="c1">// 等同于 +(1 + 2)</span>
+<span class="o">+</span> <span class="s1">'1'</span> <span class="c1">// 1</span>
+</code></pre></div></div>
+
+<p>上面代码中，数值运算符用于返回右边运算子的数值形式，详细解释见下文。</p>
+
+<p>你可能会问，如果只有左边一个运算子，会出现什么情况？答案是会报错。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">1</span> <span class="o">+</span>
+<span class="c1">// SyntaxError: Unexpected end of input</span>
+</code></pre></div></div>
+
+<p>加法运算符以外的其他算术运算符（比如减法、除法和乘法），都不会发生重载。它们的规则是：所有运算子一律转为数值，再进行相应的数学运算。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">1</span> <span class="o">-</span> <span class="s1">'2'</span> <span class="c1">// -1</span>
+<span class="mi">1</span> <span class="o">*</span> <span class="s1">'2'</span> <span class="c1">// 2</span>
+<span class="mi">1</span> <span class="o">/</span> <span class="s1">'2'</span> <span class="c1">// 0.5</span>
+</code></pre></div></div>
+
+<p>上面代码中，减法、除法和乘法运算符，都是将字符串自动转为数值，然后再运算。</p>
+
+<p>由于加法运算符与其他算术运算符的这种差异，会导致一些意想不到的结果，计算时要小心。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">now</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+<span class="k">typeof</span> <span class="p">(</span><span class="nx">now</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">// "string"</span>
+<span class="k">typeof</span> <span class="p">(</span><span class="nx">now</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">// "number"</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">now</code>是一个<code class="highlighter-rouge">Date</code>对象的实例。加法运算时，得到的是一个字符串；减法运算时，得到却是一个数值。</p>
+
+<h2 id="算术运算符">算术运算符</h2>
+
+<p>JavaScript提供9个算术运算符，用来完成基本的算术运算。</p>
+
+<ul>
+  <li><strong>加法运算符</strong>（Addition）：<code class="highlighter-rouge">x + y</code></li>
+  <li><strong>减法运算符</strong>（Subtraction）： <code class="highlighter-rouge">x - y</code></li>
+  <li><strong>乘法运算符</strong>（Multiplication）： <code class="highlighter-rouge">x * y</code></li>
+  <li><strong>除法运算符</strong>（Division）：<code class="highlighter-rouge">x / y</code></li>
+  <li><strong>余数运算符</strong>（Remainder）：<code class="highlighter-rouge">x % y</code></li>
+  <li><strong>自增运算符</strong>（Increment）：<code class="highlighter-rouge">++x</code> 或者 <code class="highlighter-rouge">x++</code></li>
+  <li><strong>自减运算符</strong>（Decrement）：<code class="highlighter-rouge">--x</code> 或者 <code class="highlighter-rouge">x--</code></li>
+  <li><strong>数值运算符</strong>（Convert to number）： <code class="highlighter-rouge">+x</code></li>
+  <li><strong>负数值运算符</strong>（Negate）：<code class="highlighter-rouge">-x</code></li>
+</ul>
+
+<p>减法、乘法、除法运算法比较单纯，就是执行相应的数学运算。下面介绍其他几个算术运算符。</p>
+
+<h3 id="余数运算符">余数运算符</h3>
+
+<p>余数运算符（<code class="highlighter-rouge">%</code>）返回前一个运算子被后一个运算子除，所得的余数。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">12</span> <span class="o">%</span> <span class="mi">5</span> <span class="c1">// 2</span>
+</code></pre></div></div>
+
+<p>需要注意的是，运算结果的正负号由第一个运算子的正负号决定。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">-</span><span class="mi">1</span> <span class="o">%</span> <span class="mi">2</span> <span class="c1">// -1</span>
+<span class="mi">1</span> <span class="o">%</span> <span class="o">-</span><span class="mi">2</span> <span class="c1">// 1</span>
+</code></pre></div></div>
+
+<p>为了得到正确的负数的余数值，需要先使用绝对值函数。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 错误的写法</span>
+<span class="kd">function</span> <span class="nx">isOdd</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">isOdd</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span> <span class="c1">// false</span>
+<span class="nx">isOdd</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span> <span class="c1">// false</span>
+
+<span class="c1">// 正确的写法</span>
+<span class="kd">function</span> <span class="nx">isOdd</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">n</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span> <span class="o">===</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">isOdd</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span> <span class="c1">// true</span>
+<span class="nx">isOdd</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span> <span class="c1">// false</span>
+</code></pre></div></div>
+
+<p>余数运算符还可以用于浮点数的运算。但是，由于浮点数不是精确的值，无法得到完全准确的结果。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">6.5</span> <span class="o">%</span> <span class="mf">2.1</span>
+<span class="c1">// 0.19999999999999973</span>
+</code></pre></div></div>
+
+<h3 id="自增和自减运算符">自增和自减运算符</h3>
+
+<p>自增和自减运算符，是一元运算符，只需要一个运算子。它们的作用是将运算子首先转为数值，然后加上1或者减去1。它们会修改原始变量。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="o">++</span><span class="nx">x</span> <span class="c1">// 2</span>
+<span class="nx">x</span> <span class="c1">// 2</span>
+
+<span class="o">--</span><span class="nx">x</span> <span class="c1">// 1</span>
+<span class="nx">x</span> <span class="c1">// 1</span>
+</code></pre></div></div>
+
+<p>上面代码的变量<code class="highlighter-rouge">x</code>自增后，返回<code class="highlighter-rouge">2</code>，再进行自减，返回<code class="highlighter-rouge">1</code>。这两种情况都会使得，原始变量<code class="highlighter-rouge">x</code>的值发生改变。</p>
+
+<p>自增和自减运算符有一个需要注意的地方，就是放在变量之后，会先返回变量操作前的值，再进行自增/自减操作；放在变量之前，会先进行自增/自减操作，再返回变量操作后的值。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="nx">x</span><span class="o">++</span> <span class="c1">// 1</span>
+<span class="o">++</span><span class="nx">y</span> <span class="c1">// 2</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">x</code>是先返回当前值，然后自增，所以得到<code class="highlighter-rouge">1</code>；<code class="highlighter-rouge">y</code>是先自增，然后返回新的值，所以得到<code class="highlighter-rouge">2</code>。</p>
+
+<h3 id="数值运算符负数值运算符">数值运算符，负数值运算符</h3>
+
+<p>数值运算符（<code class="highlighter-rouge">+</code>）同样使用加号，但是加法运算符是二元运算符（需要两个操作数），它是一元运算符（只需要一个操作数）。</p>
+
+<p>数值运算符的作用在于可以将任何值转为数值（与<code class="highlighter-rouge">Number</code>函数的作用相同）。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">+</span><span class="kc">true</span> <span class="c1">// 1</span>
+<span class="o">+</span><span class="p">[]</span> <span class="c1">// 0</span>
+<span class="o">+</span><span class="p">{}</span> <span class="c1">// NaN</span>
+</code></pre></div></div>
+
+<p>上面代码表示，非数值类型的值经过数值运算符以后，都变成了数值（最后一行<code class="highlighter-rouge">NaN</code>也是数值）。具体的类型转换规则，参见《数据类型转换》一节。</p>
+
+<p>负数值运算符（<code class="highlighter-rouge">-</code>），也同样具有将一个值转为数值的功能，只不过得到的值正负相反。连用两个负数值运算符，等同于数值运算符。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="o">-</span><span class="nx">x</span> <span class="c1">// -1</span>
+<span class="o">-</span><span class="p">(</span><span class="o">-</span><span class="nx">x</span><span class="p">)</span> <span class="c1">// 1</span>
+</code></pre></div></div>
+
+<p>上面代码最后一行的圆括号不可少，否则会变成递减运算符。</p>
+
+<p>数值运算符号和负数值运算符，都会返回一个新的值，而不会改变原始变量的值。</p>
+
+<h2 id="赋值运算符">赋值运算符</h2>
+
+<p>赋值运算符（Assignment Operators）用于给变量赋值。</p>
+
+<p>最常见的赋值运算符，当然就是等号（<code class="highlighter-rouge">=</code>），表达式<code class="highlighter-rouge">x = y</code>表示将<code class="highlighter-rouge">y</code>的值赋给<code class="highlighter-rouge">x</code>。</p>
+
+<p>除此之外，JavaScript还提供其他11个复合的赋值运算符。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">x</span> <span class="o">+=</span> <span class="nx">y</span> <span class="c1">// 等同于 x = x + y</span>
+<span class="nx">x</span> <span class="o">-=</span> <span class="nx">y</span> <span class="c1">// 等同于 x = x - y</span>
+<span class="nx">x</span> <span class="o">*=</span> <span class="nx">y</span> <span class="c1">// 等同于 x = x * y</span>
+<span class="nx">x</span> <span class="o">/=</span> <span class="nx">y</span> <span class="c1">// 等同于 x = x / y</span>
+<span class="nx">x</span> <span class="o">%=</span> <span class="nx">y</span> <span class="c1">// 等同于 x = x % y</span>
+<span class="nx">x</span> <span class="o">&gt;&gt;=</span> <span class="nx">y</span> <span class="c1">// 等同于 x = x &gt;&gt; y</span>
+<span class="nx">x</span> <span class="o">&lt;&lt;=</span> <span class="nx">y</span> <span class="c1">// 等同于 x = x &lt;&lt; y</span>
+<span class="nx">x</span> <span class="o">&gt;&gt;&gt;=</span> <span class="nx">y</span> <span class="c1">// 等同于 x = x &gt;&gt;&gt; y</span>
+<span class="nx">x</span> <span class="o">&amp;=</span> <span class="nx">y</span> <span class="c1">// 等同于 x = x &amp; y</span>
+<span class="nx">x</span> <span class="o">|=</span> <span class="nx">y</span> <span class="c1">// 等同于 x = x | y</span>
+<span class="nx">x</span> <span class="o">^=</span> <span class="nx">y</span> <span class="c1">// 等同于 x = x ^ y</span>
+</code></pre></div></div>
+
+<p>这些复合的赋值运算符，都是先进行指定运算，然后将得到值返回给左边的变量。</p>
+
+<h2 id="比较运算符">比较运算符</h2>
+
+<p>比较运算符用于比较两个值，然后返回一个布尔值，表示是否满足比较条件。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">2</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>上面代码比较<code class="highlighter-rouge">2</code>是否大于<code class="highlighter-rouge">1</code>，返回<code class="highlighter-rouge">true</code>。</p>
+
+<p>注意，比较运算符可以比较各种类型的值，不仅仅是数值。</p>
+
+<p>JavaScript 一共提供了8个比较运算符。</p>
+
+<ul>
+  <li><code class="highlighter-rouge">==</code> 相等</li>
+  <li><code class="highlighter-rouge">===</code> 严格相等</li>
+  <li><code class="highlighter-rouge">!=</code> 不相等</li>
+  <li><code class="highlighter-rouge">!==</code> 严格不相等</li>
+  <li><code class="highlighter-rouge">&lt;</code> 小于</li>
+  <li><code class="highlighter-rouge">&lt;=</code> 小于或等于</li>
+  <li><code class="highlighter-rouge">&gt;</code> 大于</li>
+  <li><code class="highlighter-rouge">&gt;=</code> 大于或等于</li>
+</ul>
+
+<p>相等运算符和精确相等运算符，有自己的比较算法。其他六个比较运算符的算法如下。</p>
+
+<ol>
+  <li>如果两个运算子都是字符串，则按照字典顺序比较（实际上是比较 Unicode 码点）。</li>
+  <li>否则，将两个运算子都转成数值，再进行比较（等同于先调用<code class="highlighter-rouge">Number</code>函数）。</li>
+</ol>
+
+<h3 id="字符串的比较">字符串的比较</h3>
+
+<p>字符串按照字典顺序进行比较。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'cat'</span> <span class="o">&gt;</span> <span class="s1">'dog'</span> <span class="c1">// false</span>
+<span class="s1">'cat'</span> <span class="o">&gt;</span> <span class="s1">'catalog'</span> <span class="c1">// false</span>
+</code></pre></div></div>
+
+<p>JavaScript 引擎内部首先比较首字符的 Unicode 码点，如果相等，再比较第二个字符的 Unicode 码点，以此类推。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'cat'</span> <span class="o">&gt;</span> <span class="s1">'Cat'</span> <span class="c1">// true'</span>
+</code></pre></div></div>
+
+<p>上面代码中，小写的<code class="highlighter-rouge">c</code>的 Unicode 码点（<code class="highlighter-rouge">99</code>）大于大写的<code class="highlighter-rouge">C</code>的 Unicode 码点（<code class="highlighter-rouge">67</code>），所以返回<code class="highlighter-rouge">true</code>。</p>
+
+<p>由于所有字符都有 Unicode 码点，因此汉字也可以比较。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'大'</span> <span class="o">&gt;</span> <span class="s1">'小'</span> <span class="c1">// false</span>
+</code></pre></div></div>
+
+<p>上面代码中，“大”的 Unicode 码点是22823，“小”是23567，因此返回<code class="highlighter-rouge">false</code>。</p>
+
+<h3 id="非字符串的比较">非字符串的比较</h3>
+
+<p><strong>（1）原始类型的值</strong></p>
+
+<p>两个原始类型的值的比较，除了相等运算符（<code class="highlighter-rouge">==</code>）和严格相等运算符（<code class="highlighter-rouge">===</code>），其他比较运算符都是先转成数值再比较。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">5</span> <span class="o">&gt;</span> <span class="s1">'4'</span> <span class="c1">// true</span>
+<span class="c1">// 等同于 5 &gt; Number('4')</span>
+<span class="c1">// 即 5 &gt; 4</span>
+
+<span class="kc">true</span> <span class="o">&gt;</span> <span class="kc">false</span> <span class="c1">// true</span>
+<span class="c1">// 等同于 Number(true) &gt; Number(false)</span>
+<span class="c1">// 即 1 &gt; 0</span>
+
+<span class="mi">2</span> <span class="o">&gt;</span> <span class="kc">true</span> <span class="c1">// true</span>
+<span class="c1">// 等同于 2 &gt; Number(true)</span>
+<span class="c1">// 即 2 &gt; 1</span>
+</code></pre></div></div>
+
+<p>上面代码中，字符串和布尔值都会先转成数值，再进行比较。</p>
+
+<p>这里有一个特殊情况，即任何值（包括<code class="highlighter-rouge">NaN</code>本身）与<code class="highlighter-rouge">NaN</code>比较，返回的都是<code class="highlighter-rouge">false</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">1</span> <span class="o">&gt;</span> <span class="kc">NaN</span> <span class="c1">// false</span>
+<span class="mi">1</span> <span class="o">&lt;=</span> <span class="kc">NaN</span> <span class="c1">// false</span>
+<span class="s1">'1'</span> <span class="o">&gt;</span> <span class="kc">NaN</span> <span class="c1">// false</span>
+<span class="s1">'1'</span> <span class="o">&lt;=</span> <span class="kc">NaN</span> <span class="c1">// false</span>
+<span class="kc">NaN</span> <span class="o">&gt;</span> <span class="kc">NaN</span> <span class="c1">// false</span>
+<span class="kc">NaN</span> <span class="o">&lt;=</span> <span class="kc">NaN</span> <span class="c1">// false</span>
+</code></pre></div></div>
+
+<p><strong>（2）对象</strong></p>
+
+<p>如果运算子是对象，会转为原始类型的值，再进行比较。</p>
+
+<p>对象转换成原始类型的值，算法是先调用<code class="highlighter-rouge">valueOf</code>方法；如果返回的还是对象，再接着调用<code class="highlighter-rouge">toString</code>方法，详细解释参见《数据类型的转换》一节。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+<span class="nx">x</span> <span class="o">&gt;</span> <span class="s1">'11'</span> <span class="c1">// true</span>
+<span class="c1">// 等同于 [2].valueOf().toString() &gt; '11'</span>
+<span class="c1">// 即 '2' &gt; '11'</span>
+
+<span class="nx">x</span><span class="p">.</span><span class="nx">valueOf</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="s1">'1'</span> <span class="p">};</span>
+<span class="nx">x</span> <span class="o">&gt;</span> <span class="s1">'11'</span> <span class="c1">// false</span>
+<span class="c1">// 等同于 [2].valueOf() &gt; '11'</span>
+<span class="c1">// 即 '1' &gt; '11'</span>
+</code></pre></div></div>
+
+<p>两个对象之间的比较也是如此。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1">// true</span>
+<span class="c1">// 等同于 [2].valueOf().toString() &gt; [1].valueOf().toString()</span>
+<span class="c1">// 即 '2' &gt; '1'</span>
+
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&gt;</span> <span class="p">[</span><span class="mi">11</span><span class="p">]</span> <span class="c1">// true</span>
+<span class="c1">// 等同于 [2].valueOf().toString() &gt; [11].valueOf().toString()</span>
+<span class="c1">// 即 '2' &gt; '11'</span>
+
+<span class="p">{</span><span class="nl">x</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span> <span class="o">&gt;=</span> <span class="p">{</span><span class="na">x</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span> <span class="c1">// true</span>
+<span class="c1">// 等同于 {x: 2}.valueOf().toString() &gt;= {x: 1}.valueOf().toString()</span>
+<span class="c1">// 即 '[object Object]' &gt;= '[object Object]'</span>
+</code></pre></div></div>
+
+<p>注意，Date 对象实例用于比较时，是先调用<code class="highlighter-rouge">toString</code>方法。如果返回的不是原始类型的值，再接着对返回值调用<code class="highlighter-rouge">valueOf</code>方法。</p>
+
+<h3 id="严格相等运算符">严格相等运算符</h3>
+
+<p>JavaScript 提供两种相等运算符：<code class="highlighter-rouge">==</code>和<code class="highlighter-rouge">===</code>。</p>
+
+<p>简单说，它们的区别是相等运算符（<code class="highlighter-rouge">==</code>）比较两个值是否相等，严格相等运算符（<code class="highlighter-rouge">===</code>）比较它们是否为“同一个值”。如果两个值不是同一类型，严格相等运算符（<code class="highlighter-rouge">===</code>）直接返回<code class="highlighter-rouge">false</code>，而相等运算符（<code class="highlighter-rouge">==</code>）会将它们转化成同一个类型，再用严格相等运算符进行比较。</p>
+
+<p>严格相等运算符的算法如下。</p>
+
+<p><strong>（1）不同类型的值</strong></p>
+
+<p>如果两个值的类型不同，直接返回<code class="highlighter-rouge">false</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">1</span> <span class="o">===</span> <span class="s2">"1"</span> <span class="c1">// false</span>
+<span class="kc">true</span> <span class="o">===</span> <span class="s2">"true"</span> <span class="c1">// false</span>
+</code></pre></div></div>
+
+<p>上面代码比较数值的<code class="highlighter-rouge">1</code>与字符串的“1”、布尔值的<code class="highlighter-rouge">true</code>与字符串“true”，因为类型不同，结果都是<code class="highlighter-rouge">false</code>。</p>
+
+<p><strong>（2）同一类的原始类型值</strong></p>
+
+<p>同一类型的原始类型的值（数值、字符串、布尔值）比较时，值相同就返回<code class="highlighter-rouge">true</code>，值不同就返回<code class="highlighter-rouge">false</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">1</span> <span class="o">===</span> <span class="mh">0x1</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>上面代码比较十进制的<code class="highlighter-rouge">1</code>与十六进制的<code class="highlighter-rouge">1</code>，因为类型和值都相同，返回<code class="highlighter-rouge">true</code>。</p>
+
+<p>需要注意的是，<code class="highlighter-rouge">NaN</code>与任何值都不相等（包括自身）。另外，正<code class="highlighter-rouge">0</code>等于负<code class="highlighter-rouge">0</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kc">NaN</span> <span class="o">===</span> <span class="kc">NaN</span>  <span class="c1">// false</span>
+<span class="o">+</span><span class="mi">0</span> <span class="o">===</span> <span class="o">-</span><span class="mi">0</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p><strong>（3）同一类的复合类型值</strong></p>
+
+<p>两个复合类型（对象、数组、函数）的数据比较时，不是比较它们的值是否相等，而是比较它们是否指向同一个对象。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{}</span> <span class="o">===</span> <span class="p">{}</span> <span class="c1">// false</span>
+<span class="p">[]</span> <span class="o">===</span> <span class="p">[]</span> <span class="c1">// false</span>
+<span class="p">(</span><span class="kd">function</span> <span class="p">(){}</span> <span class="o">===</span> <span class="kd">function</span> <span class="p">(){})</span> <span class="c1">// false</span>
+</code></pre></div></div>
+
+<p>上面代码分别比较两个空对象、两个空数组、两个空函数，结果都是不相等。原因是对于复合类型的值，严格相等运算比较的是，它们是否引用同一个内存地址，而运算符两边的空对象、空数组、空函数的值，都存放在不同的内存地址，结果当然是<code class="highlighter-rouge">false</code>。</p>
+
+<p>如果两个变量引用同一个对象，则它们相等。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">v1</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="kd">var</span> <span class="nx">v2</span> <span class="o">=</span> <span class="nx">v1</span><span class="p">;</span>
+<span class="nx">v1</span> <span class="o">===</span> <span class="nx">v2</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>注意，对于两个对象的比较，严格相等运算符比较的是地址，而大于或小于运算符比较的是值。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nb">Date</span><span class="p">()</span> <span class="o">&gt;</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">()</span> <span class="c1">// false</span>
+<span class="k">new</span> <span class="nb">Date</span><span class="p">()</span> <span class="o">&lt;</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">()</span> <span class="c1">// false</span>
+<span class="k">new</span> <span class="nb">Date</span><span class="p">()</span> <span class="o">===</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">()</span> <span class="c1">// false</span>
+</code></pre></div></div>
+
+<p>上面的三个表达式，前两个比较的是值，最后一个比较的是地址，所以都返回<code class="highlighter-rouge">false</code>。</p>
+
+<p><strong>（4）undefined 和 null</strong></p>
+
+<p><code class="highlighter-rouge">undefined</code>和<code class="highlighter-rouge">null</code>与自身严格相等。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kc">undefined</span> <span class="o">===</span> <span class="kc">undefined</span> <span class="c1">// true</span>
+<span class="kc">null</span> <span class="o">===</span> <span class="kc">null</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>由于变量声明后默认值是<code class="highlighter-rouge">undefined</code>，因此两个只声明未赋值的变量是相等的。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">v1</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">v2</span><span class="p">;</span>
+<span class="nx">v1</span> <span class="o">===</span> <span class="nx">v2</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p><strong>（5）严格不相等运算符</strong></p>
+
+<p>严格相等运算符有一个对应的“严格不相等运算符”（<code class="highlighter-rouge">!==</code>），两者的运算结果正好相反。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">1</span> <span class="o">!==</span> <span class="s1">'1'</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<h3 id="相等运算符">相等运算符</h3>
+
+<p>相等运算符比较相同类型的数据时，与严格相等运算符完全一样。</p>
+
+<p>比较不同类型的数据时，相等运算符会先将数据进行类型转换，然后再用严格相等运算符比较。类型转换规则如下。</p>
+
+<p><strong>（1）原始类型的值</strong></p>
+
+<p>原始类型的数据会转换成数值类型再进行比较。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">1</span> <span class="o">==</span> <span class="kc">true</span> <span class="c1">// true</span>
+<span class="c1">// 等同于 1 === 1</span>
+
+<span class="mi">0</span> <span class="o">==</span> <span class="kc">false</span> <span class="c1">// true</span>
+<span class="c1">// 等同于 0 === 0</span>
+
+<span class="mi">2</span> <span class="o">==</span> <span class="kc">true</span> <span class="c1">// false</span>
+<span class="c1">// 等同于 2 === 1</span>
+
+<span class="mi">2</span> <span class="o">==</span> <span class="kc">false</span> <span class="c1">// false</span>
+<span class="c1">// 等同于 2 === 0</span>
+
+<span class="s1">'true'</span> <span class="o">==</span> <span class="kc">true</span> <span class="c1">// false</span>
+<span class="c1">// 等同于 Number('true') === Number(true)</span>
+<span class="c1">// 等同于 NaN === 1</span>
+
+<span class="s1">''</span> <span class="o">==</span> <span class="mi">0</span> <span class="c1">// true</span>
+<span class="c1">// 等同于 Number('') === 0</span>
+<span class="c1">// 等同于 0 === 0</span>
+
+<span class="s1">''</span> <span class="o">==</span> <span class="kc">false</span>  <span class="c1">// true</span>
+<span class="c1">// 等同于 Number('') === Number(false)</span>
+<span class="c1">// 等同于 0 === 0</span>
+
+<span class="s1">'1'</span> <span class="o">==</span> <span class="kc">true</span>  <span class="c1">// true</span>
+<span class="c1">// 等同于 Number('1') === Number(true)</span>
+<span class="c1">// 等同于 1 === 1</span>
+
+<span class="s1">'</span><span class="err">\</span><span class="s1">n  123  </span><span class="err">\</span><span class="s1">t'</span> <span class="o">==</span> <span class="mi">123</span> <span class="c1">// true</span>
+<span class="c1">// 因为字符串转为数字时，省略前置和后置的空格</span>
+</code></pre></div></div>
+
+<p>上面代码将字符串和布尔值都转为数值，然后再进行比较。具体的字符串与布尔值的类型转换规则，参见《数据类型转换》章节。</p>
+
+<p><strong>（2）对象与原始类型值比较</strong></p>
+
+<p>对象（这里指广义的对象，包括数组和函数）与原始类型的值比较时，对象转化成原始类型的值，再进行比较。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span> <span class="c1">// true</span>
+<span class="c1">// 等同于 Number([1]) == 1</span>
+
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'1'</span> <span class="c1">// true</span>
+<span class="c1">// 等同于 String([1]) == Number('1')</span>
+
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="kc">true</span> <span class="c1">// true</span>
+<span class="c1">// 等同于 Number([1]) == Number(true)</span>
+</code></pre></div></div>
+
+<p>上面代码中，数组<code class="highlighter-rouge">[1]</code>分别与数值、字符串和布尔值进行比较，会先转成字符串或数值，再进行比较。比如，与数值<code class="highlighter-rouge">1</code>比较时，数组<code class="highlighter-rouge">[1]</code>会被自动转换成数值<code class="highlighter-rouge">1</code>，因此得到<code class="highlighter-rouge">true</code>。具体的对象类型转换规则，参见《数据类型转换》章节。</p>
+
+<p><strong>（3）undefined 和 null</strong></p>
+
+<p><code class="highlighter-rouge">undefined</code>和<code class="highlighter-rouge">null</code>与其他类型的值比较时，结果都为<code class="highlighter-rouge">false</code>，它们互相比较时结果为<code class="highlighter-rouge">true</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kc">false</span> <span class="o">==</span> <span class="kc">null</span> <span class="c1">// false</span>
+<span class="kc">false</span> <span class="o">==</span> <span class="kc">undefined</span> <span class="c1">// false</span>
+
+<span class="mi">0</span> <span class="o">==</span> <span class="kc">null</span> <span class="c1">// false</span>
+<span class="mi">0</span> <span class="o">==</span> <span class="kc">undefined</span> <span class="c1">// false</span>
+
+<span class="kc">undefined</span> <span class="o">==</span> <span class="kc">null</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>绝大多数情况下，对象与<code class="highlighter-rouge">undefined</code>和<code class="highlighter-rouge">null</code>比较，都返回<code class="highlighter-rouge">false</code>。只有在对象转为原始值得到<code class="highlighter-rouge">undefined</code>时，才会返回<code class="highlighter-rouge">true</code>，这种情况是非常罕见的。</p>
+
+<p><strong>（4）相等运算符的缺点</strong></p>
+
+<p>相等运算符隐藏的类型转换，会带来一些违反直觉的结果。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">''</span> <span class="o">==</span> <span class="s1">'0'</span>           <span class="c1">// false</span>
+<span class="mi">0</span> <span class="o">==</span> <span class="s1">''</span>             <span class="c1">// true</span>
+<span class="mi">0</span> <span class="o">==</span> <span class="s1">'0'</span>            <span class="c1">// true</span>
+
+<span class="mi">2</span> <span class="o">==</span> <span class="kc">true</span>           <span class="c1">// false</span>
+<span class="mi">2</span> <span class="o">==</span> <span class="kc">false</span>          <span class="c1">// false</span>
+
+<span class="kc">false</span> <span class="o">==</span> <span class="s1">'false'</span>    <span class="c1">// false</span>
+<span class="kc">false</span> <span class="o">==</span> <span class="s1">'0'</span>        <span class="c1">// true</span>
+
+<span class="kc">false</span> <span class="o">==</span> <span class="kc">undefined</span>  <span class="c1">// false</span>
+<span class="kc">false</span> <span class="o">==</span> <span class="kc">null</span>       <span class="c1">// false</span>
+<span class="kc">null</span> <span class="o">==</span> <span class="kc">undefined</span>   <span class="c1">// true</span>
+
+<span class="s1">' </span><span class="err">\</span><span class="s1">t</span><span class="err">\</span><span class="s1">r</span><span class="err">\</span><span class="s1">n '</span> <span class="o">==</span> <span class="mi">0</span>     <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>上面这些表达式都很容易出错，因此不要使用相等运算符（<code class="highlighter-rouge">==</code>），最好只使用严格相等运算符（<code class="highlighter-rouge">===</code>）。</p>
+
+<p><strong>（5）不相等运算符</strong></p>
+
+<p>相等运算符有一个对应的“不相等运算符”（<code class="highlighter-rouge">!=</code>），两者的运算结果正好相反。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">1</span> <span class="o">!=</span> <span class="s1">'1'</span> <span class="c1">// false</span>
+</code></pre></div></div>
+
+<h2 id="布尔运算符">布尔运算符</h2>
+
+<p>布尔运算符用于将表达式转为布尔值，一共包含四个运算符。</p>
+
+<ul>
+  <li>取反运算符：<code class="highlighter-rouge">!</code></li>
+  <li>且运算符：<code class="highlighter-rouge">&amp;&amp;</code></li>
+  <li>或运算符：<code class="highlighter-rouge">||</code></li>
+  <li>三元运算符：<code class="highlighter-rouge">?:</code></li>
+</ul>
+
+<h3 id="取反运算符">取反运算符（!）</h3>
+
+<p>取反运算符形式上是一个感叹号，用于将布尔值变为相反值，即<code class="highlighter-rouge">true</code>变成<code class="highlighter-rouge">false</code>，<code class="highlighter-rouge">false</code>变成<code class="highlighter-rouge">true</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">!</span><span class="kc">true</span> <span class="c1">// false</span>
+<span class="o">!</span><span class="kc">false</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>对于非布尔值的数据，取反运算符会自动将其转为布尔值。规则是，以下六个值取反后为<code class="highlighter-rouge">true</code>，其他值取反后都为<code class="highlighter-rouge">false</code>。</p>
+
+<ul>
+  <li><code class="highlighter-rouge">undefined</code></li>
+  <li><code class="highlighter-rouge">null</code></li>
+  <li><code class="highlighter-rouge">false</code></li>
+  <li><code class="highlighter-rouge">0</code>（包括<code class="highlighter-rouge">+0</code>和<code class="highlighter-rouge">-0</code>）</li>
+  <li><code class="highlighter-rouge">NaN</code></li>
+  <li>空字符串（<code class="highlighter-rouge">''</code>）</li>
+</ul>
+
+<p>这意味着，取反运算符有转换数据类型的作用。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">!</span><span class="kc">undefined</span> <span class="c1">// true</span>
+<span class="o">!</span><span class="kc">null</span> <span class="c1">// true</span>
+<span class="o">!</span><span class="mi">0</span> <span class="c1">// true</span>
+<span class="o">!</span><span class="kc">NaN</span> <span class="c1">// true</span>
+<span class="o">!</span><span class="s2">""</span> <span class="c1">// true</span>
+
+<span class="o">!</span><span class="mi">54</span> <span class="c1">// false</span>
+<span class="o">!</span><span class="s1">'hello'</span> <span class="c1">// false</span>
+<span class="o">!</span><span class="p">[]</span> <span class="c1">// false</span>
+<span class="o">!</span><span class="p">{}</span> <span class="c1">// false</span>
+</code></pre></div></div>
+
+<p>上面代码中，不管什么类型的值，经过取反运算后，都变成了布尔值。</p>
+
+<p>如果对一个值连续做两次取反运算，等于将其转为对应的布尔值，与<code class="highlighter-rouge">Boolean</code>函数的作用相同。这是一种常用的类型转换的写法。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">!!</span><span class="nx">x</span>
+<span class="c1">// 等同于</span>
+<span class="nb">Boolean</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>上面代码中，不管<code class="highlighter-rouge">x</code>是什么类型的值，经过两次取反运算后，变成了与<code class="highlighter-rouge">Boolean</code>函数结果相同的布尔值。所以，两次取反就是将一个值转为布尔值的简便写法。</p>
+
+<p>取反运算符的这种将任意数据自动转为布尔值的功能，对下面三种布尔运算符（且运算符、或运算符、三元条件运算符）都成立。</p>
+
+<h3 id="且运算符">且运算符（&amp;&amp;）</h3>
+
+<p>且运算符的运算规则是：如果第一个运算子的布尔值为<code class="highlighter-rouge">true</code>，则返回第二个运算子的值（注意是值，不是布尔值）；如果第一个运算子的布尔值为<code class="highlighter-rouge">false</code>，则直接返回第一个运算子的值，且不再对第二个运算子求值。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'t'</span> <span class="o">&amp;&amp;</span> <span class="s1">''</span> <span class="c1">// ""</span>
+<span class="s1">'t'</span> <span class="o">&amp;&amp;</span> <span class="s1">'f'</span> <span class="c1">// "f"</span>
+<span class="s1">'t'</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">// 3</span>
+<span class="s1">''</span> <span class="o">&amp;&amp;</span> <span class="s1">'f'</span> <span class="c1">// ""</span>
+<span class="s1">''</span> <span class="o">&amp;&amp;</span> <span class="s1">''</span> <span class="c1">// ""</span>
+
+<span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span> <span class="nx">x</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">// 0</span>
+<span class="nx">x</span> <span class="c1">// 1</span>
+</code></pre></div></div>
+
+<p>上面代码的最后一部分表示，由于且运算符的第一个运算子的布尔值为<code class="highlighter-rouge">false</code>，则直接返回它的值<code class="highlighter-rouge">0</code>，而不再对第二个运算子求值，所以变量<code class="highlighter-rouge">x</code>的值没变。</p>
+
+<p>这种跳过第二个运算子的机制，被称为“短路”。有些程序员喜欢用它取代<code class="highlighter-rouge">if</code>结构，比如下面是一段<code class="highlighter-rouge">if</code>结构的代码，就可以用且运算符改写。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">doSomething</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// 等价于</span>
+
+<span class="nx">i</span> <span class="o">&amp;&amp;</span> <span class="nx">doSomething</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>上面代码的两种写法是等价的，但是后一种不容易看出目的，也不容易除错，建议谨慎使用。</p>
+
+<p>且运算符可以多个连用，这时返回第一个布尔值为<code class="highlighter-rouge">false</code>的表达式的值。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kc">true</span> <span class="o">&amp;&amp;</span> <span class="s1">'foo'</span> <span class="o">&amp;&amp;</span> <span class="s1">''</span> <span class="o">&amp;&amp;</span> <span class="mi">4</span> <span class="o">&amp;&amp;</span> <span class="s1">'foo'</span> <span class="o">&amp;&amp;</span> <span class="kc">true</span>
+<span class="c1">// ''</span>
+</code></pre></div></div>
+
+<p>上面代码中第一个布尔值为<code class="highlighter-rouge">false</code>的表达式为第三个表达式，所以得到一个空字符串。</p>
+
+<h3 id="或运算符">或运算符（||）</h3>
+
+<p>或运算符（<code class="highlighter-rouge">||</code>）的运算规则是：如果第一个运算子的布尔值为<code class="highlighter-rouge">true</code>，则返回第一个运算子的值，且不再对第二个运算子求值；如果第一个运算子的布尔值为<code class="highlighter-rouge">false</code>，则返回第二个运算子的值。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'t'</span> <span class="o">||</span> <span class="s1">''</span> <span class="c1">// "t"</span>
+<span class="s1">'t'</span> <span class="o">||</span> <span class="s1">'f'</span> <span class="c1">// "t"</span>
+<span class="s1">''</span> <span class="o">||</span> <span class="s1">'f'</span> <span class="c1">// "f"</span>
+<span class="s1">''</span> <span class="o">||</span> <span class="s1">''</span> <span class="c1">// ""</span>
+</code></pre></div></div>
+
+<p>短路规则对这个运算符也适用。</p>
+
+<p>或运算符可以多个连用，这时返回第一个布尔值为true的表达式的值。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kc">false</span> <span class="o">||</span> <span class="mi">0</span> <span class="o">||</span> <span class="s1">''</span> <span class="o">||</span> <span class="mi">4</span> <span class="o">||</span> <span class="s1">'foo'</span> <span class="o">||</span> <span class="kc">true</span>
+<span class="c1">// 4</span>
+</code></pre></div></div>
+
+<p>上面代码中第一个布尔值为<code class="highlighter-rouge">true</code>的表达式是第四个表达式，所以得到数值4。</p>
+
+<p>或运算符常用于为一个变量设置默认值。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">saveText</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">text</span> <span class="o">=</span> <span class="nx">text</span> <span class="o">||</span> <span class="s1">''</span><span class="p">;</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+
+<span class="c1">// 或者写成</span>
+
+<span class="nx">saveText</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">text</span> <span class="o">||</span> <span class="s1">''</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>上面代码表示，如果函数调用时，没有提供参数，则该参数默认设置为空字符串。</p>
+
+<h3 id="三元条件运算符">三元条件运算符（?:）</h3>
+
+<p>三元条件运算符用问号（?）和冒号（:），分隔三个表达式。如果第一个表达式的布尔值为<code class="highlighter-rouge">true</code>，则返回第二个表达式的值，否则返回第三个表达式的值。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'t'</span> <span class="p">?</span> <span class="s1">'hello'</span> <span class="p">:</span> <span class="s1">'world'</span> <span class="c1">// "hello"</span>
+<span class="mi">0</span> <span class="p">?</span> <span class="s1">'hello'</span> <span class="p">:</span> <span class="s1">'world'</span> <span class="c1">// "world"</span>
+</code></pre></div></div>
+
+<p>上面代码的<code class="highlighter-rouge">t</code>和<code class="highlighter-rouge">0</code>的布尔值分别为<code class="highlighter-rouge">true</code>和<code class="highlighter-rouge">false</code>，所以分别返回第二个和第三个表达式的值。</p>
+
+<p>通常来说，三元条件表达式与<code class="highlighter-rouge">if...else</code>语句具有同样表达效果，前者可以表达的，后者也能表达。但是两者具有一个重大差别，<code class="highlighter-rouge">if...else</code>是语句，没有返回值；三元条件表达式是表达式，具有返回值。所以，在需要返回值的场合，只能使用三元条件表达式，而不能使用<code class="highlighter-rouge">if..else</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kc">true</span> <span class="p">?</span> <span class="s1">'T'</span> <span class="p">:</span> <span class="s1">'F'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">console.log</code>方法的参数必须是一个表达式，这时就只能使用三元条件表达式。如果要用<code class="highlighter-rouge">if...else</code>语句，就必须改变整个代码写法了。</p>
+
+<h2 id="位运算符">位运算符</h2>
+
+<h3 id="简介">简介</h3>
+
+<p>位运算符用于直接对二进制位进行计算，一共有7个。</p>
+
+<ul>
+  <li>
+    <p><strong>或运算</strong>（or）：符号为<code class="highlighter-rouge">|</code>，表示若两个二进制位都为0，则结果为0，否则为1。</p>
+  </li>
+  <li>
+    <p><strong>与运算</strong>（and）：符号为<code class="highlighter-rouge">&amp;</code>，表示若两个二进制位都为1，则结果为1，否则为0。</p>
+  </li>
+  <li>
+    <p><strong>否运算</strong>（not）：符号为<code class="highlighter-rouge">~</code>，表示对一个二进制位取反。</p>
+  </li>
+  <li>
+    <p><strong>异或运算</strong>（xor）：符号为<code class="highlighter-rouge">^</code>，表示若两个二进制位不相同，则结果为1，否则为0。</p>
+  </li>
+  <li>
+    <p><strong>左移运算</strong>（left shift）：符号为<code class="highlighter-rouge">&lt;&lt;</code>，详见下文解释。</p>
+  </li>
+  <li>
+    <p><strong>右移运算</strong>（right shift）：符号为<code class="highlighter-rouge">&gt;&gt;</code>，详见下文解释。</p>
+  </li>
+  <li>
+    <p><strong>带符号位的右移运算</strong>（zero filled right shift）：符号为<code class="highlighter-rouge">&gt;&gt;&gt;</code>，详见下文解释。</p>
+  </li>
+</ul>
+
+<p>这些位运算符直接处理每一个比特位（bit），所以是非常底层的运算，好处是速度极快，缺点是很不直观，许多场合不能使用它们，否则会使代码难以理解和查错。</p>
+
+<p>有一点需要特别注意，位运算符只对整数起作用，如果一个运算子不是整数，会自动转为整数后再执行。另外，虽然在JavaScript内部，数值都是以64位浮点数的形式储存，但是做位运算的时候，是以32位带符号的整数进行运算的，并且返回值也是一个32位带符号的整数。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">i</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">|</span> <span class="mi">0</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>上面这行代码的意思，就是将<code class="highlighter-rouge">i</code>（不管是整数或小数）转为32位整数。</p>
+
+<p>利用这个特性，可以写出一个函数，将任意数值转为32位整数。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">toInt32</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">x</span> <span class="o">|</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">toInt32</span><span class="p">(</span><span class="mf">1.001</span><span class="p">)</span> <span class="c1">// 1</span>
+<span class="nx">toInt32</span><span class="p">(</span><span class="mf">1.999</span><span class="p">)</span> <span class="c1">// 1</span>
+<span class="nx">toInt32</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">// 1</span>
+<span class="nx">toInt32</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1">// -1</span>
+<span class="nx">toInt32</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">// 1</span>
+<span class="nx">toInt32</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">// -1</span>
+</code></pre></div></div>
+
+<p>上面代码中，最后两行得到<code class="highlighter-rouge">1</code>和<code class="highlighter-rouge">-1</code>，是因为一个整数大于32位的数位都会被舍去。</p>
+
+<h3 id="或运算与与运算">“或运算”与“与运算”</h3>
+
+<p>这两种运算比较容易理解，就是逐位比较两个运算子。“或运算”的规则是，两个二进制位之中只要有一个为1，就返回1，否则返回0。“与运算”的规则是，两个二进制位之中只要有一个位为0，就返回0，否则返回1。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">0</span> <span class="o">|</span> <span class="mi">3</span> <span class="c1">// 3</span>
+<span class="mi">0</span> <span class="o">&amp;</span> <span class="mi">3</span> <span class="c1">// 0</span>
+</code></pre></div></div>
+
+<p>上面两个表达式，0和3的二进制形式分别是<code class="highlighter-rouge">00</code>和<code class="highlighter-rouge">11</code>，所以进行“或运算”会得到<code class="highlighter-rouge">11</code>（即3），进行“与运算”会得到<code class="highlighter-rouge">00</code>（即0）。</p>
+
+<p>位运算只对整数有效，遇到小数时，会将小数部分舍去，只保留整数部分。所以，将一个小数与0进行或运算，等同于对该数去除小数部分，即取整数位。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">2.9</span> <span class="o">|</span> <span class="mi">0</span> <span class="c1">// 2</span>
+<span class="o">-</span><span class="mf">2.9</span> <span class="o">|</span> <span class="mi">0</span> <span class="c1">// -2</span>
+</code></pre></div></div>
+
+<p>需要注意的是，这种取整方法不适用超过32位整数最大值2147483647的数。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">2147483649.4</span> <span class="o">|</span> <span class="mi">0</span><span class="p">;</span>
+<span class="c1">// -2147483647</span>
+</code></pre></div></div>
+
+<h3 id="否运算">否运算</h3>
+
+<p>“否运算”将每个二进制位都变为相反值（0变为1，1变为0）。它的返回结果有时比较难理解，因为涉及到计算机内部的数值表示机制。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">~</span> <span class="mi">3</span> <span class="c1">// -4</span>
+</code></pre></div></div>
+
+<p>上面表达式对<code class="highlighter-rouge">3</code>进行“否运算”，得到<code class="highlighter-rouge">-4</code>。之所以会有这样的结果，是因为位运算时，JavaScirpt内部将所有的运算子都转为32位的二进制整数再进行运算。<code class="highlighter-rouge">3</code>在JavaScript内部是<code class="highlighter-rouge">00000000000000000000000000000011</code>，否运算以后得到<code class="highlighter-rouge">11111111111111111111111111111100</code>，由于第一位是1，所以这个数是一个负数。JavaScript内部采用补码形式表示负数，即需要将这个数减去1，再取一次反，然后加上负号，才能得到这个负数对应的10进制值。这个数减去1等于<code class="highlighter-rouge">11111111111111111111111111111011</code>，再取一次反得到<code class="highlighter-rouge">00000000000000000000000000000100</code>，再加上负号就是<code class="highlighter-rouge">-4</code>。考虑到这样的过程比较麻烦，可以简单记忆成，一个数与自身的取反值相加，等于-1。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">~</span> <span class="o">-</span><span class="mi">3</span> <span class="c1">// 2</span>
+</code></pre></div></div>
+
+<p>上面表达式可以这样算，-3的取反值等于-1减去-3，结果为2。</p>
+
+<p>对一个整数连续两次“否运算”，得到它自身。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">~~</span><span class="mi">3</span> <span class="c1">// 3</span>
+</code></pre></div></div>
+
+<p>所有的位运算都只对整数有效。否运算遇到小数时，也会将小数部分舍去，只保留整数部分。所以，对一个小数连续进行两次否运算，能达到取整效果。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">~~</span><span class="mf">2.9</span> <span class="c1">// 2</span>
+<span class="o">~~</span><span class="mf">47.11</span> <span class="c1">// 47</span>
+<span class="o">~~</span><span class="mf">1.9999</span> <span class="c1">// 1</span>
+<span class="o">~~</span><span class="mi">3</span> <span class="c1">// 3</span>
+</code></pre></div></div>
+
+<p>使用否运算取整，是所有取整方法中最快的一种。</p>
+
+<p>对字符串进行否运算，JavaScript引擎会先调用Number函数，将字符串转为数值。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 以下例子相当于~Number('011')</span>
+<span class="o">~</span><span class="s1">'011'</span>  <span class="c1">// -12</span>
+<span class="o">~</span><span class="s1">'42 cats'</span> <span class="c1">// -1</span>
+<span class="o">~</span><span class="s1">'0xcafebabe'</span> <span class="c1">// 889275713</span>
+<span class="o">~</span><span class="s1">'deadbeef'</span> <span class="c1">// -1</span>
+
+<span class="c1">// 以下例子相当于~~Number('011')</span>
+<span class="o">~~</span><span class="s1">'011'</span><span class="p">;</span>        <span class="c1">// 11</span>
+<span class="o">~~</span><span class="s1">'42 cats'</span><span class="p">;</span>    <span class="c1">// 0</span>
+<span class="o">~~</span><span class="s1">'0xcafebabe'</span><span class="p">;</span> <span class="c1">// -889275714</span>
+<span class="o">~~</span><span class="s1">'deadbeef'</span><span class="p">;</span>   <span class="c1">// 0</span>
+</code></pre></div></div>
+
+<p>Number函数将字符串转为数值的规则，参见《数据的类型转换》一节。否运算对特殊数值的处理是：超出32位的整数将会被截去超出的位数，NaN和Infinity转为0。</p>
+
+<p>对于其他类型的参数，否运算也是先用<code class="highlighter-rouge">Number</code>转为数值，然后再进行处理。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">~~</span><span class="p">[]</span> <span class="c1">// 0</span>
+<span class="o">~~</span><span class="kc">NaN</span> <span class="c1">// 0</span>
+<span class="o">~~</span><span class="kc">null</span> <span class="c1">// 0</span>
+</code></pre></div></div>
+
+<h3 id="异或运算">异或运算</h3>
+
+<p>“异或运算”在两个二进制位不同时返回1，相同时返回0。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">0</span> <span class="o">^</span> <span class="mi">3</span> <span class="c1">// 3</span>
+</code></pre></div></div>
+
+<p>上面表达式中，<code class="highlighter-rouge">0</code>的二进制形式是<code class="highlighter-rouge">00</code>，<code class="highlighter-rouge">3</code>的二进制形式是<code class="highlighter-rouge">11</code>，它们每一个二进制位都不同，所以得到11（即3）。</p>
+
+<p>“异或运算”有一个特殊运用，连续对两个数a和b进行三次异或运算，aˆ=b, bˆ=a, aˆ=b，可以互换它们的值（详见<a href="javascript:if(confirm('http://en.wikipedia.org/wiki/XOR_swap_algorithm  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://en.wikipedia.org/wiki/XOR_swap_algorithm'" tppabs="http://en.wikipedia.org/wiki/XOR_swap_algorithm">维基百科</a>）。这意味着，使用“异或运算”可以在不引入临时变量的前提下，互换两个变量的值。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">99</span><span class="p">;</span>
+
+<span class="nx">a</span> <span class="o">^=</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">b</span> <span class="o">^=</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">a</span> <span class="o">^=</span> <span class="nx">b</span><span class="p">;</span>
+
+<span class="nx">a</span> <span class="c1">// 99</span>
+<span class="nx">b</span> <span class="c1">// 10</span>
+</code></pre></div></div>
+
+<p>这是互换两个变量的值的最快方法。</p>
+
+<p>异或运算也可以用来取整。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">12.9</span> <span class="o">^</span> <span class="mi">0</span> <span class="c1">// 12</span>
+</code></pre></div></div>
+
+<h3 id="左移运算符">左移运算符（«）</h3>
+
+<p>左移运算符表示将一个数的二进制值向左移动指定的位数，尾部补0，即乘以2的指定次方（最高位即符号位不参与移动）。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 4 的二进制形式为100，</span>
+<span class="c1">// 左移一位为1000（即十进制的8）</span>
+<span class="c1">// 相当于乘以2的1次方</span>
+<span class="mi">4</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span>
+<span class="c1">// 8</span>
+
+<span class="o">-</span><span class="mi">4</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span>
+<span class="c1">// -8</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">-4</code>左移一位得到<code class="highlighter-rouge">-8</code>，是因为<code class="highlighter-rouge">-4</code>的二进制形式是<code class="highlighter-rouge">11111111111111111111111111111100</code>，左移一位后得到<code class="highlighter-rouge">11111111111111111111111111111000</code>，该数转为十进制（减去1后取反，再加上负号）即为<code class="highlighter-rouge">-8</code>。</p>
+
+<p>如果左移0位，就相当于将该数值转为32位整数，等同于取整，对于正数和负数都有效。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">13.5</span> <span class="o">&lt;&lt;</span> <span class="mi">0</span>
+<span class="c1">// 13</span>
+
+<span class="o">-</span><span class="mf">13.5</span> <span class="o">&lt;&lt;</span> <span class="mi">0</span>
+<span class="c1">// -13</span>
+</code></pre></div></div>
+
+<p>左移运算符用于二进制数值非常方便。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">color</span> <span class="o">=</span> <span class="p">{</span><span class="na">r</span><span class="p">:</span> <span class="mi">186</span><span class="p">,</span> <span class="na">g</span><span class="p">:</span> <span class="mi">218</span><span class="p">,</span> <span class="na">b</span><span class="p">:</span> <span class="mi">85</span><span class="p">};</span>
+
+<span class="c1">// RGB to HEX</span>
+<span class="c1">// (1 &lt;&lt; 24)的作用为保证结果是6位数</span>
+<span class="kd">var</span> <span class="nx">rgb2hex</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">r</span><span class="p">,</span> <span class="nx">g</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="s1">'#'</span> <span class="o">+</span> <span class="p">((</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">24</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="nx">r</span> <span class="o">&lt;&lt;</span> <span class="mi">16</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="nx">g</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">+</span> <span class="nx">b</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">rgb2hex</span><span class="p">(</span><span class="nx">color</span><span class="p">.</span><span class="nx">r</span><span class="p">,</span><span class="nx">color</span><span class="p">.</span><span class="nx">g</span><span class="p">,</span><span class="nx">color</span><span class="p">.</span><span class="nx">b</span><span class="p">)</span>
+<span class="c1">// "#bada55"</span>
+</code></pre></div></div>
+
+<p>上面代码使用左移运算符，将颜色的RGB值转为HEX值。</p>
+
+<h3 id="右移运算符">右移运算符（»）</h3>
+
+<p>右移运算符表示将一个数的二进制值向右移动指定的位数，头部补0，即除以2的指定次方（最高位即符号位不参与移动）。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">4</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span>
+<span class="c1">// 2</span>
+<span class="cm">/*
+// 因为4的二进制形式为00000000000000000000000000000100，
+// 右移一位得到00000000000000000000000000000010，
+// 即为十进制的2
+*/</span>
+
+<span class="o">-</span><span class="mi">4</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span>
+<span class="c1">// -2</span>
+<span class="cm">/*
+// 因为-4的二进制形式为11111111111111111111111111111100，
+// 右移一位，头部补1，得到11111111111111111111111111111110,
+// 即为十进制的-2
+*/</span>
+</code></pre></div></div>
+
+<p>右移运算可以模拟2的整除运算。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">5</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span>
+<span class="c1">// 相当于 5 / 2 = 2</span>
+
+<span class="mi">21</span> <span class="o">&gt;&gt;</span> <span class="mi">2</span>
+<span class="c1">// 相当于 21 / 4 = 5</span>
+
+<span class="mi">21</span> <span class="o">&gt;&gt;</span> <span class="mi">3</span>
+<span class="c1">// 相当于 21 / 8 = 2</span>
+
+<span class="mi">21</span> <span class="o">&gt;&gt;</span> <span class="mi">4</span>
+<span class="c1">// 相当于 21 / 16 = 1</span>
+</code></pre></div></div>
+
+<h3 id="带符号位的右移运算符">带符号位的右移运算符（»&gt;）</h3>
+
+<p>该运算符表示将一个数的二进制形式向右移动，包括符号位也参与移动，头部补0。所以，该运算总是得到正值。对于正数，该运算的结果与右移运算符（»）完全一致，区别主要在于负数。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">4</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span>
+<span class="c1">// 2</span>
+
+<span class="o">-</span><span class="mi">4</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span>
+<span class="c1">// 2147483646</span>
+<span class="cm">/*
+// 因为-4的二进制形式为11111111111111111111111111111100，
+// 带符号位的右移一位，得到01111111111111111111111111111110，
+// 即为十进制的2147483646。
+*/</span>
+</code></pre></div></div>
+
+<p>这个运算实际上将一个值转为32位无符号整数。</p>
+
+<p>查看一个负整数在计算机内部的储存形式，最快的方法就是使用这个运算符。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">-</span><span class="mi">1</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">0</span> <span class="c1">// 4294967295</span>
+</code></pre></div></div>
+
+<p>上面代码表示，<code class="highlighter-rouge">-1</code>作为32位整数时，内部的储存形式使用无符号整数格式解读，值为 4294967295（即<code class="highlighter-rouge">(2^32)-1</code>，等于<code class="highlighter-rouge">11111111111111111111111111111111</code>）。</p>
+
+<h3 id="开关作用">开关作用</h3>
+
+<p>位运算符可以用作设置对象属性的开关。</p>
+
+<p>假定某个对象有四个开关，每个开关都是一个变量。那么，可以设置一个四位的二进制数，它的每个位对应一个开关。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">FLAG_A</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 0001</span>
+<span class="kd">var</span> <span class="nx">FLAG_B</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// 0010</span>
+<span class="kd">var</span> <span class="nx">FLAG_C</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span> <span class="c1">// 0100</span>
+<span class="kd">var</span> <span class="nx">FLAG_D</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span> <span class="c1">// 1000</span>
+</code></pre></div></div>
+
+<p>上面代码设置A、B、C、D四个开关，每个开关分别占有一个二进制位。</p>
+
+<p>然后，就可以用“与运算”检验，当前设置是否打开了指定开关。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">flags</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span> <span class="c1">// 二进制的0101</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">flags</span> <span class="o">&amp;</span> <span class="nx">FLAG_C</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+<span class="c1">// 0101 &amp; 0100 =&gt; 0100 =&gt; true</span>
+</code></pre></div></div>
+
+<p>上面代码检验是否打开了开关<code class="highlighter-rouge">C</code>。如果打开，会返回<code class="highlighter-rouge">true</code>，否则返回<code class="highlighter-rouge">false</code>。</p>
+
+<p>现在假设需要打开<code class="highlighter-rouge">A</code><code class="highlighter-rouge">B</code><code class="highlighter-rouge">D</code>三个开关，我们可以构造一个掩码变量。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">mask</span> <span class="o">=</span> <span class="nx">FLAG_A</span> <span class="o">|</span> <span class="nx">FLAG_B</span> <span class="o">|</span> <span class="nx">FLAG_D</span><span class="p">;</span>
+<span class="c1">// 0001 | 0010 | 1000 =&gt; 1011</span>
+</code></pre></div></div>
+
+<p>上面代码对<code class="highlighter-rouge">A</code><code class="highlighter-rouge">B</code><code class="highlighter-rouge">D</code>三个变量进行“或运算”，得到掩码值为二进制的<code class="highlighter-rouge">1011</code>。</p>
+
+<p>有了掩码，“或运算”可以确保打开指定的开关。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">flags</span> <span class="o">=</span> <span class="nx">flags</span> <span class="o">|</span> <span class="nx">mask</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>“与运算”可以将当前设置中凡是与开关设置不一样的项，全部关闭。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">flags</span> <span class="o">=</span> <span class="nx">flags</span> <span class="o">&amp;</span> <span class="nx">mask</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>“异或运算”可以切换（toggle）当前设置，即第一次执行可以得到当前设置的相反值，再执行一次又得到原来的值。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">flags</span> <span class="o">=</span> <span class="nx">flags</span> <span class="o">^</span> <span class="nx">mask</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>“否运算”可以翻转当前设置，即原设置为<code class="highlighter-rouge">0</code>，运算后变为<code class="highlighter-rouge">1</code>；原设置为<code class="highlighter-rouge">1</code>，运算后变为<code class="highlighter-rouge">0</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">flags</span> <span class="o">=</span> <span class="o">~</span><span class="nx">flags</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="其他运算符">其他运算符</h2>
+
+<h3 id="void运算符">void运算符</h3>
+
+<p><code class="highlighter-rouge">void</code>运算符的作用是执行一个表达式，然后不返回任何值，或者说返回<code class="highlighter-rouge">undefined</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">void</span> <span class="mi">0</span> <span class="c1">// undefined</span>
+<span class="k">void</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1">// undefined</span>
+</code></pre></div></div>
+
+<p>上面是<code class="highlighter-rouge">void</code>运算符的两种写法，都正确。建议采用后一种形式，即总是使用括号。因为<code class="highlighter-rouge">void</code>运算符的优先性很高，如果不使用括号，容易造成错误的结果。比如，<code class="highlighter-rouge">void 4 + 7</code>实际上等同于<code class="highlighter-rouge">(void 4) + 7</code>。</p>
+
+<p>下面是<code class="highlighter-rouge">void</code>运算符的一个例子。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="k">void</span> <span class="p">(</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span> <span class="c1">//undefined</span>
+<span class="nx">x</span> <span class="c1">// 5</span>
+</code></pre></div></div>
+
+<p>这个运算符主要是用于书签工具（bookmarklet），以及用于在超级链接中插入代码，目的是返回<code class="highlighter-rouge">undefined</code>可以防止网页跳转。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"javascript:void window.open('http://example.com/')"</span><span class="nt">&gt;</span>
+  点击打开新窗口
+<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<p>上面代码用于在网页中创建一个链接，点击后会打开一个新窗口。如果没有<code class="highlighter-rouge">void</code>，点击后就会在当前窗口打开链接。</p>
+
+<p>下面是常见的网页中触发鼠标点击事件的写法。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://example.com"</span> <span class="na">onclick=</span><span class="s">"f();"</span><span class="nt">&gt;</span>文字<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<p>上面代码有一个问题，函数<code class="highlighter-rouge">f</code>必须返回<code class="highlighter-rouge">false</code>，或者说<code class="highlighter-rouge">onclick</code>事件必须返回<code class="highlighter-rouge">false</code>，否则会引起浏览器跳转到<code class="highlighter-rouge">example.com</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">f</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// some code</span>
+  <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>或者写成</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://example.com"</span> <span class="na">onclick=</span><span class="s">"f();return false;"</span><span class="nt">&gt;</span>文字<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">void</code>运算符可以取代上面两种写法。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"javascript: void(f())"</span><span class="nt">&gt;</span>文字<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<p>下面的代码会提交表单，但是不会产生页面跳转。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"javascript: void(document.form.submit())"</span><span class="nt">&gt;</span>
+文字<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<h3 id="逗号运算符">逗号运算符</h3>
+
+<p>逗号运算符用于对两个表达式求值，并返回后一个表达式的值。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span> <span class="c1">// "b"</span>
+
+<span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="p">(</span><span class="nx">x</span><span class="o">++</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+<span class="nx">x</span> <span class="c1">// 1</span>
+<span class="nx">y</span> <span class="c1">// 10</span>
+</code></pre></div></div>
+
+<p>上面代码中，逗号运算符返回后一个表达式的值。</p>
+
+<h2 id="运算顺序">运算顺序</h2>
+
+<h3 id="优先级">优先级</h3>
+
+<p>JavaScript各种运算符的优先级别（Operator Precedence）是不一样的。优先级高的运算符先执行，优先级低的运算符后执行。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">4</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">6</span> <span class="c1">// 34</span>
+</code></pre></div></div>
+
+<p>上面的代码中，乘法运算符（<code class="highlighter-rouge">*</code>）的优先性高于加法运算符（<code class="highlighter-rouge">+</code>），所以先执行乘法，再执行加法，相当于下面这样。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">4</span> <span class="o">+</span> <span class="p">(</span><span class="mi">5</span> <span class="o">*</span> <span class="mi">6</span><span class="p">)</span> <span class="c1">// 34</span>
+</code></pre></div></div>
+
+<p>如果多个运算符混写在一起，常常会导致令人困惑的代码。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[];</span>
+
+<span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="o">||</span> <span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">===</span> <span class="kc">undefined</span> <span class="p">?</span> <span class="nx">x</span> <span class="p">:</span> <span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+</code></pre></div></div>
+
+<p>上面代码中，变量<code class="highlighter-rouge">y</code>的值就很难看出来，因为这个表达式涉及5个运算符，到底谁的优先级最高，实在不容易记住。</p>
+
+<p>根据语言规格，这五个运算符的优先级从高到低依次为：小于等于（<code class="highlighter-rouge">&lt;=</code>)、严格相等（<code class="highlighter-rouge">===</code>）、或（<code class="highlighter-rouge">||</code>）、三元（<code class="highlighter-rouge">?:</code>）、等号（<code class="highlighter-rouge">=</code>）。因此上面的表达式，实际的运算顺序如下。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="p">((</span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">))</span> <span class="p">?</span> <span class="nx">x</span> <span class="p">:</span> <span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+</code></pre></div></div>
+
+<p>记住所有运算符的优先级，是非常难的，也是没有必要的。</p>
+
+<h3 id="圆括号的作用">圆括号的作用</h3>
+
+<p>圆括号（<code class="highlighter-rouge">()</code>）可以用来提高运算的优先级，因为它的优先级是最高的，即圆括号中的表达式会第一个运算。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="mi">6</span> <span class="c1">// 54</span>
+</code></pre></div></div>
+
+<p>上面代码中，由于使用了圆括号，加法会先于乘法执行。</p>
+
+<p>由于运算符的优先级别十分繁杂，且都是来自硬性规定，因此建议总是使用圆括号，保证运算顺序清晰可读，这对代码的维护和除错至关重要。</p>
+
+<p>顺便说一下，圆括号不是运算符，而是一种语法结构。它一共有两种用法：一种是把表达式放在圆括号之中，提升运算的优先级；另一种是跟在函数的后面，作用是调用函数。</p>
+
+<p>注意，因为圆括号不是运算符，所以不具有求值作用，只改变运算的优先级。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>上面代码的第二行，如果圆括号具有求值作用，那么就会变成<code class="highlighter-rouge">1 = 2</code>，这是会报错了。但是，上面的代码可以运行，这验证了圆括号只改变优先级，不会求值。</p>
+
+<p>这也意味着，如果整个表达式都放在圆括号之中，那么不会有任何效果。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nx">exprssion</span><span class="p">)</span>
+<span class="c1">// 等同于</span>
+<span class="nx">expression</span>
+</code></pre></div></div>
+
+<p>函数放在圆括号中，会返回函数本身。如果圆括号紧跟在函数的后面，就表示调用函数。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">f</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">(</span><span class="nx">f</span><span class="p">)</span> <span class="c1">// function f(){return 1;}</span>
+<span class="nx">f</span><span class="p">()</span> <span class="c1">// 1</span>
+</code></pre></div></div>
+
+<p>上面代码中，函数放在圆括号之中会返回函数本身，圆括号跟在函数后面则是调用函数。</p>
+
+<p>圆括号之中，只能放置表达式，如果将语句放在圆括号之中，就会报错。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c1">// SyntaxError: Unexpected token var</span>
+</code></pre></div></div>
+
+<h3 id="左结合与右结合">左结合与右结合</h3>
+
+<p>对于优先级别相同的运算符，大多数情况，计算顺序总是从左到右，这叫做运算符的“左结合”（left-to-right associativity），即从左边开始计算。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span> <span class="o">+</span> <span class="nx">z</span>
+</code></pre></div></div>
+
+<p>上面代码先计算最左边的<code class="highlighter-rouge">x</code>与<code class="highlighter-rouge">y</code>的和，然后再计算与<code class="highlighter-rouge">z</code>的和。</p>
+
+<p>但是少数运算符的计算顺序是从右到左，即从右边开始计算，这叫做运算符的“右结合”（right-to-left associativity）。其中，最主要的是赋值运算符（<code class="highlighter-rouge">=</code>）和三元条件运算符（<code class="highlighter-rouge">?:</code>）。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">w</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">z</span><span class="p">;</span>
+<span class="nx">q</span> <span class="o">=</span> <span class="nx">a</span> <span class="p">?</span> <span class="nx">b</span> <span class="p">:</span> <span class="nx">c</span> <span class="p">?</span> <span class="nx">d</span> <span class="p">:</span> <span class="nx">e</span> <span class="p">?</span> <span class="nx">f</span> <span class="p">:</span> <span class="nx">g</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>上面代码的运算结果，相当于下面的样子。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">w</span> <span class="o">=</span> <span class="p">(</span><span class="nx">x</span> <span class="o">=</span> <span class="p">(</span><span class="nx">y</span> <span class="o">=</span> <span class="nx">z</span><span class="p">));</span>
+<span class="nx">q</span> <span class="o">=</span> <span class="nx">a</span> <span class="p">?</span> <span class="nx">b</span> <span class="p">:</span> <span class="p">(</span><span class="nx">c</span> <span class="p">?</span> <span class="nx">d</span> <span class="p">:</span> <span class="p">(</span><span class="nx">e</span> <span class="p">?</span> <span class="nx">f</span> <span class="p">:</span> <span class="nx">g</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p>上面的两行代码，各有三个等号运算符和三个三元运算符，都是先计算最右边的那个运算符。</p>
+
+<h2 id="参考链接">参考链接</h2>
+
+<ul>
+  <li>Michal Budzynski, <a href="javascript:if(confirm('http://michalbe.blogspot.co.uk/2013/03/javascript-less-known-parts-bitwise.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://michalbe.blogspot.co.uk/2013/03/javascript-less-known-parts-bitwise.html'" tppabs="http://michalbe.blogspot.co.uk/2013/03/javascript-less-known-parts-bitwise.html">JavaScript: The less known parts. Bitwise Operators</a></li>
+  <li>Axel Rauschmayer, <a href="javascript:if(confirm('http://www.2ality.com/2013/06/basic-javascript.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.2ality.com/2013/06/basic-javascript.html'" tppabs="http://www.2ality.com/2013/06/basic-javascript.html">Basic JavaScript for the impatient programmer</a></li>
+  <li>Mozilla Developer Network, <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators">Bitwise Operators</a></li>
+</ul>
+
+
+</article>
+
+<div class="row">
+<div class="twelve columns">
+
+<h2>留言</h2>
+
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'jstutorial'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="javascript:if(confirm('http://disqus.com/?ref_noscript  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://disqus.com/?ref_noscript'" tppabs="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="javascript:if(confirm('http://disqus.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://disqus.com/'" tppabs="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</section>
+
+</div>
+</div>
+
+<footer>
+<div class="row">
+<div class="twelve columns">
+	<p><a href="license.html" tppabs="http://javascript.ruanyifeng.com/introduction/license.html">版权声明</a> | last modified on 2014-02-04 </p>
+</div>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-43771063-1', 'http://javascript.ruanyifeng.com/grammar/ruanyifeng.com');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
+
+

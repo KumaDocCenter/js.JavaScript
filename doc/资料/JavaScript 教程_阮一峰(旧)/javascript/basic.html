@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>基本语法 -- JavaScript 标准参考教程（alpha）</title>
+  
+  <!-- Included CSS Files (Uncompressed) -->
+  <!--
+  <link rel="stylesheet" href="stylesheets/foundation.css">
+  -->
+  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="foundation.css" tppabs="http://javascript.ruanyifeng.com/css/foundation.css">
+  <link rel="stylesheet" href="main.css" tppabs="http://javascript.ruanyifeng.com/css/main.css">
+
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="html5.js" tppabs="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <script src="jquery.js" tppabs="http://javascript.ruanyifeng.com/js/jquery.js"></script>
+  <script src="toc.js" tppabs="http://javascript.ruanyifeng.com/js/toc.js"></script>
+  <script src="main.js" tppabs="http://javascript.ruanyifeng.com/js/main.js"></script>
+
+</head>
+<body>
+
+<header class="top-bar" id="header">
+
+<div class="fixed">
+
+<nav class="top-bar">
+<ul>
+<!-- Title Area -->
+	<li class="name has-dropdown">
+	<h1><a href="index.htm" tppabs="http://javascript.ruanyifeng.com/">JavaScript 标准参考教程（alpha） </a></h1>
+		<ul class="dropdown">
+			
+			<li><a href="index.htm#introduction" tppabs="http://javascript.ruanyifeng.com/#introduction">导论</a></li>
+			
+			<li><a href="index.htm#grammar" tppabs="http://javascript.ruanyifeng.com/#grammar">语法</a></li>
+			
+			<li><a href="index.htm#stdlib" tppabs="http://javascript.ruanyifeng.com/#stdlib">标准库</a></li>
+			
+			<li><a href="index.htm#oop" tppabs="http://javascript.ruanyifeng.com/#oop">面向对象编程</a></li>
+			
+			<li><a href="index.htm#advanced" tppabs="http://javascript.ruanyifeng.com/#advanced">语法专题</a></li>
+			
+			<li><a href="index.htm#dom" tppabs="http://javascript.ruanyifeng.com/#dom">DOM模型</a></li>
+			
+			<li><a href="index.htm#bom" tppabs="http://javascript.ruanyifeng.com/#bom">浏览器环境</a></li>
+			
+			<li><a href="index.htm#htmlapi" tppabs="http://javascript.ruanyifeng.com/#htmlapi">Web API</a></li>
+			
+		</ul>
+	</li>
+</ul>
+
+<section>
+
+
+<ul class="left">
+<li class="divider"></li>
+<li class="has-dropdown"><a class="active" href="#"> 语法 </a><ul class="dropdown">
+
+
+
+
+
+
+
+<li><a href="array.html" tppabs="http://javascript.ruanyifeng.com/grammar/array.html">数组</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="active"><a href="#">基本语法</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="conversion.html" tppabs="http://javascript.ruanyifeng.com/grammar/conversion.html">数据类型转换</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="error.html" tppabs="http://javascript.ruanyifeng.com/grammar/error.html">错误处理机制</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="function.html" tppabs="http://javascript.ruanyifeng.com/grammar/function.html">函数</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="number.html" tppabs="http://javascript.ruanyifeng.com/grammar/number.html">数值</a></li>
+
+
+
+
+
+
+
+<li><a href="object.html" tppabs="http://javascript.ruanyifeng.com/grammar/object.html">对象</a></li>
+
+
+
+
+
+
+
+
+
+<li><a href="operator.html" tppabs="http://javascript.ruanyifeng.com/grammar/operator.html">运算符</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="string.html" tppabs="http://javascript.ruanyifeng.com/grammar/string.html">字符串</a></li>
+
+
+
+
+
+
+
+<li><a href="style.html" tppabs="http://javascript.ruanyifeng.com/grammar/style.html">JavaScript 编程风格</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="types.html" tppabs="http://javascript.ruanyifeng.com/grammar/types.html">数据类型</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul></li>
+<li class="divider"></li>
+<li class="has-dropdown nav-3"><a href="#"> 基本语法</a><ul class="dropdown">
+</ul></li>
+</ul>
+
+
+<ul class="right">
+	<li class="divider"></li>
+	<li>
+		<a href="javascript:if(confirm('https://github.com/ruanyf/jstutorial  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://github.com/ruanyf/jstutorial'" tppabs="https://github.com/ruanyf/jstutorial" target="_blank">GitHub <i class="foundicon-edit"></i></a>
+	</li>
+	<li class="divider"></li>
+	<li>
+		<a href="#">TOP <i class="foundicon-up-arrow"></i></a>
+	</li>
+</ul>
+
+</section>
+
+</nav>  
+</div>
+</header>
+
+
+<article class="bookPage">
+
+  <div class="row">
+    <div class="twelve columns">
+
+<h1> 基本语法 </h1>
+
+<aside class="right"><p>来自<a href="index.htm" tppabs="http://javascript.ruanyifeng.com/">《JavaScript 标准参考教程（alpha）》</a>，by 阮一峰</p></aside>
+
+<div id="toc" class="panel callout radius">目录</div>
+
+
+<h2 id="语句">语句</h2>
+
+<p>JavaScript程序的执行单位为行（line），也就是一行一行地执行。一般情况下，每一行就是一个语句。</p>
+
+<p>语句（statement）是为了完成某种任务而进行的操作，比如下面就是一行赋值语句：</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">3</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>这条语句先用<code class="highlighter-rouge">var</code>命令，声明了变量<code class="highlighter-rouge">a</code>，然后将<code class="highlighter-rouge">1 + 3</code>的运算结果赋值给变量<code class="highlighter-rouge">a</code>。</p>
+
+<p><code class="highlighter-rouge">1 + 3</code>叫做表达式（expression），指一个为了得到返回值的计算式。语句和表达式的区别在于，前者主要为了进行某种操作，一般情况下不需要返回值；后者则是为了得到返回值，一定会返回一个值。</p>
+
+<p>凡是JavaScript语言中预期为值的地方，都可以使用表达式。比如，赋值语句的等号右边，预期是一个值，因此可以放置各种表达式。一条语句可以包含多个表达式。</p>
+
+<p>语句以分号结尾，一个分号就表示一个语句结束。多个语句可以写在一行内。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">3</span> <span class="p">;</span> <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="s1">'abc'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>分号前面可以没有任何内容，JavaScript引擎将其视为空语句。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">;;;</span>
+</code></pre></div></div>
+
+<p>上面的代码就表示3个空语句。（关于分号的更多介绍，请看后文《代码风格》一节。）</p>
+
+<p>表达式不需要分号结尾。一旦在表达式后面添加分号，则JavaScript引擎就将表达式视为语句，这样会产生一些没有任何意义的语句。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">1</span> <span class="o">+</span> <span class="mi">3</span><span class="p">;</span>
+<span class="s1">'abc'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>上面两行语句有返回值，但是没有任何意义，因为只是返回一个单纯的值，没有任何其他操作。</p>
+
+<h2 id="变量">变量</h2>
+
+<h3 id="概念">概念</h3>
+
+<p>变量是对“值”的引用，使用变量等同于引用一个值。每一个变量都有一个变量名。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>上面的代码先声明变量<code class="highlighter-rouge">a</code>，然后在变量<code class="highlighter-rouge">a</code>与数值1之间建立引用关系，也称为将数值1“赋值”给变量<code class="highlighter-rouge">a</code>。以后，引用变量<code class="highlighter-rouge">a</code>就会得到数值1。最前面的<code class="highlighter-rouge">var</code>，是变量声明命令。它表示通知解释引擎，要创建一个变量<code class="highlighter-rouge">a</code>。</p>
+
+<p>变量的声明和赋值，是分开的两个步骤，上面的代码将它们合在了一起，实际的步骤是下面这样。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span><span class="p">;</span>
+<span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>如果只是声明变量而没有赋值，则该变量的值是<code class="highlighter-rouge">undefined</code>。<code class="highlighter-rouge">undefined</code>是一个JavaScript关键字，表示“无定义”。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span><span class="p">;</span>
+<span class="nx">a</span> <span class="c1">// undefined</span>
+</code></pre></div></div>
+
+<p>如果变量赋值的时候，忘了写<code class="highlighter-rouge">var</code>命令，这条语句也是有效的。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="c1">// 基本等同</span>
+<span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>但是，不写<code class="highlighter-rouge">var</code>的做法，不利于表达意图，而且容易不知不觉地创建全局变量，所以建议总是使用<code class="highlighter-rouge">var</code>命令声明变量。</p>
+
+<blockquote>
+  <p>严格地说，<code class="highlighter-rouge">var a = 1</code> 与 <code class="highlighter-rouge">a = 1</code>，这两条语句的效果不完全一样，主要体现在<code class="highlighter-rouge">delete</code>命令无法删除前者。不过，绝大多数情况下，这种差异是可以忽略的。</p>
+</blockquote>
+
+<p>如果一个变量没有声明就直接使用，JavaScript会报错，告诉你变量未定义。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">x</span>
+<span class="c1">// ReferenceError: x is not defined</span>
+</code></pre></div></div>
+
+<p>上面代码直接使用变量<code class="highlighter-rouge">x</code>，系统就报错，告诉你变量<code class="highlighter-rouge">x</code>没有声明。</p>
+
+<p>可以在同一条<code class="highlighter-rouge">var</code>命令中声明多个变量。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>JavaScript 是一种动态类型语言，也就是说，变量的类型没有限制，可以赋予各种类型的值。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nx">a</span> <span class="o">=</span> <span class="s1">'hello'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>上面代码中，变量<code class="highlighter-rouge">a</code>起先被赋值为一个数值，后来又被重新赋值为一个字符串。第二次赋值的时候，因为变量<code class="highlighter-rouge">a</code>已经存在，所以不需要使用<code class="highlighter-rouge">var</code>命令。</p>
+
+<p>如果使用<code class="highlighter-rouge">var</code>重新声明一个已经存在的变量，是无效的。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">x</span><span class="p">;</span>
+<span class="nx">x</span> <span class="c1">// 1</span>
+</code></pre></div></div>
+
+<p>上面代码中，变量<code class="highlighter-rouge">x</code>声明了两次，第二次声明是无效的。</p>
+
+<p>但是，如果第二次声明的同时还赋值了，则会覆盖掉前面的值。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+<span class="c1">// 等同于</span>
+
+<span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">x</span><span class="p">;</span>
+<span class="nx">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="变量提升">变量提升</h3>
+
+<p>JavaScript引擎的工作方式是，先解析代码，获取所有被声明的变量，然后再一行一行地运行。这造成的结果，就是所有的变量的声明语句，都会被提升到代码的头部，这就叫做变量提升（hoisting）。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>上面代码首先使用<code class="highlighter-rouge">console.log</code>方法，在控制台（console）显示变量a的值。这时变量<code class="highlighter-rouge">a</code>还没有声明和赋值，所以这是一种错误的做法，但是实际上不会报错。因为存在变量提升，真正运行的是下面的代码。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+<span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>最后的结果是显示<code class="highlighter-rouge">undefined</code>，表示变量<code class="highlighter-rouge">a</code>已声明，但还未赋值。</p>
+
+<p>请注意，变量提升只对<code class="highlighter-rouge">var</code>命令声明的变量有效，如果一个变量不是用<code class="highlighter-rouge">var</code>命令声明的，就不会发生变量提升。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span>
+<span class="nx">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>上面的语句将会报错，提示“ReferenceError: b is not defined”，即变量<code class="highlighter-rouge">b</code>未声明，这是因为<code class="highlighter-rouge">b</code>不是用<code class="highlighter-rouge">var</code>命令声明的，JavaScript引擎不会将其提升，而只是视为对顶层对象的<code class="highlighter-rouge">b</code>属性的赋值。</p>
+
+<h2 id="标识符">标识符</h2>
+
+<p>标识符（identifier）是用来识别具体对象的一个名称。最常见的标识符就是变量名，以及后面要提到的函数名。JavaScript语言的标识符对大小写敏感，所以<code class="highlighter-rouge">a</code>和<code class="highlighter-rouge">A</code>是两个不同的标识符。</p>
+
+<p>标识符有一套命名规则，不符合规则的就是非法标识符。JavaScript引擎遇到非法标识符，就会报错。</p>
+
+<p>简单说，标识符命名规则如下：</p>
+
+<ul>
+  <li>第一个字符，可以是任意Unicode字母（包括英文字母和其他语言的字母），以及美元符号（<code class="highlighter-rouge">$</code>）和下划线（<code class="highlighter-rouge">_</code>）。</li>
+  <li>第二个字符及后面的字符，除了Unicode字母、美元符号和下划线，还可以用数字<code class="highlighter-rouge">0-9</code>。</li>
+</ul>
+
+<p>下面这些都是合法的标识符。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">arg0</span>
+<span class="nx">_tmp</span>
+<span class="nx">$elem</span>
+<span class="err">π</span>
+</code></pre></div></div>
+
+<p>下面这些则是不合法的标识符。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">1</span><span class="nx">a</span>  <span class="c1">// 第一个字符不能是数字</span>
+<span class="mi">23</span>  <span class="c1">// 同上</span>
+<span class="o">***</span>  <span class="c1">// 标识符不能包含星号</span>
+<span class="nx">a</span><span class="o">+</span><span class="nx">b</span>  <span class="c1">// 标识符不能包含加号</span>
+<span class="o">-</span><span class="nx">d</span>  <span class="c1">// 标识符不能包含减号或连词线</span>
+</code></pre></div></div>
+
+<p>中文是合法的标识符，可以用作变量名。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="err">临时变量</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>JavaScript有一些保留字，不能用作标识符：arguments、break、case、catch、class、const、continue、debugger、default、delete、do、else、enum、eval、export、extends、false、finally、for、function、if、implements、import、in、instanceof、interface、let、new、null、package、private、protected、public、return、static、super、switch、this、throw、true、try、typeof、var、void、while、with、yield。</p>
+</blockquote>
+
+<p>另外，还有三个词虽然不是保留字，但是因为具有特别含义，也不应该用作标识符：<code class="highlighter-rouge">Infinity</code>、<code class="highlighter-rouge">NaN</code>、<code class="highlighter-rouge">undefined</code>。</p>
+
+<h2 id="注释">注释</h2>
+
+<p>源码中被JavaScript引擎忽略的部分就叫做注释，它的作用是对代码进行解释。Javascript提供两种注释：一种是单行注释，用//起头；另一种是多行注释，放在/* 和 */之间。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 这是单行注释</span>
+
+<span class="cm">/*
+ 这是
+ 多行
+ 注释
+*/</span>
+</code></pre></div></div>
+
+<p>此外，由于历史上JavaScript兼容HTML代码的注释，所以<code class="highlighter-rouge">&lt;!--</code>和<code class="highlighter-rouge">--&gt;</code>也被视为单行注释。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c">&lt;!--</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="o">--&gt;</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>上面代码中，只有<code class="highlighter-rouge">x = 1</code>会执行，其他的部分都被注释掉了。</p>
+
+<p>需要注意的是，<code class="highlighter-rouge">--&gt;</code>只有在行首，才会被当成单行注释，否则就是一个运算符。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">countdown</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">n</span> <span class="o">--&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">n</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">countdown</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="c1">// 2</span>
+<span class="c1">// 1</span>
+<span class="c1">// 0</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">n --&gt; 0</code>实际上会当作<code class="highlighter-rouge">n-- &gt; 0</code>，因此输出2、1、0。</p>
+
+<h2 id="区块">区块</h2>
+
+<p>JavaScript使用大括号，将多个相关的语句组合在一起，称为“区块”（block）。</p>
+
+<p>与大多数编程语言不一样，JavaScript的区块不构成单独的作用域（scope）。也就是说，区块中的变量与区块外的变量，属于同一个作用域。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">a</span> <span class="c1">// 1</span>
+</code></pre></div></div>
+
+<p>上面代码在区块内部，声明并赋值了变量<code class="highlighter-rouge">a</code>，然后在区块外部，变量<code class="highlighter-rouge">a</code>依然有效，这说明区块不构成单独的作用域，与不使用区块的情况没有任何区别。所以，单独使用的区块在JavaScript中意义不大，很少出现。区块往往用来构成其他更复杂的语法结构，比如<code class="highlighter-rouge">for</code>、<code class="highlighter-rouge">if</code>、<code class="highlighter-rouge">while</code>、<code class="highlighter-rouge">function</code>等。</p>
+
+<h2 id="条件语句">条件语句</h2>
+
+<p>条件语句提供一种语法构造，只有满足某个条件，才会执行相应的语句。JavaScript提供<code class="highlighter-rouge">if</code>结构和<code class="highlighter-rouge">switch</code>结构，完成条件判断。</p>
+
+<h3 id="if-结构">if 结构</h3>
+
+<p><code class="highlighter-rouge">if</code>结构先判断一个表达式的布尔值，然后根据布尔值的真伪，执行不同的语句。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">expression</span><span class="p">)</span>
+  <span class="nx">statement</span><span class="p">;</span>
+
+<span class="c1">// 或者</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">expression</span><span class="p">)</span> <span class="nx">statement</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>上面是<code class="highlighter-rouge">if</code>结构的基本形式。需要注意的是，expression（表达式）必须放在圆括号中，表示对表达式求值。如果结果为<code class="highlighter-rouge">true</code>，就执行紧跟在后面的语句（statement）；如果结果为<code class="highlighter-rouge">false</code>，则跳过statement的部分。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">m</span> <span class="o">===</span> <span class="mi">3</span><span class="p">)</span>
+  <span class="nx">m</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>	
+</code></pre></div></div>
+
+<p>上面代码表示，只有在<code class="highlighter-rouge">m</code>等于3时，才会将其值加上1。</p>
+
+<p>这种写法要求条件表达式后面只能有一个语句。如果想执行多个语句，必须在<code class="highlighter-rouge">if</code>的条件判断之后，加上大括号，表示代码块。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">m</span> <span class="o">===</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">m</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>建议总是在<code class="highlighter-rouge">if</code>语句中使用大括号，因为这样方便插入语句。</p>
+
+<p>注意，<code class="highlighter-rouge">if</code>后面的表达式，不要混淆“赋值表达式”（<code class="highlighter-rouge">=</code>）与“严格相等运算符”（<code class="highlighter-rouge">===</code>）或“相等运算符”（<code class="highlighter-rouge">==</code>）。因为，“赋值表达式”不具有比较作用。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// "2"</span>
+</code></pre></div></div>
+
+<p>上面代码的原意是，当<code class="highlighter-rouge">x</code>等于<code class="highlighter-rouge">y</code>的时候，才执行相关语句。但是，不小心将“严格相等运算符”写成“赋值表达式”，结果变成了将<code class="highlighter-rouge">y</code>赋值给<code class="highlighter-rouge">x</code>，然后条件就变成了，变量<code class="highlighter-rouge">x</code>的值（等于2）自动转为布尔值以后，判断其是否为<code class="highlighter-rouge">true</code>。</p>
+
+<p>这种错误可以正常生成一个布尔值，因而不会报错。为了避免这种情况，有些开发者习惯将常量写在运算符的左边，这样的话，一旦不小心将相等运算符写成赋值运算符，就会报错，因为常量不能被赋值。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 不报错</span>
+<span class="k">if</span> <span class="p">(</span><span class="mi">2</span> <span class="o">=</span> <span class="nx">x</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 报错</span>
+</code></pre></div></div>
+
+<p>至于为什么优先采用“严格相等运算符”（<code class="highlighter-rouge">===</code>），而不是“相等运算符”（<code class="highlighter-rouge">==</code>），请参考《运算符》一节。</p>
+
+<h3 id="ifelse结构">if…else结构</h3>
+
+<p><code class="highlighter-rouge">if</code>代码块后面，还可以跟一个<code class="highlighter-rouge">else</code>代码块，表示不满足条件时，所要执行的代码。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">m</span> <span class="o">===</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// then</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="c1">// else</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>上面代码判断变量<code class="highlighter-rouge">m</code>是否等于3，如果等于就执行<code class="highlighter-rouge">if</code>代码块，否则执行<code class="highlighter-rouge">else</code>代码块。</p>
+
+<p>对同一个变量进行多次判断时，多个<code class="highlighter-rouge">if...else</code>语句可以连写在一起。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">m</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">m</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">m</span> <span class="o">===</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">else</code>代码块总是跟随离自己最近的那个<code class="highlighter-rouge">if</code>语句。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">m</span> <span class="o">!==</span> <span class="mi">1</span><span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">===</span> <span class="mi">2</span><span class="p">)</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">);</span>
+<span class="k">else</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'world'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>上面代码不会有任何输出，<code class="highlighter-rouge">else</code>代码块不会得到执行，因为它跟着的是最近的那个<code class="highlighter-rouge">if</code>语句，相当于下面这样。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">m</span> <span class="o">!==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">===</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">);</span>	
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'world'</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>如果想让<code class="highlighter-rouge">else</code>代码块跟随最上面的那个<code class="highlighter-rouge">if</code>语句，就要改变大括号的位置。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">m</span> <span class="o">!==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">===</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">);</span>	
+  <span class="p">}</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'world'</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// world</span>
+</code></pre></div></div>
+
+<h3 id="switch结构">switch结构</h3>
+
+<p>多个<code class="highlighter-rouge">if...else</code>连在一起使用的时候，可以转为使用更方便的<code class="highlighter-rouge">switch</code>结构。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">switch</span> <span class="p">(</span><span class="nx">fruit</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="s2">"banana"</span><span class="p">:</span>
+    <span class="c1">// ...</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="k">case</span> <span class="s2">"apple"</span><span class="p">:</span>
+    <span class="c1">// ...</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="nl">default</span><span class="p">:</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>上面代码根据变量<code class="highlighter-rouge">fruit</code>的值，选择执行相应的<code class="highlighter-rouge">case</code>。如果所有<code class="highlighter-rouge">case</code>都不符合，则执行最后的<code class="highlighter-rouge">default</code>部分。需要注意的是，每个<code class="highlighter-rouge">case</code>代码块内部的<code class="highlighter-rouge">break</code>语句不能少，否则会接下去执行下一个<code class="highlighter-rouge">case</code>代码块，而不是跳出<code class="highlighter-rouge">switch</code>结构。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="k">switch</span> <span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'x 等于1'</span><span class="p">);</span>
+  <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'x 等于2'</span><span class="p">);</span>
+  <span class="nl">default</span><span class="p">:</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'x 等于其他值'</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// x等于1</span>
+<span class="c1">// x等于2</span>
+<span class="c1">// x等于其他值</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">case</code>代码块之中没有<code class="highlighter-rouge">break</code>语句，导致不会跳出<code class="highlighter-rouge">switch</code>结构，而会一直执行下去。</p>
+
+<p><code class="highlighter-rouge">switch</code>语句部分和<code class="highlighter-rouge">case</code>语句部分，都可以使用表达式。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">switch</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="nx">f</span><span class="p">();</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="nl">default</span><span class="p">:</span>
+    <span class="nx">neverhappens</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>上面代码的<code class="highlighter-rouge">default</code>部分，是永远不会执行到的。</p>
+
+<p>需要注意的是，<code class="highlighter-rouge">switch</code>语句后面的表达式与<code class="highlighter-rouge">case</code>语句后面的表示式，在比较运行结果时，采用的是严格相等运算符（<code class="highlighter-rouge">===</code>），而不是相等运算符（<code class="highlighter-rouge">==</code>），这意味着比较时不会发生类型转换。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="k">switch</span> <span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="kc">true</span><span class="p">:</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'x发生类型转换'</span><span class="p">);</span>
+  <span class="nl">default</span><span class="p">:</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'x没有发生类型转换'</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// x没有发生类型转换</span>
+</code></pre></div></div>
+
+<p>上面代码中，由于变量<code class="highlighter-rouge">x</code>没有发生类型转换，所以不会执行<code class="highlighter-rouge">case true</code>的情况。这表明，<code class="highlighter-rouge">switch</code>语句内部采用的是“严格相等运算符”，详细解释请参考《运算符》一节。</p>
+
+<h3 id="三元运算符-">三元运算符 ?:</h3>
+
+<p>JavaScript还有一个三元运算符（即该运算符需要三个运算子）<code class="highlighter-rouge">?:</code>，也可以用于逻辑判断。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nx">condition</span><span class="p">)</span> <span class="p">?</span> <span class="nx">expr1</span> <span class="p">:</span> <span class="nx">expr2</span>
+</code></pre></div></div>
+
+<p>上面代码中，如果<code class="highlighter-rouge">condition</code>为<code class="highlighter-rouge">true</code>，则返回<code class="highlighter-rouge">expr1</code>的值，否则返回<code class="highlighter-rouge">expr2</code>的值。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">even</span> <span class="o">=</span> <span class="p">(</span><span class="nx">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">?</span> <span class="kc">true</span> <span class="p">:</span> <span class="kc">false</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>上面代码中，如果<code class="highlighter-rouge">n</code>可以被2整除，则<code class="highlighter-rouge">even</code>等于<code class="highlighter-rouge">true</code>，否则等于<code class="highlighter-rouge">false</code>。它等同于下面的形式。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">even</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">even</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="nx">even</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>这个三元运算符可以被视为<code class="highlighter-rouge">if...else...</code>的简写形式，因此可以用于多种场合。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">myVar</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">myVar</span>
+  <span class="p">?</span> <span class="s1">'myVar has a value'</span>
+  <span class="p">:</span> <span class="s1">'myVar do not has a value'</span>
+<span class="p">)</span>
+<span class="c1">// myVar do not has a value</span>
+</code></pre></div></div>
+
+<p>上面代码利用三元运算符，输出相应的提示。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="s1">'The number '</span>
+  <span class="o">+</span> <span class="nx">n</span>
+  <span class="o">+</span> <span class="s1">' is '</span>
+  <span class="o">+</span> <span class="p">((</span><span class="nx">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">?</span> <span class="s1">'even'</span> <span class="p">:</span> <span class="s1">'odd'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>上面代码利用三元运算符，在字符串之中插入不同的值。</p>
+
+<h2 id="循环语句">循环语句</h2>
+
+<p>循环语句用于重复执行某个操作，它有多种形式。</p>
+
+<h3 id="while循环">while循环</h3>
+
+<p><code class="highlighter-rouge">While</code>语句包括一个循环条件和一段代码块，只要条件为真，就不断循环执行代码块。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span> <span class="p">(</span><span class="nx">expression</span><span class="p">)</span>
+  <span class="nx">statement</span><span class="p">;</span>
+
+<span class="c1">// 或者</span>
+
+<span class="k">while</span> <span class="p">(</span><span class="nx">expression</span><span class="p">)</span> <span class="nx">statement</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">while</code>语句的循环条件是一个表达式（express），必须放在圆括号中。代码块部分，如果只有一条语句（statement），可以省略大括号，否则就必须加上大括号。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span> <span class="p">(</span><span class="nx">expression</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">statement</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>下面是<code class="highlighter-rouge">while</code>语句的一个例子。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="k">while</span> <span class="p">(</span><span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'i当前为：'</span> <span class="o">+</span> <span class="nx">i</span><span class="p">);</span>
+  <span class="nx">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>上面的代码将循环100次，直到<code class="highlighter-rouge">i</code>等于100为止。</p>
+
+<p>下面的例子是一个无限循环，因为条件总是为真。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Hello, world'</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="for循环">for循环</h3>
+
+<p><code class="highlighter-rouge">for</code>语句是循环命令的另一种形式，可以指定循环的起点、终点和终止条件。它的格式如下。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="nx">initialize</span><span class="p">;</span> <span class="nx">test</span><span class="p">;</span> <span class="nx">increment</span><span class="p">)</span>
+  <span class="nx">statement</span>
+
+<span class="c1">// 或者</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="nx">initialize</span><span class="p">;</span> <span class="nx">test</span><span class="p">;</span> <span class="nx">increment</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">statement</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">for</code>语句后面的括号里面，有三个表达式。</p>
+
+<ul>
+  <li>初始化表达式（initialize）：确定循环的初始值，只在循环开始时执行一次。</li>
+  <li>测试表达式（test）：检查循环条件，只要为真就进行后续操作。</li>
+  <li>递增表达式（increment）：完成后续操作，然后返回上一步，再一次检查循环条件。</li>
+</ul>
+
+<p>下面是一个例子。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">x</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// 0</span>
+<span class="c1">// 1</span>
+<span class="c1">// 2</span>
+</code></pre></div></div>
+
+<p>上面代码中，初始化表达式是<code class="highlighter-rouge">var i = 0</code>，即初始化一个变量<code class="highlighter-rouge">i</code>；测试表达式是<code class="highlighter-rouge">i &lt; x</code>，即只要<code class="highlighter-rouge">i</code>小于<code class="highlighter-rouge">x</code>，就会执行循环；递增表达式是<code class="highlighter-rouge">i++</code>，即每次循环结束后，<code class="highlighter-rouge">i</code>增大1。</p>
+
+<p>所有<code class="highlighter-rouge">for</code>循环，都可以改写成<code class="highlighter-rouge">while</code>循环。上面的例子改为<code class="highlighter-rouge">while</code>循环，代码如下。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="k">while</span> <span class="p">(</span><span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+  <span class="nx">i</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">for</code>语句的三个部分（initialize，test，increment），可以省略任何一个，也可以全部省略。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span> <span class="p">;</span> <span class="p">;</span> <span class="p">){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Hello World'</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>上面代码省略了<code class="highlighter-rouge">for</code>语句表达式的三个部分，结果就导致了一个无限循环。</p>
+
+<h3 id="dowhile循环">do…while循环</h3>
+
+<p><code class="highlighter-rouge">do...while</code>循环与<code class="highlighter-rouge">while</code>循环类似，唯一的区别就是先运行一次循环体，然后判断循环条件。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">do</span>
+  <span class="nx">statement</span>
+<span class="k">while</span> <span class="p">(</span><span class="nx">expression</span><span class="p">);</span>
+
+<span class="c1">// 或者</span>
+
+<span class="k">do</span> <span class="p">{</span>
+  <span class="nx">statement</span>
+<span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="nx">expression</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>不管条件是否为真，<code class="highlighter-rouge">do..while</code>循环至少运行一次，这是这种结构最大的特点。另外，<code class="highlighter-rouge">while</code>语句后面的分号不能省略。</p>
+
+<p>下面是一个例子。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="k">do</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+  <span class="nx">i</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">while</span><span class="p">(</span><span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">x</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="break语句和continue语句">break语句和continue语句</h3>
+
+<p><code class="highlighter-rouge">break</code>语句和<code class="highlighter-rouge">continue</code>语句都具有跳转作用，可以让代码不按既有的顺序执行。</p>
+
+<p><code class="highlighter-rouge">break</code>语句用于跳出代码块或循环。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="k">while</span><span class="p">(</span><span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'i当前为：'</span> <span class="o">+</span> <span class="nx">i</span><span class="p">);</span>
+  <span class="nx">i</span><span class="o">++</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">i</span> <span class="o">===</span> <span class="mi">10</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>上面代码只会执行10次循环，一旦<code class="highlighter-rouge">i</code>等于10，就会跳出循环。</p>
+
+<p><code class="highlighter-rouge">for</code>循环也可以使用<code class="highlighter-rouge">break</code>语句跳出循环。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">i</span> <span class="o">===</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// 0</span>
+<span class="c1">// 1</span>
+<span class="c1">// 2</span>
+<span class="c1">// 3</span>
+</code></pre></div></div>
+
+<p>上面代码执行到<code class="highlighter-rouge">i</code>等于3，就会跳出循环。</p>
+
+<p><code class="highlighter-rouge">continue</code>语句用于立即终止本轮循环，返回循环结构的头部，开始下一轮循环。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="k">while</span> <span class="p">(</span><span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">){</span>
+  <span class="nx">i</span><span class="o">++</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">i</span><span class="o">%</span><span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'i当前为：'</span> <span class="o">+</span> <span class="nx">i</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>上面代码只有在<code class="highlighter-rouge">i</code>为奇数时，才会输出<code class="highlighter-rouge">i</code>的值。如果<code class="highlighter-rouge">i</code>为偶数，则直接进入下一轮循环。</p>
+
+<p>如果存在多重循环，不带参数的<code class="highlighter-rouge">break</code>语句和<code class="highlighter-rouge">continue</code>语句都只针对最内层循环。</p>
+
+<h3 id="标签label">标签（label）</h3>
+
+<p>JavaScript语言允许，语句的前面有标签（label），相当于定位符，用于跳转到程序的任意位置，标签的格式如下。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">label</span><span class="p">:</span>
+  <span class="nx">statement</span>
+</code></pre></div></div>
+
+<p>标签可以是任意的标识符，但是不能是保留字，语句部分可以是任意语句。</p>
+
+<p>标签通常与<code class="highlighter-rouge">break</code>语句和<code class="highlighter-rouge">continue</code>语句配合使用，跳出特定的循环。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">top</span><span class="p">:</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">){</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">i</span> <span class="o">===</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="nx">j</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="k">break</span> <span class="nx">top</span><span class="p">;</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'i='</span> <span class="o">+</span> <span class="nx">i</span> <span class="o">+</span> <span class="s1">', j='</span> <span class="o">+</span> <span class="nx">j</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="c1">// i=0, j=0</span>
+<span class="c1">// i=0, j=1</span>
+<span class="c1">// i=0, j=2</span>
+<span class="c1">// i=1, j=0</span>
+</code></pre></div></div>
+
+<p>上面代码为一个双重循环区块，<code class="highlighter-rouge">break</code>命令后面加上了<code class="highlighter-rouge">top</code>标签（注意，<code class="highlighter-rouge">top</code>不用加引号），满足条件时，直接跳出双层循环。如果<code class="highlighter-rouge">break</code>语句后面不使用标签，则只能跳出内层循环，进入下一次的外层循环。</p>
+
+<p><code class="highlighter-rouge">continue</code>语句也可以与标签配合使用。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">top</span><span class="p">:</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">){</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">i</span> <span class="o">===</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="nx">j</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="k">continue</span> <span class="nx">top</span><span class="p">;</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'i='</span> <span class="o">+</span> <span class="nx">i</span> <span class="o">+</span> <span class="s1">', j='</span> <span class="o">+</span> <span class="nx">j</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="c1">// i=0, j=0</span>
+<span class="c1">// i=0, j=1</span>
+<span class="c1">// i=0, j=2</span>
+<span class="c1">// i=1, j=0</span>
+<span class="c1">// i=2, j=0</span>
+<span class="c1">// i=2, j=1</span>
+<span class="c1">// i=2, j=2</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">continue</code>命令后面有一个标签名，满足条件时，会跳过当前循环，直接进入下一轮外层循环。如果<code class="highlighter-rouge">continue</code>语句后面不使用标签，则只能进入下一轮的内层循环。</p>
+
+<h2 id="参考链接">参考链接</h2>
+
+<ul>
+  <li>Axel Rauschmayer, <a href="javascript:if(confirm('http://www.2ality.com/2011/10/javascript-overview.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.2ality.com/2011/10/javascript-overview.html'" tppabs="http://www.2ality.com/2011/10/javascript-overview.html">A quick overview of JavaScript</a></li>
+</ul>
+
+
+
+</article>
+
+<div class="row">
+<div class="twelve columns">
+
+<h2>留言</h2>
+
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'jstutorial'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="javascript:if(confirm('http://disqus.com/?ref_noscript  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://disqus.com/?ref_noscript'" tppabs="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="javascript:if(confirm('http://disqus.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://disqus.com/'" tppabs="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</section>
+
+</div>
+</div>
+
+<footer>
+<div class="row">
+<div class="twelve columns">
+	<p><a href="license.html" tppabs="http://javascript.ruanyifeng.com/introduction/license.html">版权声明</a> | last modified on 2013-12-08 </p>
+</div>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-43771063-1', 'http://javascript.ruanyifeng.com/grammar/ruanyifeng.com');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
+
+

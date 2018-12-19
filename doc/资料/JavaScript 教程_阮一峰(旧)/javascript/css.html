@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>CSS操作 -- JavaScript 标准参考教程（alpha）</title>
+  
+  <!-- Included CSS Files (Uncompressed) -->
+  <!--
+  <link rel="stylesheet" href="stylesheets/foundation.css">
+  -->
+  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="foundation.css" tppabs="http://javascript.ruanyifeng.com/css/foundation.css">
+  <link rel="stylesheet" href="main.css" tppabs="http://javascript.ruanyifeng.com/css/main.css">
+
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="html5.js" tppabs="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <script src="jquery.js" tppabs="http://javascript.ruanyifeng.com/js/jquery.js"></script>
+  <script src="toc.js" tppabs="http://javascript.ruanyifeng.com/js/toc.js"></script>
+  <script src="main.js" tppabs="http://javascript.ruanyifeng.com/js/main.js"></script>
+
+</head>
+<body>
+
+<header class="top-bar" id="header">
+
+<div class="fixed">
+
+<nav class="top-bar">
+<ul>
+<!-- Title Area -->
+	<li class="name has-dropdown">
+	<h1><a href="index.htm" tppabs="http://javascript.ruanyifeng.com/">JavaScript 标准参考教程（alpha） </a></h1>
+		<ul class="dropdown">
+			
+			<li><a href="index.htm#introduction" tppabs="http://javascript.ruanyifeng.com/#introduction">导论</a></li>
+			
+			<li><a href="index.htm#grammar" tppabs="http://javascript.ruanyifeng.com/#grammar">语法</a></li>
+			
+			<li><a href="index.htm#stdlib" tppabs="http://javascript.ruanyifeng.com/#stdlib">标准库</a></li>
+			
+			<li><a href="index.htm#oop" tppabs="http://javascript.ruanyifeng.com/#oop">面向对象编程</a></li>
+			
+			<li><a href="index.htm#advanced" tppabs="http://javascript.ruanyifeng.com/#advanced">语法专题</a></li>
+			
+			<li><a href="index.htm#dom" tppabs="http://javascript.ruanyifeng.com/#dom">DOM模型</a></li>
+			
+			<li><a href="index.htm#bom" tppabs="http://javascript.ruanyifeng.com/#bom">浏览器环境</a></li>
+			
+			<li><a href="index.htm#htmlapi" tppabs="http://javascript.ruanyifeng.com/#htmlapi">Web API</a></li>
+			
+		</ul>
+	</li>
+</ul>
+
+<section>
+
+
+<ul class="left">
+<li class="divider"></li>
+<li class="has-dropdown"><a class="active" href="#"> DOM模型 </a><ul class="dropdown">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="attribute.html" tppabs="http://javascript.ruanyifeng.com/dom/attribute.html">属性的操作</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="active"><a href="#">CSS操作</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="document.html" tppabs="http://javascript.ruanyifeng.com/dom/document.html">document节点</a></li>
+
+
+
+
+
+
+
+<li><a href="element.html" tppabs="http://javascript.ruanyifeng.com/dom/element.html">Element对象</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="event-type.html" tppabs="http://javascript.ruanyifeng.com/dom/event-type.html">事件种类</a></li>
+
+
+
+
+
+<li><a href="event.html" tppabs="http://javascript.ruanyifeng.com/dom/event.html">事件模型</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="image.html" tppabs="http://javascript.ruanyifeng.com/dom/image.html">Image对象</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mutationobserver.html" tppabs="http://javascript.ruanyifeng.com/dom/mutationobserver.html">Mutation Observer API</a></li>
+
+
+
+
+
+
+
+<li><a href="node.html" tppabs="http://javascript.ruanyifeng.com/dom/node.html">DOM 模型概述</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="text.html" tppabs="http://javascript.ruanyifeng.com/dom/text.html">Text节点和DocumentFragment节点</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul></li>
+<li class="divider"></li>
+<li class="has-dropdown nav-3"><a href="#"> CSS操作</a><ul class="dropdown">
+</ul></li>
+</ul>
+
+
+<ul class="right">
+	<li class="divider"></li>
+	<li>
+		<a href="javascript:if(confirm('https://github.com/ruanyf/jstutorial  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://github.com/ruanyf/jstutorial'" tppabs="https://github.com/ruanyf/jstutorial" target="_blank">GitHub <i class="foundicon-edit"></i></a>
+	</li>
+	<li class="divider"></li>
+	<li>
+		<a href="#">TOP <i class="foundicon-up-arrow"></i></a>
+	</li>
+</ul>
+
+</section>
+
+</nav>  
+</div>
+</header>
+
+
+<article class="bookPage">
+
+  <div class="row">
+    <div class="twelve columns">
+
+<h1> CSS操作 </h1>
+
+<aside class="right"><p>来自<a href="index.htm" tppabs="http://javascript.ruanyifeng.com/">《JavaScript 标准参考教程（alpha）》</a>，by 阮一峰</p></aside>
+
+<div id="toc" class="panel callout radius">目录</div>
+
+
+<p>CSS与JavaScript是两个有着明确分工的领域，前者负责页面的视觉效果，后者负责与用户的行为互动。但是，它们毕竟同属网页开发的前端，因此不可避免有着交叉和互相配合。本节介绍如果通过JavaScript操作CSS。</p>
+
+<h2 id="style属性">style属性</h2>
+
+<p>操作 CSS 样式最简单的方法，就是使用网页元素节点的<code class="highlighter-rouge">getAttribute</code>方法、<code class="highlighter-rouge">setAttribute</code>方法和<code class="highlighter-rouge">removeAttribute</code>方法，直接读写或删除网页元素的<code class="highlighter-rouge">style</code>属性。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">div</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span>
+  <span class="s1">'style'</span><span class="p">,</span>
+  <span class="s1">'background-color:red;'</span> <span class="o">+</span> <span class="s1">'border:1px solid black;'</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<p>上面的代码相当于下面的 HTML 代码。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"background-color:red; border:1px solid black;"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h3 id="style对象">Style对象</h3>
+
+<p>每一个网页元素对应一个DOM节点对象。这个对象的<code class="highlighter-rouge">style</code>属性可以直接操作，用来读写行内CSS样式。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">divStyle</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'div'</span><span class="p">).</span><span class="nx">style</span><span class="p">;</span>
+
+<span class="nx">divStyle</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="s1">'red'</span><span class="p">;</span>
+<span class="nx">divStyle</span><span class="p">.</span><span class="nx">border</span> <span class="o">=</span> <span class="s1">'1px solid black'</span><span class="p">;</span>
+<span class="nx">divStyle</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="s1">'100px'</span><span class="p">;</span>
+<span class="nx">divStyle</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="s1">'100px'</span><span class="p">;</span>
+<span class="nx">divStyle</span><span class="p">.</span><span class="nx">fontSize</span> <span class="o">=</span> <span class="s1">'10em'</span><span class="p">;</span>
+
+<span class="nx">divStyle</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="c1">// red</span>
+<span class="nx">divStyle</span><span class="p">.</span><span class="nx">border</span> <span class="c1">// 1px solid black</span>
+<span class="nx">divStyle</span><span class="p">.</span><span class="nx">height</span> <span class="c1">// 100px</span>
+<span class="nx">divStyle</span><span class="p">.</span><span class="nx">width</span> <span class="c1">// 100px</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">style</code>属性的值是一个对象（简称<code class="highlighter-rouge">style</code>对象）。这个对象所包含的属性与CSS规则一一对应，但是名字需要改写，比如<code class="highlighter-rouge">background-color</code>写成<code class="highlighter-rouge">backgroundColor</code>。改写的规则是将横杠从CSS属性名中去除，然后将横杠后的第一个字母大写。如果CSS属性名是JavaScript保留字，则规则名之前需要加上字符串<code class="highlighter-rouge">css</code>，比如<code class="highlighter-rouge">float</code>写成<code class="highlighter-rouge">cssFloat</code>。</p>
+
+<p>注意，<code class="highlighter-rouge">style</code>对象的属性值都是字符串，设置时必须包括单位，但是不含规则结尾的分号。比如，<code class="highlighter-rouge">divStyle.width</code>不能写为<code class="highlighter-rouge">100</code>，而要写为<code class="highlighter-rouge">100px</code>。</p>
+
+<p>下面是一个例子，通过监听事件，改写网页元素的CSS样式。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">docStyle</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">style</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">someElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(...);</span>
+
+<span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'mousemove'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">someElement</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">transform</span> <span class="o">=</span>
+    <span class="s1">'translateX('</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">clientX</span> <span class="o">+</span> <span class="s1">'px)'</span> <span class="o">+</span>
+    <span class="s1">'translateY('</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">clientY</span> <span class="o">+</span> <span class="s1">'px)'</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h3 id="csstext属性">cssText属性</h3>
+
+<p>元素节点对象的<code class="highlighter-rouge">style</code>对象，有一个<code class="highlighter-rouge">cssText</code>属性，可以读写或删除整个样式。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">divStyle</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'div'</span><span class="p">).</span><span class="nx">style</span><span class="p">;</span>
+
+<span class="nx">divStyle</span><span class="p">.</span><span class="nx">cssText</span> <span class="o">=</span> <span class="s1">'background-color: red;'</span>
+  <span class="o">+</span> <span class="s1">'border: 1px solid black;'</span>
+  <span class="o">+</span> <span class="s1">'height: 100px;'</span>
+  <span class="o">+</span> <span class="s1">'width: 100px;'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>注意，<code class="highlighter-rouge">cssText</code>的属性值不用改写CSS属性名。</p>
+
+<h3 id="css模块的侦测">CSS模块的侦测</h3>
+
+<p>CSS的规格发展太快，新的模块层出不穷。不同浏览器的不同版本，对CSS模块的支持情况都不一样。有时候，需要知道当前浏览器是否支持某个模块，这就叫做“CSS模块的侦测”。</p>
+
+<p>一个比较普遍适用的方法是，判断某个DOM元素的<code class="highlighter-rouge">style</code>对象的某个属性值是否为字符串。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">typeof</span> <span class="nx">element</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">animationName</span> <span class="o">===</span> <span class="s1">'string'</span><span class="p">;</span>
+<span class="k">typeof</span> <span class="nx">element</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">transform</span> <span class="o">===</span> <span class="s1">'string'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>如果该CSS属性确实存在，会返回一个字符串。即使该属性实际上并未设置，也会返回一个空字符串。如果该属性不存在，则会返回<code class="highlighter-rouge">undefined</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">style</span><span class="p">[</span><span class="s1">'maxWidth'</span><span class="p">]</span> <span class="c1">// ""</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">style</span><span class="p">[</span><span class="s1">'maximumWidth'</span><span class="p">]</span> <span class="c1">// undefined</span>
+</code></pre></div></div>
+
+<p>需要注意的是，不管CSS属性名带不带连词线，<code class="highlighter-rouge">style</code>对象都会显示该属性存在。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">style</span><span class="p">[</span><span class="s1">'backgroundColor'</span><span class="p">]</span> <span class="c1">// ""</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">style</span><span class="p">[</span><span class="s1">'background-color'</span><span class="p">]</span> <span class="c1">// ""</span>
+</code></pre></div></div>
+
+<p>所有浏览器都能用这个方法，但是使用的时候，需要把不同浏览器的CSS规则前缀也考虑进去。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">content</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"content"</span><span class="p">);</span>
+<span class="k">typeof</span> <span class="nx">content</span><span class="p">.</span><span class="nx">style</span><span class="p">[</span><span class="s1">'webkitAnimation'</span><span class="p">]</span> <span class="o">===</span> <span class="s1">'string'</span>
+</code></pre></div></div>
+
+<p>这种侦测方法可以写成一个函数。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">isPropertySupported</span><span class="p">(</span><span class="nx">property</span><span class="p">){</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">property</span> <span class="k">in</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">style</span><span class="p">)</span> <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">prefixes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Moz'</span><span class="p">,</span> <span class="s1">'Webkit'</span><span class="p">,</span> <span class="s1">'O'</span><span class="p">,</span> <span class="s1">'ms'</span><span class="p">,</span> <span class="s1">'Khtml'</span><span class="p">];</span>
+  <span class="kd">var</span> <span class="nx">prefProperty</span> <span class="o">=</span> <span class="nx">property</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">toUpperCase</span><span class="p">()</span> <span class="o">+</span> <span class="nx">property</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+
+  <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">prefixes</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">((</span><span class="nx">prefixes</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">+</span> <span class="nx">prefProperty</span><span class="p">)</span> <span class="k">in</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">style</span><span class="p">)</span> <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">isPropertySupported</span><span class="p">(</span><span class="s1">'background-clip'</span><span class="p">)</span>
+<span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>此外，部分浏览器（Firefox 22+, Chrome 28+, Opera 12.1+）目前部署了supports API，可以返回一个布尔值，表示是否支持某条CSS规则。但是，这个API还没有成为标准。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">CSS</span><span class="p">.</span><span class="nx">supports</span><span class="p">(</span><span class="s1">'transform-origin'</span><span class="p">,</span> <span class="s1">'5px'</span><span class="p">);</span>
+<span class="nx">CSS</span><span class="p">.</span><span class="nx">supports</span><span class="p">(</span><span class="s1">'(display: table-cell) and (display: list-item)'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="setpropertygetpropertyvalueremoveproperty">setProperty()，getPropertyValue()，removeProperty()</h3>
+
+<p>Style对象的以下三个方法，用来读写行内CSS规则。</p>
+
+<ul>
+  <li><code class="highlighter-rouge">setProperty(propertyName,value)</code>：设置某个CSS属性。</li>
+  <li><code class="highlighter-rouge">getPropertyValue(propertyName)</code>：读取某个CSS属性。</li>
+  <li><code class="highlighter-rouge">removeProperty(propertyName)</code>：删除某个CSS属性。</li>
+</ul>
+
+<p>这三个方法的第一个参数，都是CSS属性名，且不用改写连词线。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">divStyle</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'div'</span><span class="p">).</span><span class="nx">style</span><span class="p">;</span>
+
+<span class="nx">divStyle</span><span class="p">.</span><span class="nx">setProperty</span><span class="p">(</span><span class="s1">'background-color'</span><span class="p">,</span><span class="s1">'red'</span><span class="p">);</span>
+<span class="nx">divStyle</span><span class="p">.</span><span class="nx">getPropertyValue</span><span class="p">(</span><span class="s1">'background-color'</span><span class="p">);</span>
+<span class="nx">divStyle</span><span class="p">.</span><span class="nx">removeProperty</span><span class="p">(</span><span class="s1">'background-color'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="windowgetcomputedstyle">window.getComputedStyle()</h2>
+
+<p>行内样式（inline style）具有最高的优先级，改变行内样式，通常会立即反映出来。但是，网页元素最终的样式是综合各种规则计算出来的。因此，如果想得到元素现有的样式，只读取行内样式是不够的，我们需要得到浏览器最终计算出来的那个样式规则。</p>
+
+<p><code class="highlighter-rouge">window.getComputedStyle</code>方法，就用来返回这个规则。它接受一个DOM节点对象作为参数，返回一个包含该节点最终样式信息的对象。所谓“最终样式信息”，指的是各种CSS规则叠加后的结果。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">div</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'div'</span><span class="p">);</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">getComputedStyle</span><span class="p">(</span><span class="nx">div</span><span class="p">).</span><span class="nx">backgroundColor</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">getComputedStyle</code>方法还可以接受第二个参数，表示指定节点的伪元素（比如<code class="highlighter-rouge">:before</code>、<code class="highlighter-rouge">:after</code>、<code class="highlighter-rouge">:first-line</code>、<code class="highlighter-rouge">:first-letter</code>等）。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">getComputedStyle</span><span class="p">(</span><span class="nx">div</span><span class="p">,</span> <span class="s1">':before'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>下面的例子是如何获取元素的高度。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">elem</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'elem-container'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">hValue</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">getComputedStyle</span><span class="p">(</span><span class="nx">elem</span><span class="p">,</span> <span class="kc">null</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">getPropertyValue</span><span class="p">(</span><span class="s1">'height'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>上面代码得到的<code class="highlighter-rouge">height</code>属性，是浏览器最终渲染出来的高度，比其他方法得到的高度有更大的可靠性。</p>
+
+<p>有几点需要注意。</p>
+
+<ul>
+  <li>返回的CSS值都是绝对单位，比如，长度都是像素单位（返回值包括<code class="highlighter-rouge">px</code>后缀），颜色是<code class="highlighter-rouge">rgb(#, #, #)</code>或<code class="highlighter-rouge">rgba(#, #, #, #)</code>格式。</li>
+  <li>CSS规则的简写形式无效，比如，想读取<code class="highlighter-rouge">margin</code>属性的值，不能直接读，只能读<code class="highlighter-rouge">marginLeft</code>、<code class="highlighter-rouge">marginTop</code>等属性。</li>
+  <li>如果一个元素不是绝对定位，<code class="highlighter-rouge">top</code>和<code class="highlighter-rouge">left</code>属性总是返回<code class="highlighter-rouge">auto</code>。</li>
+  <li>该方法返回的样式对象的<code class="highlighter-rouge">cssText</code>属性无效，返回<code class="highlighter-rouge">undefined</code>。</li>
+  <li>该方法返回的样式对象是只读的，如果想设置样式，应该使用元素节点的<code class="highlighter-rouge">style</code>属性。</li>
+</ul>
+
+<h2 id="css伪元素">CSS伪元素</h2>
+
+<p>CSS伪元素是通过CSS向DOM添加的元素，主要方法是通过<code class="highlighter-rouge">:before</code>和<code class="highlighter-rouge">:after</code>选择器生成伪元素，然后用<code class="highlighter-rouge">content</code>属性指定伪元素的内容。</p>
+
+<p>以如下HTML代码为例。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"test"</span><span class="nt">&gt;</span>Test content<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>CSS添加伪元素的写法如下。</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">#test</span><span class="nd">:before</span> <span class="p">{</span>
+  <span class="nl">content</span><span class="p">:</span> <span class="s2">'Before '</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="m">#FF0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>DOM节点的<code class="highlighter-rouge">style</code>对象无法读写伪元素的样式，这时就要用到<code class="highlighter-rouge">window</code>对象的<code class="highlighter-rouge">getComputedStyle</code>方法（详见下面介绍）。JavaScript获取伪元素，可以使用下面的方法。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">test</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'#test'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">getComputedStyle</span><span class="p">(</span><span class="nx">test</span><span class="p">,</span> <span class="s1">':before'</span><span class="p">).</span><span class="nx">content</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">color</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">getComputedStyle</span><span class="p">(</span><span class="nx">test</span><span class="p">,</span> <span class="s1">':before'</span><span class="p">).</span><span class="nx">color</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>此外，也可以使用window.getComputedStyle对象的getPropertyValue方法，获取伪元素的属性。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">getComputedStyle</span><span class="p">(</span><span class="nx">test</span><span class="p">,</span> <span class="s1">':before'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">getPropertyValue</span><span class="p">(</span><span class="s1">'content'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">color</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">getComputedStyle</span><span class="p">(</span><span class="nx">test</span><span class="p">,</span> <span class="s1">':before'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">getPropertyValue</span><span class="p">(</span><span class="s1">'color'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="stylesheet对象">StyleSheet对象</h2>
+
+<h3 id="获取样式表">获取样式表</h3>
+
+<p><code class="highlighter-rouge">StyleSheet</code>对象代表网页的一张样式表，它包括<code class="highlighter-rouge">&lt;link&gt;</code>节点加载的样式表和<code class="highlighter-rouge">&lt;style&gt;</code>节点内嵌的样式表。</p>
+
+<p><code class="highlighter-rouge">document</code>对象的<code class="highlighter-rouge">styleSheets</code>属性，可以返回当前页面的所有<code class="highlighter-rouge">StyleSheet</code>对象（即所有样式表）。它是一个类似数组的对象。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">sheets</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">styleSheets</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">sheet</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">styleSheets</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+</code></pre></div></div>
+
+<h3 id="属性">属性</h3>
+
+<p>StyleSheet对象有以下属性。</p>
+
+<p><strong>（1）media属性</strong></p>
+
+<p>media属性表示这个样式表是用于屏幕（screen），还是用于打印（print），或两者都适用（all）。该属性只读，默认值是screen。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">styleSheets</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">media</span><span class="p">.</span><span class="nx">mediaText</span>
+<span class="c1">// "all"</span>
+</code></pre></div></div>
+
+<p><strong>（2）disabled属性</strong></p>
+
+<p><code class="highlighter-rouge">disabled</code>属性用于打开或关闭一张样式表。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'#linkElement'</span><span class="p">).</span><span class="nx">disabled</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="c1">// 或者</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'#linkElement'</span><span class="p">).</span><span class="nx">disabled</span> <span class="o">=</span> <span class="s1">'disabled'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>一旦样式表设置了<code class="highlighter-rouge">disabled</code>属性，这张样式表就将失效。</p>
+
+<p>注意，<code class="highlighter-rouge">disabled</code>属性只能在JavaScript脚本中设置，不能在HTML语句中设置。</p>
+
+<p><strong>（3）href属性</strong></p>
+
+<p><code class="highlighter-rouge">href</code>属性是只读属性，返回<code class="highlighter-rouge">StyleSheet</code>对象连接的样式表地址。对于内嵌的<code class="highlighter-rouge">&lt;style&gt;</code>节点，该属性等于<code class="highlighter-rouge">null</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">styleSheets</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">href</span>
+</code></pre></div></div>
+
+<p><strong>（4）title属性</strong></p>
+
+<p><code class="highlighter-rouge">title</code>属性返回<code class="highlighter-rouge">StyleSheet</code>对象的<code class="highlighter-rouge">title</code>值。</p>
+
+<p><strong>（5）type属性</strong></p>
+
+<p><code class="highlighter-rouge">type</code>属性返回<code class="highlighter-rouge">StyleSheet</code>对象的<code class="highlighter-rouge">type</code>值，通常是<code class="highlighter-rouge">text/css</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">styleSheets</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">type</span>  <span class="c1">// "text/css"</span>
+</code></pre></div></div>
+
+<p><strong>（6）parentStyleSheet属性</strong></p>
+
+<p>CSS的<code class="highlighter-rouge">@import</code>命令允许在样式表中加载其他样式表。<code class="highlighter-rouge">parentStyleSheet</code>属性返回包含了当前样式表的那张样式表。如果当前样式表是顶层样式表，则该属性返回<code class="highlighter-rouge">null</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">stylesheet</span><span class="p">.</span><span class="nx">parentStyleSheet</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">sheet</span> <span class="o">=</span> <span class="nx">stylesheet</span><span class="p">.</span><span class="nx">parentStyleSheet</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="nx">sheet</span> <span class="o">=</span> <span class="nx">stylesheet</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>（7）ownerNode属性</strong></p>
+
+<p><code class="highlighter-rouge">ownerNode</code>属性返回<code class="highlighter-rouge">StyleSheet</code>对象所在的DOM节点，通常是<code class="highlighter-rouge">&lt;link&gt;</code>或<code class="highlighter-rouge">&lt;style&gt;</code>。对于那些由其他样式表引用的样式表，该属性为<code class="highlighter-rouge">null</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// HTML代码为</span>
+<span class="c1">// &lt;link rel="StyleSheet" href="example.css" type="text/css" /&gt;</span>
+
+<span class="nb">document</span><span class="p">.</span><span class="nx">styleSheets</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">ownerNode</span> <span class="c1">// [object HTMLLinkElement]</span>
+</code></pre></div></div>
+
+<p><strong>（8）cssRules属性</strong></p>
+
+<p><code class="highlighter-rouge">cssRules</code>属性指向一个类似数组的对象，里面每一个成员就是当前样式表的一条CSS规则。使用该规则的<code class="highlighter-rouge">cssText</code>属性，可以得到CSS规则对应的字符串。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">sheet</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'#styleElement'</span><span class="p">).</span><span class="nx">sheet</span><span class="p">;</span>
+
+<span class="nx">sheet</span><span class="p">.</span><span class="nx">cssRules</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">cssText</span>
+<span class="c1">// "body { background-color: red; margin: 20px; }"</span>
+
+<span class="nx">sheet</span><span class="p">.</span><span class="nx">cssRules</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">cssText</span>
+<span class="c1">// "p { line-height: 1.4em; color: blue; }"</span>
+</code></pre></div></div>
+
+<p>每条CSS规则还有一个<code class="highlighter-rouge">style</code>属性，指向一个对象，用来读写具体的CSS命令。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">styleSheet</span><span class="p">.</span><span class="nx">cssRules</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="s1">'red'</span><span class="p">;</span>
+<span class="nx">styleSheet</span><span class="p">.</span><span class="nx">cssRules</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="s1">'purple'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="insertruledeleterule">insertRule()，deleteRule()</h3>
+
+<p><code class="highlighter-rouge">insertRule</code>方法用于在当前样式表的<code class="highlighter-rouge">cssRules</code>对象插入CSS规则，<code class="highlighter-rouge">deleteRule</code>方法用于删除<code class="highlighter-rouge">cssRules</code>对象的CSS规则。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">sheet</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'#styleElement'</span><span class="p">).</span><span class="nx">sheet</span><span class="p">;</span>
+<span class="nx">sheet</span><span class="p">.</span><span class="nx">insertRule</span><span class="p">(</span><span class="s1">'#block { color:white }'</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="nx">sheet</span><span class="p">.</span><span class="nx">insertRule</span><span class="p">(</span><span class="s1">'p { color:red }'</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="nx">sheet</span><span class="p">.</span><span class="nx">deleteRule</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">insertRule</code>方法的第一个参数是表示CSS规则的字符串，第二个参数是该规则在<code class="highlighter-rouge">cssRules</code>对象的插入位置。<code class="highlighter-rouge">deleteRule</code>方法的参数是该条规则在<code class="highlighter-rouge">cssRules</code>对象中的位置。</p>
+
+<h3 id="添加样式表">添加样式表</h3>
+
+<p>添加样式表有两种方式。一种是添加一张内置样式表，即在文档中添加一个<code class="highlighter-rouge">&lt;style&gt;</code>节点。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">style</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'style'</span><span class="p">);</span>
+
+<span class="nx">style</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'media'</span><span class="p">,</span> <span class="s1">'screen'</span><span class="p">);</span>
+<span class="c1">// 或者</span>
+<span class="nx">style</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s2">"media"</span><span class="p">,</span> <span class="s2">"@media only screen and (max-width : 1024px)"</span><span class="p">);</span>
+
+<span class="nx">style</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">'body{color:red}'</span><span class="p">;</span>
+<span class="c1">// 或者</span>
+<span class="nx">sheet</span><span class="p">.</span><span class="nx">insertRule</span><span class="p">(</span><span class="s2">"header { float: left; opacity: 0.8; }"</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+
+<span class="nb">document</span><span class="p">.</span><span class="nx">head</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">style</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>另一种是添加外部样式表，即在文档中添加一个<code class="highlighter-rouge">&lt;link&gt;</code>节点，然后将<code class="highlighter-rouge">href</code>属性指向外部样式表的URL。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">linkElm</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'link'</span><span class="p">);</span>
+<span class="nx">linkElm</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'rel'</span><span class="p">,</span> <span class="s1">'stylesheet'</span><span class="p">);</span>
+<span class="nx">linkElm</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'type'</span><span class="p">,</span> <span class="s1">'text/css'</span><span class="p">);</span>
+<span class="nx">linkElm</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'href'</span><span class="p">,</span> <span class="s1">'reset-min.css'</span><span class="p">);</span>
+
+<span class="nb">document</span><span class="p">.</span><span class="nx">head</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">linkElm</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="css规则">CSS规则</h2>
+
+<p>一条CSS规则包括两个部分：CSS选择器和样式声明。下面就是一条典型的CSS规则。</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.myClass</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="no">yellow</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="cssrule接口">CSSRule接口</h3>
+
+<p>CSS规则部署了CSSRule接口，它包括了以下属性。</p>
+
+<p><strong>（1）cssText</strong></p>
+
+<p>cssText属性返回当前规则的文本。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// CSS代码为</span>
+<span class="c1">// body { background-color: darkblue; }</span>
+
+<span class="kd">var</span> <span class="nx">stylesheet</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">styleSheets</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="nx">stylesheet</span><span class="p">.</span><span class="nx">cssRules</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">cssText</span>
+<span class="c1">// body { background-color: darkblue; }</span>
+</code></pre></div></div>
+
+<p><strong>（2）parentStyleSheet</strong></p>
+
+<p>parentStyleSheet属性返回定义当前规则的样式表对象。</p>
+
+<p><strong>（3）parentRule</strong></p>
+
+<p>parentRule返回包含当前规则的那条CSS规则。最典型的情况，就是当前规则包含在一个@media代码块之中。如果当前规则是顶层规则，则该属性返回null。</p>
+
+<p><strong>（4）type</strong></p>
+
+<p>type属性返回有一个整数值，表示当前规则的类型。</p>
+
+<p>最常见的类型有以下几种。</p>
+
+<ul>
+  <li>1：样式规则，部署了CSSStyleRule接口</li>
+  <li>3：输入规则，部署了CSSImportRule接口</li>
+  <li>4：Media规则，部署了CSSMediaRule接口</li>
+  <li>5：字体规则，部署了CSSFontFaceRule接口</li>
+</ul>
+
+<h3 id="cssstylerule接口">CSSStyleRule接口</h3>
+
+<p>如果一条CSS规则是普通的样式规则，那么除了CSSRule接口，它还部署了CSSStyleRule接口。</p>
+
+<p>CSSRule接口有以下两个属性。</p>
+
+<p><strong>（1）selectorText属性</strong></p>
+
+<p>selectorText属性返回当前规则的选择器。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">stylesheet</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">styleSheets</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="nx">stylesheet</span><span class="p">.</span><span class="nx">cssRules</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">selectorText</span> <span class="c1">// ".myClass"</span>
+</code></pre></div></div>
+
+<p><strong>（2）style属性</strong></p>
+
+<p>style属性返回一个对象，代表当前规则的样式声明，也就是选择器后面的大括号里面的部分。该对象部署了CSSStyleDeclaration接口，使用它的cssText属性，可以返回所有样式声明，格式为字符串。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">styleSheets</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">cssRules</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">style</span><span class="p">.</span><span class="nx">cssText</span>
+<span class="c1">// "background-color: gray;font-size: 120%;"</span>
+</code></pre></div></div>
+
+<h3 id="cssmediarule接口">CSSMediaRule接口</h3>
+
+<p>如果一条CSS规则是@media代码块，那么它除了CSSRule接口，还部署了CSSMediaRule接口。</p>
+
+<p>该接口主要提供一个media属性，可以返回@media代码块的media规则。</p>
+
+<h3 id="cssstyledeclaration对象">CSSStyleDeclaration对象</h3>
+
+<p>每一条 CSS 规则的样式声明部分（大括号内部的部分），都是一个<code class="highlighter-rouge">CSSStyleDeclaration</code>对象，主要包括三种情况。</p>
+
+<ul>
+  <li>HTML 元素的行内样式（<code class="highlighter-rouge">&lt;elem style="..."&gt;</code>）</li>
+  <li><code class="highlighter-rouge">CSSStyleRule</code>接口的<code class="highlighter-rouge">style</code>属性</li>
+  <li><code class="highlighter-rouge">window.getComputedStyle()</code>的返回结果</li>
+</ul>
+
+<p>每一条CSS属性，都是<code class="highlighter-rouge">CSSStyleDeclaration</code>对象的属性。不过，连词号需要变成骆驼拼写法。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">styleObj</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">styleSheets</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">cssRules</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">style</span><span class="p">;</span>
+<span class="nx">styleObj</span><span class="p">.</span><span class="nx">color</span> <span class="c1">// "red";</span>
+<span class="nx">styleObj</span><span class="p">.</span><span class="nx">fontSize</span> <span class="c1">// "100%"</span>
+</code></pre></div></div>
+
+<p>除了 CSS 属性以外，<code class="highlighter-rouge">CSSStyleDeclaration</code>对象还包括以下属性。</p>
+
+<ul>
+  <li><code class="highlighter-rouge">cssText</code>：当前规则的所有样式声明文本。该属性可读写，即可用来设置当前规则。</li>
+  <li><code class="highlighter-rouge">length</code>：当前规则包含多少条声明。</li>
+  <li><code class="highlighter-rouge">parentRule</code>：包含当前规则的那条规则，同 CSSRule 接口的<code class="highlighter-rouge">parentRule</code>属性。</li>
+</ul>
+
+<p><code class="highlighter-rouge">CSSStyleDeclaration</code>对象包括以下方法。</p>
+
+<p><strong>（1）getPropertyPriority()</strong></p>
+
+<p><code class="highlighter-rouge">getPropertyPriority</code>方法返回指定声明的优先级，如果有的话，就是“important”，否则就是空字符串。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">styleObj</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">styleSheets</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">cssRules</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">style</span><span class="p">;</span>
+<span class="nx">styleObj</span><span class="p">.</span><span class="nx">getPropertyPriority</span><span class="p">(</span><span class="s1">'color'</span><span class="p">)</span> <span class="c1">// ""</span>
+</code></pre></div></div>
+
+<p><strong>（2）getPropertyValue()</strong></p>
+
+<p>getPropertyValue方法返回指定声明的值。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// CSS代码为</span>
+<span class="c1">// color:red;</span>
+
+<span class="kd">var</span> <span class="nx">styleObj</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">styleSheets</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">cssRules</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">style</span><span class="p">;</span>
+<span class="nx">styleObj</span><span class="p">.</span><span class="nx">getPropertyValue</span><span class="p">(</span><span class="s1">'color'</span><span class="p">)</span> <span class="c1">// "red"</span>
+</code></pre></div></div>
+
+<p><strong>（3）item()</strong></p>
+
+<p>item方法返回指定位置的属性名。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">styleObj</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">styleSheets</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">cssRules</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">style</span><span class="p">;</span>
+<span class="nx">styleObj</span><span class="p">.</span><span class="nx">item</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1">// "color"</span>
+<span class="c1">// 或者</span>
+<span class="nx">styleObj</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">// "color"</span>
+</code></pre></div></div>
+
+<p><strong>（4）removeProperty()</strong></p>
+
+<p>removeProperty方法用于删除一条CSS属性，返回被删除的值。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// CSS代码为</span>
+<span class="c1">// color:red;</span>
+
+<span class="kd">var</span> <span class="nx">styleObj</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">styleSheets</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">cssRules</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">style</span><span class="p">;</span>
+<span class="nx">styleObj</span><span class="p">.</span><span class="nx">removeProperty</span><span class="p">(</span><span class="s1">'color'</span><span class="p">)</span> <span class="c1">// "red"</span>
+</code></pre></div></div>
+
+<p><strong>（5）setProperty()</strong></p>
+
+<p>setProperty方法用于设置指定的CSS属性，没有返回值。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">styleObj</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">styleSheets</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">cssRules</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">style</span><span class="p">;</span>
+<span class="nx">styleObj</span><span class="p">.</span><span class="nx">setProperty</span><span class="p">(</span><span class="s1">'color'</span><span class="p">,</span> <span class="s1">'green'</span><span class="p">,</span> <span class="s1">'important'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>下面是遍历一条CSS规则所有属性的例子。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">styleObj</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">styleSheets</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">cssRules</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">style</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">styleObj</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+   <span class="kd">var</span> <span class="nx">nameString</span> <span class="o">=</span> <span class="nx">styleObj</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+   <span class="nx">styleObj</span><span class="p">.</span><span class="nx">removeProperty</span><span class="p">(</span><span class="nx">nameString</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>上面删除了一条CSS规则的所有属性，更简便的方法是设置cssText属性为空字符串。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">styleObj</span><span class="p">.</span><span class="nx">cssText</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="windowmatchmedia">window.matchMedia()</h2>
+
+<h3 id="基本用法">基本用法</h3>
+
+<p><code class="highlighter-rouge">window.matchMedia</code>方法用来检查CSS的<a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/DOM/Using_media_queries_from_code  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://developer.mozilla.org/en-US/docs/DOM/Using_media_queries_from_code'" tppabs="https://developer.mozilla.org/en-US/docs/DOM/Using_media_queries_from_code"><code class="highlighter-rouge">mediaQuery</code></a>语句。各种浏览器的最新版本（包括IE 10+）都支持该方法，对于不支持该方法的老式浏览器，可以使用第三方函数库<a href="javascript:if(confirm('https://github.com/paulirish/matchMedia.js/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://github.com/paulirish/matchMedia.js/'" tppabs="https://github.com/paulirish/matchMedia.js/">matchMedia.js</a>。</p>
+
+<p>CSS的<code class="highlighter-rouge">mediaQuery</code>语句有点像<code class="highlighter-rouge">if</code>语句，只要显示媒介（包括浏览器和屏幕等）满足<code class="highlighter-rouge">mediaQuery</code>语句设定的条件，就会执行区块内部的语句。下面是<code class="highlighter-rouge">mediaQuery</code>语句的一个例子。</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@media</span> <span class="n">all</span> <span class="n">and</span> <span class="p">(</span><span class="n">max-width</span><span class="p">:</span> <span class="m">700px</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nt">body</span> <span class="p">{</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="m">#FF0</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>上面的CSS代码表示，该区块对所有媒介（media）有效，且视口的最大宽度不得超过<code class="highlighter-rouge">700</code>像素。如果条件满足，则<code class="highlighter-rouge">body</code>元素的背景设为#FF0。</p>
+
+<p>需要注意的是，<code class="highlighter-rouge">mediaQuery</code>接受两种宽度/高度的度量，一种是上例的“视口”的宽度/高度，还有一种是“设备”的宽度/高度，下面就是一个例子。</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@media</span> <span class="n">all</span> <span class="n">and</span> <span class="p">(</span><span class="n">max-device-width</span><span class="p">:</span> <span class="m">700px</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nt">body</span> <span class="p">{</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="m">#FF0</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>视口的宽度/高度（width/height）使用<code class="highlighter-rouge">documentElement.clientWidth/clientHeight</code>来衡量，单位是CSS像素；设备的宽度/高度（device-width/device-height）使用<code class="highlighter-rouge">screen.width/height</code>来衡量，单位是设备硬件的像素。</p>
+
+<p><code class="highlighter-rouge">window.matchMedia</code>方法接受一个<code class="highlighter-rouge">mediaQuery</code>语句的字符串作为参数，返回一个<a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/DOM/MediaQueryList  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://developer.mozilla.org/en-US/docs/DOM/MediaQueryList'" tppabs="https://developer.mozilla.org/en-US/docs/DOM/MediaQueryList"><code class="highlighter-rouge">MediaQueryList</code></a>对象。该对象有以下两个属性。</p>
+
+<ul>
+  <li><code class="highlighter-rouge">media</code>：返回所查询的<code class="highlighter-rouge">mediaQuery</code>语句字符串。</li>
+  <li><code class="highlighter-rouge">matches</code>：返回一个布尔值，表示当前环境是否匹配查询语句。</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">matchMedia</span><span class="p">(</span><span class="s1">'(min-width: 600px)'</span><span class="p">);</span>
+<span class="nx">result</span><span class="p">.</span><span class="nx">media</span> <span class="c1">// (min-width: 600px)</span>
+<span class="nx">result</span><span class="p">.</span><span class="nx">matches</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>下面是另外一个例子，根据mediaQuery是否匹配当前环境，执行不同的JavaScript代码。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">matchMedia</span><span class="p">(</span><span class="s1">'(max-width: 700px)'</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">matches</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'页面宽度小于等于700px'</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'页面宽度大于700px'</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>下面的例子根据<code class="highlighter-rouge">mediaQuery</code>是否匹配当前环境，加载相应的CSS样式表。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">matchMedia</span><span class="p">(</span><span class="s2">"(max-width: 700px)"</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">matches</span><span class="p">){</span>
+  <span class="kd">var</span> <span class="nx">linkElm</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'link'</span><span class="p">);</span>
+  <span class="nx">linkElm</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'rel'</span><span class="p">,</span> <span class="s1">'stylesheet'</span><span class="p">);</span>
+  <span class="nx">linkElm</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'type'</span><span class="p">,</span> <span class="s1">'text/css'</span><span class="p">);</span>
+  <span class="nx">linkElm</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'href'</span><span class="p">,</span> <span class="s1">'small.css'</span><span class="p">);</span>
+
+  <span class="nb">document</span><span class="p">.</span><span class="nx">head</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">linkElm</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>注意，如果<code class="highlighter-rouge">window.matchMedia</code>无法解析<code class="highlighter-rouge">mediaQuery</code>参数，返回的总是<code class="highlighter-rouge">false</code>，而不是报错。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">matchMedia</span><span class="p">(</span><span class="s1">'bad string'</span><span class="p">).</span><span class="nx">matches</span>
+<span class="c1">// false</span>
+</code></pre></div></div>
+
+<h3 id="监听事件">监听事件</h3>
+
+<p>window.matchMedia方法返回的MediaQueryList对象有两个方法，用来监听事件：addListener方法和removeListener方法。如果mediaQuery查询结果发生变化，就调用指定的回调函数。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">mql</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">matchMedia</span><span class="p">(</span><span class="s2">"(max-width: 700px)"</span><span class="p">);</span>
+
+<span class="c1">// 指定回调函数</span>
+<span class="nx">mql</span><span class="p">.</span><span class="nx">addListener</span><span class="p">(</span><span class="nx">mqCallback</span><span class="p">);</span>
+
+<span class="c1">// 撤销回调函数</span>
+<span class="nx">mql</span><span class="p">.</span><span class="nx">removeListener</span><span class="p">(</span><span class="nx">mqCallback</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">mqCallback</span><span class="p">(</span><span class="nx">mql</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">mql</span><span class="p">.</span><span class="nx">matches</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 宽度小于等于700像素</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="c1">// 宽度大于700像素</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>上面代码中，回调函数的参数是MediaQueryList对象。回调函数的调用可能存在两种情况。一种是显示宽度从700像素以上变为以下，另一种是从700像素以下变为以上，所以在回调函数内部要判断一下当前的屏幕宽度。</p>
+
+<h2 id="css事件">CSS事件</h2>
+
+<h3 id="transitionend事件">transitionEnd事件</h3>
+
+<p>CSS的过渡效果（transition）结束后，触发<code class="highlighter-rouge">transitionEnd</code>事件。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">el</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'transitionend'</span><span class="p">,</span> <span class="nx">onTransitionEnd</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">onTransitionEnd</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Transition end'</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">transitionEnd</code>的事件对象具有以下属性。</p>
+
+<ul>
+  <li><code class="highlighter-rouge">propertyName</code>：发生<code class="highlighter-rouge">transition</code>效果的CSS属性名。</li>
+  <li><code class="highlighter-rouge">elapsedTime</code>：<code class="highlighter-rouge">transition</code>效果持续的秒数，不含<code class="highlighter-rouge">transition-delay</code>的时间。</li>
+  <li><code class="highlighter-rouge">pseudoElement</code>：如果<code class="highlighter-rouge">transition</code>效果发生在伪元素，会返回该伪元素的名称，以“::”开头。如果不发生在伪元素上，则返回一个空字符串。</li>
+</ul>
+
+<p>实际使用<code class="highlighter-rouge">transitionend</code>事件时，可能需要添加浏览器前缀。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">el</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'webkitTransitionEnd'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">el</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">transition</span> <span class="o">=</span> <span class="s1">'none'</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h3 id="animationstart事件animationend事件animationiteration事件">animationstart事件，animationend事件，animationiteration事件</h3>
+
+<p>CSS动画有以下三个事件。</p>
+
+<ul>
+  <li>
+    <p>animationstart事件：动画开始时触发。</p>
+  </li>
+  <li>
+    <p>animationend事件：动画结束时触发。</p>
+  </li>
+  <li>
+    <p>animationiteration事件：开始新一轮动画循环时触发。如果animation-iteration-count属性等于1，该事件不触发，即只播放一轮的CSS动画，不会触发animationiteration事件。</p>
+  </li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">div</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'animationiteration'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'完成一次动画'</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>这三个事件的事件对象，都有animationName属性（返回产生过渡效果的CSS属性名）和elapsedTime属性（动画已经运行的秒数）。对于animationstart事件，elapsedTime属性等于0，除非animation-delay属性等于负值。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">var</span> <span class="nx">el</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"animation"</span><span class="p">);</span>
+
+<span class="nx">el</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"animationstart"</span><span class="p">,</span> <span class="nx">listener</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+<span class="nx">el</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"animationend"</span><span class="p">,</span> <span class="nx">listener</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+<span class="nx">el</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"animationiteration"</span><span class="p">,</span> <span class="nx">listener</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">listener</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">li</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"li"</span><span class="p">);</span>
+  <span class="k">switch</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="s2">"animationstart"</span><span class="p">:</span>
+      <span class="nx">li</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">"Started: elapsed time is "</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">elapsedTime</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="s2">"animationend"</span><span class="p">:</span>
+      <span class="nx">li</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">"Ended: elapsed time is "</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">elapsedTime</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="s2">"animationiteration"</span><span class="p">:</span>
+      <span class="nx">li</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">"New loop started at time "</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">elapsedTime</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"output"</span><span class="p">).</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">li</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>上面代码的运行结果是下面的样子。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Started: elapsed time is 0
+New loop started at time 3.01200008392334
+New loop started at time 6.00600004196167
+Ended: elapsed time is 9.234000205993652
+</code></pre></div></div>
+
+<p>animation-play-state属性可以控制动画的状态（暂停/播放），该属性需求加上浏览器前缀。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">element</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">webkitAnimationPlayState</span> <span class="o">=</span> <span class="s2">"paused"</span><span class="p">;</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">webkitAnimationPlayState</span> <span class="o">=</span> <span class="s2">"running"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="参考链接">参考链接</h2>
+
+<ul>
+  <li>David Walsh, <a href="javascript:if(confirm('http://davidwalsh.name/add-rules-stylesheets  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://davidwalsh.name/add-rules-stylesheets'" tppabs="http://davidwalsh.name/add-rules-stylesheets">Add Rules to Stylesheets with JavaScript</a></li>
+  <li>Mozilla Developer Network, <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/CSS/Tutorials/Using_CSS_animations  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://developer.mozilla.org/en-US/docs/CSS/Tutorials/Using_CSS_animations'" tppabs="https://developer.mozilla.org/en-US/docs/CSS/Tutorials/Using_CSS_animations">Using CSS animations</a></li>
+  <li>Ryan Morr, <a href="javascript:if(confirm('http://ryanmorr.com/detecting-css-style-support/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://ryanmorr.com/detecting-css-style-support/'" tppabs="http://ryanmorr.com/detecting-css-style-support/">Detecting CSS Style Support</a></li>
+  <li>Mozilla Developer Network, <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Testing_media_queries  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Testing_media_queries'" tppabs="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Testing_media_queries">Testing media queries</a></li>
+  <li>Robert Nyman, <a href="javascript:if(confirm('https://hacks.mozilla.org/2012/06/using-window-matchmedia-to-do-media-queries-in-javascript/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://hacks.mozilla.org/2012/06/using-window-matchmedia-to-do-media-queries-in-javascript/'" tppabs="https://hacks.mozilla.org/2012/06/using-window-matchmedia-to-do-media-queries-in-javascript/">Using window.matchMedia to do media queries in JavaScript</a></li>
+</ul>
+
+
+</article>
+
+<div class="row">
+<div class="twelve columns">
+
+<h2>留言</h2>
+
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'jstutorial'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="javascript:if(confirm('http://disqus.com/?ref_noscript  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://disqus.com/?ref_noscript'" tppabs="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="javascript:if(confirm('http://disqus.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://disqus.com/'" tppabs="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</section>
+
+</div>
+</div>
+
+<footer>
+<div class="row">
+<div class="twelve columns">
+	<p><a href="license.html" tppabs="http://javascript.ruanyifeng.com/introduction/license.html">版权声明</a> | last modified on 2014-01-31 </p>
+</div>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-43771063-1', 'http://javascript.ruanyifeng.com/dom/ruanyifeng.com');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
+
+

@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset=utf-8 />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>数组 -- JavaScript 标准参考教程（alpha）</title>
+  
+  <!-- Included CSS Files (Uncompressed) -->
+  <!--
+  <link rel="stylesheet" href="stylesheets/foundation.css">
+  -->
+  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="foundation.css" tppabs="http://javascript.ruanyifeng.com/css/foundation.css">
+  <link rel="stylesheet" href="main.css" tppabs="http://javascript.ruanyifeng.com/css/main.css">
+
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="html5.js" tppabs="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <script src="jquery.js" tppabs="http://javascript.ruanyifeng.com/js/jquery.js"></script>
+  <script src="toc.js" tppabs="http://javascript.ruanyifeng.com/js/toc.js"></script>
+  <script src="main.js" tppabs="http://javascript.ruanyifeng.com/js/main.js"></script>
+
+</head>
+<body>
+
+<header class="top-bar" id="header">
+
+<div class="fixed">
+
+<nav class="top-bar">
+<ul>
+<!-- Title Area -->
+	<li class="name has-dropdown">
+	<h1><a href="index.htm" tppabs="http://javascript.ruanyifeng.com/">JavaScript 标准参考教程（alpha） </a></h1>
+		<ul class="dropdown">
+			
+			<li><a href="index.htm#introduction" tppabs="http://javascript.ruanyifeng.com/#introduction">导论</a></li>
+			
+			<li><a href="index.htm#grammar" tppabs="http://javascript.ruanyifeng.com/#grammar">语法</a></li>
+			
+			<li><a href="index.htm#stdlib" tppabs="http://javascript.ruanyifeng.com/#stdlib">标准库</a></li>
+			
+			<li><a href="index.htm#oop" tppabs="http://javascript.ruanyifeng.com/#oop">面向对象编程</a></li>
+			
+			<li><a href="index.htm#advanced" tppabs="http://javascript.ruanyifeng.com/#advanced">语法专题</a></li>
+			
+			<li><a href="index.htm#dom" tppabs="http://javascript.ruanyifeng.com/#dom">DOM模型</a></li>
+			
+			<li><a href="index.htm#bom" tppabs="http://javascript.ruanyifeng.com/#bom">浏览器环境</a></li>
+			
+			<li><a href="index.htm#htmlapi" tppabs="http://javascript.ruanyifeng.com/#htmlapi">Web API</a></li>
+			
+		</ul>
+	</li>
+</ul>
+
+<section>
+
+
+<ul class="left">
+<li class="divider"></li>
+<li class="has-dropdown"><a class="active" href="#"> 语法 </a><ul class="dropdown">
+
+
+
+
+
+
+
+<li class="active"><a href="#">数组</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="basic.html" tppabs="http://javascript.ruanyifeng.com/grammar/basic.html">基本语法</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="conversion.html" tppabs="http://javascript.ruanyifeng.com/grammar/conversion.html">数据类型转换</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="error.html" tppabs="http://javascript.ruanyifeng.com/grammar/error.html">错误处理机制</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="function.html" tppabs="http://javascript.ruanyifeng.com/grammar/function.html">函数</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="number.html" tppabs="http://javascript.ruanyifeng.com/grammar/number.html">数值</a></li>
+
+
+
+
+
+
+
+<li><a href="object.html" tppabs="http://javascript.ruanyifeng.com/grammar/object.html">对象</a></li>
+
+
+
+
+
+
+
+
+
+<li><a href="operator.html" tppabs="http://javascript.ruanyifeng.com/grammar/operator.html">运算符</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="string.html" tppabs="http://javascript.ruanyifeng.com/grammar/string.html">字符串</a></li>
+
+
+
+
+
+
+
+<li><a href="style.html" tppabs="http://javascript.ruanyifeng.com/grammar/style.html">JavaScript 编程风格</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="types.html" tppabs="http://javascript.ruanyifeng.com/grammar/types.html">数据类型</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul></li>
+<li class="divider"></li>
+<li class="has-dropdown nav-3"><a href="#"> 数组</a><ul class="dropdown">
+</ul></li>
+</ul>
+
+
+<ul class="right">
+	<li class="divider"></li>
+	<li>
+		<a href="javascript:if(confirm('https://github.com/ruanyf/jstutorial  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://github.com/ruanyf/jstutorial'" tppabs="https://github.com/ruanyf/jstutorial" target="_blank">GitHub <i class="foundicon-edit"></i></a>
+	</li>
+	<li class="divider"></li>
+	<li>
+		<a href="#">TOP <i class="foundicon-up-arrow"></i></a>
+	</li>
+</ul>
+
+</section>
+
+</nav>  
+</div>
+</header>
+
+
+<article class="bookPage">
+
+  <div class="row">
+    <div class="twelve columns">
+
+<h1> 数组 </h1>
+
+<aside class="right"><p>来自<a href="index.htm" tppabs="http://javascript.ruanyifeng.com/">《JavaScript 标准参考教程（alpha）》</a>，by 阮一峰</p></aside>
+
+<div id="toc" class="panel callout radius">目录</div>
+
+
+<h2 id="数组的定义">数组的定义</h2>
+
+<p>数组（array）是按次序排列的一组值。每个值的位置都有编号（从0开始），整个数组用方括号表示。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">];</span>
+</code></pre></div></div>
+
+<p>上面代码中的<code class="highlighter-rouge">a</code>、<code class="highlighter-rouge">b</code>、<code class="highlighter-rouge">c</code>就构成一个数组，两端的方括号是数组的标志。<code class="highlighter-rouge">a</code>是0号位置，<code class="highlighter-rouge">b</code>是1号位置，<code class="highlighter-rouge">c</code>是2号位置。</p>
+
+<p>除了在定义时赋值，数组也可以先定义后赋值。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[];</span>
+
+<span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'a'</span><span class="p">;</span>
+<span class="nx">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'b'</span><span class="p">;</span>
+<span class="nx">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'c'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>任何类型的数据，都可以放入数组。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span><span class="na">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+  <span class="kd">function</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="kc">true</span><span class="p">;}</span>
+<span class="p">];</span>
+
+<span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">// Object {a: 1}</span>
+<span class="nx">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1">// [1, 2, 3]</span>
+<span class="nx">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="c1">// function (){return true;}</span>
+</code></pre></div></div>
+
+<p>上面数组<code class="highlighter-rouge">arr</code>的3个成员依次是对象、数组、函数。</p>
+
+<p>如果数组的元素还是数组，就形成了多维数组。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]];</span>
+<span class="nx">a</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="c1">// 2</span>
+<span class="nx">a</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="c1">// 4</span>
+</code></pre></div></div>
+
+<h2 id="数组的本质">数组的本质</h2>
+
+<p>本质上，数组属于一种特殊的对象。<code class="highlighter-rouge">typeof</code>运算符会返回数组的类型是<code class="highlighter-rouge">object</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">typeof</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="c1">// "object"</span>
+</code></pre></div></div>
+
+<p>上面代码表明，<code class="highlighter-rouge">typeof</code>运算符认为数组的类型就是对象。</p>
+
+<p>数组的特殊性体现在，它的键名是按次序排列的一组整数（0，1，2…）。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">];</span>
+
+<span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span>
+<span class="c1">// ["0", "1", "2"]</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">Object.keys</code>方法返回数组的所有键名。可以看到数组的键名就是整数0、1、2。</p>
+
+<p>由于数组成员的键名是固定的，因此数组不用为每个元素指定键名，而对象的每个成员都必须指定键名。</p>
+
+<p>JavaScript语言规定，对象的键名一律为字符串，所以，数组的键名其实也是字符串。之所以可以用数值读取，是因为非字符串的键名会被转为字符串。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">];</span>
+
+<span class="nx">arr</span><span class="p">[</span><span class="s1">'0'</span><span class="p">]</span> <span class="c1">// 'a'</span>
+<span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">// 'a'</span>
+</code></pre></div></div>
+
+<p>上面代码分别用数值和字符串作为键名，结果都能读取数组。原因是数值键名被自动转为了字符串。</p>
+
+<p>需要注意的是，这一条在赋值时也成立。如果一个值可以被转换为整数，则以该值为键名，等于以对应的整数为键名。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[];</span>
+
+<span class="nx">a</span><span class="p">[</span><span class="s1">'1000'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'abc'</span><span class="p">;</span>
+<span class="nx">a</span><span class="p">[</span><span class="mi">1000</span><span class="p">]</span> <span class="c1">// 'abc'</span>
+
+<span class="nx">a</span><span class="p">[</span><span class="mf">1.00</span><span class="p">]</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+<span class="nx">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1">// 6</span>
+</code></pre></div></div>
+
+<p>上面代码表明，由于字符串“1000”和浮点数1.00都可以转换为整数，所以视同为整数键赋值。</p>
+
+<p>上一节说过，对象有两种读取成员的方法：“点”结构（<code class="highlighter-rouge">object.key</code>）和方括号结构（<code class="highlighter-rouge">object[key]</code>）。但是，对于数值的键名，不能使用点结构。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+<span class="nx">arr</span><span class="p">.</span><span class="mi">0</span> <span class="c1">// SyntaxError</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">arr.0</code>的写法不合法，因为单独的数值不能作为标识符（identifier）。所以，数组成员只能用方括号<code class="highlighter-rouge">arr[0]</code>表示（方括号是运算符，可以接受数值）。</p>
+
+<h2 id="length属性">length属性</h2>
+
+<p>数组的<code class="highlighter-rouge">length</code>属性，返回数组的成员数量。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">].</span><span class="nx">length</span> <span class="c1">// 3</span>
+</code></pre></div></div>
+
+<p>JavaScript使用一个32位整数，保存数组的元素个数。这意味着，数组成员最多只有4294967295个（2<sup>32</sup> - 1）个，也就是说<code class="highlighter-rouge">length</code>属性的最大值就是4294967295。</p>
+
+<p>只要是数组，就一定有<code class="highlighter-rouge">length</code>属性。该属性是一个动态的值，等于键名中的最大整数加上<code class="highlighter-rouge">1</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">];</span>
+<span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="c1">// 2</span>
+
+<span class="nx">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'c'</span><span class="p">;</span>
+<span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="c1">// 3</span>
+
+<span class="nx">arr</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'d'</span><span class="p">;</span>
+<span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="c1">// 10</span>
+
+<span class="nx">arr</span><span class="p">[</span><span class="mi">1000</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'e'</span><span class="p">;</span>
+<span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="c1">// 1001</span>
+</code></pre></div></div>
+
+<p>上面代码表示，数组的数字键不需要连续，<code class="highlighter-rouge">length</code>属性的值总是比最大的那个整数键大<code class="highlighter-rouge">1</code>。另外，这也表明数组是一种动态的数据结构，可以随时增减数组的成员。</p>
+
+<p><code class="highlighter-rouge">length</code>属性是可写的。如果人为设置一个小于当前成员个数的值，该数组的成员会自动减少到<code class="highlighter-rouge">length</code>设置的值。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span> <span class="p">];</span>
+<span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="c1">// 3</span>
+
+<span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nx">arr</span> <span class="c1">// ["a", "b"]</span>
+</code></pre></div></div>
+
+<p>上面代码表示，当数组的<code class="highlighter-rouge">length</code>属性设为2（即最大的整数键只能是1）那么整数键2（值为<code class="highlighter-rouge">c</code>）就已经不在数组中了，被自动删除了。</p>
+
+<p>将数组清空的一个有效方法，就是将<code class="highlighter-rouge">length</code>属性设为0。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span> <span class="p">];</span>
+
+<span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="nx">arr</span> <span class="c1">// []</span>
+</code></pre></div></div>
+
+<p>如果人为设置<code class="highlighter-rouge">length</code>大于当前元素个数，则数组的成员数量会增加到这个值，新增的位置都是空位。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">];</span>
+
+<span class="nx">a</span><span class="p">.</span><span class="nx">length</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="nx">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1">// undefined</span>
+</code></pre></div></div>
+
+<p>上面代码表示，当<code class="highlighter-rouge">length</code>属性设为大于数组个数时，读取新增的位置都会返回<code class="highlighter-rouge">undefined</code>。</p>
+
+<p>如果人为设置<code class="highlighter-rouge">length</code>为不合法的值，JavaScript会报错。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 设置负值</span>
+<span class="p">[].</span><span class="nx">length</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="c1">// RangeError: Invalid array length</span>
+
+<span class="c1">// 数组元素个数大于等于2的32次方</span>
+<span class="p">[].</span><span class="nx">length</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="c1">// RangeError: Invalid array length</span>
+
+<span class="c1">// 设置字符串</span>
+<span class="p">[].</span><span class="nx">length</span> <span class="o">=</span> <span class="s1">'abc'</span>
+<span class="c1">// RangeError: Invalid array length</span>
+</code></pre></div></div>
+
+<p>值得注意的是，由于数组本质上是对象的一种，所以我们可以为数组添加属性，但是这不影响<code class="highlighter-rouge">length</code>属性的值。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[];</span>
+
+<span class="nx">a</span><span class="p">[</span><span class="s1">'p'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'abc'</span><span class="p">;</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">length</span> <span class="c1">// 0</span>
+
+<span class="nx">a</span><span class="p">[</span><span class="mf">2.1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'abc'</span><span class="p">;</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">length</span> <span class="c1">// 0</span>
+</code></pre></div></div>
+
+<p>上面代码将数组的键分别设为字符串和小数，结果都不影响<code class="highlighter-rouge">length</code>属性。因为，<code class="highlighter-rouge">length</code>属性的值就是等于最大的数字键加1，而这个数组没有整数键，所以<code class="highlighter-rouge">length</code>属性保持为0。</p>
+
+<p>如果数组的键名是添加超出范围的数值，该键名会自动转为字符串。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="nx">arr</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'a'</span><span class="p">;</span>
+<span class="nx">arr</span><span class="p">[</span><span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">32</span><span class="p">)]</span> <span class="o">=</span> <span class="s1">'b'</span><span class="p">;</span>
+
+<span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="c1">// 0</span>
+<span class="nx">arr</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1">// "a"</span>
+<span class="nx">arr</span><span class="p">[</span><span class="mi">4294967296</span><span class="p">]</span> <span class="c1">// "b"</span>
+</code></pre></div></div>
+
+<p>上面代码中，我们为数组<code class="highlighter-rouge">arr</code>添加了两个不合法的数字键，结果<code class="highlighter-rouge">length</code>属性没有发生变化。这些数字键都变成了字符串键名。最后两行之所以会取到值，是因为取键值时，数字键名会默认转为字符串。</p>
+
+<h2 id="类似数组的对象">类似数组的对象</h2>
+
+<p>如果一个对象的所有键名都是正整数或零，并且有<code class="highlighter-rouge">length</code>属性，那么这个对象就很像数组，语法上称为“类似数组的对象”（array-like object）。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="mi">0</span><span class="p">:</span> <span class="s1">'a'</span><span class="p">,</span>
+  <span class="mi">1</span><span class="p">:</span> <span class="s1">'b'</span><span class="p">,</span>
+  <span class="mi">2</span><span class="p">:</span> <span class="s1">'c'</span><span class="p">,</span>
+  <span class="na">length</span><span class="p">:</span> <span class="mi">3</span>
+<span class="p">};</span>
+
+<span class="nx">obj</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">// 'a'</span>
+<span class="nx">obj</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1">// 'b'</span>
+<span class="nx">obj</span><span class="p">.</span><span class="nx">length</span> <span class="c1">// 3</span>
+<span class="nx">obj</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s1">'d'</span><span class="p">)</span> <span class="c1">// TypeError: obj.push is not a function</span>
+</code></pre></div></div>
+
+<p>上面代码中，对象<code class="highlighter-rouge">obj</code>就是一个类似数组的对象。</p>
+
+<p>但是，“类似数组的对象”并不是数组，因为它们不具备数组特有的方法。上面例子中，<code class="highlighter-rouge">obj</code>对象没有数组的<code class="highlighter-rouge">push</code>方法，使用该方法就会报错。</p>
+
+<p>“类似数组的对象”的根本特征，就是具有<code class="highlighter-rouge">length</code>属性。只要有<code class="highlighter-rouge">length</code>属性，就可以认为这个对象类似于数组。但是有一个问题，这种<code class="highlighter-rouge">length</code>属性不是动态值，不会随着成员的变化而变化。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">length</span><span class="p">:</span> <span class="mi">0</span>
+<span class="p">};</span>
+<span class="nx">obj</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'d'</span><span class="p">;</span>
+<span class="nx">obj</span><span class="p">.</span><span class="nx">length</span> <span class="c1">// 0</span>
+</code></pre></div></div>
+
+<p>上面代码为对象<code class="highlighter-rouge">obj</code>添加了一个数字键，但是<code class="highlighter-rouge">length</code>属性没变。这就说明了<code class="highlighter-rouge">obj</code>不是数组。</p>
+
+<p>典型的“类似数组的对象”是函数的<code class="highlighter-rouge">arguments</code>对象，以及大多数 DOM 元素集，还有字符串。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// arguments对象</span>
+<span class="kd">function</span> <span class="nx">args</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="kr">arguments</span> <span class="p">}</span>
+<span class="kd">var</span> <span class="nx">arrayLike</span> <span class="o">=</span> <span class="nx">args</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">);</span>
+
+<span class="nx">arrayLike</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">// 'a'</span>
+<span class="nx">arrayLike</span><span class="p">.</span><span class="nx">length</span> <span class="c1">// 2</span>
+<span class="nx">arrayLike</span> <span class="k">instanceof</span> <span class="nb">Array</span> <span class="c1">// false</span>
+
+<span class="c1">// DOM元素集</span>
+<span class="kd">var</span> <span class="nx">elts</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'h3'</span><span class="p">);</span>
+<span class="nx">elts</span><span class="p">.</span><span class="nx">length</span> <span class="c1">// 3</span>
+<span class="nx">elts</span> <span class="k">instanceof</span> <span class="nb">Array</span> <span class="c1">// false</span>
+
+<span class="c1">// 字符串</span>
+<span class="s1">'abc'</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1">// 'b'</span>
+<span class="s1">'abc'</span><span class="p">.</span><span class="nx">length</span> <span class="c1">// 3</span>
+<span class="s1">'abc'</span> <span class="k">instanceof</span> <span class="nb">Array</span> <span class="c1">// false</span>
+</code></pre></div></div>
+
+<p>数组的<code class="highlighter-rouge">slice</code>方法可以将“类似数组的对象”变成真正的数组。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arrayLike</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>除了转为真正的数组，“类似数组的对象”还有一个办法可以使用数组的方法，就是通过<code class="highlighter-rouge">call()</code>把数组的方法放到对象上面。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">print</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">index</span> <span class="o">+</span> <span class="s1">' : '</span> <span class="o">+</span> <span class="nx">value</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">forEach</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arrayLike</span><span class="p">,</span> <span class="nx">print</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">arrayLike</code>代表一个类似数组的对象，本来是不可以使用数组的<code class="highlighter-rouge">forEach()</code>方法的，但是通过<code class="highlighter-rouge">call()</code>，可以把<code class="highlighter-rouge">forEach()</code>嫁接到<code class="highlighter-rouge">arrayLike</code>上面调用。</p>
+
+<p>下面的例子就是通过这种方法，在<code class="highlighter-rouge">arguments</code>对象上面调用<code class="highlighter-rouge">forEach</code>方法。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// forEach 方法</span>
+<span class="kd">function</span> <span class="nx">logArgs</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">forEach</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="kr">arguments</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">elem</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="o">+</span><span class="s1">'. '</span><span class="o">+</span><span class="nx">elem</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="c1">// 等同于 for 循环</span>
+<span class="kd">function</span> <span class="nx">logArgs</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="kr">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span> <span class="o">+</span> <span class="s1">'. '</span> <span class="o">+</span> <span class="kr">arguments</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>字符串也是类似数组的对象，所以也可以用<code class="highlighter-rouge">Array.prototype.forEach.call</code>遍历。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">forEach</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="s1">'abc'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">chr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">chr</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="c1">// a</span>
+<span class="c1">// b</span>
+<span class="c1">// c</span>
+</code></pre></div></div>
+
+<p>注意，这种方法比直接使用数组原生的<code class="highlighter-rouge">forEach</code>要慢，所以最好还是先将“类似数组的对象”转为真正的数组，然后再直接调用数组的<code class="highlighter-rouge">forEach</code>方法。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="s1">'abc'</span><span class="p">);</span>
+<span class="nx">arr</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">chr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">chr</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="c1">// a</span>
+<span class="c1">// b</span>
+<span class="c1">// c</span>
+</code></pre></div></div>
+
+<h2 id="in-运算符">in 运算符</h2>
+
+<p>检查某个键名是否存在的运算符<code class="highlighter-rouge">in</code>，适用于对象，也适用于数组。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span> <span class="p">];</span>
+<span class="mi">2</span> <span class="k">in</span> <span class="nx">arr</span>  <span class="c1">// true</span>
+<span class="s1">'2'</span> <span class="k">in</span> <span class="nx">arr</span> <span class="c1">// true</span>
+<span class="mi">4</span> <span class="k">in</span> <span class="nx">arr</span> <span class="c1">// false</span>
+</code></pre></div></div>
+
+<p>上面代码表明，数组存在键名为<code class="highlighter-rouge">2</code>的键。由于键名都是字符串，所以数值<code class="highlighter-rouge">2</code>会自动转成字符串。</p>
+
+<p>注意，如果数组的某个位置是空位，<code class="highlighter-rouge">in</code>运算符返回<code class="highlighter-rouge">false</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="nx">arr</span><span class="p">[</span><span class="mi">100</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'a'</span><span class="p">;</span>
+
+<span class="mi">100</span> <span class="k">in</span> <span class="nx">arr</span> <span class="c1">// true</span>
+<span class="mi">1</span> <span class="k">in</span> <span class="nx">arr</span> <span class="c1">// false</span>
+</code></pre></div></div>
+
+<p>上面代码中，数组<code class="highlighter-rouge">arr</code>只有一个成员<code class="highlighter-rouge">arr[100]</code>，其他位置的键名都会返回<code class="highlighter-rouge">false</code>。</p>
+
+<h2 id="forin-循环和数组的遍历">for…in 循环和数组的遍历</h2>
+
+<p><code class="highlighter-rouge">for...in</code>循环不仅可以遍历对象，也可以遍历数组，毕竟数组只是一种特殊对象。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">a</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+<span class="p">}</span>
+<span class="c1">// 1</span>
+<span class="c1">// 2</span>
+<span class="c1">// 3</span>
+</code></pre></div></div>
+
+<p>但是，<code class="highlighter-rouge">for...in</code>不仅会遍历数组所有的数字键，还会遍历非数字键。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">foo</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">key</span> <span class="k">in</span> <span class="nx">a</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// 0</span>
+<span class="c1">// 1</span>
+<span class="c1">// 2</span>
+<span class="c1">// foo</span>
+</code></pre></div></div>
+
+<p>上面代码在遍历数组时，也遍历到了非整数键<code class="highlighter-rouge">foo</code>。所以，不推荐使用<code class="highlighter-rouge">for...in</code>遍历数组。</p>
+
+<p>数组的遍历可以考虑使用<code class="highlighter-rouge">for</code>循环或<code class="highlighter-rouge">while</code>循环。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+
+<span class="c1">// for循环</span>
+<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+<span class="p">}</span>
+
+<span class="c1">// while循环</span>
+<span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">(</span><span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+  <span class="nx">i</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">l</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">(</span><span class="nx">l</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="nx">l</span><span class="p">]);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>上面代码是三种遍历数组的写法。最后一种写法是逆向遍历，即从最后一个元素向第一个元素遍历。</p>
+
+<p>数组的<code class="highlighter-rouge">forEach</code>方法，也可以用来遍历数组，详见《标准库》一章的Array对象部分。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'red'</span><span class="p">,</span> <span class="s1">'green'</span><span class="p">,</span> <span class="s1">'blue'</span><span class="p">];</span>
+<span class="nx">colors</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">color</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">color</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h2 id="数组的空位">数组的空位</h2>
+
+<p>当数组的某个位置是空元素，即两个逗号之间没有任何值，我们称该数组存在空位（hole）。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">,</span> <span class="mi">1</span><span class="p">];</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">length</span> <span class="c1">// 3</span>
+</code></pre></div></div>
+
+<p>上面代码表明，数组的空位不影响<code class="highlighter-rouge">length</code>属性。</p>
+
+<p>需要注意的是，如果最后一个元素后面有逗号，并不会产生空位。也就是说，有没有这个逗号，结果都是一样的。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,];</span>
+
+<span class="nx">a</span><span class="p">.</span><span class="nx">length</span> <span class="c1">// 3</span>
+<span class="nx">a</span> <span class="c1">// [1, 2, 3]</span>
+</code></pre></div></div>
+
+<p>上面代码中，数组最后一个成员后面有一个逗号，这不影响<code class="highlighter-rouge">length</code>属性的值，与没有这个逗号时效果一样。</p>
+
+<p>数组的空位是可以读取的，返回<code class="highlighter-rouge">undefined</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[,</span> <span class="p">,</span> <span class="p">,];</span>
+<span class="nx">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1">// undefined</span>
+</code></pre></div></div>
+
+<p>使用<code class="highlighter-rouge">delete</code>命令删除一个数组成员，会形成空位，并且不会影响<code class="highlighter-rouge">length</code>属性。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+<span class="k">delete</span> <span class="nx">a</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+
+<span class="nx">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1">// undefined</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">length</span> <span class="c1">// 3</span>
+</code></pre></div></div>
+
+<p>上面代码用<code class="highlighter-rouge">delete</code>命令删除了数组的第二个元素，这个位置就形成了空位，但是对<code class="highlighter-rouge">length</code>属性没有影响。也就是说，<code class="highlighter-rouge">length</code>属性不过滤空位。所以，使用<code class="highlighter-rouge">length</code>属性进行数组遍历，一定要非常小心。</p>
+
+<p>数组的某个位置是空位，与某个位置是<code class="highlighter-rouge">undefined</code>，是不一样的。如果是空位，使用数组的<code class="highlighter-rouge">forEach</code>方法、<code class="highlighter-rouge">for...in</code>结构、以及<code class="highlighter-rouge">Object.keys</code>方法进行遍历，空位都会被跳过。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[,</span> <span class="p">,</span> <span class="p">,];</span>
+
+<span class="nx">a</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span> <span class="o">+</span> <span class="s1">'. '</span> <span class="o">+</span> <span class="nx">x</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="c1">// 不产生任何输出</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">a</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// 不产生任何输出</span>
+
+<span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span>
+<span class="c1">// []</span>
+</code></pre></div></div>
+
+<p>如果某个位置是<code class="highlighter-rouge">undefined</code>，遍历的时候就不会被跳过。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="kc">undefined</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">];</span>
+
+<span class="nx">a</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span> <span class="o">+</span> <span class="s1">'. '</span> <span class="o">+</span> <span class="nx">x</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="c1">// 0. undefined</span>
+<span class="c1">// 1. undefined</span>
+<span class="c1">// 2. undefined</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">a</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// 0</span>
+<span class="c1">// 1</span>
+<span class="c1">// 2</span>
+
+<span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span>
+<span class="c1">// ['0', '1', '2']</span>
+</code></pre></div></div>
+
+<p>这就是说，空位就是数组没有这个元素，所以不会被遍历到，而<code class="highlighter-rouge">undefined</code>则表示数组有这个元素，值是<code class="highlighter-rouge">undefined</code>，所以遍历不会跳过。</p>
+
+<h2 id="参考链接">参考链接</h2>
+
+<ul>
+  <li>Axel Rauschmayer, <a href="javascript:if(confirm('http://www.2ality.com/2012/12/arrays.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.2ality.com/2012/12/arrays.html'" tppabs="http://www.2ality.com/2012/12/arrays.html">Arrays in JavaScript</a></li>
+  <li>Axel Rauschmayer, <a href="javascript:if(confirm('http://www.2ality.com/2012/06/dense-arrays.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.2ality.com/2012/06/dense-arrays.html'" tppabs="http://www.2ality.com/2012/06/dense-arrays.html">JavaScript: sparse arrays vs. dense arrays</a></li>
+  <li>Felix Bohm, <a href="javascript:if(confirm('http://net.tutsplus.com/tutorials/javascript-ajax/what-they-didnt-tell-you-about-es5s-array-extras/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://net.tutsplus.com/tutorials/javascript-ajax/what-they-didnt-tell-you-about-es5s-array-extras/'" tppabs="http://net.tutsplus.com/tutorials/javascript-ajax/what-they-didnt-tell-you-about-es5s-array-extras/">What They Didn’t Tell You About ES5′s Array Extras</a></li>
+  <li>Juriy Zaytsev, <a href="javascript:if(confirm('http://perfectionkills.com/how-ecmascript-5-still-does-not-allow-to-subclass-an-array/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://perfectionkills.com/how-ecmascript-5-still-does-not-allow-to-subclass-an-array/'" tppabs="http://perfectionkills.com/how-ecmascript-5-still-does-not-allow-to-subclass-an-array/">How ECMAScript 5 still does not allow to subclass an array</a></li>
+</ul>
+
+
+</article>
+
+<div class="row">
+<div class="twelve columns">
+
+<h2>留言</h2>
+
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'jstutorial'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="javascript:if(confirm('http://disqus.com/?ref_noscript  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://disqus.com/?ref_noscript'" tppabs="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="javascript:if(confirm('http://disqus.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://disqus.com/'" tppabs="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</section>
+
+</div>
+</div>
+
+<footer>
+<div class="row">
+<div class="twelve columns">
+	<p><a href="license.html" tppabs="http://javascript.ruanyifeng.com/introduction/license.html">版权声明</a> | last modified on 2013-11-24 </p>
+</div>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-43771063-1', 'http://javascript.ruanyifeng.com/grammar/ruanyifeng.com');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
+
+

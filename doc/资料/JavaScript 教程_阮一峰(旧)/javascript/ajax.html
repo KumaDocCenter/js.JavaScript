@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>AJAX -- JavaScript 标准参考教程（alpha）</title>
+  
+  <!-- Included CSS Files (Uncompressed) -->
+  <!--
+  <link rel="stylesheet" href="stylesheets/foundation.css">
+  -->
+  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="foundation.css" tppabs="http://javascript.ruanyifeng.com/css/foundation.css">
+  <link rel="stylesheet" href="main.css" tppabs="http://javascript.ruanyifeng.com/css/main.css">
+
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="html5.js" tppabs="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <script src="jquery.js" tppabs="http://javascript.ruanyifeng.com/js/jquery.js"></script>
+  <script src="toc.js" tppabs="http://javascript.ruanyifeng.com/js/toc.js"></script>
+  <script src="main.js" tppabs="http://javascript.ruanyifeng.com/js/main.js"></script>
+
+</head>
+<body>
+
+<header class="top-bar" id="header">
+
+<div class="fixed">
+
+<nav class="top-bar">
+<ul>
+<!-- Title Area -->
+	<li class="name has-dropdown">
+	<h1><a href="index.htm" tppabs="http://javascript.ruanyifeng.com/">JavaScript 标准参考教程（alpha） </a></h1>
+		<ul class="dropdown">
+			
+			<li><a href="index.htm#introduction" tppabs="http://javascript.ruanyifeng.com/#introduction">导论</a></li>
+			
+			<li><a href="index.htm#grammar" tppabs="http://javascript.ruanyifeng.com/#grammar">语法</a></li>
+			
+			<li><a href="index.htm#stdlib" tppabs="http://javascript.ruanyifeng.com/#stdlib">标准库</a></li>
+			
+			<li><a href="index.htm#oop" tppabs="http://javascript.ruanyifeng.com/#oop">面向对象编程</a></li>
+			
+			<li><a href="index.htm#advanced" tppabs="http://javascript.ruanyifeng.com/#advanced">语法专题</a></li>
+			
+			<li><a href="index.htm#dom" tppabs="http://javascript.ruanyifeng.com/#dom">DOM模型</a></li>
+			
+			<li><a href="index.htm#bom" tppabs="http://javascript.ruanyifeng.com/#bom">浏览器环境</a></li>
+			
+			<li><a href="index.htm#htmlapi" tppabs="http://javascript.ruanyifeng.com/#htmlapi">Web API</a></li>
+			
+		</ul>
+	</li>
+</ul>
+
+<section>
+
+
+<ul class="left">
+<li class="divider"></li>
+<li class="has-dropdown"><a class="active" href="#"> 浏览器环境 </a><ul class="dropdown">
+
+
+
+<li class="active"><a href="#">AJAX</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="cookie.html" tppabs="http://javascript.ruanyifeng.com/bom/cookie.html">Cookie</a></li>
+
+
+
+
+
+<li><a href="cors.html" tppabs="http://javascript.ruanyifeng.com/bom/cors.html">CORS通信</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="engine.html" tppabs="http://javascript.ruanyifeng.com/bom/engine.html">浏览器环境概述</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="history-1.html" tppabs="http://javascript.ruanyifeng.com/bom/history.html">history对象</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="indexeddb.html" tppabs="http://javascript.ruanyifeng.com/bom/indexeddb.html">IndexedDB：浏览器端数据库</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mobile.html" tppabs="http://javascript.ruanyifeng.com/bom/mobile.html">移动设备API</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="notification.html" tppabs="http://javascript.ruanyifeng.com/bom/notification.html">Web Notifications API</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="performance.html" tppabs="http://javascript.ruanyifeng.com/bom/performance.html">Performance API</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="same-origin.html" tppabs="http://javascript.ruanyifeng.com/bom/same-origin.html">同源政策</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="webrtc.html" tppabs="http://javascript.ruanyifeng.com/htmlapi/webrtc.html">WebRTC</a></li>
+
+
+
+
+
+<li><a href="websocket.html" tppabs="http://javascript.ruanyifeng.com/htmlapi/websocket.html">WebSocket</a></li>
+
+
+
+
+
+
+
+<li><a href="webstorage.html" tppabs="http://javascript.ruanyifeng.com/bom/webstorage.html">Web Storage：浏览器端数据储存机制</a></li>
+
+
+
+
+
+
+
+<li><a href="window.html" tppabs="http://javascript.ruanyifeng.com/bom/window.html">window对象</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul></li>
+<li class="divider"></li>
+<li class="has-dropdown nav-3"><a href="#"> AJAX</a><ul class="dropdown">
+</ul></li>
+</ul>
+
+
+<ul class="right">
+	<li class="divider"></li>
+	<li>
+		<a href="javascript:if(confirm('https://github.com/ruanyf/jstutorial  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://github.com/ruanyf/jstutorial'" tppabs="https://github.com/ruanyf/jstutorial" target="_blank">GitHub <i class="foundicon-edit"></i></a>
+	</li>
+	<li class="divider"></li>
+	<li>
+		<a href="#">TOP <i class="foundicon-up-arrow"></i></a>
+	</li>
+</ul>
+
+</section>
+
+</nav>  
+</div>
+</header>
+
+
+<article class="bookPage">
+
+  <div class="row">
+    <div class="twelve columns">
+
+<h1> AJAX </h1>
+
+<aside class="right"><p>来自<a href="index.htm" tppabs="http://javascript.ruanyifeng.com/">《JavaScript 标准参考教程（alpha）》</a>，by 阮一峰</p></aside>
+
+<div id="toc" class="panel callout radius">目录</div>
+
+
+<p>浏览器与服务器之间，采用HTTP协议通信。用户在浏览器地址栏键入一个网址，或者通过网页表单向服务器提交内容，这时浏览器就会向服务器发出HTTP请求。</p>
+
+<p>1999年，微软公司发布IE浏览器5.0版，第一次引入新功能：允许JavaScript脚本向服务器发起HTTP请求。这个功能当时并没有引起注意，直到2004年Gmail发布和2005年Google Map发布，才引起广泛重视。2005年2月，AJAX这个词第一次正式提出，指围绕这个功能进行开发的一整套做法。从此，AJAX成为脚本发起HTTP通信的代名词，W3C也在2006年发布了它的国际标准。</p>
+
+<p>具体来说，AJAX包括以下几个步骤。</p>
+
+<ol>
+  <li>创建AJAX对象</li>
+  <li>发出HTTP请求</li>
+  <li>接收服务器传回的数据</li>
+  <li>更新网页数据</li>
+</ol>
+
+<p>概括起来，就是一句话，AJAX通过原生的<code class="highlighter-rouge">XMLHttpRequest</code>对象发出HTTP请求，得到服务器返回的数据后，再进行处理。</p>
+
+<p>AJAX可以是同步请求，也可以是异步请求。但是，大多数情况下，特指异步请求。因为同步的Ajax请求，对浏览器有“堵塞效应”。</p>
+
+<h2 id="xmlhttprequest对象">XMLHttpRequest对象</h2>
+
+<p><code class="highlighter-rouge">XMLHttpRequest</code>对象用来在浏览器与服务器之间传送数据。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">ajax</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+<span class="nx">ajax</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span> <span class="s1">'http://www.example.com/page.php'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>上面代码向指定的服务器网址，发出GET请求。</p>
+
+<p>然后，AJAX指定回调函数，监听通信状态（<code class="highlighter-rouge">readyState</code>属性）的变化。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">ajax</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="nx">handleStateChange</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>一旦拿到服务器返回的数据，AJAX不会刷新整个网页，而是只更新相关部分，从而不打断用户正在做的事情。</p>
+
+<p>注意，AJAX只能向同源网址（协议、域名、端口都相同）发出HTTP请求，如果发出跨源请求，就会报错（详见《同源政策》和《CORS机制》两节）。</p>
+
+<p>虽然名字里面有<code class="highlighter-rouge">XML</code>，但是实际上，XMLHttpRequest可以报送各种数据，包括字符串和二进制，而且除了HTTP，它还支持通过其他协议传送（比如File和FTP）。</p>
+
+<p>下面是<code class="highlighter-rouge">XMLHttpRequest</code>对象的典型用法。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+
+<span class="c1">// 指定通信过程中状态改变时的回调函数</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+  <span class="c1">// 通信成功时，状态值为4</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">xhr</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="mi">4</span><span class="p">){</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">xhr</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span><span class="p">){</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">xhr</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">xhr</span><span class="p">.</span><span class="nx">statusText</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">onerror</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">xhr</span><span class="p">.</span><span class="nx">statusText</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">// open方式用于指定HTTP动词、请求的网址、是否异步</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span> <span class="s1">'/endpoint'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+
+<span class="c1">// 发送HTTP请求</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">open</code>方法的第三个参数是一个布尔值，表示是否为异步请求。如果设为<code class="highlighter-rouge">false</code>，就表示这个请求是同步的，下面是一个例子。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+<span class="nx">request</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span> <span class="s1">'/bar/foo.txt'</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+<span class="nx">request</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="xmlhttprequest实例的属性">XMLHttpRequest实例的属性</h2>
+
+<h3 id="readystate">readyState</h3>
+
+<p><code class="highlighter-rouge">readyState</code>是一个只读属性，用一个整数和对应的常量，表示XMLHttpRequest请求当前所处的状态。</p>
+
+<ul>
+  <li>0，对应常量<code class="highlighter-rouge">UNSENT</code>，表示XMLHttpRequest实例已经生成，但是<code class="highlighter-rouge">open()</code>方法还没有被调用。</li>
+  <li>1，对应常量<code class="highlighter-rouge">OPENED</code>，表示<code class="highlighter-rouge">send()</code>方法还没有被调用，仍然可以使用<code class="highlighter-rouge">setRequestHeader()</code>，设定HTTP请求的头信息。</li>
+  <li>2，对应常量<code class="highlighter-rouge">HEADERS_RECEIVED</code>，表示<code class="highlighter-rouge">send()</code>方法已经执行，并且头信息和状态码已经收到。</li>
+  <li>3，对应常量<code class="highlighter-rouge">LOADING</code>，表示正在接收服务器传来的body部分的数据，如果<code class="highlighter-rouge">responseType</code>属性是<code class="highlighter-rouge">text</code>或者空字符串，<code class="highlighter-rouge">responseText</code>就会包含已经收到的部分信息。</li>
+  <li>4，对应常量<code class="highlighter-rouge">DONE</code>，表示服务器数据已经完全接收，或者本次接收已经失败了。</li>
+</ul>
+
+<p>在通信过程中，每当发生状态变化的时候，<code class="highlighter-rouge">readyState</code>属性的值就会发生改变。这个值每一次变化，都会触发<code class="highlighter-rouge">readyStateChange</code>事件。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">ajax</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+<span class="err">  </span><span class="c1">// Handle the response.</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<span class="err"> </span><span class="c1">// Show the 'Loading...' message or do nothing.</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>上面代码表示，只有<code class="highlighter-rouge">readyState</code>变为4时，才算确认请求已经成功，其他值都表示请求还在进行中。</p>
+
+<h3 id="onreadystatechange">onreadystatechange</h3>
+
+<p><code class="highlighter-rouge">onreadystatechange</code>属性指向一个回调函数，当<code class="highlighter-rouge">readystatechange</code>事件发生的时候，这个回调函数就会调用，并且XMLHttpRequest实例的<code class="highlighter-rouge">readyState</code>属性也会发生变化。</p>
+
+<p>另外，如果使用<code class="highlighter-rouge">abort()</code>方法，终止XMLHttpRequest请求，<code class="highlighter-rouge">onreadystatechange</code>回调函数也会被调用。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">xmlhttp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+<span class="nx">xmlhttp</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span> <span class="s1">'GET'</span><span class="p">,</span> <span class="s1">'http://example.com'</span> <span class="p">,</span> <span class="kc">true</span> <span class="p">);</span>
+<span class="nx">xmlhttp</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span> <span class="nx">XMLHttpRequest</span><span class="p">.</span><span class="nx">DONE</span> <span class="o">!=</span> <span class="nx">xmlhttp</span><span class="p">.</span><span class="nx">readyState</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">if</span> <span class="p">(</span> <span class="mi">200</span> <span class="o">!=</span> <span class="nx">xmlhttp</span><span class="p">.</span><span class="nx">status</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">xmlhttp</span><span class="p">.</span><span class="nx">responseText</span> <span class="p">);</span>
+<span class="p">};</span>
+<span class="nx">xmlhttp</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h3 id="response">response</h3>
+
+<p><code class="highlighter-rouge">response</code>属性为只读，返回接收到的数据体（即body部分）。它的类型可以是ArrayBuffer、Blob、Document、JSON对象、或者一个字符串，这由<code class="highlighter-rouge">XMLHttpRequest.responseType</code>属性的值决定。</p>
+
+<p>如果本次请求没有成功或者数据不完整，该属性就会等于<code class="highlighter-rouge">null</code>。</p>
+
+<h3 id="responsetype">responseType</h3>
+
+<p><code class="highlighter-rouge">responseType</code>属性用来指定服务器返回数据（<code class="highlighter-rouge">xhr.response</code>）的类型。</p>
+
+<ul>
+  <li>”“：字符串（默认值）</li>
+  <li>“arraybuffer”：ArrayBuffer对象</li>
+  <li>“blob”：Blob对象</li>
+  <li>“document”：Document对象</li>
+  <li>“json”：JSON对象</li>
+  <li>“text”：字符串</li>
+</ul>
+
+<p>text类型适合大多数情况，而且直接处理文本也比较方便，document类型适合返回XML文档的情况，blob类型适合读取二进制数据，比如图片文件。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span> <span class="s1">'/path/to/image.png'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">responseType</span> <span class="o">=</span> <span class="s1">'blob'</span><span class="p">;</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">blob</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Blob</span><span class="p">([</span><span class="k">this</span><span class="p">.</span><span class="nx">response</span><span class="p">],</span> <span class="p">{</span><span class="na">type</span><span class="p">:</span> <span class="s1">'image/png'</span><span class="p">});</span>
+    <span class="c1">// 或者</span>
+    <span class="kd">var</span> <span class="nx">blob</span> <span class="o">=</span> <span class="nx">oReq</span><span class="p">.</span><span class="nx">response</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>如果将这个属性设为ArrayBuffer，就可以按照数组的方式处理二进制数据。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span> <span class="s1">'/path/to/image.png'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">responseType</span> <span class="o">=</span> <span class="s1">'arraybuffer'</span><span class="p">;</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">uInt8Array</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Uint8Array</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">response</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">binStr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="o">++</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// var byte = uInt8Array[i];</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>如果将这个属性设为“json”，支持JSON的浏览器（Firefox&gt;9，chrome&gt;30），就会自动对返回数据调用<code class="highlighter-rouge">JSON.parse()</code>方法。也就是说，你从xhr.response属性（注意，不是xhr.responseText属性）得到的不是文本，而是一个JSON对象。</p>
+
+<p>XHR2支持Ajax的返回类型为文档，即xhr.responseType=”document” 。这意味着，对于那些打开CORS的网站，我们可以直接用Ajax抓取网页，然后不用解析HTML字符串，直接对XHR回应进行DOM操作。</p>
+
+<h3 id="responsetext">responseText</h3>
+
+<p><code class="highlighter-rouge">responseText</code>属性返回从服务器接收到的字符串，该属性为只读。如果本次请求没有成功或者数据不完整，该属性就会等于<code class="highlighter-rouge">null</code>。</p>
+
+<p>如果服务器返回的数据格式是JSON，就可以使用<code class="highlighter-rouge">responseText</code>属性。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">ajax</span><span class="p">.</span><span class="nx">responseText</span><span class="p">;</span>
+<span class="nx">data</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="responsexml">responseXML</h3>
+
+<p><code class="highlighter-rouge">responseXML</code>属性返回从服务器接收到的Document对象，该属性为只读。如果本次请求没有成功，或者数据不完整，或者不能被解析为XML或HTML，该属性等于<code class="highlighter-rouge">null</code>。</p>
+
+<p>返回的数据会被直接解析为DOM对象。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* 返回的XML文件如下
+  &lt;?xml version="1.0" encoding="utf-8" standalone="yes" ?&gt;
+  &lt;book&gt;
+      &lt;chapter id="1"&gt;(Re-)Introducing JavaScript&lt;/chapter&gt;
+      &lt;chapter id="2"&gt;JavaScript in Action&lt;/chapter&gt;
+  &lt;/book&gt;
+*/</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">ajax</span><span class="p">.</span><span class="nx">responseXML</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">chapters</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'chapter'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>如果服务器返回的数据，没有明示<code class="highlighter-rouge">Content-Type</code>头信息等于<code class="highlighter-rouge">text/xml</code>，可以使用<code class="highlighter-rouge">overrideMimeType()</code>方法，指定XMLHttpRequest对象将返回的数据解析为XML。</p>
+
+<h3 id="status">status</h3>
+
+<p><code class="highlighter-rouge">status</code>属性为只读属性，表示本次请求所得到的HTTP状态码，它是一个整数。一般来说，如果通信成功的话，这个状态码是200。</p>
+
+<ul>
+  <li>200, OK，访问正常</li>
+  <li>301, Moved Permanently，永久移动</li>
+  <li>302, Move temporarily，暂时移动</li>
+  <li>304, Not Modified，未修改</li>
+  <li>307, Temporary Redirect，暂时重定向</li>
+  <li>401, Unauthorized，未授权</li>
+  <li>403, Forbidden，禁止访问</li>
+  <li>404, Not Found，未发现指定网址</li>
+  <li>500, Internal Server Error，服务器发生错误</li>
+</ul>
+
+<p>基本上，只有2xx和304的状态码，表示服务器返回是正常状态。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">ajax</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+<span class="err">  </span><span class="k">if</span> <span class="p">(</span> <span class="p">(</span><span class="nx">ajax</span><span class="p">.</span><span class="nx">status</span> <span class="o">&gt;=</span> <span class="mi">200</span> <span class="o">&amp;&amp;</span> <span class="nx">ajax</span><span class="p">.</span><span class="nx">status</span> <span class="o">&lt;</span> <span class="mi">300</span><span class="p">)</span>
+<span class="err">    </span><span class="o">||</span> <span class="p">(</span><span class="nx">ajax</span><span class="p">.</span><span class="nx">status</span> <span class="o">==</span> <span class="mi">304</span><span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+<span class="err">    </span><span class="c1">// Handle the response.</span>
+<span class="err">  </span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<span class="err">    </span><span class="c1">// Status error!</span>
+<span class="err">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="statustext">statusText</h3>
+
+<p><code class="highlighter-rouge">statusText</code>属性为只读属性，返回一个字符串，表示服务器发送的状态提示。不同于<code class="highlighter-rouge">status</code>属性，该属性包含整个状态信息，比如”200 OK“。</p>
+
+<h3 id="timeout">timeout</h3>
+
+<p><code class="highlighter-rouge">timeout</code>属性等于一个整数，表示多少毫秒后，如果请求仍然没有得到结果，就会自动终止。如果该属性等于0，就表示没有时间限制。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+  <span class="nx">xhr</span><span class="p">.</span><span class="nx">ontimeout</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">"The request for "</span> <span class="o">+</span> <span class="nx">url</span> <span class="o">+</span> <span class="s2">" timed out."</span><span class="p">);</span>
+  <span class="p">};</span>
+  <span class="nx">xhr</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">xhr</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">xhr</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">callback</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">xhr</span><span class="p">,</span> <span class="nx">args</span><span class="p">);</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">xhr</span><span class="p">.</span><span class="nx">statusText</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+  <span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">"GET"</span><span class="p">,</span> <span class="nx">url</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+  <span class="nx">xhr</span><span class="p">.</span><span class="nx">timeout</span> <span class="o">=</span> <span class="nx">timeout</span><span class="p">;</span>
+  <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="事件监听接口">事件监听接口</h3>
+
+<p>XMLHttpRequest第一版，只能对<code class="highlighter-rouge">onreadystatechange</code>这一个事件指定回调函数。该事件对所有情况作出响应。 XMLHttpRequest第二版允许对更多的事件指定回调函数。</p>
+
+<ul>
+  <li>onloadstart 请求发出</li>
+  <li>onprogress 正在发送和加载数据</li>
+  <li>onabort 请求被中止，比如用户调用了<code class="highlighter-rouge">abort()</code>方法</li>
+  <li>onerror 请求失败</li>
+  <li>onload 请求成功完成</li>
+  <li>ontimeout 用户指定的时限到期，请求还未完成</li>
+  <li>onloadend 请求完成，不管成果或失败</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">xhr</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+ <span class="kd">var</span> <span class="nx">responseText</span> <span class="o">=</span> <span class="nx">xhr</span><span class="p">.</span><span class="nx">responseText</span><span class="p">;</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">responseText</span><span class="p">);</span>
+ <span class="c1">// process the response.</span>
+<span class="p">};</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">onerror</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'There was an error!'</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>注意，如果发生网络错误（比如服务器无法连通），<code class="highlighter-rouge">onerror</code>事件无法获取报错信息，所以只能显示报错。</p>
+
+<h3 id="withcredentials">withCredentials</h3>
+
+<p><code class="highlighter-rouge">withCredentials</code>属性是一个布尔值，表示跨域请求时，用户信息（比如Cookie和认证的HTTP头信息）是否会包含在请求之中，默认为<code class="highlighter-rouge">false</code>。即向<code class="highlighter-rouge">example.com</code>发出跨域请求时，不会发送<code class="highlighter-rouge">example.com</code>设置在本机上的Cookie（如果有的话）。</p>
+
+<p>如果你需要通过跨域AJAX发送Cookie，需要打开<code class="highlighter-rouge">withCredentials</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">xhr</span><span class="p">.</span><span class="nx">withCredentials</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>为了让这个属性生效，服务器必须显式返回<code class="highlighter-rouge">Access-Control-Allow-Credentials</code>这个头信息。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Access</span><span class="o">-</span><span class="nx">Control</span><span class="o">-</span><span class="nx">Allow</span><span class="o">-</span><span class="nx">Credentials</span><span class="p">:</span> <span class="kc">true</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">.withCredentials</code>属性打开的话，不仅会发送Cookie，还会设置远程主机指定的Cookie。注意，此时你的脚本还是遵守同源政策，无法 从<code class="highlighter-rouge">document.cookie</code>或者HTTP回应的头信息之中，读取这些Cookie。</p>
+
+<h2 id="xmlhttprequest实例的方法">XMLHttpRequest实例的方法</h2>
+
+<h3 id="abort">abort()</h3>
+
+<p><code class="highlighter-rouge">abort</code>方法用来终止已经发出的HTTP请求。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">ajax</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span> <span class="s1">'http://www.example.com/page.php'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">ajaxAbortTimer</span> <span class="o">=</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="err">  </span><span class="k">if</span> <span class="p">(</span><span class="nx">ajax</span><span class="p">)</span> <span class="p">{</span>
+<span class="err">    </span><span class="nx">ajax</span><span class="p">.</span><span class="nx">abort</span><span class="p">();</span>
+<span class="err">    </span><span class="nx">ajax</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+<span class="err">  </span><span class="p">}</span>
+<span class="p">},</span> <span class="mi">5000</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>上面代码在发出5秒之后，终止一个AJAX请求。</p>
+
+<h3 id="getallresponseheaders">getAllResponseHeaders()</h3>
+
+<p><code class="highlighter-rouge">getAllResponseHeaders</code>方法返回服务器发来的所有HTTP头信息。格式为字符串，每个头信息之间使用<code class="highlighter-rouge">CRLF</code>分隔，如果没有受到服务器回应，该属性返回<code class="highlighter-rouge">null</code>。</p>
+
+<h3 id="getresponseheader">getResponseHeader()</h3>
+
+<p><code class="highlighter-rouge">getResponseHeader</code>方法返回HTTP头信息指定字段的值，如果还没有收到服务器回应或者指定字段不存在，则该属性为<code class="highlighter-rouge">null</code>。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function getHeaderTime () {
+  console.log(this.getResponseHeader("Last-Modified"));
+}
+
+var oReq = new XMLHttpRequest();
+oReq.open("HEAD", "yourpage.html");
+oReq.onload = getHeaderTime;
+oReq.send();
+</code></pre></div></div>
+
+<p>如果有多个字段同名，则它们的值会被连接为一个字符串，每个字段之间使用“逗号+空格”分隔。</p>
+
+<h3 id="open">open()</h3>
+
+<p><code class="highlighter-rouge">XMLHttpRequest</code>对象的<code class="highlighter-rouge">open</code>方法用于指定发送HTTP请求的参数，它的使用格式如下，一共可以接受五个参数。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">void</span> <span class="nx">open</span><span class="p">(</span>
+   <span class="nx">string</span> <span class="nx">method</span><span class="p">,</span>
+   <span class="nx">string</span> <span class="nx">url</span><span class="p">,</span>
+   <span class="nx">optional</span> <span class="kr">boolean</span> <span class="k">async</span><span class="p">,</span>
+   <span class="nx">optional</span> <span class="nx">string</span> <span class="nx">user</span><span class="p">,</span>
+   <span class="nx">optional</span> <span class="nx">string</span> <span class="nx">password</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="highlighter-rouge">method</code>：表示HTTP动词，比如“GET”、“POST”、“PUT”和“DELETE”。</li>
+  <li><code class="highlighter-rouge">url</code>: 表示请求发送的网址。</li>
+  <li><code class="highlighter-rouge">async</code>: 格式为布尔值，默认为<code class="highlighter-rouge">true</code>，表示请求是否为异步。如果设为<code class="highlighter-rouge">false</code>，则<code class="highlighter-rouge">send()</code>方法只有等到收到服务器返回的结果，才会有返回值。</li>
+  <li><code class="highlighter-rouge">user</code>：表示用于认证的用户名，默认为空字符串。</li>
+  <li><code class="highlighter-rouge">password</code>：表示用于认证的密码，默认为空字符串。</li>
+</ul>
+
+<p>如果对使用过<code class="highlighter-rouge">open()</code>方法的请求，再次使用这个方法，等同于调用<code class="highlighter-rouge">abort()</code>。</p>
+
+<p>下面发送POST请求的例子。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">'POST'</span><span class="p">,</span> <span class="nb">encodeURI</span><span class="p">(</span><span class="s1">'someURL'</span><span class="p">));</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s1">'Content-Type'</span><span class="p">,</span> <span class="s1">'application/x-www-form-urlencoded'</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{};</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nb">encodeURI</span><span class="p">(</span><span class="s1">'dataString'</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p>上面方法中，open方法向指定URL发出POST请求，send方法送出实际的数据。</p>
+
+<p>下面是一个同步AJAX请求的例子。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+<span class="nx">request</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span> <span class="s1">'/bar/foo.txt'</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+<span class="nx">request</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="send">send()</h3>
+
+<p><code class="highlighter-rouge">send</code>方法用于实际发出HTTP请求。如果不带参数，就表示HTTP请求只包含头信息，也就是只有一个URL，典型例子就是GET请求；如果带有参数，就表示除了头信息，还带有包含具体数据的信息体，典型例子就是POST请求。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">ajax</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">'GET'</span>
+  <span class="p">,</span> <span class="s1">'http://www.example.com/somepage.php?id='</span> <span class="o">+</span> <span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span>
+  <span class="p">,</span> <span class="kc">true</span>
+<span class="p">);</span>
+
+<span class="c1">// 等同于</span>
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="s1">'id='</span> <span class="o">+</span> <span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">id</span><span class="p">));</span>
+<span class="nx">ajax</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span> <span class="s1">'http://www.example.com/somepage.php'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nx">ajax</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">GET</code>请求的参数，可以作为查询字符串附加在URL后面，也可以作为<code class="highlighter-rouge">send</code>方法的参数。</p>
+
+<p>下面是发送POST请求的例子。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="s1">'email='</span>
+  <span class="o">+</span> <span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">email</span><span class="p">)</span>
+  <span class="o">+</span> <span class="s1">'&amp;password='</span>
+  <span class="o">+</span> <span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">password</span><span class="p">);</span>
+<span class="nx">ajax</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">'POST'</span><span class="p">,</span> <span class="s1">'http://www.example.com/somepage.php'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nx">ajax</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s1">'Content-Type'</span><span class="p">,</span> <span class="s1">'application/x-www-form-urlencoded'</span><span class="p">);</span>
+<span class="nx">ajax</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>如果请求是异步的（默认为异步），该方法在发出请求后会立即返回。如果请求为同步，该方法只有等到收到服务器回应后，才会返回。</p>
+
+<p>注意，所有XMLHttpRequest的监听事件，都必须在<code class="highlighter-rouge">send()</code>方法调用之前设定。</p>
+
+<p><code class="highlighter-rouge">send</code>方法的参数就是发送的数据。多种格式的数据，都可以作为它的参数。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">void</span> <span class="nx">send</span><span class="p">();</span>
+<span class="k">void</span> <span class="nx">send</span><span class="p">(</span><span class="nx">ArrayBufferView</span> <span class="nx">data</span><span class="p">);</span>
+<span class="k">void</span> <span class="nx">send</span><span class="p">(</span><span class="nx">Blob</span> <span class="nx">data</span><span class="p">);</span>
+<span class="k">void</span> <span class="nx">send</span><span class="p">(</span><span class="nx">Document</span> <span class="nx">data</span><span class="p">);</span>
+<span class="k">void</span> <span class="nx">send</span><span class="p">(</span><span class="nb">String</span> <span class="nx">data</span><span class="p">);</span>
+<span class="k">void</span> <span class="nx">send</span><span class="p">(</span><span class="nx">FormData</span> <span class="nx">data</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>如果发送<code class="highlighter-rouge">Document</code>数据，在发送之前，数据会先被串行化。</p>
+
+<p>发送二进制数据，最好使用<code class="highlighter-rouge">ArrayBufferView</code>或<code class="highlighter-rouge">Blob</code>对象，这使得通过Ajax上传文件成为可能。</p>
+
+<p>下面是一个上传<code class="highlighter-rouge">ArrayBuffer</code>对象的例子。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">sendArrayBuffer</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+  <span class="kd">var</span> <span class="nx">uInt8Array</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Uint8Array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>
+
+  <span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">'POST'</span><span class="p">,</span> <span class="s1">'/server'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+  <span class="nx">xhr</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">};</span>
+  <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">uInt8Array</span><span class="p">.</span><span class="nx">buffer</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>FormData类型可以用于构造表单数据。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">formData</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormData</span><span class="p">();</span>
+
+<span class="nx">formData</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">'username'</span><span class="p">,</span> <span class="s1">'张三'</span><span class="p">);</span>
+<span class="nx">formData</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">'email'</span><span class="p">,</span> <span class="s1">'zhangsan@example.com'</span><span class="p">);</span>
+<span class="nx">formData</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">'birthDate'</span><span class="p">,</span> <span class="mi">1940</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">"POST"</span><span class="p">,</span> <span class="s2">"/register"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">formData</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>上面的代码构造了一个<code class="highlighter-rouge">formData</code>对象，然后使用send方法发送。它的效果与点击下面表单的submit按钮是一样的。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">'registration'</span> <span class="na">name=</span><span class="s">'registration'</span> <span class="na">action=</span><span class="s">'/register'</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">'text'</span> <span class="na">name=</span><span class="s">'username'</span> <span class="na">value=</span><span class="s">'张三'</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">'email'</span> <span class="na">name=</span><span class="s">'email'</span> <span class="na">value=</span><span class="s">'zhangsan@example.com'</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">'number'</span> <span class="na">name=</span><span class="s">'birthDate'</span> <span class="na">value=</span><span class="s">'1940'</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">'submit'</span> <span class="na">onclick=</span><span class="s">'return sendForm(this.form);'</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre></div></div>
+
+<p>FormData也可以将现有表单构造生成。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">formElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"form"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+<span class="nx">request</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">"POST"</span><span class="p">,</span> <span class="s2">"submitform.php"</span><span class="p">);</span>
+<span class="nx">request</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="k">new</span> <span class="nx">FormData</span><span class="p">(</span><span class="nx">formElement</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p>FormData对象还可以对现有表单添加数据，这为我们操作表单提供了极大的灵活性。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">sendForm</span><span class="p">(</span><span class="nx">form</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">formData</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormData</span><span class="p">(</span><span class="nx">form</span><span class="p">);</span>
+    <span class="nx">formData</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">'csrf'</span><span class="p">,</span> <span class="s1">'e69a18d7db1286040586e6da1950128c'</span><span class="p">);</span>
+
+    <span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+    <span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">'POST'</span><span class="p">,</span> <span class="nx">form</span><span class="p">.</span><span class="nx">action</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nx">xhr</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+    <span class="p">};</span>
+    <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">formData</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">form</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'#registration'</span><span class="p">);</span>
+<span class="nx">sendForm</span><span class="p">(</span><span class="nx">form</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>FormData对象也能用来模拟File控件，进行文件上传。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">uploadFiles</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">files</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">formData</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormData</span><span class="p">();</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">file</span><span class="p">;</span> <span class="nx">file</span> <span class="o">=</span> <span class="nx">files</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span> <span class="o">++</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">formData</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">file</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="nx">file</span><span class="p">);</span> <span class="c1">// 可加入第三个参数，表示文件名</span>
+  <span class="p">}</span>
+
+  <span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+  <span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">'POST'</span><span class="p">,</span> <span class="nx">url</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+  <span class="nx">xhr</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">};</span>
+
+  <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">formData</span><span class="p">);</span>  <span class="c1">// multipart/form-data</span>
+<span class="p">}</span>
+
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'input[type="file"]'</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'change'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">uploadFiles</span><span class="p">(</span><span class="s1">'/server'</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">files</span><span class="p">);</span>
+<span class="p">},</span> <span class="kc">false</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>FormData也可以加入JavaScript生成的文件。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 添加JavaScript生成的文件</span>
+<span class="kd">var</span> <span class="nx">content</span> <span class="o">=</span> <span class="s1">'&lt;a id="a"&gt;&lt;b id="b"&gt;hey!&lt;/b&gt;&lt;/a&gt;'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">blob</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Blob</span><span class="p">([</span><span class="nx">content</span><span class="p">],</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="s2">"text/xml"</span><span class="p">});</span>
+<span class="nx">formData</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"webmasterfile"</span><span class="p">,</span> <span class="nx">blob</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="setrequestheader">setRequestHeader()</h3>
+
+<p><code class="highlighter-rouge">setRequestHeader</code>方法用于设置HTTP头信息。该方法必须在<code class="highlighter-rouge">open()</code>之后、<code class="highlighter-rouge">send()</code>之前调用。如果该方法多次调用，设定同一个字段，则每一次调用的值会被合并成一个单一的值发送。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s1">'Content-Type'</span><span class="p">,</span> <span class="s1">'application/json'</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s1">'Content-Length'</span><span class="p">,</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">).</span><span class="nx">length</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p>上面代码首先设置头信息<code class="highlighter-rouge">Content-Type</code>，表示发送JSON格式的数据；然后设置<code class="highlighter-rouge">Content-Length</code>，表示数据长度；最后发送JSON数据。</p>
+
+<h3 id="overridemimetype">overrideMimeType()</h3>
+
+<p>该方法用来指定服务器返回数据的MIME类型。该方法必须在<code class="highlighter-rouge">send()</code>之前调用。</p>
+
+<p>传统上，如果希望从服务器取回二进制数据，就要使用这个方法，人为将数据类型伪装成文本数据。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span> <span class="s1">'/path/to/image.png'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+
+<span class="c1">// 强制将MIME改为文本类型</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">overrideMimeType</span><span class="p">(</span><span class="s1">'text/plain; charset=x-user-defined'</span><span class="p">);</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">==</span> <span class="mi">4</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">binStr</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">responseText</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">binStr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="o">++</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">binStr</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="kr">byte</span> <span class="o">=</span> <span class="nx">c</span> <span class="o">&amp;</span> <span class="mh">0xff</span><span class="p">;</span>  <span class="c1">// 去除高位字节，留下低位字节</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>上面代码中，因为传回来的是二进制数据，首先用<code class="highlighter-rouge">xhr.overrideMimeType</code>方法强制改变它的MIME类型，伪装成文本数据。字符集必需指定为“x-user-defined”，如果是其他字符集，浏览器内部会强制转码，将其保存成UTF-16的形式。字符集“x-user-defined”其实也会发生转码，浏览器会在每个字节前面再加上一个字节（0xF700-0xF7ff），因此后面要对每个字符进行一次与运算（&amp;），将高位的8个位去除，只留下低位的8个位，由此逐一读出原文件二进制数据的每个字节。</p>
+
+<p>这种方法很麻烦，在XMLHttpRequest版本升级以后，一般采用指定<code class="highlighter-rouge">responseType</code>的方法。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">arraybuffer</span> <span class="o">=</span> <span class="nx">xhr</span><span class="p">.</span><span class="nx">response</span><span class="p">;</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">"GET"</span><span class="p">,</span> <span class="nx">url</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">responseType</span> <span class="o">=</span> <span class="s2">"arraybuffer"</span><span class="p">;</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h2 id="xmlhttprequest实例的事件">XMLHttpRequest实例的事件</h2>
+
+<h3 id="readystatechange事件">readyStateChange事件</h3>
+
+<p><code class="highlighter-rouge">readyState</code>属性的值发生改变，就会触发readyStateChange事件。</p>
+
+<p>我们可以通过<code class="highlighter-rouge">onReadyStateChange</code>属性，指定这个事件的回调函数，对不同状态进行不同处理。尤其是当状态变为4的时候，表示通信成功，这时回调函数就可以处理服务器传送回来的数据。</p>
+
+<h3 id="progress事件">progress事件</h3>
+
+<p>上传文件时，XMLHTTPRequest对象的upload属性有一个progress，会不断返回上传的进度。</p>
+
+<p>假定网页上有一个progress元素。</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&lt;progress min="0" max="100" value="0"&gt;0% complete&lt;/progress&gt;
+</span></code></pre></div></div>
+
+<p>文件上传时，对upload属性指定progress事件回调函数，即可获得上传的进度。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">upload</span><span class="p">(</span><span class="nx">blobOrFile</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+  <span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">'POST'</span><span class="p">,</span> <span class="s1">'/server'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+  <span class="nx">xhr</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">};</span>
+
+  <span class="c1">// Listen to the upload progress.</span>
+  <span class="kd">var</span> <span class="nx">progressBar</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'progress'</span><span class="p">);</span>
+  <span class="nx">xhr</span><span class="p">.</span><span class="nx">upload</span><span class="p">.</span><span class="nx">onprogress</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">lengthComputable</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">progressBar</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">loaded</span> <span class="o">/</span> <span class="nx">e</span><span class="p">.</span><span class="nx">total</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">;</span>
+      <span class="nx">progressBar</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">progressBar</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span> <span class="c1">// Fallback for unsupported browsers.</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+
+  <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">blobOrFile</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">upload</span><span class="p">(</span><span class="k">new</span> <span class="nx">Blob</span><span class="p">([</span><span class="s1">'hello world'</span><span class="p">],</span> <span class="p">{</span><span class="na">type</span><span class="p">:</span> <span class="s1">'text/plain'</span><span class="p">}));</span>
+</code></pre></div></div>
+
+<h3 id="load事件error事件abort事件">load事件、error事件、abort事件</h3>
+
+<p>load事件表示服务器传来的数据接收完毕，error事件表示请求出错，abort事件表示请求被中断。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"progress"</span><span class="p">,</span> <span class="nx">updateProgress</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"load"</span><span class="p">,</span> <span class="nx">transferComplete</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"error"</span><span class="p">,</span> <span class="nx">transferFailed</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"abort"</span><span class="p">,</span> <span class="nx">transferCanceled</span><span class="p">);</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">();</span>
+
+<span class="kd">function</span> <span class="nx">updateProgress</span> <span class="p">(</span><span class="nx">oEvent</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">oEvent</span><span class="p">.</span><span class="nx">lengthComputable</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">percentComplete</span> <span class="o">=</span> <span class="nx">oEvent</span><span class="p">.</span><span class="nx">loaded</span> <span class="o">/</span> <span class="nx">oEvent</span><span class="p">.</span><span class="nx">total</span><span class="p">;</span>
+    <span class="c1">// ...</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="c1">// 回应的总数据量未知，导致无法计算百分比</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">transferComplete</span><span class="p">(</span><span class="nx">evt</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"The transfer is complete."</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">transferFailed</span><span class="p">(</span><span class="nx">evt</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"An error occurred while transferring the file."</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">transferCanceled</span><span class="p">(</span><span class="nx">evt</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"The transfer has been canceled by the user."</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="loadend事件">loadend事件</h3>
+
+<p><code class="highlighter-rouge">abort</code>、<code class="highlighter-rouge">load</code>和<code class="highlighter-rouge">error</code>这三个事件，会伴随一个<code class="highlighter-rouge">loadend</code>事件，表示请求结束，但不知道其是否成功。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">req</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"loadend"</span><span class="p">,</span> <span class="nx">loadEnd</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">loadEnd</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="s2">"请求结束（不知道是否成功）"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="文件上传">文件上传</h2>
+
+<p>HTML网页的<code class="highlighter-rouge">&lt;form&gt;</code>元素能够以四种格式，向服务器发送数据。</p>
+
+<ul>
+  <li>使用<code class="highlighter-rouge">POST</code>方法，将<code class="highlighter-rouge">enctype</code>属性设为<code class="highlighter-rouge">application/x-www-form-urlencoded</code>，这是默认方法。</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"register.php"</span> <span class="na">method=</span><span class="s">"post"</span> <span class="na">onsubmit=</span><span class="s">"AJAXSubmit(this); return false;"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>使用<code class="highlighter-rouge">POST</code>方法，将<code class="highlighter-rouge">enctype</code>属性设为<code class="highlighter-rouge">text/plain</code>。</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"register.php"</span> <span class="na">method=</span><span class="s">"post"</span> <span class="na">enctype=</span><span class="s">"text/plain"</span> <span class="na">onsubmit=</span><span class="s">"AJAXSubmit(this); return false;"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>使用<code class="highlighter-rouge">POST</code>方法，将<code class="highlighter-rouge">enctype</code>属性设为<code class="highlighter-rouge">multipart/form-data</code>。</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"register.php"</span> <span class="na">method=</span><span class="s">"post"</span> <span class="na">enctype=</span><span class="s">"multipart/form-data"</span> <span class="na">onsubmit=</span><span class="s">"AJAXSubmit(this); return false;"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>使用<code class="highlighter-rouge">GET</code>方法，<code class="highlighter-rouge">enctype</code>属性将被忽略。</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"register.php"</span> <span class="na">method=</span><span class="s">"get"</span> <span class="na">onsubmit=</span><span class="s">"AJAXSubmit(this); return false;"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre></div></div>
+
+<p>某个表单有两个字段，分别是<code class="highlighter-rouge">foo</code>和<code class="highlighter-rouge">baz</code>，其中<code class="highlighter-rouge">foo</code>字段的值等于<code class="highlighter-rouge">bar</code>，<code class="highlighter-rouge">baz</code>字段的值一个分为两行的字符串。上面四种方法，都可以将这个表单发送到服务器。</p>
+
+<p>第一种方法是默认方法，POST发送，Encoding type为application/x-www-form-urlencoded。</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">Content-Type: application/x-www-form-urlencoded
+
+foo=bar&amp;baz=The+first+line.&amp;#37;0D%0AThe+second+line.%0D%0A
+</span></code></pre></div></div>
+
+<p>第二种方法是POST发送，Encoding type为text/plain。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Content</span><span class="o">-</span><span class="nx">Type</span><span class="p">:</span> <span class="nx">text</span><span class="o">/</span><span class="nx">plain</span>
+
+<span class="nx">foo</span><span class="o">=</span><span class="nx">bar</span>
+<span class="nx">baz</span><span class="o">=</span><span class="nx">The</span> <span class="nx">first</span> <span class="nx">line</span><span class="p">.</span>
+<span class="nx">The</span> <span class="nx">second</span> <span class="nx">line</span><span class="p">.</span>
+</code></pre></div></div>
+
+<p>第三种方法是POST发送，Encoding type为multipart/form-data。</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">Content-Type: multipart/form-data; boundary=---------------------------314911788813839
+
+-----------------------------314911788813839
+Content-Disposition: form-data; name="foo"
+
+bar
+-----------------------------314911788813839
+Content-Disposition: form-data; name="baz"
+
+The first line.
+The second line.
+
+-----------------------------314911788813839--
+</span></code></pre></div></div>
+
+<p>第四种方法是GET请求。</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">?foo=bar&amp;baz=The%20first%20line.%0AThe%20second%20line.
+</span></code></pre></div></div>
+
+<p>通常，我们使用file控件实现文件上传。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">"file-form"</span> <span class="na">action=</span><span class="s">"handler.php"</span> <span class="na">method=</span><span class="s">"POST"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"file"</span> <span class="na">id=</span><span class="s">"file-select"</span> <span class="na">name=</span><span class="s">"photos[]"</span> <span class="na">multiple</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">id=</span><span class="s">"upload-button"</span><span class="nt">&gt;</span>上传<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre></div></div>
+
+<p>上面HTML代码中，file控件的multiple属性，指定可以一次选择多个文件；如果没有这个属性，则一次只能选择一个文件。</p>
+
+<p>file对象的files属性，返回一个FileList对象，包含了用户选中的文件。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">fileSelect</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'file-select'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">files</span> <span class="o">=</span> <span class="nx">fileSelect</span><span class="p">.</span><span class="nx">files</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>然后，新建一个FormData对象的实例，用来模拟发送到服务器的表单数据，把选中的文件添加到这个对象上面。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">formData</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormData</span><span class="p">();</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">files</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">file</span> <span class="o">=</span> <span class="nx">files</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">file</span><span class="p">.</span><span class="nx">type</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="s1">'image.*'</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">continue</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nx">formData</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">'photos[]'</span><span class="p">,</span> <span class="nx">file</span><span class="p">,</span> <span class="nx">file</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>上面代码中的FormData对象的append方法，除了可以添加文件，还可以添加二进制对象（Blob）或者字符串。</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Files</span><br data-jekyll-commonmark-ghpages="" /><span class="nx">formData</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">file</span><span class="p">,</span> <span class="nx">filename</span><span class="p">);</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" /><span class="c1">// Blobs</span><br data-jekyll-commonmark-ghpages="" /><span class="nx">formData</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">blob</span><span class="p">,</span> <span class="nx">filename</span><span class="p">);</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" /><span class="c1">// Strings</span><br data-jekyll-commonmark-ghpages="" /><span class="nx">formData</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">value</span><span class="p">);</span>    </code></pre></figure>
+
+<p>append方法的第一个参数是表单的控件名，第二个参数是实际的值，第三个参数是可选的，通常是文件名。</p>
+
+<p>最后，使用Ajax方法向服务器上传文件。</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" /><span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">'POST'</span><span class="p">,</span> <span class="s1">'handler.php'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" /><span class="nx">xhr</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />  <span class="k">if</span> <span class="p">(</span><span class="nx">xhr</span><span class="p">.</span><span class="nx">status</span> <span class="o">!==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span><br data-jekyll-commonmark-ghpages="" />    <span class="nx">alert</span><span class="p">(</span><span class="s1">'An error occurred!'</span><span class="p">);</span><br data-jekyll-commonmark-ghpages="" />  <span class="p">}</span><br data-jekyll-commonmark-ghpages="" /><span class="p">};</span><br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" /><span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">formData</span><span class="p">);</span></code></pre></figure>
+
+<p>目前，各大浏览器（包括IE 10）都支持Ajax上传文件。</p>
+
+<p>除了使用FormData接口上传，也可以直接使用File API上传。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">var</span> <span class="nx">file</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'test-input'</span><span class="p">).</span><span class="nx">files</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">'POST'</span><span class="p">,</span> <span class="s1">'myserver/uploads'</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s1">'Content-Type'</span><span class="p">,</span> <span class="nx">file</span><span class="p">.</span><span class="nx">type</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">file</span><span class="p">);</span>
+
+</code></pre></div></div>
+
+<p>可以看到，上面这种写法比FormData的写法，要简单很多。</p>
+
+<h2 id="参考链接">参考链接</h2>
+
+<ul>
+  <li>MDN, <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/DOM/XMLHttpRequest/Using_XMLHttpRequest  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://developer.mozilla.org/en-US/docs/DOM/XMLHttpRequest/Using_XMLHttpRequest'" tppabs="https://developer.mozilla.org/en-US/docs/DOM/XMLHttpRequest/Using_XMLHttpRequest">Using XMLHttpRequest</a></li>
+  <li>Mathias Bynens, <a href="javascript:if(confirm('http://mathiasbynens.be/notes/xhr-responsetype-json  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://mathiasbynens.be/notes/xhr-responsetype-json'" tppabs="http://mathiasbynens.be/notes/xhr-responsetype-json">Loading JSON-formatted data with Ajax and xhr.responseType=’json’</a></li>
+  <li>Eric Bidelman, <a href="javascript:if(confirm('http://www.html5rocks.com/en/tutorials/file/xhr2/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.html5rocks.com/en/tutorials/file/xhr2/'" tppabs="http://www.html5rocks.com/en/tutorials/file/xhr2/">New Tricks in XMLHttpRequest2</a></li>
+  <li>
+    <p>Matt West, <a href="javascript:if(confirm('http://blog.teamtreehouse.com/uploading-files-ajax  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://blog.teamtreehouse.com/uploading-files-ajax'" tppabs="http://blog.teamtreehouse.com/uploading-files-ajax">Uploading Files with AJAX</a></p>
+  </li>
+  <li>Matt Gaunt, <a href="javascript:if(confirm('http://updates.html5rocks.com/2015/03/introduction-to-fetch  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://updates.html5rocks.com/2015/03/introduction-to-fetch'" tppabs="http://updates.html5rocks.com/2015/03/introduction-to-fetch">Introduction to fetch()</a></li>
+  <li>Nikhil Marathe, <a href="javascript:if(confirm('https://hacks.mozilla.org/2015/03/this-api-is-so-fetching/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://hacks.mozilla.org/2015/03/this-api-is-so-fetching/'" tppabs="https://hacks.mozilla.org/2015/03/this-api-is-so-fetching/">This API is so Fetching!</a></li>
+  <li>Ludovico Fischer, <a href="javascript:if(confirm('http://www.sitepoint.com/introduction-to-the-fetch-api/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.sitepoint.com/introduction-to-the-fetch-api/'" tppabs="http://www.sitepoint.com/introduction-to-the-fetch-api/">Introduction to the Fetch API</a></li>
+</ul>
+
+
+
+</article>
+
+<div class="row">
+<div class="twelve columns">
+
+<h2>留言</h2>
+
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'jstutorial'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="javascript:if(confirm('http://disqus.com/?ref_noscript  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://disqus.com/?ref_noscript'" tppabs="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="javascript:if(confirm('http://disqus.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://disqus.com/'" tppabs="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</section>
+
+</div>
+</div>
+
+<footer>
+<div class="row">
+<div class="twelve columns">
+	<p><a href="license.html" tppabs="http://javascript.ruanyifeng.com/introduction/license.html">版权声明</a> | last modified on 2014-02-27 </p>
+</div>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-43771063-1', 'http://javascript.ruanyifeng.com/bom/ruanyifeng.com');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
+
+

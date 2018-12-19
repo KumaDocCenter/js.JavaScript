@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>prototype 对象 -- JavaScript 标准参考教程（alpha）</title>
+  
+  <!-- Included CSS Files (Uncompressed) -->
+  <!--
+  <link rel="stylesheet" href="stylesheets/foundation.css">
+  -->
+  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="foundation.css" tppabs="http://javascript.ruanyifeng.com/css/foundation.css">
+  <link rel="stylesheet" href="main.css" tppabs="http://javascript.ruanyifeng.com/css/main.css">
+
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="html5.js" tppabs="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <script src="jquery.js" tppabs="http://javascript.ruanyifeng.com/js/jquery.js"></script>
+  <script src="toc.js" tppabs="http://javascript.ruanyifeng.com/js/toc.js"></script>
+  <script src="main.js" tppabs="http://javascript.ruanyifeng.com/js/main.js"></script>
+
+</head>
+<body>
+
+<header class="top-bar" id="header">
+
+<div class="fixed">
+
+<nav class="top-bar">
+<ul>
+<!-- Title Area -->
+	<li class="name has-dropdown">
+	<h1><a href="index.htm" tppabs="http://javascript.ruanyifeng.com/">JavaScript 标准参考教程（alpha） </a></h1>
+		<ul class="dropdown">
+			
+			<li><a href="index.htm#introduction" tppabs="http://javascript.ruanyifeng.com/#introduction">导论</a></li>
+			
+			<li><a href="index.htm#grammar" tppabs="http://javascript.ruanyifeng.com/#grammar">语法</a></li>
+			
+			<li><a href="index.htm#stdlib" tppabs="http://javascript.ruanyifeng.com/#stdlib">标准库</a></li>
+			
+			<li><a href="index.htm#oop" tppabs="http://javascript.ruanyifeng.com/#oop">面向对象编程</a></li>
+			
+			<li><a href="index.htm#advanced" tppabs="http://javascript.ruanyifeng.com/#advanced">语法专题</a></li>
+			
+			<li><a href="index.htm#dom" tppabs="http://javascript.ruanyifeng.com/#dom">DOM模型</a></li>
+			
+			<li><a href="index.htm#bom" tppabs="http://javascript.ruanyifeng.com/#bom">浏览器环境</a></li>
+			
+			<li><a href="index.htm#htmlapi" tppabs="http://javascript.ruanyifeng.com/#htmlapi">Web API</a></li>
+			
+		</ul>
+	</li>
+</ul>
+
+<section>
+
+
+<ul class="left">
+<li class="divider"></li>
+<li class="has-dropdown"><a class="active" href="#"> 面向对象编程 </a><ul class="dropdown">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="basic-1.html" tppabs="http://javascript.ruanyifeng.com/oop/basic.html">构造函数与 new 命令</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="object-2.html" tppabs="http://javascript.ruanyifeng.com/oop/object.html">Object 对象与继承</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="pattern.html" tppabs="http://javascript.ruanyifeng.com/oop/pattern.html">面向对象编程的模式</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="active"><a href="#">prototype 对象</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="this.html" tppabs="http://javascript.ruanyifeng.com/oop/this.html">this 关键字</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul></li>
+<li class="divider"></li>
+<li class="has-dropdown nav-3"><a href="#"> prototype 对象</a><ul class="dropdown">
+</ul></li>
+</ul>
+
+
+<ul class="right">
+	<li class="divider"></li>
+	<li>
+		<a href="javascript:if(confirm('https://github.com/ruanyf/jstutorial  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://github.com/ruanyf/jstutorial'" tppabs="https://github.com/ruanyf/jstutorial" target="_blank">GitHub <i class="foundicon-edit"></i></a>
+	</li>
+	<li class="divider"></li>
+	<li>
+		<a href="#">TOP <i class="foundicon-up-arrow"></i></a>
+	</li>
+</ul>
+
+</section>
+
+</nav>  
+</div>
+</header>
+
+
+<article class="bookPage">
+
+  <div class="row">
+    <div class="twelve columns">
+
+<h1> prototype 对象 </h1>
+
+<aside class="right"><p>来自<a href="index.htm" tppabs="http://javascript.ruanyifeng.com/">《JavaScript 标准参考教程（alpha）》</a>，by 阮一峰</p></aside>
+
+<div id="toc" class="panel callout radius">目录</div>
+
+
+<p>大部分面向对象的编程语言，都以“类”（class）为基础，实现对象的继承。JavaScript 语言不是如此，它的对象继承以“原型对象”（prototype）为基础。</p>
+
+<h2 id="概述">概述</h2>
+
+<h3 id="构造函数的缺点">构造函数的缺点</h3>
+
+<p>JavaScript 通过构造函数生成新对象，因此构造函数可以视为对象的模板。实例对象的属性和方法，可以定义在构造函数内部。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Cat</span> <span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">color</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="nx">color</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">cat1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Cat</span><span class="p">(</span><span class="s1">'大毛'</span><span class="p">,</span> <span class="s1">'白色'</span><span class="p">);</span>
+
+<span class="nx">cat1</span><span class="p">.</span><span class="nx">name</span> <span class="c1">// '大毛'</span>
+<span class="nx">cat1</span><span class="p">.</span><span class="nx">color</span> <span class="c1">// '白色'</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">Cat</code>函数是一个构造函数，函数内部定义了<code class="highlighter-rouge">name</code>属性和<code class="highlighter-rouge">color</code>属性，所有实例对象（上例是<code class="highlighter-rouge">cat1</code>）都会生成这两个属性，即这两个属性会定义在实例对象上面。</p>
+
+<p>通过构造函数为实例对象定义属性，虽然很方便，但是有一个缺点。同一个构造函数的多个实例之间，无法共享属性，从而造成对系统资源的浪费。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Cat</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">color</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="nx">color</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">meow</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'喵喵'</span><span class="p">);</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">cat1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Cat</span><span class="p">(</span><span class="s1">'大毛'</span><span class="p">,</span> <span class="s1">'白色'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">cat2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Cat</span><span class="p">(</span><span class="s1">'二毛'</span><span class="p">,</span> <span class="s1">'黑色'</span><span class="p">);</span>
+
+<span class="nx">cat1</span><span class="p">.</span><span class="nx">meow</span> <span class="o">===</span> <span class="nx">cat2</span><span class="p">.</span><span class="nx">meow</span>
+<span class="c1">// false</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">cat1</code>和<code class="highlighter-rouge">cat2</code>是同一个构造函数的两个实例，它们都具有<code class="highlighter-rouge">meow</code>方法。由于<code class="highlighter-rouge">meow</code>方法是生成在每个实例对象上面，所以两个实例就生成了两次。也就是说，每新建一个实例，就会新建一个<code class="highlighter-rouge">meow</code>方法。这既没有必要，又浪费系统资源，因为所有<code class="highlighter-rouge">meow</code>方法都是同样的行为，完全应该共享。</p>
+
+<p>这个问题的解决方法，就是 JavaScript 的原型对象（prototype）。</p>
+
+<h3 id="prototype-属性的作用">prototype 属性的作用</h3>
+
+<p>JavaScript 的每个对象都继承另一个对象，后者称为“原型”（prototype）对象。一方面，任何一个对象，都可以充当其他对象的原型；另一方面，由于原型对象也是对象，所以它也有自己的原型。<code class="highlighter-rouge">null</code>也可以充当原型，区别在于它没有自己的原型对象。</p>
+
+<p>JavaScript 继承机制的设计就是，原型的所有属性和方法，都能被子对象共享。</p>
+
+<p>下面，先看怎么为对象指定原型。每一个构造函数都有一个<code class="highlighter-rouge">prototype</code>属性，这个属性会在生成实例的时候，成为实例对象的原型对象。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Animal</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">Animal</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="s1">'white'</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">cat1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Animal</span><span class="p">(</span><span class="s1">'大毛'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">cat2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Animal</span><span class="p">(</span><span class="s1">'二毛'</span><span class="p">);</span>
+
+<span class="nx">cat1</span><span class="p">.</span><span class="nx">color</span> <span class="c1">// 'white'</span>
+<span class="nx">cat2</span><span class="p">.</span><span class="nx">color</span> <span class="c1">// 'white'</span>
+</code></pre></div></div>
+
+<p>上面代码中，构造函数<code class="highlighter-rouge">Animal</code>的<code class="highlighter-rouge">prototype</code>对象，就是实例对象<code class="highlighter-rouge">cat1</code>和<code class="highlighter-rouge">cat2</code>的原型对象。原型对象上添加一个<code class="highlighter-rouge">color</code>属性，结果，实例对象都继承了该属性。</p>
+
+<p>原型对象的属性不是实例对象自身的属性。只要修改原型对象，变动就立刻会体现在<strong>所有</strong>实例对象上。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Animal</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="s1">'yellow'</span><span class="p">;</span>
+
+<span class="nx">cat1</span><span class="p">.</span><span class="nx">color</span> <span class="c1">// "yellow"</span>
+<span class="nx">cat2</span><span class="p">.</span><span class="nx">color</span> <span class="c1">// "yellow"</span>
+</code></pre></div></div>
+
+<p>上面代码中，原型对象的<code class="highlighter-rouge">color</code>属性的值变为<code class="highlighter-rouge">yellow</code>，两个实例对象的<code class="highlighter-rouge">color</code>属性立刻跟着变了。这是因为实例对象其实没有<code class="highlighter-rouge">color</code>属性，都是读取原型对象的<code class="highlighter-rouge">color</code>属性。也就是说，当实例对象本身没有某个属性或方法的时候，它会到构造函数的<code class="highlighter-rouge">prototype</code>属性指向的对象，去寻找该属性或方法。这就是原型对象的特殊之处。</p>
+
+<p>如果实例对象自身就有某个属性或方法，它就不会再去原型对象寻找这个属性或方法。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">cat1</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="s1">'black'</span><span class="p">;</span>
+
+<span class="nx">cat1</span><span class="p">.</span><span class="nx">color</span> <span class="c1">// 'black'</span>
+<span class="nx">cat2</span><span class="p">.</span><span class="nx">color</span> <span class="c1">// 'yellow'</span>
+<span class="nx">Animal</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">color</span> <span class="c1">// 'yellow';</span>
+</code></pre></div></div>
+
+<p>上面代码中，实例对象<code class="highlighter-rouge">cat1</code>的<code class="highlighter-rouge">color</code>属性改为<code class="highlighter-rouge">black</code>，就使得它不再去原型对象读取<code class="highlighter-rouge">color</code>属性，后者的值依然为<code class="highlighter-rouge">yellow</code>。</p>
+
+<p>总结一下，原型对象的作用，就是定义所有实例对象共享的属性和方法。这也是它被称为原型对象的原因，而实例对象可以视作从原型对象衍生出来的子对象。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Animal</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">walk</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">' is walking'</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">Animal.prototype</code>对象上面定义了一个<code class="highlighter-rouge">walk</code>方法，这个方法将可以在所有<code class="highlighter-rouge">Animal</code>实例对象上面调用。</p>
+
+<p>构造函数就是普通的函数， 所以实际上所有函数都有<code class="highlighter-rouge">prototype</code>属性。</p>
+
+<h3 id="原型链">原型链</h3>
+
+<p>对象的属性和方法，有可能定义在自身，也有可能定义在它的原型对象。由于原型本身也是对象，又有自己的原型，所以形成了一条原型链（prototype chain）。比如，<code class="highlighter-rouge">a</code>对象是<code class="highlighter-rouge">b</code>对象的原型，<code class="highlighter-rouge">b</code>对象是<code class="highlighter-rouge">c</code>对象的原型，以此类推。</p>
+
+<p>如果一层层地上溯，所有对象的原型最终都可以上溯到<code class="highlighter-rouge">Object.prototype</code>，即<code class="highlighter-rouge">Object</code>构造函数的<code class="highlighter-rouge">prototype</code>属性。那么，<code class="highlighter-rouge">Object.prototype</code>对象有没有它的原型呢？回答是有的，就是没有任何属性和方法的<code class="highlighter-rouge">null</code>对象，而<code class="highlighter-rouge">null</code>对象没有自己的原型。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Object</span><span class="p">.</span><span class="nx">getPrototypeOf</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">prototype</span><span class="p">)</span>
+<span class="c1">// null</span>
+</code></pre></div></div>
+
+<p>上面代码表示，<code class="highlighter-rouge">Object.prototype</code>对象的原型是<code class="highlighter-rouge">null</code>，由于<code class="highlighter-rouge">null</code>没有任何属性，所以原型链到此为止。</p>
+
+<p>“原型链”的作用是，读取对象的某个属性时，JavaScript 引擎先寻找对象本身的属性，如果找不到，就到它的原型去找，如果还是找不到，就到原型的原型去找。如果直到最顶层的<code class="highlighter-rouge">Object.prototype</code>还是找不到，则返回<code class="highlighter-rouge">undefined</code>。</p>
+
+<p>如果对象自身和它的原型，都定义了一个同名属性，那么优先读取对象自身的属性，这叫做“覆盖”（overriding）。</p>
+
+<p>需要注意的是，一级级向上，在原型链寻找某个属性，对性能是有影响的。所寻找的属性在越上层的原型对象，对性能的影响越大。如果寻找某个不存在的属性，将会遍历整个原型链。</p>
+
+<p>举例来说，如果让某个函数的<code class="highlighter-rouge">prototype</code>属性指向一个数组，就意味着该函数可以当作数组的构造函数，因为它生成的实例对象都可以通过<code class="highlighter-rouge">prototype</code>属性调用数组方法。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">MyArray</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{};</span>
+
+<span class="nx">MyArray</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">();</span>
+<span class="nx">MyArray</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="kd">constructor</span> <span class="o">=</span> <span class="nx">MyArray</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">mine</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyArray</span><span class="p">();</span>
+<span class="nx">mine</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+
+<span class="nx">mine</span><span class="p">.</span><span class="nx">length</span> <span class="c1">// 3</span>
+<span class="nx">mine</span> <span class="k">instanceof</span> <span class="nb">Array</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">mine</code>是构造函数<code class="highlighter-rouge">MyArray</code>的实例对象，由于<code class="highlighter-rouge">MyArray</code>的<code class="highlighter-rouge">prototype</code>属性指向一个数组实例，使得<code class="highlighter-rouge">mine</code>可以调用数组方法（这些方法定义在数组实例的<code class="highlighter-rouge">prototype</code>对象上面）。至于最后那行<code class="highlighter-rouge">instanceof</code>表达式，我们知道<code class="highlighter-rouge">instanceof</code>运算符用来比较一个对象是否为某个构造函数的实例，最后一行就表示<code class="highlighter-rouge">mine</code>为<code class="highlighter-rouge">Array</code>的实例。</p>
+
+<p>下面的代码可以找出，某个属性到底是原型链上哪个对象自身的属性。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">getDefiningObject</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="nx">propKey</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">obj</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="p">{}.</span><span class="nx">hasOwnProperty</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="nx">propKey</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nx">obj</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">getPrototypeOf</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">obj</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="constructor-属性">constructor 属性</h3>
+
+<p><code class="highlighter-rouge">prototype</code>对象有一个<code class="highlighter-rouge">constructor</code>属性，默认指向<code class="highlighter-rouge">prototype</code>对象所在的构造函数。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">P</span><span class="p">()</span> <span class="p">{}</span>
+
+<span class="nx">P</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="kd">constructor</span> <span class="o">===</span> <span class="nx">P</span>
+<span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>由于<code class="highlighter-rouge">constructor</code>属性定义在<code class="highlighter-rouge">prototype</code>对象上面，意味着可以被所有实例对象继承。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">P</span><span class="p">()</span> <span class="p">{}</span>
+<span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">P</span><span class="p">();</span>
+
+<span class="nx">p</span><span class="p">.</span><span class="kd">constructor</span>
+<span class="c1">// function P() {}</span>
+
+<span class="nx">p</span><span class="p">.</span><span class="kd">constructor</span> <span class="o">===</span> <span class="nx">P</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="kd">constructor</span>
+<span class="c1">// true</span>
+
+<span class="nx">p</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s1">'constructor'</span><span class="p">)</span>
+<span class="c1">// false</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">p</code>是构造函数<code class="highlighter-rouge">P</code>的实例对象，但是<code class="highlighter-rouge">p</code>自身没有<code class="highlighter-rouge">contructor</code>属性，该属性其实是读取原型链上面的<code class="highlighter-rouge">P.prototype.constructor</code>属性。</p>
+
+<p><code class="highlighter-rouge">constructor</code>属性的作用，是分辨原型对象到底属于哪个构造函数。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">F</span><span class="p">()</span> <span class="p">{};</span>
+<span class="kd">var</span> <span class="nx">f</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">F</span><span class="p">();</span>
+
+<span class="nx">f</span><span class="p">.</span><span class="kd">constructor</span> <span class="o">===</span> <span class="nx">F</span> <span class="c1">// true</span>
+<span class="nx">f</span><span class="p">.</span><span class="kd">constructor</span> <span class="o">===</span> <span class="nb">RegExp</span> <span class="c1">// false</span>
+</code></pre></div></div>
+
+<p>上面代码表示，使用<code class="highlighter-rouge">constructor</code>属性，确定实例对象<code class="highlighter-rouge">f</code>的构造函数是<code class="highlighter-rouge">F</code>，而不是<code class="highlighter-rouge">RegExp</code>。</p>
+
+<p>有了<code class="highlighter-rouge">constructor</code>属性，就可以从实例新建另一个实例。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Constr</span><span class="p">()</span> <span class="p">{}</span>
+<span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Constr</span><span class="p">();</span>
+
+<span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">x</span><span class="p">.</span><span class="kd">constructor</span><span class="p">();</span>
+<span class="nx">y</span> <span class="k">instanceof</span> <span class="nx">Constr</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">x</code>是构造函数<code class="highlighter-rouge">Constr</code>的实例，可以从<code class="highlighter-rouge">x.constructor</code>间接调用构造函数。</p>
+
+<p>这使得在实例方法中，调用自身的构造函数成为可能。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Constr</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">createCopy</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="k">this</span><span class="p">.</span><span class="kd">constructor</span><span class="p">();</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">constructor</code>属性表示原型对象与构造函数之间的关联关系，如果修改了原型对象，一般会同时修改<code class="highlighter-rouge">constructor</code>属性，防止引用的时候出错。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Person</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="kd">constructor</span> <span class="o">===</span> <span class="nx">Person</span> <span class="c1">// true</span>
+
+<span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">copy</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="k">this</span><span class="p">.</span><span class="kd">constructor</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">Person</code>构造函数的原型对象的<code class="highlighter-rouge">contructor</code>属性指向<code class="highlighter-rouge">Person</code>。然后，开发者在原型对象上定义了<code class="highlighter-rouge">copy</code>方法，该方法内部通过<code class="highlighter-rouge">this.constructor</code>调用<code class="highlighter-rouge">Person</code>。如果原型对象变了，这个<code class="highlighter-rouge">constructor</code>属性的指向可能就会出错。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{}</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">p1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s1">'张三'</span><span class="p">);</span>
+<span class="nx">p1</span><span class="p">.</span><span class="nx">copy</span><span class="p">()</span> <span class="c1">// TypeError: p1.copy is not a function</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">Person.prototype</code>改成另一个对象，但是忘了改写<code class="highlighter-rouge">contructor</code>属性，结果导致调用实例方法报错。</p>
+
+<p>所以，修改原型对象时，一般要同时校正<code class="highlighter-rouge">constructor</code>属性的指向。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 避免这种写法</span>
+<span class="nx">C</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method1</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(...)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">},</span>
+  <span class="c1">// ...</span>
+<span class="p">};</span>
+
+<span class="c1">// 较好的写法</span>
+<span class="nx">C</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">constructor</span><span class="p">:</span> <span class="nx">C</span><span class="p">,</span>
+  <span class="na">method1</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(...)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">},</span>
+  <span class="c1">// ...</span>
+<span class="p">};</span>
+
+<span class="c1">// 更好好的写法</span>
+<span class="nx">C</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">method1</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(...)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">};</span>
+</code></pre></div></div>
+
+<p>上面代码中，避免完全覆盖掉原来的<code class="highlighter-rouge">prototype</code>属性，要么将<code class="highlighter-rouge">constructor</code>属性重新指向原来的构造函数，要么只在原型对象上添加方法，这样可以保证<code class="highlighter-rouge">instanceof</code>运算符不会失真。</p>
+
+<p>此外，通过<code class="highlighter-rouge">name</code>属性，可以从实例得到构造函数的名称。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Foo</span><span class="p">()</span> <span class="p">{}</span>
+<span class="kd">var</span> <span class="nx">f</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Foo</span><span class="p">();</span>
+<span class="nx">f</span><span class="p">.</span><span class="kd">constructor</span><span class="p">.</span><span class="nx">name</span> <span class="c1">// "Foo"</span>
+</code></pre></div></div>
+
+<h2 id="instanceof-运算符">instanceof 运算符</h2>
+
+<p><code class="highlighter-rouge">instanceof</code>运算符返回一个布尔值，表示某个对象是否为指定的构造函数的实例。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">v</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vehicle</span><span class="p">();</span>
+<span class="nx">v</span> <span class="k">instanceof</span> <span class="nx">Vehicle</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>上面代码中，对象<code class="highlighter-rouge">v</code>是构造函数<code class="highlighter-rouge">Vehicle</code>的实例，所以返回<code class="highlighter-rouge">true</code>。</p>
+
+<p><code class="highlighter-rouge">instanceof</code>运算符的左边是实例对象，右边是构造函数。它会检查右边构建函数的原型对象（prototype），是否在左边对象的原型链上。因此，下面两种写法是等价的。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">v</span> <span class="k">instanceof</span> <span class="nx">Vehicle</span>
+<span class="c1">// 等同于</span>
+<span class="nx">Vehicle</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">isPrototypeOf</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>由于<code class="highlighter-rouge">instanceof</code>对整个原型链上的对象都有效，因此同一个实例对象，可能会对多个构造函数都返回<code class="highlighter-rouge">true</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+<span class="nx">d</span> <span class="k">instanceof</span> <span class="nb">Date</span> <span class="c1">// true</span>
+<span class="nx">d</span> <span class="k">instanceof</span> <span class="nb">Object</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">d</code>同时是<code class="highlighter-rouge">Date</code>和<code class="highlighter-rouge">Object</code>的实例，因此对这两个构造函数都返回<code class="highlighter-rouge">true</code>。</p>
+
+<p><code class="highlighter-rouge">instanceof</code>的原理是检查原型链，对于那些不存在原型链的对象，就无法判断。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span> <span class="k">instanceof</span> <span class="nb">Object</span> <span class="c1">// false</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">Object.create(null)</code>返回的新对象的原型是<code class="highlighter-rouge">null</code>，即不存在原型，因此<code class="highlighter-rouge">instanceof</code>就认为该对象不是<code class="highlighter-rouge">Object</code>的实例。</p>
+
+<p>除了上面这种继承<code class="highlighter-rouge">null</code>的特殊情况，JavaScript 之中，只要是对象，就有对应的构造函数。因此，<code class="highlighter-rouge">instanceof</code>运算符的一个用处，是判断值的类型。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="nx">x</span> <span class="k">instanceof</span> <span class="nb">Array</span> <span class="c1">// true</span>
+<span class="nx">y</span> <span class="k">instanceof</span> <span class="nb">Object</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">instanceof</code>运算符判断，变量<code class="highlighter-rouge">x</code>是数组，变量<code class="highlighter-rouge">y</code>是对象。</p>
+
+<p>注意，<code class="highlighter-rouge">instanceof</code>运算符只能用于对象，不适用原始类型的值。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="s1">'hello'</span><span class="p">;</span>
+<span class="nx">s</span> <span class="k">instanceof</span> <span class="nb">String</span> <span class="c1">// false</span>
+</code></pre></div></div>
+
+<p>上面代码中，字符串不是<code class="highlighter-rouge">String</code>对象的实例（因为字符串不是对象），所以返回<code class="highlighter-rouge">false</code>。</p>
+
+<p>此外，对于<code class="highlighter-rouge">undefined</code>和<code class="highlighter-rouge">null</code>，<code class="highlighter-rouge">instanceOf</code>运算符总是返回<code class="highlighter-rouge">false</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kc">undefined</span> <span class="k">instanceof</span> <span class="nb">Object</span> <span class="c1">// false</span>
+<span class="kc">null</span> <span class="k">instanceof</span> <span class="nb">Object</span> <span class="c1">// false</span>
+</code></pre></div></div>
+
+<p>利用<code class="highlighter-rouge">instanceof</code>运算符，还可以巧妙地解决，调用构造函数时，忘了加<code class="highlighter-rouge">new</code>命令的问题。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Fubar</span> <span class="p">(</span><span class="nx">foo</span><span class="p">,</span> <span class="nx">bar</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">this</span> <span class="k">instanceof</span> <span class="nx">Fubar</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">_foo</span> <span class="o">=</span> <span class="nx">foo</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">_bar</span> <span class="o">=</span> <span class="nx">bar</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">Fubar</span><span class="p">(</span><span class="nx">foo</span><span class="p">,</span> <span class="nx">bar</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>上面代码使用<code class="highlighter-rouge">instanceof</code>运算符，在函数体内部判断<code class="highlighter-rouge">this</code>关键字是否为构造函数<code class="highlighter-rouge">Fubar</code>的实例。如果不是，就表明忘了加<code class="highlighter-rouge">new</code>命令。</p>
+
+<h2 id="objectgetprototypeof">Object.getPrototypeOf()</h2>
+
+<p><code class="highlighter-rouge">Object.getPrototypeOf</code>方法返回一个对象的原型。这是获取原型对象的标准方法。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 空对象的原型是Object.prototype</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">getPrototypeOf</span><span class="p">({})</span> <span class="o">===</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">prototype</span>
+<span class="c1">// true</span>
+
+<span class="c1">// 函数的原型是Function.prototype</span>
+<span class="kd">function</span> <span class="nx">f</span><span class="p">()</span> <span class="p">{}</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">getPrototypeOf</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span> <span class="o">===</span> <span class="nb">Function</span><span class="p">.</span><span class="nx">prototype</span>
+<span class="c1">// true</span>
+
+<span class="c1">// f 为 F 的实例对象，则 f 的原型是 F.prototype</span>
+<span class="kd">var</span> <span class="nx">f</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">F</span><span class="p">();</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">getPrototypeOf</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span> <span class="o">===</span> <span class="nx">F</span><span class="p">.</span><span class="nx">prototype</span>
+<span class="c1">// true</span>
+</code></pre></div></div>
+
+<h2 id="objectsetprototypeof">Object.setPrototypeOf()</h2>
+
+<p><code class="highlighter-rouge">Object.setPrototypeOf</code>方法可以为现有对象设置原型，返回一个新对象。</p>
+
+<p><code class="highlighter-rouge">Object.setPrototypeOf</code>方法接受两个参数，第一个是现有对象，第二个是原型对象。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">{</span><span class="na">x</span><span class="p">:</span> <span class="mi">1</span><span class="p">};</span>
+<span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">setPrototypeOf</span><span class="p">({},</span> <span class="nx">a</span><span class="p">);</span>
+<span class="c1">// 等同于</span>
+<span class="c1">// var b = {__proto__: a};</span>
+
+<span class="nx">b</span><span class="p">.</span><span class="nx">x</span> <span class="c1">// 1</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">b</code>对象是<code class="highlighter-rouge">Object.setPrototypeOf</code>方法返回的一个新对象。该对象本身为空、原型为<code class="highlighter-rouge">a</code>对象，所以<code class="highlighter-rouge">b</code>对象可以拿到<code class="highlighter-rouge">a</code>对象的所有属性和方法。<code class="highlighter-rouge">b</code>对象本身并没有<code class="highlighter-rouge">x</code>属性，但是 JavaScript 引擎找到它的原型对象<code class="highlighter-rouge">a</code>，然后读取<code class="highlighter-rouge">a</code>的<code class="highlighter-rouge">x</code>属性。</p>
+
+<p><code class="highlighter-rouge">new</code>命令通过构造函数新建实例对象，实质就是将实例对象的原型，指向构造函数的<code class="highlighter-rouge">prototype</code>属性，然后在实例对象上执行构造函数。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">F</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">foo</span> <span class="o">=</span> <span class="s1">'bar'</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">f</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">F</span><span class="p">();</span>
+
+<span class="c1">// 等同于</span>
+<span class="kd">var</span> <span class="nx">f</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">setPrototypeOf</span><span class="p">({},</span> <span class="nx">F</span><span class="p">.</span><span class="nx">prototype</span><span class="p">);</span>
+<span class="nx">F</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">f</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="objectcreate">Object.create()</h2>
+
+<p>生成实例对象的常用方法，就是使用<code class="highlighter-rouge">new</code>命令，让构造函数返回一个实例。但是很多时候，只能拿到一个实例对象，它可能根本不是由构建函数生成的，那么能不能从一个实例对象，生成另一个实例对象呢？</p>
+
+<p>JavaScript 提供了<code class="highlighter-rouge">Object.create</code>方法，用来满足这种需求。该方法接受一个对象作为参数，然后以它为原型，返回一个实例对象。该实例完全继承原型对象的属性。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 原型对象</span>
+<span class="kd">var</span> <span class="nx">A</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">print</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// 实例对象</span>
+<span class="kd">var</span> <span class="nx">B</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">A</span><span class="p">);</span>
+<span class="nx">B</span><span class="p">.</span><span class="nx">print</span><span class="p">()</span> <span class="c1">// hello</span>
+<span class="nx">B</span><span class="p">.</span><span class="nx">print</span> <span class="o">===</span> <span class="nx">A</span><span class="p">.</span><span class="nx">print</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">Object.create</code>方法以<code class="highlighter-rouge">A</code>对象为原型，生成了<code class="highlighter-rouge">B</code>对象。<code class="highlighter-rouge">B</code>继承了<code class="highlighter-rouge">A</code>的所有属性和方法。这段代码等同于下面的代码。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">A</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{};</span>
+<span class="nx">A</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="p">{</span>
+ <span class="na">print</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">);</span>
+ <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">B</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">A</span><span class="p">();</span>
+<span class="nx">B</span><span class="p">.</span><span class="nx">print</span> <span class="o">===</span> <span class="nx">A</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">print</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>实际上，<code class="highlighter-rouge">Object.create</code>方法可以用下面的代码代替。如果老式浏览器不支持<code class="highlighter-rouge">Object.create</code>方法，可以就用这段代码自己部署。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span> <span class="o">!==</span> <span class="s1">'function'</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">function</span> <span class="nx">F</span><span class="p">()</span> <span class="p">{}</span>
+    <span class="nx">F</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="nx">obj</span><span class="p">;</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">F</span><span class="p">();</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>上面代码表明，<code class="highlighter-rouge">Object.create</code>方法的实质是新建一个构造函数<code class="highlighter-rouge">F</code>，然后让<code class="highlighter-rouge">F.prototype</code>属性指向参数对象<code class="highlighter-rouge">obj</code>，最后返回一个<code class="highlighter-rouge">F</code>的实例，从而实现让该实例继承<code class="highlighter-rouge">obj</code>的属性。</p>
+
+<p>下面三种方式生成的新对象是等价的。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">obj1</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">({});</span>
+<span class="kd">var</span> <span class="nx">obj2</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">prototype</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">obj3</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Object</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>如果想要生成一个不继承任何属性（比如没有<code class="highlighter-rouge">toString</code>和<code class="highlighter-rouge">valueOf</code>方法）的对象，可以将<code class="highlighter-rouge">Object.create</code>的参数设为<code class="highlighter-rouge">null</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+
+<span class="nx">obj</span><span class="p">.</span><span class="nx">valueOf</span><span class="p">()</span>
+<span class="c1">// TypeError: Object [object Object] has no method 'valueOf'</span>
+</code></pre></div></div>
+
+<p>上面代码中，对象<code class="highlighter-rouge">obj</code>的原型是<code class="highlighter-rouge">null</code>，它就不具备一些定义在<code class="highlighter-rouge">Object.prototype</code>对象上面的属性，比如<code class="highlighter-rouge">valueOf</code>方法。</p>
+
+<p>使用<code class="highlighter-rouge">Object.create</code>方法的时候，必须提供对象原型，即参数不能为空，或者不是对象，否则会报错。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">()</span>
+<span class="c1">// TypeError: Object prototype may only be an Object or null</span>
+
+<span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+<span class="c1">// TypeError: Object prototype may only be an Object or null</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">object.create</code>方法生成的新对象，动态继承了原型。在原型上添加或修改任何方法，会立刻反映在新对象之上。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">obj1</span> <span class="o">=</span> <span class="p">{</span> <span class="na">p</span><span class="p">:</span> <span class="mi">1</span> <span class="p">};</span>
+<span class="kd">var</span> <span class="nx">obj2</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">obj1</span><span class="p">);</span>
+
+<span class="nx">obj1</span><span class="p">.</span><span class="nx">p</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nx">obj2</span><span class="p">.</span><span class="nx">p</span>
+<span class="c1">// 2</span>
+</code></pre></div></div>
+
+<p>上面代码中，修改对象原型<code class="highlighter-rouge">obj1</code>会影响到新生成的实例对象<code class="highlighter-rouge">obj2</code>。</p>
+
+<p>除了对象的原型，<code class="highlighter-rouge">Object.create</code>方法还可以接受第二个参数。该参数是一个属性描述对象，它所描述的对象属性，会添加到实例对象，作为该对象自身的属性。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">({},</span> <span class="p">{</span>
+  <span class="na">p1</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">value</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+    <span class="na">enumerable</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">configurable</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">writable</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="na">p2</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">value</span><span class="p">:</span> <span class="s1">'abc'</span><span class="p">,</span>
+    <span class="na">enumerable</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">configurable</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">writable</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// 等同于</span>
+<span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">({});</span>
+<span class="nx">obj</span><span class="p">.</span><span class="nx">p1</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span>
+<span class="nx">obj</span><span class="p">.</span><span class="nx">p2</span> <span class="o">=</span> <span class="s1">'abc'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">Object.create</code>方法生成的对象，继承了它的原型对象的构造函数。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">A</span><span class="p">()</span> <span class="p">{}</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">A</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+
+<span class="nx">b</span><span class="p">.</span><span class="kd">constructor</span> <span class="o">===</span> <span class="nx">A</span> <span class="c1">// true</span>
+<span class="nx">b</span> <span class="k">instanceof</span> <span class="nx">A</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">b</code>对象的原型是<code class="highlighter-rouge">a</code>对象，因此继承了<code class="highlighter-rouge">a</code>对象的构造函数<code class="highlighter-rouge">A</code>。</p>
+
+<h2 id="objectprototypeisprototypeof">Object.prototype.isPrototypeOf()</h2>
+
+<p>对象实例的<code class="highlighter-rouge">isPrototypeOf</code>方法，用来判断一个对象是否是另一个对象的原型。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">o1</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="kd">var</span> <span class="nx">o2</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">o1</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">o3</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">o2</span><span class="p">);</span>
+
+<span class="nx">o2</span><span class="p">.</span><span class="nx">isPrototypeOf</span><span class="p">(</span><span class="nx">o3</span><span class="p">)</span> <span class="c1">// true</span>
+<span class="nx">o1</span><span class="p">.</span><span class="nx">isPrototypeOf</span><span class="p">(</span><span class="nx">o3</span><span class="p">)</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>上面代码表明，只要某个对象处在原型链上，<code class="highlighter-rouge">isPrototypeOf</code>都返回<code class="highlighter-rouge">true</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Object</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">isPrototypeOf</span><span class="p">({})</span> <span class="c1">// true</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">isPrototypeOf</span><span class="p">([])</span> <span class="c1">// true</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">isPrototypeOf</span><span class="p">(</span><span class="sr">/xyz/</span><span class="p">)</span> <span class="c1">// true</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">isPrototypeOf</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="kc">null</span><span class="p">))</span> <span class="c1">// false</span>
+</code></pre></div></div>
+
+<p>上面代码中，由于<code class="highlighter-rouge">Object.prototype</code>处于原型链的最顶端，所以对各种实例都返回<code class="highlighter-rouge">true</code>，只有继承<code class="highlighter-rouge">null</code>的对象除外。</p>
+
+<h2 id="objectprototype__proto__">Object.prototype.__proto__</h2>
+
+<p><code class="highlighter-rouge">__proto__</code>属性（前后各两个下划线）可以改写某个对象的原型对象。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="p">{};</span>
+
+<span class="nx">obj</span><span class="p">.</span><span class="nx">__proto__</span> <span class="o">=</span> <span class="nx">p</span><span class="p">;</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">getPrototypeOf</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="o">===</span> <span class="nx">p</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>上面代码通过<code class="highlighter-rouge">__proto__</code>属性，将<code class="highlighter-rouge">p</code>对象设为<code class="highlighter-rouge">obj</code>对象的原型。</p>
+
+<p>根据语言标准，<code class="highlighter-rouge">__proto__</code>属性只有浏览器才需要部署，其他环境可以没有这个属性，而且前后的两根下划线，表示它本质是一个内部属性，不应该对使用者暴露。因此，应该尽量少用这个属性，而是用<code class="highlighter-rouge">Object.getPrototypeof()</code>（读取）和<code class="highlighter-rouge">Object.setPrototypeOf()</code>（设置），进行原型对象的读写操作。</p>
+
+<p>原型链可以用<code class="highlighter-rouge">__proto__</code>很直观地表示。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">A</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="s1">'张三'</span>
+<span class="p">};</span>
+<span class="kd">var</span> <span class="nx">B</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="s1">'李四'</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">proto</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">print</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">A</span><span class="p">.</span><span class="nx">__proto__</span> <span class="o">=</span> <span class="nx">proto</span><span class="p">;</span>
+<span class="nx">B</span><span class="p">.</span><span class="nx">__proto__</span> <span class="o">=</span> <span class="nx">proto</span><span class="p">;</span>
+
+<span class="nx">A</span><span class="p">.</span><span class="nx">print</span><span class="p">()</span> <span class="c1">// 张三</span>
+<span class="nx">B</span><span class="p">.</span><span class="nx">print</span><span class="p">()</span> <span class="c1">// 李四</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">A</code>对象和<code class="highlighter-rouge">B</code>对象的原型都是<code class="highlighter-rouge">proto</code>对象，它们都共享<code class="highlighter-rouge">proto</code>对象的<code class="highlighter-rouge">print</code>方法。也就是说，<code class="highlighter-rouge">A</code>和<code class="highlighter-rouge">B</code>的<code class="highlighter-rouge">print</code>方法，都是在调用<code class="highlighter-rouge">proto</code>对象的<code class="highlighter-rouge">print</code>方法。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">A</span><span class="p">.</span><span class="nx">print</span> <span class="o">===</span> <span class="nx">B</span><span class="p">.</span><span class="nx">print</span> <span class="c1">// true</span>
+<span class="nx">A</span><span class="p">.</span><span class="nx">print</span> <span class="o">===</span> <span class="nx">proto</span><span class="p">.</span><span class="nx">print</span> <span class="c1">// true</span>
+<span class="nx">B</span><span class="p">.</span><span class="nx">print</span> <span class="o">===</span> <span class="nx">proto</span><span class="p">.</span><span class="nx">print</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>可以使用<code class="highlighter-rouge">Object.getPrototypeOf</code>方法，检查浏览器是否支持<code class="highlighter-rouge">__proto__</code>属性，老式浏览器不支持这个属性。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Object</span><span class="p">.</span><span class="nx">getPrototypeOf</span><span class="p">({</span> <span class="na">__proto__</span><span class="p">:</span> <span class="kc">null</span> <span class="p">})</span> <span class="o">===</span> <span class="kc">null</span>
+</code></pre></div></div>
+
+<p>上面代码将一个对象的<code class="highlighter-rouge">__proto__</code>属性设为<code class="highlighter-rouge">null</code>，然后使用<code class="highlighter-rouge">Object.getPrototypeOf</code>方法获取这个对象的原型，判断是否等于<code class="highlighter-rouge">null</code>。如果当前环境支持<code class="highlighter-rouge">__proto__</code>属性，两者的比较结果应该是<code class="highlighter-rouge">true</code>。</p>
+
+<h2 id="获取原型对象方法的比较">获取原型对象方法的比较</h2>
+
+<p>如前所述，<code class="highlighter-rouge">__proto__</code>属性指向当前对象的原型对象，即构造函数的<code class="highlighter-rouge">prototype</code>属性。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Object</span><span class="p">();</span>
+
+<span class="nx">obj</span><span class="p">.</span><span class="nx">__proto__</span> <span class="o">===</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">prototype</span>
+<span class="c1">// true</span>
+<span class="nx">obj</span><span class="p">.</span><span class="nx">__proto__</span> <span class="o">===</span> <span class="nx">obj</span><span class="p">.</span><span class="kd">constructor</span><span class="p">.</span><span class="nx">prototype</span>
+<span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>上面代码首先新建了一个对象<code class="highlighter-rouge">obj</code>，它的<code class="highlighter-rouge">__proto__</code>属性，指向构造函数（<code class="highlighter-rouge">Object</code>或<code class="highlighter-rouge">obj.constructor</code>）的<code class="highlighter-rouge">prototype</code>属性。所以，两者比较以后，返回<code class="highlighter-rouge">true</code>。</p>
+
+<p>因此，获取实例对象<code class="highlighter-rouge">obj</code>的原型对象，有三种方法。</p>
+
+<ul>
+  <li><code class="highlighter-rouge">obj.__proto__</code></li>
+  <li><code class="highlighter-rouge">obj.constructor.prototype</code></li>
+  <li><code class="highlighter-rouge">Object.getPrototypeOf(obj)</code></li>
+</ul>
+
+<p>上面三种方法之中，前两种都不是很可靠。最新的ES6标准规定，<code class="highlighter-rouge">__proto__</code>属性只有浏览器才需要部署，其他环境可以不部署。而<code class="highlighter-rouge">obj.constructor.prototype</code>在手动改变原型对象时，可能会失效。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">P</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{};</span>
+<span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">P</span><span class="p">();</span>
+
+<span class="kd">var</span> <span class="nx">C</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{};</span>
+<span class="nx">C</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="nx">p</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">C</span><span class="p">();</span>
+
+<span class="nx">c</span><span class="p">.</span><span class="kd">constructor</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">===</span> <span class="nx">p</span> <span class="c1">// false</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">C</code>构造函数的原型对象被改成了<code class="highlighter-rouge">p</code>，结果<code class="highlighter-rouge">c.constructor.prototype</code>就失真了。所以，在改变原型对象时，一般要同时设置<code class="highlighter-rouge">constructor</code>属性。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">C</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="nx">p</span><span class="p">;</span>
+<span class="nx">C</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="kd">constructor</span> <span class="o">=</span> <span class="nx">C</span><span class="p">;</span>
+
+<span class="nx">c</span><span class="p">.</span><span class="kd">constructor</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">===</span> <span class="nx">p</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p>所以，推荐使用第三种<code class="highlighter-rouge">Object.getPrototypeOf</code>方法，获取原型对象。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Object</span><span class="p">();</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">getPrototypeOf</span><span class="p">(</span><span class="nx">o</span><span class="p">)</span> <span class="o">===</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">prototype</span>
+<span class="c1">// true</span>
+</code></pre></div></div>
+
+
+</article>
+
+<div class="row">
+<div class="twelve columns">
+
+<h2>留言</h2>
+
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'jstutorial'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="javascript:if(confirm('http://disqus.com/?ref_noscript  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://disqus.com/?ref_noscript'" tppabs="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="javascript:if(confirm('http://disqus.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://disqus.com/'" tppabs="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</section>
+
+</div>
+</div>
+
+<footer>
+<div class="row">
+<div class="twelve columns">
+	<p><a href="license.html" tppabs="http://javascript.ruanyifeng.com/introduction/license.html">版权声明</a> | last modified on 2013-11-23 </p>
+</div>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-43771063-1', 'http://javascript.ruanyifeng.com/oop/ruanyifeng.com');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
+
+

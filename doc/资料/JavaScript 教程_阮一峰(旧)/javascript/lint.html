@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>Lint 工具 -- JavaScript 标准参考教程（alpha）</title>
+  
+  <!-- Included CSS Files (Uncompressed) -->
+  <!--
+  <link rel="stylesheet" href="stylesheets/foundation.css">
+  -->
+  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="foundation.css" tppabs="http://javascript.ruanyifeng.com/css/foundation.css">
+  <link rel="stylesheet" href="main.css" tppabs="http://javascript.ruanyifeng.com/css/main.css">
+
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="html5.js" tppabs="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <script src="jquery.js" tppabs="http://javascript.ruanyifeng.com/js/jquery.js"></script>
+  <script src="toc.js" tppabs="http://javascript.ruanyifeng.com/js/toc.js"></script>
+  <script src="main.js" tppabs="http://javascript.ruanyifeng.com/js/main.js"></script>
+
+</head>
+<body>
+
+<header class="top-bar" id="header">
+
+<div class="fixed">
+
+<nav class="top-bar">
+<ul>
+<!-- Title Area -->
+	<li class="name has-dropdown">
+	<h1><a href="index.htm" tppabs="http://javascript.ruanyifeng.com/">JavaScript 标准参考教程（alpha） </a></h1>
+		<ul class="dropdown">
+			
+			<li><a href="index.htm#introduction" tppabs="http://javascript.ruanyifeng.com/#introduction">导论</a></li>
+			
+			<li><a href="index.htm#grammar" tppabs="http://javascript.ruanyifeng.com/#grammar">语法</a></li>
+			
+			<li><a href="index.htm#stdlib" tppabs="http://javascript.ruanyifeng.com/#stdlib">标准库</a></li>
+			
+			<li><a href="index.htm#oop" tppabs="http://javascript.ruanyifeng.com/#oop">面向对象编程</a></li>
+			
+			<li><a href="index.htm#advanced" tppabs="http://javascript.ruanyifeng.com/#advanced">语法专题</a></li>
+			
+			<li><a href="index.htm#dom" tppabs="http://javascript.ruanyifeng.com/#dom">DOM模型</a></li>
+			
+			<li><a href="index.htm#bom" tppabs="http://javascript.ruanyifeng.com/#bom">浏览器环境</a></li>
+			
+			<li><a href="index.htm#htmlapi" tppabs="http://javascript.ruanyifeng.com/#htmlapi">Web API</a></li>
+			
+		</ul>
+	</li>
+</ul>
+
+<section>
+
+
+<ul class="left">
+<li class="divider"></li>
+<li class="has-dropdown"><a class="active" href="#"> 开发工具 </a><ul class="dropdown">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="bower.html" tppabs="http://javascript.ruanyifeng.com/tool/bower.html">Bower：客户端库管理工具</a></li>
+
+
+
+
+
+<li><a href="browserify.html" tppabs="http://javascript.ruanyifeng.com/tool/browserify.html">Browserify：浏览器加载Node.js模块</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="console.html" tppabs="http://javascript.ruanyifeng.com/stdlib/console.html">console对象</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="grunt.html" tppabs="http://javascript.ruanyifeng.com/tool/grunt.html">Grunt：任务自动管理工具</a></li>
+
+
+
+
+
+<li><a href="gulp.html" tppabs="http://javascript.ruanyifeng.com/tool/gulp.html">Gulp：任务自动管理工具</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="active"><a href="#">Lint 工具</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="phantomjs.html" tppabs="http://javascript.ruanyifeng.com/tool/phantomjs.html">PhantomJS</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="requirejs.html" tppabs="http://javascript.ruanyifeng.com/tool/requirejs.html">RequireJS和AMD规范</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="sourcemap.html" tppabs="http://javascript.ruanyifeng.com/tool/sourcemap.html">Source Map</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="testing.html" tppabs="http://javascript.ruanyifeng.com/tool/testing.html">JavaScript 程序测试</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul></li>
+<li class="divider"></li>
+<li class="has-dropdown nav-3"><a href="#"> Lint 工具</a><ul class="dropdown">
+</ul></li>
+</ul>
+
+
+<ul class="right">
+	<li class="divider"></li>
+	<li>
+		<a href="javascript:if(confirm('https://github.com/ruanyf/jstutorial  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://github.com/ruanyf/jstutorial'" tppabs="https://github.com/ruanyf/jstutorial" target="_blank">GitHub <i class="foundicon-edit"></i></a>
+	</li>
+	<li class="divider"></li>
+	<li>
+		<a href="#">TOP <i class="foundicon-up-arrow"></i></a>
+	</li>
+</ul>
+
+</section>
+
+</nav>  
+</div>
+</header>
+
+
+<article class="bookPage">
+
+  <div class="row">
+    <div class="twelve columns">
+
+<h1> Lint 工具 </h1>
+
+<aside class="right"><p>来自<a href="index.htm" tppabs="http://javascript.ruanyifeng.com/">《JavaScript 标准参考教程（alpha）》</a>，by 阮一峰</p></aside>
+
+<div id="toc" class="panel callout radius">目录</div>
+
+
+<h1 id="lint工具">Lint工具</h1>
+
+<h2 id="概述">概述</h2>
+
+<p>Lint工具用于检查代码的语法是否正确、风格是否符合要求。</p>
+
+<p>JavaScript语言的最早的Lint工具，是Douglas Crockford开发的JSLint。由于该工具所有的语法规则，都是预设的，用户无法改变。所以，很快就有人抱怨，JSLint不是让你写成正确的JavaScript，而是让你像Douglas Crockford一样写JavaScript。</p>
+
+<p>JSHint可以看作是JSLint的后继者，最大特定就是允许用户自定义自己的语法规则，写在项目根目录下面的<code class="highlighter-rouge">.jshintrc</code>文件。</p>
+
+<p>JSLint和JSHint同时检查你的语法和风格。另一个工具JSCS则是只检查语法风格。</p>
+
+<p>最新的工具ESLint不仅允许你自定义语法规则，还允许用户创造插件，改变默认的JavaScript语法，比如支持ES6和JSX的语法。</p>
+
+<h2 id="eslint">ESLint</h2>
+
+<h3 id="基本用法">基本用法</h3>
+
+<p>首先，安装ESLint。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm i <span class="nt">-g</span> eslint
+</code></pre></div></div>
+
+<p>其次，在项目根目录下面新建一个<code class="highlighter-rouge">.eslintrc</code>文件，里面定义了你的语法规则。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+  <span class="s2">"rules"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"indent"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s2">"no-unused-vars"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s2">"no-alert"</span><span class="p">:</span> <span class="mi">1</span>
+  <span class="p">},</span>
+  <span class="s2">"env"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"browser"</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>上面的<code class="highlighter-rouge">.eslintrc</code>文件是JSON格式，里面首先定义，这些规则只适用于浏览器环境。如果要定义，同时适用于浏览器环境和Node环境，可以写成下面这样。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+  <span class="s2">"env"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"browser"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">"node"</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>然后，上面的<code class="highlighter-rouge">.eslintrc</code>文件定义了三条语法规则。每个语法规则后面，表示这个规则的级别。</p>
+
+<ul>
+  <li>0：关闭该条规则。</li>
+  <li>1：违反这条规则，会抛出一个警告。</li>
+  <li>2：违反这条规则，会抛出一个错误。</li>
+</ul>
+
+<p>接下来，新建一个<code class="highlighter-rouge">index.js</code>文件。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">unusued</span> <span class="o">=</span> <span class="s1">'I have no purpose!'</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">greet</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">message</span> <span class="o">=</span> <span class="s1">'Hello, World!'</span><span class="p">;</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">greet</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>然后，运行ESLint检查该文件，结果如下。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>eslint index.js
+
+index.js
+  1:5  error    unusued is defined but never used  no-unused-vars
+  5:5  warning  Unexpected alert                   no-alert
+
+✖ 2 problems <span class="o">(</span>1 error, 1 warning<span class="o">)</span>
+</code></pre></div></div>
+
+<p>上面代码检查出两个问题，一个是定义了变量却没有使用，二是存在alert。</p>
+
+<h3 id="预置规则">预置规则</h3>
+
+<p>自己设置所有语法规则，是非常麻烦的。所以，ESLint提供了预设的语法样式，比较常用的Airbnb的语法规则。由于这个规则集涉及ES6，所以还需要安装Babel插件。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm i <span class="nt">-g</span> babel-eslint eslint-config-airbnb
+</code></pre></div></div>
+
+<p>安装完成后，在<code class="highlighter-rouge">.eslintrc</code>文件中注明，使用Airbnb语法规则。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">{</span>
+  <span class="s2">"extends"</span>: <span class="s2">"eslint-config-airbnb"</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>你也可以用自己的规则，覆盖预设的语法规则。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+  <span class="s2">"extends"</span><span class="p">:</span> <span class="s2">"eslint-config-airbnb"</span><span class="p">,</span>
+  <span class="s2">"rules"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"no-var"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">"no-alert"</span><span class="p">:</span> <span class="mi">0</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="语法规则">语法规则</h3>
+
+<p>（1）indent</p>
+
+<p>indent规则设定行首的缩进，默认是四个空格。下面的几种写法，可以改变这个设置。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 缩进为4个空格（默认值）</span>
+<span class="s2">"indent"</span><span class="p">:</span> <span class="mi">2</span>
+
+<span class="c1">// 缩进为2个空格</span>
+<span class="s2">"indent"</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="c1">// 缩进为1个tab键</span>
+<span class="s2">"indent"</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="s2">"tab"</span><span class="p">]</span>
+
+<span class="c1">// 缩进为2个空格，</span>
+<span class="c1">// 同时，switch...case结构的case也必须缩进，默认是不打开的</span>
+ <span class="s2">"indent"</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">{</span><span class="s2">"SwitchCase"</span><span class="p">:</span> <span class="mi">1</span><span class="p">}]</span>
+</code></pre></div></div>
+
+<p>（2）no-unused-vars</p>
+
+<p>不允许声明了变量，却不使用。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"no-unused-vars"</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">{</span><span class="s2">"vars"</span><span class="p">:</span> <span class="s2">"local"</span><span class="p">,</span> <span class="s2">"args"</span><span class="p">:</span> <span class="s2">"after-used"</span><span class="p">}]</span>
+</code></pre></div></div>
+
+<p>上面代码中，vars字段表示只检查局部变量，允许全局变量声明了却不使用；args字段表示函数的参数，只要求使用最后一个参数，前面的参数可以不使用。</p>
+
+<p>（3）no-alert</p>
+
+<p>不得使用alert、confirm和prompt。</p>
+
+<h2 id="参考链接">参考链接</h2>
+
+<ul>
+  <li>Lauritz Hilsøe, <a href="javascript:if(confirm('http://blog.lauritz.me/linting-javascript-in-2015/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://blog.lauritz.me/linting-javascript-in-2015/'" tppabs="http://blog.lauritz.me/linting-javascript-in-2015/">Linting JavaScript in 2015</a></li>
+</ul>
+
+
+</article>
+
+<div class="row">
+<div class="twelve columns">
+
+<h2>留言</h2>
+
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'jstutorial'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="javascript:if(confirm('http://disqus.com/?ref_noscript  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://disqus.com/?ref_noscript'" tppabs="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="javascript:if(confirm('http://disqus.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://disqus.com/'" tppabs="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</section>
+
+</div>
+</div>
+
+<footer>
+<div class="row">
+<div class="twelve columns">
+	<p><a href="license.html" tppabs="http://javascript.ruanyifeng.com/introduction/license.html">版权声明</a> | last modified on 2015-11-11 </p>
+</div>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-43771063-1', 'http://javascript.ruanyifeng.com/tool/ruanyifeng.com');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
+
+

@@ -1,0 +1,24 @@
+
+From：https://baike.baidu.com/item/Ecma国际
+
+
+【 Ecma国际（Ecma International） 】
+
+Ecma国际（Ecma International）是一家国际性会员制度的信息和电信标准组织。
+
+Ecma国际的任务包括与有关组织合作开发通信技术和消费电子标准、鼓励准确的标准落实、
+和标准文件与相关技术报告的出版。
+
+----------------------------------------------------------------------------
+
+Ecma国际负责的标准包括：
+
+CD-ROM格式（之后被国际标准化组织批准为ISO 9660） 
+C#语言规范 
+C++/CLI语言规范
+通用语言基础结构（CLI）
+ECMAScript语言规范（JavaScript）  
+Eiffel语言 
+电子产品环境化设计要素 
+Universal 3D标准 
+OOXML

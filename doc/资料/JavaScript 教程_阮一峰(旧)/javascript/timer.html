@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>定时器 -- JavaScript 标准参考教程（alpha）</title>
+  
+  <!-- Included CSS Files (Uncompressed) -->
+  <!--
+  <link rel="stylesheet" href="stylesheets/foundation.css">
+  -->
+  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="foundation.css" tppabs="http://javascript.ruanyifeng.com/css/foundation.css">
+  <link rel="stylesheet" href="main.css" tppabs="http://javascript.ruanyifeng.com/css/main.css">
+
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="html5.js" tppabs="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <script src="jquery.js" tppabs="http://javascript.ruanyifeng.com/js/jquery.js"></script>
+  <script src="toc.js" tppabs="http://javascript.ruanyifeng.com/js/toc.js"></script>
+  <script src="main.js" tppabs="http://javascript.ruanyifeng.com/js/main.js"></script>
+
+</head>
+<body>
+
+<header class="top-bar" id="header">
+
+<div class="fixed">
+
+<nav class="top-bar">
+<ul>
+<!-- Title Area -->
+	<li class="name has-dropdown">
+	<h1><a href="index.htm" tppabs="http://javascript.ruanyifeng.com/">JavaScript 标准参考教程（alpha） </a></h1>
+		<ul class="dropdown">
+			
+			<li><a href="index.htm#introduction" tppabs="http://javascript.ruanyifeng.com/#introduction">导论</a></li>
+			
+			<li><a href="index.htm#grammar" tppabs="http://javascript.ruanyifeng.com/#grammar">语法</a></li>
+			
+			<li><a href="index.htm#stdlib" tppabs="http://javascript.ruanyifeng.com/#stdlib">标准库</a></li>
+			
+			<li><a href="index.htm#oop" tppabs="http://javascript.ruanyifeng.com/#oop">面向对象编程</a></li>
+			
+			<li><a href="index.htm#advanced" tppabs="http://javascript.ruanyifeng.com/#advanced">语法专题</a></li>
+			
+			<li><a href="index.htm#dom" tppabs="http://javascript.ruanyifeng.com/#dom">DOM模型</a></li>
+			
+			<li><a href="index.htm#bom" tppabs="http://javascript.ruanyifeng.com/#bom">浏览器环境</a></li>
+			
+			<li><a href="index.htm#htmlapi" tppabs="http://javascript.ruanyifeng.com/#htmlapi">Web API</a></li>
+			
+		</ul>
+	</li>
+</ul>
+
+<section>
+
+
+<ul class="left">
+<li class="divider"></li>
+<li class="has-dropdown"><a class="active" href="#"> 语法专题 </a><ul class="dropdown">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="backbonejs.html" tppabs="http://javascript.ruanyifeng.com/advanced/backbonejs.html">MVC框架与Backbone.js</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="ecmascript6.html" tppabs="http://javascript.ruanyifeng.com/advanced/ecmascript6.html">ECMAScript 6 介绍</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="fsm.html" tppabs="http://javascript.ruanyifeng.com/advanced/fsm.html">JavaScript与有限状态机</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="interpreter.html" tppabs="http://javascript.ruanyifeng.com/advanced/interpreter.html">JavaScript解释器</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="promise.html" tppabs="http://javascript.ruanyifeng.com/advanced/promise.html">Promise对象</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="single-thread.html" tppabs="http://javascript.ruanyifeng.com/advanced/single-thread.html">单线程模型</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="strict.html" tppabs="http://javascript.ruanyifeng.com/advanced/strict.html">严格模式</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="active"><a href="#">定时器</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul></li>
+<li class="divider"></li>
+<li class="has-dropdown nav-3"><a href="#"> 定时器</a><ul class="dropdown">
+</ul></li>
+</ul>
+
+
+<ul class="right">
+	<li class="divider"></li>
+	<li>
+		<a href="javascript:if(confirm('https://github.com/ruanyf/jstutorial  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://github.com/ruanyf/jstutorial'" tppabs="https://github.com/ruanyf/jstutorial" target="_blank">GitHub <i class="foundicon-edit"></i></a>
+	</li>
+	<li class="divider"></li>
+	<li>
+		<a href="#">TOP <i class="foundicon-up-arrow"></i></a>
+	</li>
+</ul>
+
+</section>
+
+</nav>  
+</div>
+</header>
+
+
+<article class="bookPage">
+
+  <div class="row">
+    <div class="twelve columns">
+
+<h1> 定时器 </h1>
+
+<aside class="right"><p>来自<a href="index.htm" tppabs="http://javascript.ruanyifeng.com/">《JavaScript 标准参考教程（alpha）》</a>，by 阮一峰</p></aside>
+
+<div id="toc" class="panel callout radius">目录</div>
+
+
+<p>JavaScript提供定时执行代码的功能，叫做定时器（timer），主要由<code class="highlighter-rouge">setTimeout()</code>和<code class="highlighter-rouge">setInterval()</code>这两个函数来完成。它们向任务队列添加定时任务。</p>
+
+<h2 id="settimeout">setTimeout()</h2>
+
+<p><code class="highlighter-rouge">setTimeout</code>函数用来指定某个函数或某段代码，在多少毫秒之后执行。它返回一个整数，表示定时器的编号，以后可以用来取消这个定时器。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">timerId</span> <span class="o">=</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">func</span><span class="o">|</span><span class="nx">code</span><span class="p">,</span> <span class="nx">delay</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">setTimeout</code>函数接受两个参数，第一个参数<code class="highlighter-rouge">func|code</code>是将要推迟执行的函数名或者一段代码，第二个参数<code class="highlighter-rouge">delay</code>是推迟执行的毫秒数。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="nx">setTimeout</span><span class="p">(</span><span class="s1">'console.log(2)'</span><span class="p">,</span><span class="mi">1000</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>上面代码的输出结果就是1，3，2，因为<code class="highlighter-rouge">setTimeout</code>指定第二行语句推迟1000毫秒再执行。</p>
+
+<p>需要注意的是，推迟执行的代码必须以字符串的形式，放入<code class="highlighter-rouge">setTimeout</code>，因为引擎内部使用<code class="highlighter-rouge">eval</code>函数，将字符串转为代码。如果推迟执行的是函数，则可以直接将函数名，放入<code class="highlighter-rouge">setTimeout</code>。一方面<code class="highlighter-rouge">eval</code>函数有安全顾虑，另一方面为了便于JavaScript引擎优化代码，<code class="highlighter-rouge">setTimeout</code>方法一般总是采用函数名的形式，就像下面这样。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">f</span><span class="p">(){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">setTimeout</span><span class="p">(</span><span class="nx">f</span><span class="p">,</span><span class="mi">1000</span><span class="p">);</span>
+
+<span class="c1">// 或者</span>
+
+<span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">(){</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">2</span><span class="p">)},</span><span class="mi">1000</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>如果省略<code class="highlighter-rouge">setTimeout</code>的第二个参数，则该参数默认为0。</p>
+
+<p>除了前两个参数，<code class="highlighter-rouge">setTimeout</code>还允许添加更多的参数。它们将被传入推迟执行的函数（回调函数）。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">);</span>
+<span class="p">},</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">setTimeout</code>共有4个参数。最后那两个参数，将在1000毫秒之后回调函数执行时，作为回调函数的参数。</p>
+
+<p>IE 9.0及以下版本，只允许<code class="highlighter-rouge">setTimeout</code>有两个参数，不支持更多的参数。这时有三种解决方法。第一种是在一个匿名函数里面，让回调函数带参数运行，再把匿名函数输入<code class="highlighter-rouge">setTimeout</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">myFunc</span><span class="p">(</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">);</span>
+<span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>上面代码中，myFunc是真正要推迟执行的函数，有三个参数。如果直接放入<code class="highlighter-rouge">setTimeout</code>，低版本的IE不能带参数，所以可以放在一个匿名函数。</p>
+
+<p>第二种解决方法是使用<code class="highlighter-rouge">bind</code>方法，把多余的参数绑定在回调函数上面，生成一个新的函数输入<code class="highlighter-rouge">setTimeout</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">arg1</span><span class="p">){}.</span><span class="nx">bind</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="mi">1000</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>上面代码中，<code class="highlighter-rouge">bind</code>方法第一个参数是<code class="highlighter-rouge">undefined</code>，表示将原函数的<code class="highlighter-rouge">this</code>绑定全局作用域，第二个参数是要传入原函数的参数。它运行后会返回一个新函数，该函数不带参数。</p>
+
+<p>第三种解决方法是自定义<code class="highlighter-rouge">setTimeout</code>，使用<code class="highlighter-rouge">apply</code>方法将参数输入回调函数。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!--[if lte IE 9]&gt;&lt;script&gt;
+(function(f){
+window.setTimeout =f(window.setTimeout);
+window.setInterval =f(window.setInterval);
+})(function(f){return function(c,t){
+var a=[].slice.call(arguments,2);return f(function(){c.apply(this,a)},t)}
+});
+&lt;/script&gt;&lt;![endif]--&gt;</span>
+</code></pre></div></div>
+
+<p>除了参数问题，<code class="highlighter-rouge">setTimeout</code>还有一个需要注意的地方：如果被<code class="highlighter-rouge">setTimeout</code>推迟执行的回调函数是某个对象的方法，那么该方法中的<code class="highlighter-rouge">this</code>关键字将指向全局环境，而不是定义时所在的那个对象。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">x</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="na">y</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">setTimeout</span><span class="p">(</span><span class="nx">o</span><span class="p">.</span><span class="nx">y</span><span class="p">,</span><span class="mi">1000</span><span class="p">);</span>
+<span class="c1">// 1</span>
+</code></pre></div></div>
+
+<p>上面代码输出的是1，而不是2，这表示<code class="highlighter-rouge">o.y</code>的this所指向的已经不是o，而是全局环境了。</p>
+
+<p>再看一个不容易发现错误的例子。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">User</span><span class="p">(</span><span class="nx">login</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">login</span> <span class="o">=</span> <span class="nx">login</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">sayHi</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">login</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">User</span><span class="p">(</span><span class="s1">'John'</span><span class="p">);</span>
+
+<span class="nx">setTimeout</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">sayHi</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>上面代码只会显示<code class="highlighter-rouge">undefined</code>，因为等到user.sayHi执行时，它是在全局对象中执行，所以this.login取不到值。</p>
+
+<p>为了防止出现这个问题，一种解决方法是将user.sayHi放在函数中执行。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">user</span><span class="p">.</span><span class="nx">sayHi</span><span class="p">();</span>
+<span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>上面代码中，sayHi是在user作用域内执行，而不是在全局作用域内执行，所以能够显示正确的值。</p>
+
+<p>另一种解决方法是，使用<code class="highlighter-rouge">bind</code>方法，将绑定sayHi绑定在user上面。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">setTimeout</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">sayHi</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">user</span><span class="p">),</span> <span class="mi">1000</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>HTML 5标准规定，<code class="highlighter-rouge">setTimeout</code>的最短时间间隔是4毫秒。为了节电，对于那些不处于当前窗口的页面，浏览器会将时间间隔扩大到1000毫秒。另外，如果笔记本电脑处于电池供电状态，Chrome和IE 9以上的版本，会将时间间隔切换到系统定时器，大约是15.6毫秒。</p>
+
+<h2 id="setinterval">setInterval()</h2>
+
+<p><code class="highlighter-rouge">setInterval</code>函数的用法与<code class="highlighter-rouge">setTimeout</code>完全一致，区别仅仅在于<code class="highlighter-rouge">setInterval</code>指定某个任务每隔一段时间就执行一次，也就是无限次的定时执行。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">onclick=</span><span class="s">"clearInterval(timer)"</span> <span class="na">value=</span><span class="s">"stop"</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+  <span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="kd">var</span> <span class="nx">timer</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+  <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>上面代码表示每隔1000毫秒就输出一个2，直到用户点击了停止按钮。</p>
+
+<p>与<code class="highlighter-rouge">setTimeout</code>一样，除了前两个参数，<code class="highlighter-rouge">setInterval</code>方法还可以接受更多的参数，它们会传入回调函数，下面是一个例子。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">f</span><span class="p">(){</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;</span><span class="kr">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kr">arguments</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">setInterval</span><span class="p">(</span><span class="nx">f</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="s2">"Hello World"</span><span class="p">);</span>
+<span class="c1">// Hello World</span>
+<span class="c1">// Hello World</span>
+<span class="c1">// Hello World</span>
+<span class="c1">// ...</span>
+</code></pre></div></div>
+
+<p>如果网页不在浏览器的当前窗口（或tab），许多浏览器限制setInteral指定的反复运行的任务最多每秒执行一次。</p>
+
+<p>下面是一个通过<code class="highlighter-rouge">setInterval</code>方法实现网页动画的例子。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">div</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'someDiv'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">opacity</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">fader</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="err">  </span><span class="nx">opacity</span> <span class="o">-=</span> <span class="mf">0.1</span><span class="p">;</span>
+<span class="err">  </span><span class="k">if</span> <span class="p">(</span><span class="nx">opacity</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+<span class="err">    </span><span class="nx">div</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">opacity</span> <span class="o">=</span> <span class="nx">opacity</span><span class="p">;</span>
+<span class="err">  </span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<span class="err">    </span><span class="nx">clearInterval</span><span class="p">(</span><span class="nx">fader</span><span class="p">);</span>
+<span class="err">  </span><span class="p">}</span>
+<span class="p">},</span> <span class="mi">100</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>上面代码每隔100毫秒，设置一次<code class="highlighter-rouge">div</code>元素的透明度，直至其完全透明为止。</p>
+
+<p><code class="highlighter-rouge">setInterval</code>的一个常见用途是实现轮询。下面是一个轮询URL的Hash值是否发生变化的例子。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">hash</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">hash</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">hashWatcher</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="err">  </span><span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">hash</span> <span class="o">!=</span> <span class="nx">hash</span><span class="p">)</span> <span class="p">{</span>
+<span class="err">    </span><span class="nx">updatePage</span><span class="p">();</span>
+<span class="err">  </span><span class="p">}</span>
+<span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>setInterval指定的是“开始执行”之间的间隔，并不考虑每次任务执行本身所消耗的时间。因此实际上，两次执行之间的间隔会小于指定的时间。比如，setInterval指定每100ms执行一次，每次执行需要5ms，那么第一次执行结束后95毫秒，第二次执行就会开始。如果某次执行耗时特别长，比如需要105毫秒，那么它结束后，下一次执行就会立即开始。</p>
+
+<p>为了确保两次执行之间有固定的间隔，可以不用<code class="highlighter-rouge">setInterval</code>，而是每次执行结束后，使用<code class="highlighter-rouge">setTimeout</code>指定下一次执行的具体时间。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">timer</span> <span class="o">=</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="nx">i</span><span class="o">++</span><span class="p">);</span>
+  <span class="nx">timer</span> <span class="o">=</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="kr">arguments</span><span class="p">.</span><span class="nx">callee</span><span class="p">,</span> <span class="mi">2000</span><span class="p">);</span>
+<span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>上面代码可以确保，下一个对话框总是在关闭上一个对话框之后2000毫秒弹出。</p>
+
+<p>根据这种思路，可以自己部署一个函数，实现间隔时间确定的<code class="highlighter-rouge">setInterval</code>的效果。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">interval</span><span class="p">(</span><span class="nx">func</span><span class="p">,</span> <span class="nx">wait</span><span class="p">){</span>
+  <span class="kd">var</span> <span class="nx">interv</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">func</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">interv</span><span class="p">,</span> <span class="nx">wait</span><span class="p">);</span>
+  <span class="p">};</span>
+
+  <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">interv</span><span class="p">,</span> <span class="nx">wait</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">interval</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="p">},</span><span class="mi">1000</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>上面代码部署了一个<code class="highlighter-rouge">interval</code>函数，用循环调用<code class="highlighter-rouge">setTimeout</code>模拟了<code class="highlighter-rouge">setInterval</code>。</p>
+
+<p>HTML 5标准规定，<code class="highlighter-rouge">setInterval</code>的最短间隔时间是10毫秒，也就是说，小于10毫秒的时间间隔会被调整到10毫秒。</p>
+
+<h2 id="cleartimeoutclearinterval">clearTimeout()，clearInterval()</h2>
+
+<p>setTimeout和setInterval函数，都返回一个表示计数器编号的整数值，将该整数传入clearTimeout和clearInterval函数，就可以取消对应的定时器。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">id1</span> <span class="o">=</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">f</span><span class="p">,</span><span class="mi">1000</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">id2</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(</span><span class="nx">f</span><span class="p">,</span><span class="mi">1000</span><span class="p">);</span>
+
+<span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">id1</span><span class="p">);</span>
+<span class="nx">clearInterval</span><span class="p">(</span><span class="nx">id2</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">setTimeout</code>和<code class="highlighter-rouge">setInterval</code>返回的整数值是连续的，也就是说，第二个<code class="highlighter-rouge">setTimeout</code>方法返回的整数值，将比第一个的整数值大1。利用这一点，可以写一个函数，取消当前所有的<code class="highlighter-rouge">setTimeout</code>。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">gid</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(</span><span class="nx">clearAllTimeouts</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+  <span class="kd">function</span> <span class="nx">clearAllTimeouts</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">id</span> <span class="o">=</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{},</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="k">while</span> <span class="p">(</span><span class="nx">id</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">id</span> <span class="o">!==</span> <span class="nx">gid</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+      <span class="p">}</span>
+      <span class="nx">id</span><span class="o">--</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">})();</span>
+</code></pre></div></div>
+
+<p>运行上面代码后，实际上再设置任何setTimeout都无效了。</p>
+
+<p>下面是一个clearTimeout实际应用的例子。有些网站会实时将用户在文本框的输入，通过Ajax方法传回服务器，jQuery的写法如下。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="s1">'textarea'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'keydown'</span><span class="p">,</span> <span class="nx">ajaxAction</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>这样写有一个很大的缺点，就是如果用户连续击键，就会连续触发keydown事件，造成大量的Ajax通信。这是不必要的，而且很可能会发生性能问题。正确的做法应该是，设置一个门槛值，表示两次Ajax通信的最小间隔时间。如果在设定的时间内，发生新的keydown事件，则不触发Ajax通信，并且重新开始计时。如果过了指定时间，没有发生新的keydown事件，将进行Ajax通信将数据发送出去。</p>
+
+<p>这种做法叫做debounce（防抖动）方法，用来返回一个新函数。只有当两次触发之间的时间间隔大于事先设定的值，这个新函数才会运行实际的任务。假定两次Ajax通信的间隔不小于2500毫秒，上面的代码可以改写成下面这样。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="s1">'textarea'</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'keydown'</span><span class="p">,</span> <span class="nx">debounce</span><span class="p">(</span><span class="nx">ajaxAction</span><span class="p">,</span> <span class="mi">2500</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>利用setTimeout和clearTimeout，可以实现debounce方法，该方法用于防止某个函数在短时间内被密集调用。具体来说，debounce方法返回一个新版的该函数，这个新版函数调用后，只有在指定时间内没有新的调用，才会执行，否则就重新计时。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">debounce</span><span class="p">(</span><span class="nx">fn</span><span class="p">,</span> <span class="nx">delay</span><span class="p">){</span>
+  <span class="kd">var</span> <span class="nx">timer</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span> <span class="c1">// 声明计时器</span>
+  <span class="k">return</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="kd">var</span> <span class="nx">context</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">args</span> <span class="o">=</span> <span class="kr">arguments</span><span class="p">;</span>
+    <span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">timer</span><span class="p">);</span>
+    <span class="nx">timer</span> <span class="o">=</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+      <span class="nx">fn</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">context</span><span class="p">,</span> <span class="nx">args</span><span class="p">);</span>
+    <span class="p">},</span> <span class="nx">delay</span><span class="p">);</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="c1">// 用法示例</span>
+<span class="kd">var</span> <span class="nx">todoChanges</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">debounce</span><span class="p">(</span><span class="nx">batchLog</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">observe</span><span class="p">(</span><span class="nx">models</span><span class="p">.</span><span class="nx">todo</span><span class="p">,</span> <span class="nx">todoChanges</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>现实中，最好不要设置太多个setTimeout和setInterval，它们耗费CPU。比较理想的做法是，将要推迟执行的代码都放在一个函数里，然后只对这个函数使用setTimeout或setInterval。</p>
+
+<h2 id="运行机制">运行机制</h2>
+
+<p><code class="highlighter-rouge">setTimeout</code>和<code class="highlighter-rouge">setInterval</code>的运行机制是，将指定的代码移出本次执行，等到下一轮 Event Loop 时，再检查是否到了指定时间。如果到了，就执行对应的代码；如果不到，就等到再下一轮 Event Loop 时重新判断。</p>
+
+<p>这意味着，<code class="highlighter-rouge">setTimeout</code>和<code class="highlighter-rouge">setInterval</code>指定的代码，必须等到本轮 Event Loop 的所有任务都执行完，才会开始执行。由于前面的任务到底需要多少时间执行完，是不确定的，所以没有办法保证，<code class="highlighter-rouge">setTimeout</code>和<code class="highlighter-rouge">setInterval</code>指定的任务，一定会按照预定时间执行。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">setTimeout</span><span class="p">(</span><span class="nx">someTask</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+<span class="nx">veryLongTask</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>上面代码的<code class="highlighter-rouge">setTimeout</code>，指定100毫秒以后运行一个任务。但是，如果后面的<code class="highlighter-rouge">veryLongTask</code>函数（同步任务）运行时间非常长，过了100毫秒还无法结束，那么被推迟运行的<code class="highlighter-rouge">someTask</code>就只有等着，等到<code class="highlighter-rouge">veryLongTask</code>运行结束，才轮到它执行。</p>
+
+<p>下面是<code class="highlighter-rouge">setInterval</code>的例子。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+
+<span class="nx">sleep</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>上面的第一行语句要求每隔1000毫秒，就输出一个2。但是，紧接着的语句需要3000毫秒才能完成，那么<code class="highlighter-rouge">setInterval</code>就必须推迟到3000毫秒之后才开始生效。这3000毫秒之内，<code class="highlighter-rouge">setInterval</code>不会产生累积效应。</p>
+
+<h2 id="settimeoutf-0">setTimeout(f, 0)</h2>
+
+<h3 id="含义">含义</h3>
+
+<p><code class="highlighter-rouge">setTimeout</code>的作用是将代码推迟到指定时间执行，如果指定时间为<code class="highlighter-rouge">0</code>，即<code class="highlighter-rouge">setTimeout(f, 0)</code>，那么会立刻执行吗？</p>
+
+<p>答案是不会。因为上一段说过，必须要等到当前脚本的同步任务和“任务队列”中已有的事件，全部处理完以后，才会执行<code class="highlighter-rouge">setTimeout</code>指定的任务。也就是说，<code class="highlighter-rouge">setTimeout</code>的真正作用是，在“消息队列”的现有消息的后面再添加一个消息，规定在指定时间执行某段代码。<code class="highlighter-rouge">setTimeout</code>添加的事件，会在下一次<code class="highlighter-rouge">Event Loop</code>执行。</p>
+
+<p><code class="highlighter-rouge">setTimeout(f, 0)</code>将第二个参数设为<code class="highlighter-rouge">0</code>，作用是让<code class="highlighter-rouge">f</code>在现有的任务（脚本的同步任务和“消息队列”指定的任务）一结束就立刻执行。也就是说，<code class="highlighter-rouge">setTimeout(f, 0)</code>的作用是，尽可能早地执行指定的任务。而并不是会立刻就执行这个任务。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'你好！'</span><span class="p">);</span>
+<span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>上面代码的含义是，尽可能早地显示“你好！”。</p>
+
+<p><code class="highlighter-rouge">setTimeout(f, 0)</code>指定的任务，最早也要到下一次Event Loop才会执行。请看下面的例子。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Timeout"</span><span class="p">);</span>
+<span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">a</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"a() 开始运行"</span><span class="p">);</span>
+  <span class="nx">b</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"a() 结束运行"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">b</span><span class="p">(</span><span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"b() 开始运行"</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"传入的值为"</span> <span class="o">+</span> <span class="nx">y</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"b() 结束运行"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"当前任务开始"</span><span class="p">);</span>
+<span class="nx">a</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"当前任务结束"</span><span class="p">);</span>
+
+<span class="c1">// 当前任务开始</span>
+<span class="c1">// a() 开始运行</span>
+<span class="c1">// b() 开始运行</span>
+<span class="c1">// 传入的值为42</span>
+<span class="c1">// b() 结束运行</span>
+<span class="c1">// a() 结束运行</span>
+<span class="c1">// 当前任务结束</span>
+<span class="c1">// Timeout</span>
+</code></pre></div></div>
+
+<p>上面代码说明，<code class="highlighter-rouge">setTimeout(f, 0)</code>必须要等到当前脚本的所有同步任务结束后才会执行。</p>
+
+<p>即使消息队列是空的，0毫秒实际上也是达不到的。根据<a href="javascript:if(confirm('http://www.whatwg.org/specs/web-apps/current-work/multipage/timers.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.whatwg.org/specs/web-apps/current-work/multipage/timers.html#timers'" tppabs="http://www.whatwg.org/specs/web-apps/current-work/multipage/timers.html#timers">HTML 5标准</a>，<code class="highlighter-rouge">setTimeout</code>推迟执行的时间，最少是4毫秒。如果小于这个值，会被自动增加到4。这是为了防止多个<code class="highlighter-rouge">setTimeout(f, 0)</code>语句连续执行，造成性能问题。</p>
+
+<p>另一方面，浏览器内部使用32位带符号的整数，来储存推迟执行的时间。这意味着<code class="highlighter-rouge">setTimeout</code>最多只能推迟执行2147483647毫秒（24.8天），超过这个时间会发生溢出，导致回调函数将在当前任务队列结束后立即执行，即等同于<code class="highlighter-rouge">setTimeout(f, 0)</code>的效果。</p>
+
+<h3 id="应用">应用</h3>
+
+<p><code class="highlighter-rouge">setTimeout(f, 0)</code>有几个非常重要的用途。它的一大应用是，可以调整事件的发生顺序。比如，网页开发中，某个事件先发生在子元素，然后冒泡到父元素，即子元素的事件回调函数，会早于父元素的事件回调函数触发。如果，我们先让父元素的事件回调函数先发生，就要用到setTimeout(f, 0)。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">input</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'input[type=button]'</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+
+<span class="nx">input</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">A</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="nx">B</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">input</span><span class="p">.</span><span class="nx">value</span> <span class="o">+=</span><span class="s1">' input'</span><span class="p">;</span>
+  <span class="p">},</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">};</span>
+
+<span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">C</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">input</span><span class="p">.</span><span class="nx">value</span> <span class="o">+=</span> <span class="s1">' body'</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>上面代码在点击按钮后，先触发回调函数A，然后触发函数C。在函数A中，setTimeout将函数B推迟到下一轮Loop执行，这样就起到了，先触发父元素的回调函数C的目的了。</p>
+
+<p>用户自定义的回调函数，通常在浏览器的默认动作之前触发。比如，用户在输入框输入文本，keypress事件会在浏览器接收文本之前触发。因此，下面的回调函数是达不到目的的。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'input-box'</span><span class="p">).</span><span class="nx">onkeypress</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>上面代码想在用户输入文本后，立即将字符转为大写。但是实际上，它只能将上一个字符转为大写，因为浏览器此时还没接收到文本，所以<code class="highlighter-rouge">this.value</code>取不到最新输入的那个字符。只有用setTimeout改写，上面的代码才能发挥作用。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'my-ok'</span><span class="p">).</span><span class="nx">onkeypress</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nb">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+  <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nb">self</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">();</span>
+  <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>上面代码将代码放入setTimeout之中，就能使得它在浏览器接收到文本之后触发。</p>
+
+<p>由于setTimeout(f,0)实际上意味着，将任务放到浏览器最早可得的空闲时段执行，所以那些计算量大、耗时长的任务，常常会被放到几个小部分，分别放到setTimeout(f,0)里面执行。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">div</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'div'</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+
+<span class="c1">// 写法一</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mh">0xA00000</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mh">0xFFFFFF</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">div</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="s1">'#'</span> <span class="o">+</span> <span class="nx">i</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// 写法二</span>
+<span class="kd">var</span> <span class="nx">timer</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mh">0x100000</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">func</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">timer</span> <span class="o">=</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">func</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+  <span class="nx">div</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="s1">'#'</span> <span class="o">+</span> <span class="nx">i</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">i</span><span class="o">++</span> <span class="o">==</span> <span class="mh">0xFFFFFF</span><span class="p">)</span> <span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">timer</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">timer</span> <span class="o">=</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">func</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>上面代码有两种写法，都是改变一个网页元素的背景色。写法一会造成浏览器“堵塞”，因为JavaScript执行速度远高于DOM，会造成大量DOM操作“堆积”，而写法二就不会，这就是<code class="highlighter-rouge">setTimeout(f, 0)</code>的好处。</p>
+
+<p>另一个使用这种技巧的例子是代码高亮的处理。如果代码块很大，一次性处理，可能会对性能造成很大的压力，那么将其分成一个个小块，一次处理一块，比如写成<code class="highlighter-rouge">setTimeout(highlightNext, 50)</code>的样子，性能压力就会减轻。</p>
+
+<h2 id="正常任务与微任务">正常任务与微任务</h2>
+
+<p>正常情况下，JavaScript的任务是同步执行的，即执行完前一个任务，然后执行后一个任务。只有遇到异步任务的情况下，执行顺序才会改变。</p>
+
+<p>这时，需要区分两种任务：正常任务（task）与微任务（microtask）。它们的区别在于，“正常任务”在下一轮Event Loop执行，“微任务”在本轮Event Loop的所有任务结束后执行。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
+
+<span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+
+<span class="c1">// 1</span>
+<span class="c1">// 5</span>
+<span class="c1">// 3</span>
+<span class="c1">// 4</span>
+<span class="c1">// 2</span>
+</code></pre></div></div>
+
+<p>上面代码的执行结果说明，<code class="highlighter-rouge">setTimeout(fn, 0)</code>在<code class="highlighter-rouge">Promise.resolve</code>之后执行。</p>
+
+<p>这是因为<code class="highlighter-rouge">setTimeout</code>语句指定的是“正常任务”，即不会在当前的Event Loop执行。而Promise会将它的回调函数，在状态改变后的那一轮Event Loop指定为微任务。所以，3和4输出在5之后、2之前。</p>
+
+<p>正常任务包括以下情况。</p>
+
+<ul>
+  <li>setTimeout</li>
+  <li>setInterval</li>
+  <li>setImmediate</li>
+  <li>I/O</li>
+  <li>各种事件（比如鼠标单击事件）的回调函数</li>
+</ul>
+
+<p>微任务目前主要是<code class="highlighter-rouge">process.nextTick</code>和 Promise 这两种情况。</p>
+
+<h2 id="参考链接">参考链接</h2>
+
+<ul>
+  <li>Ilya Kantor, <a href="javascript:if(confirm('http://javascript.info/tutorial/settimeout-setinterval  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://javascript.info/tutorial/settimeout-setinterval'" tppabs="http://javascript.info/tutorial/settimeout-setinterval">Understanding timers: setTimeout and setInterval</a></li>
+  <li>Ilya Kantor, <a href="javascript:if(confirm('http://javascript.info/tutorial/events-and-timing-depth  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://javascript.info/tutorial/events-and-timing-depth'" tppabs="http://javascript.info/tutorial/events-and-timing-depth">Events and timing in-depth</a></li>
+  <li>MDN, <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers.setTimeout  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers.setTimeout'" tppabs="https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers.setTimeout">WindowTimers.setTimeout()</a></li>
+  <li>Artem Tyurin, <a href="javascript:if(confirm('http://agentcooper.ghost.io/being-evil-with-settimeout/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://agentcooper.ghost.io/being-evil-with-settimeout/'" tppabs="http://agentcooper.ghost.io/being-evil-with-settimeout/">Being evil with setTimeout</a></li>
+  <li>Jake Archibald, <a href="javascript:if(confirm('https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/'" tppabs="https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/">Tasks, microtasks, queues and schedules</a></li>
+  <li>Tamas Kadlecsik, <a href="javascript:if(confirm('https://blog.risingstack.com/node-js-at-scale-understanding-node-js-event-loop/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://blog.risingstack.com/node-js-at-scale-understanding-node-js-event-loop/'" tppabs="https://blog.risingstack.com/node-js-at-scale-understanding-node-js-event-loop/">Node.js at Scale - Understanding the Node.js Event Loop</a></li>
+</ul>
+
+
+</article>
+
+<div class="row">
+<div class="twelve columns">
+
+<h2>留言</h2>
+
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'jstutorial'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="javascript:if(confirm('http://disqus.com/?ref_noscript  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://disqus.com/?ref_noscript'" tppabs="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="javascript:if(confirm('http://disqus.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://disqus.com/'" tppabs="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</section>
+
+</div>
+</div>
+
+<footer>
+<div class="row">
+<div class="twelve columns">
+	<p><a href="license.html" tppabs="http://javascript.ruanyifeng.com/introduction/license.html">版权声明</a> | last modified on 2014-10-12 </p>
+</div>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-43771063-1', 'http://javascript.ruanyifeng.com/advanced/ruanyifeng.com');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
+
+

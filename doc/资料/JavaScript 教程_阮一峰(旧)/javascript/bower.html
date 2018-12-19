@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>Bower：客户端库管理工具 -- JavaScript 标准参考教程（alpha）</title>
+  
+  <!-- Included CSS Files (Uncompressed) -->
+  <!--
+  <link rel="stylesheet" href="stylesheets/foundation.css">
+  -->
+  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="foundation.css" tppabs="http://javascript.ruanyifeng.com/css/foundation.css">
+  <link rel="stylesheet" href="main.css" tppabs="http://javascript.ruanyifeng.com/css/main.css">
+
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="html5.js" tppabs="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <script src="jquery.js" tppabs="http://javascript.ruanyifeng.com/js/jquery.js"></script>
+  <script src="toc.js" tppabs="http://javascript.ruanyifeng.com/js/toc.js"></script>
+  <script src="main.js" tppabs="http://javascript.ruanyifeng.com/js/main.js"></script>
+
+</head>
+<body>
+
+<header class="top-bar" id="header">
+
+<div class="fixed">
+
+<nav class="top-bar">
+<ul>
+<!-- Title Area -->
+	<li class="name has-dropdown">
+	<h1><a href="index.htm" tppabs="http://javascript.ruanyifeng.com/">JavaScript 标准参考教程（alpha） </a></h1>
+		<ul class="dropdown">
+			
+			<li><a href="index.htm#introduction" tppabs="http://javascript.ruanyifeng.com/#introduction">导论</a></li>
+			
+			<li><a href="index.htm#grammar" tppabs="http://javascript.ruanyifeng.com/#grammar">语法</a></li>
+			
+			<li><a href="index.htm#stdlib" tppabs="http://javascript.ruanyifeng.com/#stdlib">标准库</a></li>
+			
+			<li><a href="index.htm#oop" tppabs="http://javascript.ruanyifeng.com/#oop">面向对象编程</a></li>
+			
+			<li><a href="index.htm#advanced" tppabs="http://javascript.ruanyifeng.com/#advanced">语法专题</a></li>
+			
+			<li><a href="index.htm#dom" tppabs="http://javascript.ruanyifeng.com/#dom">DOM模型</a></li>
+			
+			<li><a href="index.htm#bom" tppabs="http://javascript.ruanyifeng.com/#bom">浏览器环境</a></li>
+			
+			<li><a href="index.htm#htmlapi" tppabs="http://javascript.ruanyifeng.com/#htmlapi">Web API</a></li>
+			
+		</ul>
+	</li>
+</ul>
+
+<section>
+
+
+<ul class="left">
+<li class="divider"></li>
+<li class="has-dropdown"><a class="active" href="#"> 开发工具 </a><ul class="dropdown">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="active"><a href="#">Bower：客户端库管理工具</a></li>
+
+
+
+
+
+<li><a href="browserify.html" tppabs="http://javascript.ruanyifeng.com/tool/browserify.html">Browserify：浏览器加载Node.js模块</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="console.html" tppabs="http://javascript.ruanyifeng.com/stdlib/console.html">console对象</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="grunt.html" tppabs="http://javascript.ruanyifeng.com/tool/grunt.html">Grunt：任务自动管理工具</a></li>
+
+
+
+
+
+<li><a href="gulp.html" tppabs="http://javascript.ruanyifeng.com/tool/gulp.html">Gulp：任务自动管理工具</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="lint.html" tppabs="http://javascript.ruanyifeng.com/tool/lint.html">Lint 工具</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="phantomjs.html" tppabs="http://javascript.ruanyifeng.com/tool/phantomjs.html">PhantomJS</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="requirejs.html" tppabs="http://javascript.ruanyifeng.com/tool/requirejs.html">RequireJS和AMD规范</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="sourcemap.html" tppabs="http://javascript.ruanyifeng.com/tool/sourcemap.html">Source Map</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="testing.html" tppabs="http://javascript.ruanyifeng.com/tool/testing.html">JavaScript 程序测试</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul></li>
+<li class="divider"></li>
+<li class="has-dropdown nav-3"><a href="#"> Bower：客户端库管理工具</a><ul class="dropdown">
+</ul></li>
+</ul>
+
+
+<ul class="right">
+	<li class="divider"></li>
+	<li>
+		<a href="javascript:if(confirm('https://github.com/ruanyf/jstutorial  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='https://github.com/ruanyf/jstutorial'" tppabs="https://github.com/ruanyf/jstutorial" target="_blank">GitHub <i class="foundicon-edit"></i></a>
+	</li>
+	<li class="divider"></li>
+	<li>
+		<a href="#">TOP <i class="foundicon-up-arrow"></i></a>
+	</li>
+</ul>
+
+</section>
+
+</nav>  
+</div>
+</header>
+
+
+<article class="bookPage">
+
+  <div class="row">
+    <div class="twelve columns">
+
+<h1> Bower：客户端库管理工具 </h1>
+
+<aside class="right"><p>来自<a href="index.htm" tppabs="http://javascript.ruanyifeng.com/">《JavaScript 标准参考教程（alpha）》</a>，by 阮一峰</p></aside>
+
+<div id="toc" class="panel callout radius">目录</div>
+
+
+<h2 id="概述">概述</h2>
+
+<p>随着网页功能变得越来越复杂，同一张网页加载多个JavaScript函数库早已是家常便饭。开发者越来越需要一个工具，对浏览器端的各种库进行管理，比如搜索、自动安装\卸载、检查更新、确保依赖关系等等。Bower就是为了解决这个问题而诞生的针对浏览器端的库管理工具。</p>
+
+<p>Bower基于node.js，所以安装之前，必须先确保已安装node.js。</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">sudo </span>npm install bower <span class="nt">--global</span></code></pre></figure>
+
+<p>运行上面的命令以后，Bower就已经安装在你的系统中了。运行帮助命令，查看Bower是否安装成功。</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>bower <span class="nb">help</span></code></pre></figure>
+
+<p>下面的命令可以更新或卸载Bower。</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># 更新</span><br data-jekyll-commonmark-ghpages="" /><span class="nv">$ </span><span class="nb">sudo </span>npm update <span class="nt">-g</span> bower<br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" /><span class="c"># 卸载</span><br data-jekyll-commonmark-ghpages="" /><span class="nv">$ </span><span class="nb">sudo </span>npm uninstall <span class="nt">--global</span> bower</code></pre></figure>
+
+<h2 id="常用操作">常用操作</h2>
+
+<h3 id="项目初始化">项目初始化</h3>
+
+<p>在项目根目录下，运行下面的命令，进行初始化。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bower init
+</code></pre></div></div>
+
+<p>通过回答几个问题，就会自动生成bower.json文件。这是项目的配置文件，下面是一个例子。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+  <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"app-name"</span><span class="p">,</span>
+  <span class="s2">"version"</span><span class="p">:</span> <span class="s2">"0.1.0"</span><span class="p">,</span>
+  <span class="s2">"main"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"path/to/app.html"</span><span class="p">,</span> <span class="s2">"path/to/app.css"</span><span class="p">,</span> <span class="s2">"path/to/app.js"</span><span class="p">],</span>
+  <span class="s2">"ignore"</span><span class="p">:</span> <span class="p">[</span><span class="s2">".jshintrc"</span><span class="p">,</span><span class="s2">"**/*.txt"</span><span class="p">],</span>
+  <span class="s2">"dependencies"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"sass-bootstrap"</span><span class="p">:</span> <span class="s2">"~3.0.0"</span><span class="p">,</span>
+    <span class="s2">"modernizr"</span><span class="p">:</span> <span class="s2">"~2.6.2"</span><span class="p">,</span>
+    <span class="s2">"jquery"</span><span class="p">:</span> <span class="s2">"latests"</span>
+  <span class="p">},</span>
+  <span class="s2">"devDependencies"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"qunit"</span><span class="p">:</span> <span class="s2">"&gt;1.11.0"</span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>有了bower.json文件以后，就可以用bower install命令，一下子安装所有库。</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>bower install</code></pre></figure>
+
+<p>bower.json文件存放在库的根目录下，它的作用是（1）保存项目的库信息，供项目安装时使用，（2）向Bower.com提交你的库，该网站会读取bower.json，列入在线索引。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bower register &lt;my-package-name&gt; &lt;git-endpoint&gt;
+
+<span class="c"># 实例：在 bower.com 登记jquery</span>
+<span class="nv">$ </span>bower register jquery git://github.com/jquery/jquery
+</code></pre></div></div>
+
+<p>注意，如果你的库与现有的库重名，就会提交失败。</p>
+
+<h3 id="库的安装">库的安装</h3>
+
+<p>bower install命令用于安装某个库，需要指明库的名字。</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>bower install backbone</code></pre></figure>
+
+<p>Bower会使用库的名字，去在线索引中搜索该库的网址。某些情况下，如果一个库很新（或者你不想使用默认网址），可能需要我们手动指定该库的网址。</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>bower install git://github.com/documentcloud/backbone.git<br data-jekyll-commonmark-ghpages="" /><span class="nv">$ </span>bower install http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js<br data-jekyll-commonmark-ghpages="" /><span class="nv">$ </span>bower install ./some/path/relative/to/this/directory/backbone.js</code></pre></figure>
+
+<p>上面的命令说明，指定的网址可以是github地址、http网址、本地文件。</p>
+
+<p>默认情况下，会安装该库的最新版本，但是也可以手动指定版本号。</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>bower install jquery-ui#1.10.1</code></pre></figure>
+
+<p>上面的命令指定安装jquery-ui的1.10.1版。</p>
+
+<p>如果某个库依赖另一个库，安装时默认将所依赖的库一起安装。比如，jquery-ui依赖jquery，安装时会连jquery一起安装。</p>
+
+<p>安装后的库默认存放在项目的bower_components子目录，如果要指定其他位置，可在.bowerrc文件的directory属性设置。</p>
+
+<h3 id="库的搜索和查看">库的搜索和查看</h3>
+
+<p>bower search命令用于使用关键字，从在线索引中搜索相关库。</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">bower search jquery</code></pre></figure>
+
+<p>上面命令会得到下面这样的结果。</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">Search results:<br data-jekyll-commonmark-ghpages="" /><br data-jekyll-commonmark-ghpages="" />    jquery git://github.com/components/jquery.git<br data-jekyll-commonmark-ghpages="" />    jquery-ui git://github.com/components/jqueryui<br data-jekyll-commonmark-ghpages="" />    jquery.cookie git://github.com/carhartl/jquery-cookie.git<br data-jekyll-commonmark-ghpages="" />    jquery-placeholder git://github.com/mathiasbynens/jquery-placeholder.git<br data-jekyll-commonmark-ghpages="" />    jquery-file-upload git://github.com/blueimp/jQuery-File-Upload.git<br data-jekyll-commonmark-ghpages="" />    jasmine-jquery git://github.com/velesin/jasmine-jquery<br data-jekyll-commonmark-ghpages="" />    jquery.ui git://github.com/jquery/jquery-ui.git<br data-jekyll-commonmark-ghpages="" />    ...</code></pre></figure>
+
+<p>bower info命令用于查看某个库的详细信息。</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">bower info jquery-ui</code></pre></figure>
+
+<p>查看结果会列出该库的依赖关系（dependencies），以及可以得到的版本（Available versions）。</p>
+
+<h3 id="库的更新和卸载">库的更新和卸载</h3>
+
+<p>bower update用于更新一个库，将其更新为最新版本。</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>bower update jquery-ui</code></pre></figure>
+
+<p>如果不给出库名，则更新所有库。</p>
+
+<p>bower uninstall命令用于卸载指定的库。</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>bower uninstall jquery-ui</code></pre></figure>
+
+<p>注意，默认情况下会连所依赖的库一起卸载。比如，jquery-ui依赖jquery，卸载时会连jquery一起卸载，除非还有别的库依赖jquery。</p>
+
+<h3 id="列出所有库">列出所有库</h3>
+
+<p>bower list或bower ls命令，用于列出项目所使用的所有库。</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">Bower list<br data-jekyll-commonmark-ghpages="" />Bower <span class="nb">ls</span></code></pre></figure>
+
+<h2 id="配置文件bowerrc">配置文件.bowerrc</h2>
+
+<p>项目根目录下（也可以放在用户的主目录下）的.bowerrc文件是Bower的配置文件，它大概像下面这样。</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span><br data-jekyll-commonmark-ghpages="" />  <span class="s2">"directory"</span> <span class="p">:</span> <span class="s2">"components"</span><span class="p">,</span><br data-jekyll-commonmark-ghpages="" />  <span class="s2">"json"</span>      <span class="p">:</span> <span class="s2">"bower.json"</span><span class="p">,</span><br data-jekyll-commonmark-ghpages="" />  <span class="s2">"endpoint"</span>  <span class="p">:</span> <span class="s2">"https://Bower.herokuapp.com"</span><span class="p">,</span><br data-jekyll-commonmark-ghpages="" />  <span class="s2">"searchpath"</span>  <span class="p">:</span> <span class="s2">""</span><span class="p">,</span><br data-jekyll-commonmark-ghpages="" />  <span class="s2">"shorthand_resolver"</span> <span class="p">:</span> <span class="s2">""</span><br data-jekyll-commonmark-ghpages="" /><span class="p">}</span></code></pre></figure>
+
+<p>其中的属性含义如下。</p>
+
+<ul>
+  <li>directory：存放库文件的子目录名。</li>
+  <li>json：描述各个库的json文件名。</li>
+  <li>endpoint：在线索引的网址，用来搜索各种库。</li>
+  <li>searchpath：一个数组，储存备选的在线索引网址。如果某个库在endpoint中找不到，则继续搜索该属性指定的网址，通常用于放置某些不公开的库。</li>
+  <li>shorthand_resolver：定义各个库名称简写形式。</li>
+</ul>
+
+<h2 id="相关链接">相关链接</h2>
+
+<ul>
+  <li>Cody Lindley, <a href="javascript:if(confirm('http://tech.pro/tutorial/1190/package-managers-an-introductory-guide-for-the-uninitiated-front-end-developer  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://tech.pro/tutorial/1190/package-managers-an-introductory-guide-for-the-uninitiated-front-end-developer'" tppabs="http://tech.pro/tutorial/1190/package-managers-an-introductory-guide-for-the-uninitiated-front-end-developer">Package Managers: An Introductory Guide For The Uninitiated Front-End Developer</a></li>
+  <li>Tyson Cadenhead, <a href="javascript:if(confirm('http://tysoncadenhead.com/blog/client-side-dependency-management-with-bower  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://tysoncadenhead.com/blog/client-side-dependency-management-with-bower'" tppabs="http://tysoncadenhead.com/blog/client-side-dependency-management-with-bower">Client-Side Dependency Management with Bower</a></li>
+  <li>Matt West, <a href="javascript:if(confirm('http://blog.teamtreehouse.com/getting-started-bower  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://blog.teamtreehouse.com/getting-started-bower'" tppabs="http://blog.teamtreehouse.com/getting-started-bower">Getting Started with Bower</a></li>
+</ul>
+
+
+</article>
+
+<div class="row">
+<div class="twelve columns">
+
+<h2>留言</h2>
+
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'jstutorial'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="javascript:if(confirm('http://disqus.com/?ref_noscript  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://disqus.com/?ref_noscript'" tppabs="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="javascript:if(confirm('http://disqus.com/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://disqus.com/'" tppabs="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</section>
+
+</div>
+</div>
+
+<footer>
+<div class="row">
+<div class="twelve columns">
+	<p><a href="license.html" tppabs="http://javascript.ruanyifeng.com/introduction/license.html">版权声明</a> | last modified on 2014-01-01 </p>
+</div>
+</div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-43771063-1', 'http://javascript.ruanyifeng.com/tool/ruanyifeng.com');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
+
+
