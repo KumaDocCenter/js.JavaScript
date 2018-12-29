@@ -1,12 +1,12 @@
 ---
-title: [JavaScript]案例
+title: JavaScript 案例
 date: 2018-12-19 16:21:11
 updated: 2018-12-19 16:21:11 
 mathjax: false
 categories: 
 tags:
-typora-root-url: .
-typora-copy-images-to: .
+typora-root-url: JavaScript_案例
+typora-copy-images-to: JavaScript_案例
 top: 
 ---
 
@@ -19,7 +19,7 @@ top:
 
 页面效果：
 
-![1532690579842](assets/1532690579842.png)
+![1532690579842](1532690579842.png)
 
 
 ## 6.1、设置html和css样式
@@ -95,7 +95,7 @@ css样式：
 
 因为 id列通常为不可编辑，所以只需要姓名列的对象。
 
-![1532691082117](assets/1532691082117.png)
+![1532691082117](1532691082117.png)
 
 ##  6.4、循环绑定单击事件
 
@@ -321,7 +321,7 @@ css样式：
 
 效果：
 
-![1532677837446](assets/1532677837446.png)
+![1532677837446](1532677837446.png)
 
 ----
 
@@ -571,5 +571,5 @@ function change(ele, fn) {
 
 函数设置完毕，要配合z-index，一起使用：
 
-![1532942765162](assets/1532942765162.png)
+![1532942765162](1532942765162.png)
 

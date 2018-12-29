@@ -1,12 +1,12 @@
 ---
-title: [JavaScript]面向对象编程和系统对象
+title:  JavaScript 面向对象编程和系统对象
 date: 2018-12-19 16:21:11
 updated: 2018-12-19 16:21:11 
 mathjax: false
 categories: 
 tags:
-typora-root-url: .
-typora-copy-images-to: .
+typora-root-url: JavaScript_面向对象编程和系统对象
+typora-copy-images-to: JavaScript_面向对象编程和系统对象
 top: 
 ---
 
@@ -174,7 +174,7 @@ dog1.jiao();
 
 对应的内存图：
 
-![1532766667149](assets/1532766667149.png)
+![1532766667149](1532766667149.png)
 
 ```javascript
 function Person(){
@@ -331,7 +331,7 @@ console.log('  world  '.trim()); //world
 
 通过浏览器可以查到系统对象中有哪些成员，方法是在浏览器的console区，输出String.prototype.
 
-![1532769108592](assets/1532769108592.png)
+![1532769108592](1532769108592.png)
 
 ## 7.3、Date对象
 

@@ -1,12 +1,12 @@
 ---
-title: [JavaScript]闭包
+title: JavaScript 闭包
 date: 2018-12-19 16:21:11
 updated: 2018-12-19 16:21:11 
 mathjax: false
 categories: 
 tags:
-typora-root-url: .
-typora-copy-images-to: .
+typora-root-url: JavaScript_闭包
+typora-copy-images-to: JavaScript_闭包
 top: 
 ---
 
@@ -161,7 +161,7 @@ myGetA(); //相当于调用getA
 </script>
 ```
 
-![1532761709171](assets/1532761709171.png)
+![1532761709171](1532761709171.png)
 
 总之，很多高级的应用程序都会使用到闭包，但是滥用闭包会造成内存的消耗。
 

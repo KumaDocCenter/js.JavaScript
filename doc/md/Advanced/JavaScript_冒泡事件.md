@@ -1,12 +1,12 @@
 ---
-title: [JavaScript]冒泡事件
+title:  JavaScript 冒泡事件
 date: 2018-12-19 16:21:11
 updated: 2018-12-19 16:21:11 
 mathjax: false
 categories: 
 tags:
-typora-root-url: .
-typora-copy-images-to: .
+typora-root-url: JavaScript_冒泡事件
+typora-copy-images-to: JavaScript_冒泡事件
 top: 
 ---
 
@@ -56,7 +56,7 @@ top:
 
 展示效果：
 
-![1532745074426](assets/1532745074426.png)
+![1532745074426](1532745074426.png)
 
 当点击内层（绿色）div的时候，不但会触发绿色div的单击事件，也会触发底层灰色div的单击事件。
 

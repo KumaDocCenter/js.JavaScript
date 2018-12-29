@@ -5,8 +5,8 @@ updated: 2018-12-19 16:21:11
 mathjax: false
 categories: 
 tags:
-typora-root-url: .
-typora-copy-images-to: .
+typora-root-url: js运行机制
+typora-copy-images-to: js运行机制
 top: 
 ---
 
@@ -23,7 +23,7 @@ top:
 
 # JavaScript运行机制图解
 
-![](images/111.jpg)
+![](111.jpg)
 
 上图我们可以分为两部分：浏览器中的`JS引擎`和`运行环境Runtime`，那它们的区别是什么？
 
@@ -138,19 +138,19 @@ bar();
 
 首先当调用函数`bar()`时，此函数就会先入栈，其内部的`console.log(1)`也会随之入栈执行。
 
-![入栈](images\1.jpg)
+![入栈](1.jpg)
 
 执行完console.log(1)后，就要出栈，于是控制台先打印出结果**1**，只剩下bar()在栈中。接着再执行函数bar内部的函数foo，于是函数foo也开心的入栈了。
 
-![](images\2.jpg)
+![](2.jpg)
 
 执行函数foo的内部代码，调用函数`par()`，于是函数par()也要跟着入栈。
 
-![](images\3.jpg)
+![](3.jpg)
 
 由于函数par()内部执行遇到了`异步函数setTimeout`,异步函数则会由浏览器的Runtime运行环境的工作线程来处理，等定时器设置的时间到达就会被放到任务队列中，此时栈的同步任务继续执行。
 
-![](images\5.jpg)
+![](5.jpg)
 
 接着在执行par函数中的`console.log(3)`,控制台打印结果为**3** ,此时栈的代码执行完毕后，会按照栈的特点进行
 
@@ -160,7 +160,7 @@ bar();
 
 最后只剩下异步任务，由主线程去获取任务队列中的任务放在栈中去执行。也可以认为栈中的同步代码执行总是在读取`异步任务`之前执行。
 
-![](images\6.jpg)
+![](6.jpg)
 
 最后执行setTimeout中的回调函数：结果控制台输出为2。
 
