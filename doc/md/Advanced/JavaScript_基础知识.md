@@ -7,7 +7,7 @@ categories:
 tags:
 typora-root-url: JavaScript_基础知识
 typora-copy-images-to: JavaScript_基础知识
-top: 
+top: 1
 ---
 
 # JavaScript高级

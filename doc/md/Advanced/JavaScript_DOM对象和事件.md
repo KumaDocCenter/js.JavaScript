@@ -7,7 +7,7 @@ categories:
 tags:
 typora-root-url: JavaScript_DOM对象和事件
 typora-copy-images-to: JavaScript_DOM对象和事件
-top: 
+top: 1
 ---
 
 

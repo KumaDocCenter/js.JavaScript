@@ -7,7 +7,7 @@ categories:
 tags:
 typora-root-url: JavaScript_闭包
 typora-copy-images-to: JavaScript_闭包
-top: 
+top: 1
 ---
 
 

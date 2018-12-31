@@ -7,7 +7,7 @@ categories:
 tags:
 typora-root-url: JavaScript_面向对象编程和系统对象
 typora-copy-images-to: JavaScript_面向对象编程和系统对象
-top: 
+top: 1
 ---
 
 

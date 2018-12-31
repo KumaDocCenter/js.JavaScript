@@ -1,5 +1,5 @@
 ---
-title: JavaScript运行机制 索引 
+title: Index
 date: 2018-12-29 14:40:21 
 updated: 2018-12-29 14:40:21 
 mathjax: false 
@@ -7,7 +7,7 @@ categories:
 tags: 
 typora-root-url: index
 typora-copy-images-to: index
-top: 
+top: 0
 ---
 
 

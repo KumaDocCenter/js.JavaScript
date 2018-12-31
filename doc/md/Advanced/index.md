@@ -1,5 +1,5 @@
 ---
-title: Advanced 索引 
+title: Index
 date: 2018-12-29 14:40:13 
 updated: 2018-12-29 14:40:13 
 mathjax: false 
@@ -7,7 +7,7 @@ categories:
 tags: 
 typora-root-url: index
 typora-copy-images-to: index
-top: 
+top: 0
 ---
 
 

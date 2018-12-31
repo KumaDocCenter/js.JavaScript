@@ -7,7 +7,7 @@ categories:
 tags:
 typora-root-url: JavaScript_冒泡事件
 typora-copy-images-to: JavaScript_冒泡事件
-top: 
+top: 1
 ---
 
 

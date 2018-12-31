@@ -7,7 +7,7 @@ categories:
 tags:
 typora-root-url: JavaScript_阻止默认行为
 typora-copy-images-to: JavaScript_阻止默认行为
-top: 
+top: 1
 ---
 
 

@@ -7,7 +7,7 @@ categories:
 tags:
 typora-root-url: JavaScript_Basics
 typora-copy-images-to: JavaScript_Basics
-top: 
+top: 1
 ---
 
 
