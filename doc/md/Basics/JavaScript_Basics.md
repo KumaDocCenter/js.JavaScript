@@ -2769,7 +2769,7 @@ document.getElementsByName()这个方法多用于复选框中。 一组复选框
 			//1.先获取到所有的复选框  通过name属性值来获取  
 			//2.遍历数组  给里面的每个元素打上勾
 			for(var i=0;i<inputsObj.length;i++){
-				inputsObj[i].checked = false; //表示是被选中 
+				inputsObj[i].checked = false; //表示是未选中 
 			}
 		}
 
